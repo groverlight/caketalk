@@ -1,0 +1,866 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
+		F45844881CE541E6000D8B41 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45844871CE541E6000D8B41 /* GradientView.swift */; };
+		F458448A1CE54872000D8B41 /* paddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45844891CE54872000D8B41 /* paddedLabel.swift */; };
+		F45844901CE548A9000D8B41 /* ColorDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458448B1CE548A9000D8B41 /* ColorDefinition.swift */; };
+		F45844911CE548A9000D8B41 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458448C1CE548A9000D8B41 /* Hue.swift */; };
+		F45844921CE548A9000D8B41 /* Luminosity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458448D1CE548A9000D8B41 /* Luminosity.swift */; };
+		F45844931CE548A9000D8B41 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F458448F1CE548A9000D8B41 /* RandomColor.swift */; };
+		F45844961CE54B34000D8B41 /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45844941CE54B34000D8B41 /* CloudManager.swift */; };
+		F45844971CE54B34000D8B41 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45844951CE54B34000D8B41 /* User.swift */; };
+		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
+		F45844AE1CE5562E000D8B41 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844A91CE5542E000D8B41 /* GPUImage.framework */; };
+		F45844AF1CE5562E000D8B41 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F45844A91CE5542E000D8B41 /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F45844B51CE561B6000D8B41 /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = F45844B31CE561B6000D8B41 /* lookup_miss_etikate.png */; };
+		F45844B61CE561B6000D8B41 /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F45844B41CE561B6000D8B41 /* lookup_soft_elegance_1.png */; };
+		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
+		F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */; };
+		F47C01341CE3B3D700891EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47C01331CE3B3D700891EB1 /* Assets.xcassets */; };
+		F47C01371CE3B3D700891EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47C01351CE3B3D700891EB1 /* LaunchScreen.storyboard */; };
+		F47C01421CE3B3D700891EB1 /* CaketalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01411CE3B3D700891EB1 /* CaketalkTests.swift */; };
+		F47C014D1CE3B3D700891EB1 /* CaketalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C014C1CE3B3D700891EB1 /* CaketalkUITests.swift */; };
+		F47C016C1CE3B51E00891EB1 /* RionaSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C015D1CE3B51E00891EB1 /* RionaSans-Black.otf */; };
+		F47C016D1CE3B51E00891EB1 /* RionaSans-BlackIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C015E1CE3B51E00891EB1 /* RionaSans-BlackIt.otf */; };
+		F47C016E1CE3B51E00891EB1 /* RionaSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C015F1CE3B51E00891EB1 /* RionaSans-Bold.otf */; };
+		F47C016F1CE3B51E00891EB1 /* RionaSans-BoldIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01601CE3B51E00891EB1 /* RionaSans-BoldIt.otf */; };
+		F47C01701CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01611CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf */; };
+		F47C01711CE3B51E00891EB1 /* RionaSans-ExtraBlackIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01621CE3B51E00891EB1 /* RionaSans-ExtraBlackIt.otf */; };
+		F47C01721CE3B51E00891EB1 /* RionaSans-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01631CE3B51E00891EB1 /* RionaSans-ExtraLight.otf */; };
+		F47C01731CE3B51E00891EB1 /* RionaSans-ExtraLightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01641CE3B51E00891EB1 /* RionaSans-ExtraLightIt.otf */; };
+		F47C01741CE3B51E00891EB1 /* RionaSans-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01651CE3B51E00891EB1 /* RionaSans-Italic.otf */; };
+		F47C01751CE3B51E00891EB1 /* RionaSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01661CE3B51E00891EB1 /* RionaSans-Light.otf */; };
+		F47C01761CE3B51E00891EB1 /* RionaSans-LightIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01671CE3B51E00891EB1 /* RionaSans-LightIt.otf */; };
+		F47C01771CE3B51E00891EB1 /* RionaSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01681CE3B51E00891EB1 /* RionaSans-Medium.otf */; };
+		F47C01781CE3B51E00891EB1 /* RionaSans-MediumIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C01691CE3B51E00891EB1 /* RionaSans-MediumIt.otf */; };
+		F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */; };
+		F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */; };
+		F47C01861CE3D09200891EB1 /* splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01851CE3D09200891EB1 /* splash.swift */; };
+		F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */; };
+		F4FB95551CE3D1C500E2977B /* permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95541CE3D1C500E2977B /* permission.swift */; };
+		F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95561CE3D2CD00E2977B /* ViewController.swift */; };
+		F4FB955C1CE3DCDD00E2977B /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB95581CE3DCDD00E2977B /* fb.png */; };
+		F4FB955F1CE3DCDD00E2977B /* twtr.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB955B1CE3DCDD00E2977B /* twtr.png */; };
+		F4FB95621CE3DF2600E2977B /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB95601CE3DF2600E2977B /* insta.png */; };
+		F4FB95631CE3DF2600E2977B /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB95611CE3DF2600E2977B /* more.png */; };
+		F4FB95651CE3E93700E2977B /* mobileNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95641CE3E93700E2977B /* mobileNumber.swift */; };
+		F4FB95671CE3EC0900E2977B /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95661CE3EC0900E2977B /* code.swift */; };
+		F4FB95691CE3ED5B00E2977B /* cameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95681CE3ED5B00E2977B /* cameraView.swift */; };
+		F4FB956B1CE3F0B600E2977B /* playerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB956A1CE3F0B600E2977B /* playerView.swift */; };
+		F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB956D1CE3F57300E2977B /* AVFoundation.framework */; };
+		F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB956F1CE3F57B00E2977B /* MediaPlayer.framework */; };
+		F4FB95721CE3F59200E2977B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB95711CE3F59200E2977B /* AVKit.framework */; };
+		F4FB95741CE3F5AB00E2977B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB95731CE3F5AB00E2977B /* QuartzCore.framework */; };
+		F4FB95781CE3F5C300E2977B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4FB95771CE3F5C300E2977B /* CFNetwork.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F45844A61CE5542E000D8B41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45844A01CE5542E000D8B41 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCF1A33414DDB1EC00852800;
+			remoteInfo = GPUImage;
+		};
+		F45844A81CE5542E000D8B41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45844A01CE5542E000D8B41 /* GPUImage.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BCE209E51943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		F45844B01CE5562E000D8B41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F45844A01CE5542E000D8B41 /* GPUImage.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BCE209E41943F20C002FEED8;
+			remoteInfo = GPUImageFramework;
+		};
+		F47C013E1CE3B3D700891EB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F47C011E1CE3B3D700891EB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F47C01251CE3B3D700891EB1;
+			remoteInfo = Caketalk;
+		};
+		F47C01491CE3B3D700891EB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F47C011E1CE3B3D700891EB1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F47C01251CE3B3D700891EB1;
+			remoteInfo = Caketalk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F45844B21CE5562F000D8B41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F45844AF1CE5562E000D8B41 /* GPUImage.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Caketalk.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		231FB45B1A03119C9C17888E /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
+		74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
+		F45844861CE541E6000D8B41 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GradientView.h; path = "../../../../Downloads/newNew-master/TypeFace/GradientView.h"; sourceTree = "<group>"; };
+		F45844871CE541E6000D8B41 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = "../../../../Downloads/newNew-master/TypeFace/GradientView.swift"; sourceTree = "<group>"; };
+		F45844891CE54872000D8B41 /* paddedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = paddedLabel.swift; path = "../../../../Downloads/newNew-master/TypeFace/paddedLabel.swift"; sourceTree = "<group>"; };
+		F458448B1CE548A9000D8B41 /* ColorDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorDefinition.swift; path = "../../../../Downloads/newNew-master/TypeFace/ColorDefinition.swift"; sourceTree = "<group>"; };
+		F458448C1CE548A9000D8B41 /* Hue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hue.swift; path = "../../../../Downloads/newNew-master/TypeFace/Hue.swift"; sourceTree = "<group>"; };
+		F458448D1CE548A9000D8B41 /* Luminosity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Luminosity.swift; path = "../../../../Downloads/newNew-master/TypeFace/Luminosity.swift"; sourceTree = "<group>"; };
+		F458448E1CE548A9000D8B41 /* RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RandomColor.h; path = "../../../../Downloads/newNew-master/TypeFace/RandomColor.h"; sourceTree = "<group>"; };
+		F458448F1CE548A9000D8B41 /* RandomColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomColor.swift; path = "../../../../Downloads/newNew-master/TypeFace/RandomColor.swift"; sourceTree = "<group>"; };
+		F45844941CE54B34000D8B41 /* CloudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudManager.swift; path = "../../../../Downloads/newNew-master/TypeFace/CloudManager.swift"; sourceTree = "<group>"; };
+		F45844951CE54B34000D8B41 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = "../../../../Downloads/newNew-master/TypeFace/User.swift"; sourceTree = "<group>"; };
+		F45844981CE54B5B000D8B41 /* Caketalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
+		F45844991CE54B5D000D8B41 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		F45844A01CE5542E000D8B41 /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = "../../../Downloads/GPUImage-master 3/framework/GPUImage.xcodeproj"; sourceTree = "<group>"; };
+		F45844B31CE561B6000D8B41 /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_miss_etikate.png; path = "../../../../Downloads/GPUImage-master 3/framework/Resources/lookup_miss_etikate.png"; sourceTree = "<group>"; };
+		F45844B41CE561B6000D8B41 /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lookup_soft_elegance_1.png; path = "../../../../Downloads/GPUImage-master 3/framework/Resources/lookup_soft_elegance_1.png"; sourceTree = "<group>"; };
+		F47C01261CE3B3D700891EB1 /* Caketalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caketalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47C01291CE3B3D700891EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F47C01311CE3B3D700891EB1 /* Caketalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Caketalk.xcdatamodel; sourceTree = "<group>"; };
+		F47C01331CE3B3D700891EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F47C01361CE3B3D700891EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F47C01381CE3B3D700891EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47C013D1CE3B3D700891EB1 /* CaketalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaketalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47C01411CE3B3D700891EB1 /* CaketalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaketalkTests.swift; sourceTree = "<group>"; };
+		F47C01431CE3B3D700891EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47C01481CE3B3D700891EB1 /* CaketalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaketalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F47C014C1CE3B3D700891EB1 /* CaketalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaketalkUITests.swift; sourceTree = "<group>"; };
+		F47C014E1CE3B3D700891EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F47C015D1CE3B51E00891EB1 /* RionaSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Black.otf"; sourceTree = "<group>"; };
+		F47C015E1CE3B51E00891EB1 /* RionaSans-BlackIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-BlackIt.otf"; sourceTree = "<group>"; };
+		F47C015F1CE3B51E00891EB1 /* RionaSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Bold.otf"; sourceTree = "<group>"; };
+		F47C01601CE3B51E00891EB1 /* RionaSans-BoldIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-BoldIt.otf"; sourceTree = "<group>"; };
+		F47C01611CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-ExtraBlack.otf"; sourceTree = "<group>"; };
+		F47C01621CE3B51E00891EB1 /* RionaSans-ExtraBlackIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-ExtraBlackIt.otf"; sourceTree = "<group>"; };
+		F47C01631CE3B51E00891EB1 /* RionaSans-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-ExtraLight.otf"; sourceTree = "<group>"; };
+		F47C01641CE3B51E00891EB1 /* RionaSans-ExtraLightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-ExtraLightIt.otf"; sourceTree = "<group>"; };
+		F47C01651CE3B51E00891EB1 /* RionaSans-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Italic.otf"; sourceTree = "<group>"; };
+		F47C01661CE3B51E00891EB1 /* RionaSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Light.otf"; sourceTree = "<group>"; };
+		F47C01671CE3B51E00891EB1 /* RionaSans-LightIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-LightIt.otf"; sourceTree = "<group>"; };
+		F47C01681CE3B51E00891EB1 /* RionaSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Medium.otf"; sourceTree = "<group>"; };
+		F47C01691CE3B51E00891EB1 /* RionaSans-MediumIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-MediumIt.otf"; sourceTree = "<group>"; };
+		F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Regular.otf"; sourceTree = "<group>"; };
+		F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Thin.otf"; sourceTree = "<group>"; };
+		F47C01851CE3D09200891EB1 /* splash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splash.swift; sourceTree = "<group>"; };
+		F4D5F38E1CE3D0F4008AE6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4FB95541CE3D1C500E2977B /* permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permission.swift; sourceTree = "<group>"; };
+		F4FB95561CE3D2CD00E2977B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4FB95581CE3DCDD00E2977B /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
+		F4FB955B1CE3DCDD00E2977B /* twtr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twtr.png; sourceTree = "<group>"; };
+		F4FB95601CE3DF2600E2977B /* insta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insta.png; sourceTree = "<group>"; };
+		F4FB95611CE3DF2600E2977B /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
+		F4FB95641CE3E93700E2977B /* mobileNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mobileNumber.swift; sourceTree = "<group>"; };
+		F4FB95661CE3EC0900E2977B /* code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
+		F4FB95681CE3ED5B00E2977B /* cameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraView.swift; sourceTree = "<group>"; };
+		F4FB956A1CE3F0B600E2977B /* playerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playerView.swift; sourceTree = "<group>"; };
+		F4FB956D1CE3F57300E2977B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F4FB956F1CE3F57B00E2977B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F4FB95711CE3F59200E2977B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		F4FB95731CE3F5AB00E2977B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F4FB95771CE3F5C300E2977B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		F4FB957D1CE403E400E2977B /* Caketalk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Caketalk-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F47C01231CE3B3D700891EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FB95781CE3F5C300E2977B /* CFNetwork.framework in Frameworks */,
+				F4FB95741CE3F5AB00E2977B /* QuartzCore.framework in Frameworks */,
+				F4FB95721CE3F59200E2977B /* AVKit.framework in Frameworks */,
+				F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */,
+				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
+				F45844AE1CE5562E000D8B41 /* GPUImage.framework in Frameworks */,
+				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
+				E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47C013A1CE3B3D700891EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47C01451CE3B3D700891EB1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F43CF4A25F5BAFFF4B3515E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				231FB45B1A03119C9C17888E /* Pods-Caketalk.debug.xcconfig */,
+				74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F45844A11CE5542E000D8B41 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F45844A71CE5542E000D8B41 /* libGPUImage.a */,
+				F45844A91CE5542E000D8B41 /* GPUImage.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F47C011D1CE3B3D700891EB1 = {
+			isa = PBXGroup;
+			children = (
+				F45844A01CE5542E000D8B41 /* GPUImage.xcodeproj */,
+				F47C01281CE3B3D700891EB1 /* Caketalk */,
+				F47C01401CE3B3D700891EB1 /* CaketalkTests */,
+				F47C014B1CE3B3D700891EB1 /* CaketalkUITests */,
+				F47C01271CE3B3D700891EB1 /* Products */,
+				6F43CF4A25F5BAFFF4B3515E /* Pods */,
+				FCFC2848D6592F2DEC3BA40C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F47C01271CE3B3D700891EB1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F47C01261CE3B3D700891EB1 /* Caketalk.app */,
+				F47C013D1CE3B3D700891EB1 /* CaketalkTests.xctest */,
+				F47C01481CE3B3D700891EB1 /* CaketalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F47C01281CE3B3D700891EB1 /* Caketalk */ = {
+			isa = PBXGroup;
+			children = (
+				F45844B31CE561B6000D8B41 /* lookup_miss_etikate.png */,
+				F45844B41CE561B6000D8B41 /* lookup_soft_elegance_1.png */,
+				F45844981CE54B5B000D8B41 /* Caketalk.entitlements */,
+				F45844941CE54B34000D8B41 /* CloudManager.swift */,
+				F45844951CE54B34000D8B41 /* User.swift */,
+				F458448B1CE548A9000D8B41 /* ColorDefinition.swift */,
+				F458448C1CE548A9000D8B41 /* Hue.swift */,
+				F458448D1CE548A9000D8B41 /* Luminosity.swift */,
+				F458448E1CE548A9000D8B41 /* RandomColor.h */,
+				F458448F1CE548A9000D8B41 /* RandomColor.swift */,
+				F45844891CE54872000D8B41 /* paddedLabel.swift */,
+				F45844861CE541E6000D8B41 /* GradientView.h */,
+				F45844871CE541E6000D8B41 /* GradientView.swift */,
+				F4FB95581CE3DCDD00E2977B /* fb.png */,
+				F4FB95601CE3DF2600E2977B /* insta.png */,
+				F4FB95611CE3DF2600E2977B /* more.png */,
+				F4FB955B1CE3DCDD00E2977B /* twtr.png */,
+				F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */,
+				F4FB957D1CE403E400E2977B /* Caketalk-Bridging-Header.h */,
+				F4FB95561CE3D2CD00E2977B /* ViewController.swift */,
+				F47C015C1CE3B51E00891EB1 /* fonts */,
+				F47C01291CE3B3D700891EB1 /* AppDelegate.swift */,
+				F47C01331CE3B3D700891EB1 /* Assets.xcassets */,
+				F47C01351CE3B3D700891EB1 /* LaunchScreen.storyboard */,
+				F47C01381CE3B3D700891EB1 /* Info.plist */,
+				F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */,
+				F47C01851CE3D09200891EB1 /* splash.swift */,
+				F4FB95541CE3D1C500E2977B /* permission.swift */,
+				F4FB95641CE3E93700E2977B /* mobileNumber.swift */,
+				F4FB95661CE3EC0900E2977B /* code.swift */,
+				F4FB95681CE3ED5B00E2977B /* cameraView.swift */,
+				F4FB956A1CE3F0B600E2977B /* playerView.swift */,
+			);
+			path = Caketalk;
+			sourceTree = "<group>";
+		};
+		F47C01401CE3B3D700891EB1 /* CaketalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				F47C01411CE3B3D700891EB1 /* CaketalkTests.swift */,
+				F47C01431CE3B3D700891EB1 /* Info.plist */,
+			);
+			path = CaketalkTests;
+			sourceTree = "<group>";
+		};
+		F47C014B1CE3B3D700891EB1 /* CaketalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F47C014C1CE3B3D700891EB1 /* CaketalkUITests.swift */,
+				F47C014E1CE3B3D700891EB1 /* Info.plist */,
+			);
+			path = CaketalkUITests;
+			sourceTree = "<group>";
+		};
+		F47C015C1CE3B51E00891EB1 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F47C015D1CE3B51E00891EB1 /* RionaSans-Black.otf */,
+				F47C015E1CE3B51E00891EB1 /* RionaSans-BlackIt.otf */,
+				F47C015F1CE3B51E00891EB1 /* RionaSans-Bold.otf */,
+				F47C01601CE3B51E00891EB1 /* RionaSans-BoldIt.otf */,
+				F47C01611CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf */,
+				F47C01621CE3B51E00891EB1 /* RionaSans-ExtraBlackIt.otf */,
+				F47C01631CE3B51E00891EB1 /* RionaSans-ExtraLight.otf */,
+				F47C01641CE3B51E00891EB1 /* RionaSans-ExtraLightIt.otf */,
+				F47C01651CE3B51E00891EB1 /* RionaSans-Italic.otf */,
+				F47C01661CE3B51E00891EB1 /* RionaSans-Light.otf */,
+				F47C01671CE3B51E00891EB1 /* RionaSans-LightIt.otf */,
+				F47C01681CE3B51E00891EB1 /* RionaSans-Medium.otf */,
+				F47C01691CE3B51E00891EB1 /* RionaSans-MediumIt.otf */,
+				F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */,
+				F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		FCFC2848D6592F2DEC3BA40C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F45844991CE54B5D000D8B41 /* CloudKit.framework */,
+				F4FB95771CE3F5C300E2977B /* CFNetwork.framework */,
+				F4FB95731CE3F5AB00E2977B /* QuartzCore.framework */,
+				F4FB95711CE3F59200E2977B /* AVKit.framework */,
+				F4FB956F1CE3F57B00E2977B /* MediaPlayer.framework */,
+				F4FB956D1CE3F57300E2977B /* AVFoundation.framework */,
+				063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F47C01251CE3B3D700891EB1 /* Caketalk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F47C01511CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "Caketalk" */;
+			buildPhases = (
+				CE084240830A1E869FA6BCFB /* Check Pods Manifest.lock */,
+				F47C01221CE3B3D700891EB1 /* Sources */,
+				F47C01231CE3B3D700891EB1 /* Frameworks */,
+				F47C01241CE3B3D700891EB1 /* Resources */,
+				040357FE3B2A599C0F0AB8D7 /* Copy Pods Resources */,
+				F45844B21CE5562F000D8B41 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F45844B11CE5562E000D8B41 /* PBXTargetDependency */,
+			);
+			name = Caketalk;
+			productName = Caketalk;
+			productReference = F47C01261CE3B3D700891EB1 /* Caketalk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F47C013C1CE3B3D700891EB1 /* CaketalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F47C01541CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "CaketalkTests" */;
+			buildPhases = (
+				F47C01391CE3B3D700891EB1 /* Sources */,
+				F47C013A1CE3B3D700891EB1 /* Frameworks */,
+				F47C013B1CE3B3D700891EB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F47C013F1CE3B3D700891EB1 /* PBXTargetDependency */,
+			);
+			name = CaketalkTests;
+			productName = CaketalkTests;
+			productReference = F47C013D1CE3B3D700891EB1 /* CaketalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F47C01471CE3B3D700891EB1 /* CaketalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F47C01571CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "CaketalkUITests" */;
+			buildPhases = (
+				F47C01441CE3B3D700891EB1 /* Sources */,
+				F47C01451CE3B3D700891EB1 /* Frameworks */,
+				F47C01461CE3B3D700891EB1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F47C014A1CE3B3D700891EB1 /* PBXTargetDependency */,
+			);
+			name = CaketalkUITests;
+			productName = CaketalkUITests;
+			productReference = F47C01481CE3B3D700891EB1 /* CaketalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F47C011E1CE3B3D700891EB1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Grover Light";
+				TargetAttributes = {
+					F47C01251CE3B3D700891EB1 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 4THJ5Z3YGF;
+					};
+					F47C013C1CE3B3D700891EB1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F47C01251CE3B3D700891EB1;
+					};
+					F47C01471CE3B3D700891EB1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F47C01251CE3B3D700891EB1;
+					};
+				};
+			};
+			buildConfigurationList = F47C01211CE3B3D700891EB1 /* Build configuration list for PBXProject "Caketalk" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F47C011D1CE3B3D700891EB1;
+			productRefGroup = F47C01271CE3B3D700891EB1 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F45844A11CE5542E000D8B41 /* Products */;
+					ProjectRef = F45844A01CE5542E000D8B41 /* GPUImage.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				F47C01251CE3B3D700891EB1 /* Caketalk */,
+				F47C013C1CE3B3D700891EB1 /* CaketalkTests */,
+				F47C01471CE3B3D700891EB1 /* CaketalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F45844A71CE5542E000D8B41 /* libGPUImage.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGPUImage.a;
+			remoteRef = F45844A61CE5542E000D8B41 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F45844A91CE5542E000D8B41 /* GPUImage.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = GPUImage.framework;
+			remoteRef = F45844A81CE5542E000D8B41 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F47C01241CE3B3D700891EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */,
+				F47C01371CE3B3D700891EB1 /* LaunchScreen.storyboard in Resources */,
+				F47C01731CE3B51E00891EB1 /* RionaSans-ExtraLightIt.otf in Resources */,
+				F4FB955C1CE3DCDD00E2977B /* fb.png in Resources */,
+				F47C01761CE3B51E00891EB1 /* RionaSans-LightIt.otf in Resources */,
+				F47C01341CE3B3D700891EB1 /* Assets.xcassets in Resources */,
+				F45844B51CE561B6000D8B41 /* lookup_miss_etikate.png in Resources */,
+				F4FB95631CE3DF2600E2977B /* more.png in Resources */,
+				F47C016D1CE3B51E00891EB1 /* RionaSans-BlackIt.otf in Resources */,
+				F47C01701CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf in Resources */,
+				F47C01781CE3B51E00891EB1 /* RionaSans-MediumIt.otf in Resources */,
+				F47C01711CE3B51E00891EB1 /* RionaSans-ExtraBlackIt.otf in Resources */,
+				F47C016E1CE3B51E00891EB1 /* RionaSans-Bold.otf in Resources */,
+				F4FB95621CE3DF2600E2977B /* insta.png in Resources */,
+				F47C016C1CE3B51E00891EB1 /* RionaSans-Black.otf in Resources */,
+				F47C01751CE3B51E00891EB1 /* RionaSans-Light.otf in Resources */,
+				F47C01741CE3B51E00891EB1 /* RionaSans-Italic.otf in Resources */,
+				F4FB955F1CE3DCDD00E2977B /* twtr.png in Resources */,
+				F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */,
+				F47C016F1CE3B51E00891EB1 /* RionaSans-BoldIt.otf in Resources */,
+				F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */,
+				F45844B61CE561B6000D8B41 /* lookup_soft_elegance_1.png in Resources */,
+				F47C01721CE3B51E00891EB1 /* RionaSans-ExtraLight.otf in Resources */,
+				F47C01771CE3B51E00891EB1 /* RionaSans-Medium.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47C013B1CE3B3D700891EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47C01461CE3B3D700891EB1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		040357FE3B2A599C0F0AB8D7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE084240830A1E869FA6BCFB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F47C01221CE3B3D700891EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */,
+				F45844931CE548A9000D8B41 /* RandomColor.swift in Sources */,
+				F4FB95671CE3EC0900E2977B /* code.swift in Sources */,
+				F45844921CE548A9000D8B41 /* Luminosity.swift in Sources */,
+				F45844881CE541E6000D8B41 /* GradientView.swift in Sources */,
+				F458448A1CE54872000D8B41 /* paddedLabel.swift in Sources */,
+				F4FB95551CE3D1C500E2977B /* permission.swift in Sources */,
+				F45844971CE54B34000D8B41 /* User.swift in Sources */,
+				F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */,
+				F45844911CE548A9000D8B41 /* Hue.swift in Sources */,
+				F4FB956B1CE3F0B600E2977B /* playerView.swift in Sources */,
+				F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */,
+				F45844901CE548A9000D8B41 /* ColorDefinition.swift in Sources */,
+				F4FB95651CE3E93700E2977B /* mobileNumber.swift in Sources */,
+				F47C01861CE3D09200891EB1 /* splash.swift in Sources */,
+				F4FB95691CE3ED5B00E2977B /* cameraView.swift in Sources */,
+				F45844961CE54B34000D8B41 /* CloudManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47C01391CE3B3D700891EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47C01421CE3B3D700891EB1 /* CaketalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F47C01441CE3B3D700891EB1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F47C014D1CE3B3D700891EB1 /* CaketalkUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F45844B11CE5562E000D8B41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GPUImageFramework;
+			targetProxy = F45844B01CE5562E000D8B41 /* PBXContainerItemProxy */;
+		};
+		F47C013F1CE3B3D700891EB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F47C01251CE3B3D700891EB1 /* Caketalk */;
+			targetProxy = F47C013E1CE3B3D700891EB1 /* PBXContainerItemProxy */;
+		};
+		F47C014A1CE3B3D700891EB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F47C01251CE3B3D700891EB1 /* Caketalk */;
+			targetProxy = F47C01491CE3B3D700891EB1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F47C01351CE3B3D700891EB1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F47C01361CE3B3D700891EB1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4D5F38E1CE3D0F4008AE6D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F47C014F1CE3B3D700891EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F47C01501CE3B3D700891EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F47C01521CE3B3D700891EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 231FB45B1A03119C9C17888E /* Pods-Caketalk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Mixpanel\"",
+					../GPUImage/Source,
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
+					../GPUImage/Source/iOS,
+				);
+				INFOPLIST_FILE = Caketalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gl.Caketalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/grover/Desktop/FIXED/Caketalk/Caketalk/Caketalk-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		F47C01531CE3B3D700891EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Mixpanel\"",
+					../GPUImage/Source,
+					"\"${PODS_ROOT}/Headers/Public/pop\"",
+					../GPUImage/Source/iOS,
+				);
+				INFOPLIST_FILE = Caketalk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gl.Caketalk;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/grover/Desktop/FIXED/Caketalk/Caketalk/Caketalk-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		F47C01551CE3B3D700891EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CaketalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gl.CaketalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caketalk.app/Caketalk";
+			};
+			name = Debug;
+		};
+		F47C01561CE3B3D700891EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CaketalkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gl.CaketalkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Caketalk.app/Caketalk";
+			};
+			name = Release;
+		};
+		F47C01581CE3B3D700891EB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CaketalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gl.CaketalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Caketalk;
+			};
+			name = Debug;
+		};
+		F47C01591CE3B3D700891EB1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CaketalkUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gl.CaketalkUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Caketalk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F47C01211CE3B3D700891EB1 /* Build configuration list for PBXProject "Caketalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F47C014F1CE3B3D700891EB1 /* Debug */,
+				F47C01501CE3B3D700891EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F47C01511CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "Caketalk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F47C01521CE3B3D700891EB1 /* Debug */,
+				F47C01531CE3B3D700891EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F47C01541CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "CaketalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F47C01551CE3B3D700891EB1 /* Debug */,
+				F47C01561CE3B3D700891EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F47C01571CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "CaketalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F47C01581CE3B3D700891EB1 /* Debug */,
+				F47C01591CE3B3D700891EB1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F47C01311CE3B3D700891EB1 /* Caketalk.xcdatamodel */,
+			);
+			currentVersion = F47C01311CE3B3D700891EB1 /* Caketalk.xcdatamodel */;
+			path = Caketalk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = F47C011E1CE3B3D700891EB1 /* Project object */;
+}
