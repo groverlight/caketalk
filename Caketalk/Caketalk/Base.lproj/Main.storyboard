@@ -490,10 +490,10 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="rbW-Oh-41e"/>
                                 <exclude reference="2QZ-yk-Rcz"/>
                                 <exclude reference="X6b-yx-m6i"/>
                                 <exclude reference="auZ-OT-BRh"/>
-                                <exclude reference="rbW-Oh-41e"/>
                                 <exclude reference="sFx-uc-Flr"/>
                                 <exclude reference="l45-1g-iuL"/>
                                 <exclude reference="s6I-NZ-D2V"/>

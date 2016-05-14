@@ -11,6 +11,7 @@
 
 #import "Mixpanel.h"
 #import <pop/POP.h>
+#import "GradientView.h"
 
 
 
