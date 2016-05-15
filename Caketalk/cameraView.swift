@@ -49,21 +49,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet var progressBarView: UIView!
     @IBOutlet var animatedProgressBarView: UIView!
-
     @IBOutlet var headerView: UIView!
-
     @IBOutlet var cameraTextView: UITextView!
-
     @IBOutlet var recordButton: UIButton!
     @IBOutlet var recordEmoji: UILabel!
     @IBOutlet var characterCount: UILabel!
-
     @IBOutlet var clearButton: UIButton!
     @IBOutlet var clearEmoji: UILabel!
-
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backEmoji: UILabel!
-
     @IBOutlet var scrollView: UIScrollView!
 
     //constraints
@@ -75,7 +69,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
 /*---------------END OUTLETS----------------------*/
 
-
+    //override functions
     override func viewDidLoad() {
         print("camera view is loaded")
         super.viewDidLoad()
@@ -148,7 +142,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
-            gradientView.frame = CGRectMake(0,0,self.view.bounds.size.width,self.view.bounds.size.height)
+            gradientView.frame = self.view.bounds
             gradientView.backgroundColor = UIColor.clearColor()
             gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
             gradientView.locations = [0, 1]
@@ -229,20 +223,20 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.view.endEditing(true)
             
      }
-
-
+    
+    //status bar functions
     override func prefersStatusBarHidden() -> Bool {
             if showStatusBar {
                 return false
             }
             return true
         }
-
     private func showStatusBar(enabled: Bool) {
             showStatusBar = enabled
             self.setNeedsStatusBarAppearanceUpdate()
         }
-
+    
+    //UITextView delegate functions
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         print("getting text...")
 
@@ -365,7 +359,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         return true
     }
 
-
     func textViewDidChange(textView: UITextView) {
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)
         let textHeight = self.cameraTextView.font?.lineHeight
@@ -422,7 +415,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     }
 
-
+    //keyboard + constraints functions
     func keyboardWillShow(notification: NSNotification) {
 
         updateBottomLayoutConstraintWithNotification(notification)
@@ -464,7 +457,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         
     }
 
-
+    //camera functions
     func startRecording() {
         print ("starting recording...")
         recording = true;
@@ -492,7 +485,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     }
 
-
+    // misc.
     func longPressed(sender: UILongPressGestureRecognizer)
 
     {
