@@ -19,6 +19,7 @@
 		27049AB01CE823FD002D69EF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA61CE823FD002D69EF /* GradientView.swift */; };
 		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; };
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
 		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
@@ -116,6 +117,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
