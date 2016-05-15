@@ -59,18 +59,18 @@ class permission: UIViewController {
     @IBAction func icloudPressed(sender: AnyObject) {
         print("iCloud button pressed")
         self.alertView.hidden = true
-        self.performSegueWithIdentifier("permissionAsk", sender: self)
+        
 
-        /*self.iCloudLogin({ (success) -> () in
+        self.iCloudLogin({ (success) -> () in
             if success {
-
+                self.performSegueWithIdentifier("permissionAsk", sender: self)
 
                 // print ("success")
             } else {
                 ("error")
                 // TODO error handling
             }
-        })*/
+        })
 
 
     }
