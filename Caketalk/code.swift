@@ -119,9 +119,10 @@ class code: UIViewController, UITextFieldDelegate {
                 // NSNotificationCenter.defaultCenter().postNotificationName("move", object: nil)
 
                 //self.dismissViewControllerAnimated(true, completion: nil)
-                let delay = 1 * Double(NSEC_PER_SEC)
-                let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-                dispatch_after(time, dispatch_get_main_queue()) {
+               // let delay = 1 * Double(NSEC_PER_SEC)
+                //let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+                //dispatch_after(time, dispatch_get_main_queue()) {
+                dispatch_async(dispatch_get_main_queue()) {
                     let prefs = NSUserDefaults.standardUserDefaults()
                     prefs.setValue("didLogin", forKey: "Login")
                     self.performSegueWithIdentifier("finishLogin", sender: self)

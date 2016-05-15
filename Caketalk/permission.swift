@@ -63,7 +63,6 @@ class permission: UIViewController {
 
         self.iCloudLogin({ (success) -> () in
             if success {
-                self.performSegueWithIdentifier("permissionAsk", sender: self)
 
                 // print ("success")
             } else {
@@ -89,14 +88,15 @@ class permission: UIViewController {
                     self.presentViewController(iCloudAlert, animated: true, completion: nil)
                 }
             } else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.performSegueWithIdentifier("permissionAsk", sender: self)
+                }
                 cloudManager.getUser({ (success, let user) -> () in
                     if success {
                         userFull = user
 
                         cloudManager.getUserInfo(userFull!, completionHandler: { (success, user) -> () in
                             if success {
-                                //  self.PageView!.scrollToNextViewController()
-                                self.performSegueWithIdentifier("permissionAsk", sender: self)
                                 completionHandler(success: true)
                             }
                         })
