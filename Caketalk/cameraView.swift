@@ -98,6 +98,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.recordEmoji.hidden = true
         self.characterCount.hidden = true
         self.progressBarView.hidden = true
+        self.clearEmoji.hidden = true
+        self.backEmoji.hidden = true
         self.animatedProgressBarView.hidden = true
         self.cameraTextView.font = UIFont(name:"RionaSans-Bold", size: 22.0)
         characterCount.layer.masksToBounds = true
@@ -582,12 +584,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
 
 
-            clearButton.transform = CGAffineTransformMakeTranslation(0, 2000)
-            backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+            self.clearButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+            self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
             overlayScrollView.transform = CGAffineTransformMakeTranslation (0, -1000)
-            clearButton.hidden = false
-            backButton.hidden = false
-
+            self.clearButton.hidden = false
+            self.backButton.hidden = false
+            self.clearEmoji.hidden = false
+            self.backEmoji.hidden = false
 
             cameraTextView.resignFirstResponder()
             UIView.animateWithDuration(0.1, animations: {
@@ -914,7 +917,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.headerView.hidden = false
           //  self.headerView.text = "caketalk"
            // self.headerView.font = UIFont (name: "RionaSans-Bold", size: 17)
-
+            self.clearEmoji.hidden = true
+            self.backEmoji.hidden = true
             self.backButton.hidden = true
             self.clearButton.hidden = true
 
@@ -951,7 +955,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.headerView.hidden = false
            // self.headerView.text = "caketalk"
            // self.headerView.font = UIFont (name: "RionaSans-Bold", size: 17)
-
+            self.clearEmoji.hidden = true
+            self.backEmoji.hidden = true
             self.backButton.hidden = true
             self.clearEmoji.hidden = true
 

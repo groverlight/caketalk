@@ -22,19 +22,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         //  frontWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
-       /* let prefs = NSUserDefaults.standardUserDefaults()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let login = storyboard.instantiateViewControllerWithIdentifier("login") 
+        let camera = storyboard.instantiateViewControllerWithIdentifier("camera") 
 
-        if let login = prefs.stringForKey("Login"){
+        
+        let prefs = NSUserDefaults.standardUserDefaults()
+        let loginCred = prefs.stringForKey("Login")
+        if (loginCred != nil){
             //print (login)
-            self.window?.rootViewController = front // supposed to be front
+            self.window?.rootViewController = camera // supposed to be front
 
 
         }else{
             //Nothing stored in NSUserDefaults yet. Set a value.
             //prefs.setValue("Berlin", forKey: "Login")
-            self.window?.rootViewController = vc
+            self.window?.rootViewController = login
             
-        }*/
+        }
         return true
     }
 

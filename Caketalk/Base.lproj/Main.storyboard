@@ -376,16 +376,6 @@
                                 <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login with your mobile number " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-8S-Pel">
-                                <rect key="frame" x="230" y="68" width="141" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="3bc-hP-M81"/>
-                                    <constraint firstAttribute="width" constant="141" id="rhF-K3-Mfj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znV-ZO-pcV" userLabel="country">
                                 <rect key="frame" x="20" y="160" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.94509803920000002" green="0.49803921569999998" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -409,23 +399,15 @@
                                 <rect key="frame" x="20" y="245" width="560" height="1"/>
                                 <color key="backgroundColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to the terms &amp; privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9P-Al-UFr">
-                                <rect key="frame" x="202" y="254" width="197" height="68"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login with your mobile number " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-8S-Pel">
+                                <rect key="frame" x="230" y="68" width="141" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="197" id="8fU-kX-Qt1"/>
-                                    <constraint firstAttribute="height" constant="68" id="Fck-Qf-uB8"/>
-                                    <constraint firstAttribute="height" constant="68" id="Mpr-Wl-ecR"/>
-                                    <constraint firstAttribute="width" constant="197" id="dXJ-bb-SA4"/>
+                                    <constraint firstAttribute="height" constant="72" id="3bc-hP-M81"/>
+                                    <constraint firstAttribute="width" constant="141" id="rhF-K3-Mfj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="8fU-kX-Qt1"/>
-                                        <exclude reference="Fck-Qf-uB8"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyU-Cm-pBq">
                                 <rect key="frame" x="20" y="523" width="560" height="60"/>
@@ -447,6 +429,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By continuing, you agree to the terms &amp; privacy policy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P9P-Al-UFr">
+                                <rect key="frame" x="202" y="254" width="197" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="8fU-kX-Qt1"/>
+                                    <constraint firstAttribute="height" constant="68" id="Fck-Qf-uB8"/>
+                                    <constraint firstAttribute="height" constant="68" id="Mpr-Wl-ecR"/>
+                                    <constraint firstAttribute="width" constant="197" id="dXJ-bb-SA4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8fU-kX-Qt1"/>
+                                        <exclude reference="Fck-Qf-uB8"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1093,26 +1093,6 @@
                                     <constraint firstItem="rrI-oJ-TSJ" firstAttribute="top" secondItem="h3W-p5-mHp" secondAttribute="top" constant="26" id="glL-L2-YYz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-SD-QVm" userLabel="progressBarView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="6"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-A2-iDM" userLabel="animatedProgressBar">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="6"/>
-                                        <color key="backgroundColor" red="0.56470588239999997" green="1" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="6" id="Lpn-ka-WHD"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="FYa-A2-iDM" firstAttribute="leading" secondItem="KvP-SD-QVm" secondAttribute="leading" id="3Up-uN-oYJ"/>
-                                    <constraint firstItem="FYa-A2-iDM" firstAttribute="top" secondItem="KvP-SD-QVm" secondAttribute="top" id="Gw2-WA-7d2"/>
-                                    <constraint firstAttribute="height" constant="6" id="QgF-aa-XYZ"/>
-                                    <constraint firstItem="FYa-A2-iDM" firstAttribute="centerX" secondItem="KvP-SD-QVm" secondAttribute="centerX" id="WdO-C7-WWl"/>
-                                    <constraint firstAttribute="trailing" secondItem="FYa-A2-iDM" secondAttribute="trailing" id="l1D-Jk-NXR"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-fc-Nl5" userLabel="line">
                                 <rect key="frame" x="155" y="370" width="290" height="1"/>
                                 <color key="backgroundColor" red="1" green="0.74509803919999995" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1156,6 +1136,26 @@
                                     <constraint firstAttribute="width" constant="50" id="3zF-ch-Q2q"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-SD-QVm" userLabel="progressBarView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="6"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FYa-A2-iDM" userLabel="animatedProgressBar">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="6"/>
+                                        <color key="backgroundColor" red="0.56470588239999997" green="1" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="6" id="Lpn-ka-WHD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="FYa-A2-iDM" firstAttribute="leading" secondItem="KvP-SD-QVm" secondAttribute="leading" id="3Up-uN-oYJ"/>
+                                    <constraint firstItem="FYa-A2-iDM" firstAttribute="top" secondItem="KvP-SD-QVm" secondAttribute="top" id="Gw2-WA-7d2"/>
+                                    <constraint firstAttribute="height" constant="6" id="QgF-aa-XYZ"/>
+                                    <constraint firstItem="FYa-A2-iDM" firstAttribute="centerX" secondItem="KvP-SD-QVm" secondAttribute="centerX" id="WdO-C7-WWl"/>
+                                    <constraint firstAttribute="trailing" secondItem="FYa-A2-iDM" secondAttribute="trailing" id="l1D-Jk-NXR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1239,7 +1239,7 @@
         <image name="twtr.png" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i92-3f-FIP"/>
         <segue reference="HTJ-XM-i7F"/>
+        <segue reference="WJ7-pB-pep"/>
     </inferredMetricsTieBreakers>
 </document>

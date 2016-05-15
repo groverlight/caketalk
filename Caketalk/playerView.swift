@@ -174,7 +174,7 @@ var showStatusBar = false
 
 
         for i in 0..<arrayofText.count{
-            let avAsset = AVAsset(URL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(i+1).mov"))
+            let avAsset = AVAsset(URL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(i+1).mp4"))
             duration = duration + CMTimeGetSeconds(avAsset.duration)
         }
 
@@ -187,6 +187,7 @@ var showStatusBar = false
 
             self.progressBarView.hidden = false
             self.view.bringSubviewToFront(self.headerView)
+            self.view.bringSubviewToFront(self.progressBarView)
             self.view.bringSubviewToFront(self.animatedProgressBarView)
 
             print (duration)
