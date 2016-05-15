@@ -92,8 +92,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.characterCount.clipsToBounds = true
 
 /*---------------END STYLE 🎨----------------------*/
-
-
+        self.cameraTextView.setContentOffset(CGPointZero, animated: false)
         self.recordButton.hidden = true
         self.recordEmoji.hidden = true
         self.characterCount.hidden = true
