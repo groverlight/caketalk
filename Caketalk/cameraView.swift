@@ -66,12 +66,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBOutlet var recordButtonBottom: NSLayoutConstraint!
     @IBOutlet var scrollViewBottom: NSLayoutConstraint!
 
-
 /*---------------END OUTLETS----------------------*/
 
     //override functions
     override func viewDidLoad() {
-        print("camera view is loaded")
+        print("camera view loaded")
         super.viewDidLoad()
         self.cameraTextView.delegate = self
 
@@ -82,31 +81,43 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.recordButton.layer.cornerRadius = 6
         self.clearButton.layer.cornerRadius = 6
         self.backButton.layer.cornerRadius = 6
-        self.characterCount.layer.cornerRadius = 6
-        self.characterCount.clipsToBounds = true
 
-/*---------------END STYLE 🎨----------------------*/
-        self.cameraTextView.scrollRangeToVisible(NSMakeRange(0, 0))
+        self.characterCount.clipsToBounds = true
+        self.characterCount.layer.masksToBounds = true
+        self.characterCount.layer.cornerRadius = characterCount.bounds.size.width/2
+
+        //transparent header
+
+        self.headerView.backgroundColor = UIColor .clearColor()
+
+        //hidden items
+
         self.recordButton.hidden = true
         self.recordEmoji.hidden = true
         self.characterCount.hidden = true
         self.progressBarView.hidden = true
-        self.clearEmoji.hidden = true
-        self.backEmoji.hidden = true
         self.animatedProgressBarView.hidden = true
-        self.cameraTextView.font = UIFont(name:"RionaSans-Bold", size: 22.0)
-        characterCount.layer.masksToBounds = true
-        characterCount.layer.cornerRadius = characterCount.bounds.size.width/2
+
+        self.backButton.hidden = true
+        self.backEmoji.hidden = true
+        self.clearButton.hidden = true
+        self.clearEmoji.hidden = true
+
+/*---------------END STYLE 🎨----------------------*/
+
+
+        //other misc. important items
+
+        self.cameraTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         self.cameraTextView.textContainer.lineFragmentPadding = 0
         self.scrollView.contentOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y+100)
-        print ("loading camera...")
-        self.backButton.hidden = true
-        self.clearButton.hidden = true
+
         longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(cameraView.longPressed(_:)))
         self.view.addGestureRecognizer(longPressRecognizer)
 
-
         typingButtonFrame = recordButton.frame
+
+
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(cameraView.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(cameraView.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
@@ -123,6 +134,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             }
             catch {
+
             }
 
             //instantiating the camera
@@ -130,7 +142,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             filteredImage = GPUImageView()
             videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPresetHigh, cameraPosition: .Front)
             videoCamera?.horizontallyMirrorFrontFacingCamera = true
-            videoCamera?.frameRate = 30
+            videoCamera?.frameRate = 60
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.frame = self.view.bounds
             filter = GPUImageMissEtikateFilter()
@@ -147,14 +159,17 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
             gradientView.locations = [0, 1]
             gradientView.direction = .Vertical
-            gradientView.alpha = 0.7
+            gradientView.alpha = 0.8
 
 
-            // Add it as a subview in all of its awesome
+            // make gradient a subview
+
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
         }
         else
+
         { // for simulator
+
             self.view.backgroundColor = UIColor.brownColor()
             recordButton.userInteractionEnabled = false
         }
@@ -163,15 +178,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     }
     override func viewWillAppear(animated: Bool) {
-        self.recordButton.transform = CGAffineTransformMakeScale(0.5, 0.5)
-        self.recordEmoji.transform = CGAffineTransformMakeScale(0.5, 0.5)
-        self.characterCount.transform = CGAffineTransformMakeScale(0.5, 0.5)
-        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
-            self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
-            self.recordEmoji.transform = CGAffineTransformMakeScale(1, 1)
-            self.characterCount.transform = CGAffineTransformMakeScale(1, 1)
-            }, completion: nil)
-        do{
+//        self.recordButton.transform = CGAffineTransformMakeScale(0.5, 0.5)
+//        self.recordEmoji.transform = CGAffineTransformMakeScale(0.5, 0.5)
+//        self.characterCount.transform = CGAffineTransformMakeScale(0.5, 0.5)
+//        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+//            self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
+//            self.recordEmoji.transform = CGAffineTransformMakeScale(1, 1)
+//            self.characterCount.transform = CGAffineTransformMakeScale(1, 1)
+//            }, completion: nil)
+
+        do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
             if (files?.count == 0){
                 clipCount = 1
@@ -464,7 +480,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
-        self.videoCamera?.frameRate = 30
+        self.videoCamera?.frameRate = 60
         movieWriter?.startRecording()
         //        self.toolTip?.dismiss()
 
@@ -638,6 +654,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     }
 
+    //text font and size for different phones
+
     func iPhoneScreenSizes(){
         let bounds = UIScreen.mainScreen().bounds
         let height = bounds.size.height
@@ -645,16 +663,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         switch height {
         case 480.0:
             // print("iPhone 3,4")
-            self.cameraTextView.font = UIFont(name: "AvenirNext-Medium", size: 19)
+            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 19)
         case 568.0:
             //print("iPhone 5")
-            self.cameraTextView.font = UIFont(name: "AvenirNext-Medium", size: 20)
+            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 20)
         case 667.0:
             //print("iPhone 6")
-            self.cameraTextView.font = UIFont(name: "AvenirNext-Medium", size: 21)
+            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 21)
         case 736.0:
             //print("iPhone 6+")
-            self.cameraTextView.font = UIFont(name: "AvenirNext-Medium", size: 22 )
+            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 22 )
         default:
             break
             //print("not an iPhone")
@@ -721,7 +739,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.newImage = GPUImageView()
             self.newImage?.frame = self.view.bounds
             let newfilter = GPUImagePixellateFilter()
-            self.videoCamera?.frameRate = 30
+            self.videoCamera?.frameRate = 60
             self.videoCamera?.addTarget(newfilter)
             newfilter.addTarget(self.newImage)
             self.view.insertSubview(self.newImage!, aboveSubview:(self.filteredImage)!)
@@ -863,6 +881,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBAction func clearButtonPressed(sender: AnyObject) {
         print("text cleared")
 
+        self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
         self.clearButton.hidden = true
         self.headerView.hidden = true
@@ -892,8 +911,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         }
 
         self.cameraTextView.returnKeyType = UIReturnKeyType.Default
-        self.clearEmoji.hidden = true
-        self.backEmoji.hidden = true
+
 
         arrayofText.removeAllObjects()
 
