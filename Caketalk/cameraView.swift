@@ -86,7 +86,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.characterCount.clipsToBounds = true
 
 /*---------------END STYLE 🎨----------------------*/
-        self.cameraTextView.setContentOffset(CGPointZero, animated: false)
+        self.cameraTextView.scrollRangeToVisible(NSMakeRange(0, 0))
         self.recordButton.hidden = true
         self.recordEmoji.hidden = true
         self.characterCount.hidden = true
@@ -204,7 +204,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.view.bringSubviewToFront(recordEmoji)
         self.view.bringSubviewToFront(characterCount)
         super.viewWillAppear(animated)
-        cameraTextView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.New, context: nil)
+        self.cameraTextView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.New, context: nil)
         cameraTextView.becomeFirstResponder()
         shouldEdit = true
 
@@ -295,7 +295,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         clipCount -= 1
 
                         do{
-                            try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
+                            try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mp4")
                             arrayofText.removeLastObject()
 
                         }
@@ -314,8 +314,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         }
         if (textView.text.characters.count == 0 && text != ""){
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
-                //print ("go")
-                cameraTextView.resignFirstResponder()
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
                 self.view.endEditing(true)

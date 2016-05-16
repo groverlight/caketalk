@@ -777,14 +777,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QRz-S9-xH4" userLabel="cameraTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QRz-S9-xH4" userLabel="cameraTextView">
                                 <rect key="frame" x="20" y="300" width="380" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="BRe-fM-eqs"/>
                                     <constraint firstAttribute="width" constant="380" id="T8n-VG-BSt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="alert"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="alert"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="T8n-VG-BSt"/>
+                                    </mask>
+                                </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3l-4O-jQM" userLabel="justReading">
                                 <rect key="frame" x="20" y="523" width="560" height="60"/>
@@ -944,6 +949,7 @@
                             <constraint firstAttribute="trailing" secondItem="k2J-4J-oop" secondAttribute="trailing" id="Bfr-IH-Her"/>
                             <constraint firstItem="QRz-S9-xH4" firstAttribute="leading" secondItem="RU9-NR-pJA" secondAttribute="leading" constant="20" id="BjA-GV-sel"/>
                             <constraint firstItem="uJa-gf-rSj" firstAttribute="leading" secondItem="RU9-NR-pJA" secondAttribute="leading" constant="50" id="CCO-64-pkO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QRz-S9-xH4" secondAttribute="trailing" id="CiG-bW-013"/>
                             <constraint firstItem="k2J-4J-oop" firstAttribute="width" secondItem="RU9-NR-pJA" secondAttribute="width" id="EaI-Lt-FOX"/>
                             <constraint firstAttribute="trailing" secondItem="cVs-rJ-vfS" secondAttribute="trailing" id="HF2-5T-9bD"/>
                             <constraint firstItem="k2J-4J-oop" firstAttribute="top" secondItem="RU9-NR-pJA" secondAttribute="top" constant="200" id="Hvu-Ca-rPM"/>
