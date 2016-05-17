@@ -342,6 +342,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             }
 
         }
+        if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Send){
+            return false
+        }
         if (textView.text.characters.count == 0 && text != ""){
             print("1st character on new line")
             print("SOUND EFFECT HERE")
@@ -393,7 +396,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         }
         return true
     }
-
     func textViewDidChange(textView: UITextView) {
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)
         let textHeight = self.cameraTextView.font?.lineHeight
