@@ -80,7 +80,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 /*---------------BEGIN STYLE 🎨----------------------*/
 
         //rounding edges out
-
+        self.cameraTextView.contentSize = self.cameraTextView.bounds.size
         self.recordButton.layer.cornerRadius = 6
         self.clearButton.layer.cornerRadius = 6
         self.backButton.layer.cornerRadius = 6
