@@ -56,6 +56,7 @@ var showStatusBar = false
     @IBOutlet var backEmoji: UILabel!
 
 /*---------------END OUTLETS----------------------*/
+
     func setupVideo(index: Int){
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(playerView.playerItemDidReachEnd(_:)), name:AVPlayerItemDidPlayToEndTimeNotification, object: nil);
@@ -70,7 +71,10 @@ var showStatusBar = false
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
         let scrollLabel = PaddingLabel()
-        scrollLabel.frame = CGRectMake(20,self.view.bounds.size.height*0.55, self.view.bounds.size.width*(2/3)-20,50)
+
+        //height of where player label starts
+        scrollLabel.frame = CGRectMake(20,self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
+
         scrollLabel.textColor = UIColor.whiteColor()
         print (scrollLabel.frame)
         scrollLabel.font = labelFont
@@ -78,9 +82,9 @@ var showStatusBar = false
         print (scrollLabel.text)
         scrollLabel.numberOfLines = 0
         scrollLabel.sizeToFit()
-        scrollLabel.layer.cornerRadius = 8
+        scrollLabel.layer.cornerRadius = 10
         scrollLabel.layer.masksToBounds = true
-        scrollLabel.backgroundColor = randomColor(hue: .Random, luminosity: .Light)
+        scrollLabel.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
 
         scrollLabel.setLineHeight(0)
         self.view.addSubview(scrollLabel)
@@ -160,6 +164,7 @@ var showStatusBar = false
         instagramButton.hidden = true
         moreButton.hidden = true
         backButton.hidden = true
+        backEmoji.hidden = true
 
 
         iPhoneScreenSizes()
@@ -231,13 +236,12 @@ var showStatusBar = false
             overlayScrollView.delegate = self
 
             var scrollHeightOverlay:CGFloat = 0.0
-            //  let newLabel = UILabel(frame: CGRectMake(0, scrollView.bounds.size.height + scrollHeight, scrollView.bounds.size.width, textHeight! ))
             let arrayofBorders = NSMutableArray()
             for text in arrayofText{
 
 
                 let newerLabel = UILabel(frame: CGRectMake(6, scrollHeightOverlay, self.view.bounds.size.width*(2/3)-20, 25))
-                newerLabel.font =  UIFont(name:"RionaSans-Bold", size: 20.0)
+                newerLabel.font =  self.labelFont
                 newerLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.4)
                 newerLabel.text = text as? String
                 newerLabel.numberOfLines = 0
@@ -281,6 +285,7 @@ var showStatusBar = false
                 self.view.addSubview(overlayScrollView)
                 self.view.bringSubviewToFront(overlayScrollView)
                 self.view.bringSubviewToFront(self.backButton)
+                self.view.bringSubviewToFront(self.backEmoji)
                 self.view.bringSubviewToFront(self.facebookButton)
                 self.view.bringSubviewToFront(self.twitterButton)
                 self.view.bringSubviewToFront(self.instagramButton)
@@ -292,6 +297,7 @@ var showStatusBar = false
                 self.instagramButton.hidden = false
                 self.moreButton.hidden = false
                 self.backButton.hidden = false
+                self.backEmoji.hidden = false
                 self.backButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
                 UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                     self.backButton.transform = CGAffineTransformMakeScale(1, 1)
@@ -314,13 +320,13 @@ var showStatusBar = false
         switch height {
         case 480.0:
             //print("iPhone 3,4")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 24)
+            labelFont = UIFont(name: "RionaSans-Bold", size: 19)
         case 568.0:
             //print("iPhone 5")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 24)
+            labelFont = UIFont(name: "RionaSans-Bold", size: 20)
         case 667.0:
             //print("iPhone 6")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 28.5)
+            labelFont = UIFont(name: "RionaSans-Bold", size: 21)
         case 736.0:
             //print("iPhone 6+")
             labelFont = UIFont(name: "RionaSans-Bold", size: 22 )
@@ -331,14 +337,6 @@ var showStatusBar = false
         }
 
     }
-
-/*---------------BEGIN STYLE 🎨----------------------*/
-
-        //rounding edges out
-
-
-/*---------------END STYLE 🎨----------------------*/
-
 
         // Do any additional setup after loading the view.
 
@@ -352,9 +350,11 @@ var showStatusBar = false
 //MARK: This clears draft and takes you back
 
     @IBAction func backButtonPressed(sender: AnyObject) {
-        //self.performSegueWithIdentifier("segueToCamera", sender: self)
+         print("back button pressed")
+         print("SOUND EFFECT HERE")
+         print("Mixpanel event here")
         arrayofText.removeAllObjects()
-        do{
+        do {
             let files = try self.fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
             for file:NSString in files!{
                 try self.fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(file)")

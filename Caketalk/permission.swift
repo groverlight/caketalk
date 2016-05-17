@@ -27,6 +27,7 @@ class permission: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("permission view loaded")
+        print("SOUND EFFECT HERE")
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -58,6 +59,7 @@ class permission: UIViewController {
 
     @IBAction func icloudPressed(sender: AnyObject) {
         print("iCloud button pressed")
+        print("SOUND EFFECT HERE")
         self.alertView.hidden = true
         
 

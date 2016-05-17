@@ -50,6 +50,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBOutlet var progressBarView: UIView!
     @IBOutlet var animatedProgressBarView: UIView!
     @IBOutlet var headerView: UIView!
+    @IBOutlet var headerLabel: UILabel!
     @IBOutlet var cameraTextView: UITextView!
     @IBOutlet var recordButton: UIButton!
     @IBOutlet var recordEmoji: UILabel!
@@ -59,6 +60,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backEmoji: UILabel!
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var line: UIView!
 
     //constraints
 
@@ -71,6 +73,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     //override functions
     override func viewDidLoad() {
         print("camera view loaded")
+        print("SOUND EFFECT HERE")
         super.viewDidLoad()
         self.cameraTextView.delegate = self
 
@@ -102,6 +105,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.backEmoji.hidden = true
         self.clearButton.hidden = true
         self.clearEmoji.hidden = true
+        self.line.hidden = true
 
 /*---------------END STYLE 🎨----------------------*/
 
@@ -263,20 +267,27 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             shouldGoDown = true
         }
         if (isBackSpace == -92) {
-            // print("Backspace was pressed")
+             print("backspace was pressed")
             if (textView.text.characters.count == 1){
+                print("current line has been cleared")
                 self.recordButton.hidden = true
                 self.recordEmoji.hidden = true
                 self.characterCount.hidden = true
 
             }
             else if (textView.text == ""){
+                print("editing the previous line")
                 self.recordButton.hidden = true
                 self.recordEmoji.hidden = true
                 self.characterCount.hidden = true
+
                 if (scrollView.subviews.count > 0){
-                    //scrollView.subviews[0]
+
                     if (scrollView.subviews[scrollView.subviews.count-1] is UILabel){
+                        print("button brought back")
+                        print("SOUND EFFECT HERE")
+
+                        //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
                         let buttonSpring2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
                         buttonSpring.toValue = NSValue(CGPoint: CGPointMake(1, 1))
@@ -292,7 +303,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         self.characterCount.hidden = false
 
                         if (clipCount > 0){
+
                             if (self.cameraTextView.returnKeyType == UIReturnKeyType.Send){
+                                print("return button visible")
+
                                 dispatch_async(dispatch_get_main_queue()) { [unowned self] in
                                     self.cameraTextView.resignFirstResponder()
                                     self.cameraTextView.returnKeyType = UIReturnKeyType.Default
@@ -329,22 +343,29 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
         }
         if (textView.text.characters.count == 0 && text != ""){
+            print("1st character on new line")
+            print("SOUND EFFECT HERE")
+
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
+                print("send button pressed")
+
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
+                self.headerView.backgroundColor = UIColor .clearColor()
                 self.view.endEditing(true)
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("goPlayer", sender: self)
                 }
                 recordEmoji.hidden = true
                 characterCount.hidden = true
-                // typingButton.pop_addAnimation(goScale, forKey: "go")
                 return false
             }
             else if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Send){
 
                 return false
             }
+
+
             let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
             let buttonSpring2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
             buttonSpring.toValue = NSValue(CGPoint: CGPointMake(1, 1))
@@ -379,12 +400,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         let pos = self.cameraTextView.endOfDocument
         let currentRect = self.cameraTextView.caretRectForPosition(pos)
         if (currentRect.origin.y > previousRect.origin.y){
-            // print ("up")
             self.scrollView.contentOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y + textHeight!)
 
         }
         else if (currentRect.origin.y < previousRect.origin.y){
-            //  print ("down")
             if (shouldGoDown == true){
 
                 self.scrollView.contentOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y - textHeight!)
@@ -396,7 +415,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
         previousRect = currentRect;
         if (self.cameraTextView.text.characters.count == 0 && clipCount > 1){
-            //  print ("send c")
 
             if (self.cameraTextView.returnKeyType == UIReturnKeyType.Default){
 
@@ -409,7 +427,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             }
         }
         else{
-            // print (" need to change send button")
+            print ("need to change send button")
             if (self.cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 dispatch_async(dispatch_get_main_queue()) { [unowned self] in
                     self.cameraTextView.resignFirstResponder()
@@ -474,6 +492,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     //camera functions
     func startRecording() {
         print ("starting recording...")
+        print("SOUND EFFECT HERE")
         recording = true;
         let clipCountString = String(clipCount)
         movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mp4",isDirectory: true), size: view.frame.size)
@@ -482,13 +501,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         movieWriter?.hasAudioTrack = false
         self.videoCamera?.frameRate = 60
         movieWriter?.startRecording()
-        //        self.toolTip?.dismiss()
 
 
     }
     func stopRecording() {
         newImage?.removeFromSuperview()
         print ("stopping recording...")
+        print("SOUND EFFECT HERE")
         clipCount += 1
         recording = false;
         showStatusBar(true)
@@ -499,26 +518,28 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     }
 
-    // misc.
+    // edit view
     func longPressed(sender: UILongPressGestureRecognizer)
 
     {
 
+
         if (sender.state == UIGestureRecognizerState.Began){
+            print("edit view loaded")
+            print("SOUND EFFECT HERE")
+            print("Mixpanel event here")
 
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
+       
 
-            let line = UIView(frame: CGRectMake(20,(self.clearButton.frame.origin.y)-33, (self.view.bounds.size.width)-40, 0.5))
-            line.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.30)
-            self.view.addSubview(line)
+
 
             self.recordButton.userInteractionEnabled = false
             sender.enabled = false
 
             let blurEffect = UIBlurEffect(style: .Dark)
             let blurOverlay = UIVisualEffectView()
-
 
             let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
             let vibrantOverlay = UIVisualEffectView(effect: vibrancyEffect)
@@ -544,22 +565,22 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             for subview in scrollView.subviews{
                 if subview is UILabel{
-                    print("kendall")
 
 
                     let olderLabel = subview as! UILabel
                     let newerLabel = UILabel(frame: CGRectMake(6, scrollHeightOverlay, self.view.bounds.size.width*(2/3)-20, 25))
 
 
-                    newerLabel.font =  UIFont(name:"RionaSans-Bold", size: 20.0)
+                    newerLabel.font =  self.cameraTextView.font
                     newerLabel.textColor = UIColor.whiteColor()
                     newerLabel.text = olderLabel.text
                     newerLabel.numberOfLines = 0
                     newerLabel.sizeToFit()
                     overlayScrollView.addSubview(newerLabel)
 
+                    // colored left-side border on edit view
                     let border = CALayer()
-                    border.frame = CGRectMake(0 , scrollHeightOverlay+45+self.headerView.bounds.size.height, 4, CGRectGetHeight(newerLabel.frame)-12)
+                    border.frame = CGRectMake(0 , scrollHeightOverlay+45+self.headerView.bounds.size.height, 2, CGRectGetHeight(newerLabel.frame)-12)
                     border.cornerRadius = 0.5
                     border.backgroundColor =  UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0).CGColor
                     vibrantOverlay.layer.addSublayer(border)
@@ -586,6 +607,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             emojiLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(emojiLabel)
+            self.view.bringSubviewToFront(self.headerView)
+
+
 
 
 
@@ -596,7 +620,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.clearButton.hidden = false
             self.backButton.hidden = false
             self.clearEmoji.hidden = false
-            self.backEmoji.hidden = false
 
             cameraTextView.resignFirstResponder()
             UIView.animateWithDuration(0.1, animations: {
@@ -616,7 +639,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         self.view.bringSubviewToFront(self.clearButton)
                         self.view.bringSubviewToFront(self.backButton)
                         self.view.bringSubviewToFront(self.headerView)
-                        self.view.bringSubviewToFront(line)
 
                         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 3, options: .CurveEaseInOut, animations: {
 
@@ -631,7 +653,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                             buttonSpring.springBounciness = 20.0
 
                             self.clearEmoji.hidden = false
+                            self.backEmoji.hidden = false
                             self.view.bringSubviewToFront(self.clearEmoji)
+                            self.view.bringSubviewToFront(self.backEmoji)
+
+
                             self.clearEmoji.pop_addAnimation(buttonSpring, forKey: "spring")
                         }
                         UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.85, initialSpringVelocity: 3, options: .CurveEaseInOut, animations: {
@@ -693,10 +719,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     }
     
 
-    //MARK: This records your annotation
 
     @IBAction func recordButtonPressed(sender: AnyObject) {
-        print("record started")
+        print("record button pressed")
+        print("Mixpanel event here")
 
         if (cameraTextView.text.characters.count == 0){
 
@@ -762,8 +788,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.oldLabel = newLabel
             self.cameraTextView.text.removeAll()
             self.scrollView.addSubview(newLabel)
-            newLabel.transform = CGAffineTransformMakeScale(0.5, 0.5)
-            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+            newLabel.transform = CGAffineTransformMakeScale(1.5, 1.5)
+            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 4.5, options: [], animations: { () -> Void in
                 newLabel.transform = CGAffineTransformMakeScale(1, 1)
                 }, completion: nil)
 
@@ -802,14 +828,17 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             default:
                 break
             }
+
+            // record button visual state as its recording
+
             let moveUp = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             let scaleDown = POPSpringAnimation(propertyNamed: kPOPViewSize)
-            scaleDown.toValue = NSValue(CGSize: CGSize(width: self.recordButton.bounds.size.width*0.3, height: self.recordButton.bounds.size.height*0.6))
+            scaleDown.toValue = NSValue(CGSize: CGSize(width: self.recordButton.bounds.size.width*0.2, height: self.recordButton.bounds.size.height*0.5))
             moveUp.toValue = 27.5
             self.recordEmoji.hidden = true
             self.characterCount.hidden = true
             self.recordButton.setTitle("look", forState: UIControlState.Normal)
-            self.recordButton.layer.cornerRadius = 14
+            self.recordButton.layer.cornerRadius = 15
             self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 13.0)
 
             self.view.bringSubviewToFront(self.recordButton)
@@ -830,6 +859,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                                 self.characterCount.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
                                 self.recordEmoji.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
                                 }, completion: {(finished) -> Void in
+
+                                    // record buttton visual state after recording
+
                                     self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 15.0)
                                     self.recordButton.layer.cornerRadius = 6
                                     self.animatedProgressBarView.hidden = true
@@ -876,15 +908,20 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
     }
 
-    //MARK: This clears the draft
+      //MARK: This takes you back to typing screen BUT clears typed text
 
     @IBAction func clearButtonPressed(sender: AnyObject) {
         print("text cleared")
+        print("SOUND EFFECT HERE")
+        print("Mixpanel event here")
 
         self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
+        self.backEmoji.hidden = true
         self.clearButton.hidden = true
+        self.clearEmoji.hidden = true
         self.headerView.hidden = true
+
 
         self.recordButton.userInteractionEnabled = true
         longPressRecognizer.enabled = true
@@ -916,15 +953,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         arrayofText.removeAllObjects()
 
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-        //    self.headerView.textColor = UIColor .blackColor()
-         //   self.header.backgroundColor = UIColor .clearColor()
+
             self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
             self.clearButton.transform = CGAffineTransformMakeTranslation(0, 2000)
         }) { (finished) -> Void in
 
             self.headerView.hidden = false
-          //  self.headerView.text = "caketalk"
-           // self.headerView.font = UIFont (name: "RionaSans-Bold", size: 17)
             self.clearEmoji.hidden = true
             self.backEmoji.hidden = true
             self.backButton.hidden = true
@@ -944,10 +978,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
 
 
-    //MARK: This takes you back
+    //MARK: This takes you back to typing screen & keeps your typed text
 
     @IBAction func backButtonPressed(sender: AnyObject) {
         print("decided not to clear")
+        print("SOUND EFFECT HERE")
+        print("Mixpanel event here")
 
         self.recordButton.userInteractionEnabled = true
         longPressRecognizer.enabled = true
