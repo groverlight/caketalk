@@ -256,6 +256,9 @@ var showStatusBar = false
                 scrollHeightOverlay = scrollHeightOverlay + newerLabel.bounds.size.height + 10
 
             }
+
+            // dark, burred view attributes
+
             overlayScrollView.contentSize = CGSizeMake(self.view.bounds.size.width-20,scrollHeightOverlay)
             let timeStampLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height , self.view.bounds.size.width*(2/3)-20,25))
             timeStampLabel.font = UIFont(name:"RionaSans-Bold", size: 10.0)

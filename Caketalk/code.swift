@@ -34,6 +34,7 @@ class code: UIViewController, UITextFieldDelegate {
     @IBOutlet var noCodeButton: UIButton!
 
     @IBOutlet var invisibleTextField: UITextField!
+
 /*---------------END OUTLETS----------------------*/
 
 
@@ -44,7 +45,7 @@ class code: UIViewController, UITextFieldDelegate {
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
-        //rounding edges out
+        //rounding edges out use MASKTOBOUNDS=true
 
     self.oneLabel.layer.cornerRadius = 10
     self.oneLabel.clipsToBounds = true
@@ -60,12 +61,6 @@ class code: UIViewController, UITextFieldDelegate {
     self.digitFive.layer.cornerRadius = 6
 
 /*---------------END STYLE 🎨----------------------*/
-
-
-
-
-
-
 
 }
 
@@ -139,11 +134,11 @@ class code: UIViewController, UITextFieldDelegate {
                 wrongCode.addAction(okAction)
                 dispatch_async(dispatch_get_main_queue()) {
                     self.invisibleTextField.text = ""
-                    self.digitOne.text = ""
-                    self.digitTwo.text = ""
-                    self.digitThree.text = ""
-                    self.digitFour.text = ""
-                    self.digitFive.text = ""
+                    self.digitOne.text = "•"
+                    self.digitTwo.text = "•"
+                    self.digitThree.text = "•"
+                    self.digitFour.text = "•"
+                    self.digitFive.text = "•"
                     self.presentViewController(wrongCode, animated: true, completion: nil)
                 }
             }
