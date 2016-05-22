@@ -2,14 +2,17 @@ PODS:
   - Mixpanel (2.9.9):
     - Mixpanel/Mixpanel (= 2.9.9)
   - Mixpanel/Mixpanel (2.9.9)
+  - Player (0.1.1)
   - pop (1.0.9)
 
 DEPENDENCIES:
   - Mixpanel
+  - Player
   - pop (~> 1.0)
 
 SPEC CHECKSUMS:
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
+  Player: 575e1e8cde1e6b7cd62d6d6bc06e492d02e62b9e
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
