@@ -8,6 +8,7 @@
 
 import UIKit
 import GPUImage
+import pop
 
 var arrayofText: NSMutableArray = []
 
