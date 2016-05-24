@@ -20,6 +20,7 @@
 		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; };
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
 		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
 		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
@@ -141,6 +142,7 @@
 		27049AA51CE823FD002D69EF /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		27049AA61CE823FD002D69EF /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27049ACC1CE824F8002D69EF /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Caketalk/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAActivityIndicatorView.swift; sourceTree = "<group>"; };
 		74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
 		F45844981CE54B5B000D8B41 /* Caketalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
 		F45844991CE54B5D000D8B41 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -271,6 +273,7 @@
 				27049A9B1CE823FD002D69EF /* lookup_miss_etikate.png */,
 				27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */,
 				27049A9D1CE823FD002D69EF /* CloudManager.swift */,
+				2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */,
 				27049A9E1CE823FD002D69EF /* User.swift */,
 				27049A9F1CE823FD002D69EF /* ColorDefinition.swift */,
 				27049AA01CE823FD002D69EF /* Hue.swift */,
@@ -588,6 +591,7 @@
 				F4FB95691CE3ED5B00E2977B /* cameraView.swift in Sources */,
 				27049AAF1CE823FD002D69EF /* paddedLabel.swift in Sources */,
 				27049AAA1CE823FD002D69EF /* User.swift in Sources */,
+				2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
