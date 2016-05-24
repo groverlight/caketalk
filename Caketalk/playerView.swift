@@ -30,7 +30,7 @@ var labelFont: UIFont?
 var overlay: UIVisualEffectView?
 var didPlay = false
 var showStatusBar = false
-
+var gradientView:GradientView = GradientView()
 
 
 /*---------------BEGIN OUTLETS----------------------*/
@@ -70,6 +70,7 @@ var showStatusBar = false
         avLayer.frame = self.view.bounds
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
+        self.view.bringSubviewToFront(self.gradientView)
         let scrollLabel = PaddingLabel()
 
         //height of where player label starts
@@ -137,6 +138,17 @@ var showStatusBar = false
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton.layer.cornerRadius = 6
+        gradientView.frame = self.view.bounds
+        gradientView.backgroundColor = UIColor.clearColor()
+        gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
+        gradientView.locations = [0, 1]
+        gradientView.direction = .Vertical
+        gradientView.alpha = 0.8
+        
+        
+        // make gradient a subview
+
+        self.view.insertSubview(self.gradientView, aboveSubview: self.movieView)
 
     }
 
@@ -285,6 +297,8 @@ var showStatusBar = false
                 for border in arrayofBorders{
                     self.overlay!.layer.addSublayer(border as! CALayer)
                 }
+                self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+                self.backEmoji.transform = CGAffineTransformMakeTranslation(0, 2000)
                 self.view.addSubview(overlayScrollView)
                 self.view.bringSubviewToFront(overlayScrollView)
                 self.view.bringSubviewToFront(self.backButton)
@@ -294,16 +308,18 @@ var showStatusBar = false
                 self.view.bringSubviewToFront(self.instagramButton)
                 self.view.bringSubviewToFront(self.moreButton)
                 self.view.bringSubviewToFront(self.headerView)
-
+                self.view.bringSubviewToFront(self.line)
                 self.facebookButton.hidden = false
                 self.twitterButton.hidden = false
                 self.instagramButton.hidden = false
                 self.moreButton.hidden = false
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
-                self.backButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
-                UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
-                    self.backButton.transform = CGAffineTransformMakeScale(1, 1)
+                self.line.hidden = false
+    
+                UIView.animateWithDuration(0.5, animations: {() -> Void in
+                    self.backButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                    self.backEmoji.transform = CGAffineTransformMakeTranslation(0, 0)
                     }, completion: { finished in
 
                 })
