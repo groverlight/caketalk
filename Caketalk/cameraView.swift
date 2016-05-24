@@ -8,6 +8,7 @@
 
 import UIKit
 import GPUImage
+import AssetsLibrary
 
 var arrayofText: NSMutableArray = []
 
@@ -154,7 +155,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 0)
             videoCamera?.startCameraCapture()
-            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mp4",isDirectory: true), size: view.frame.size)
+            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov", isDirectory: true), size: view.frame.size)
             filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
@@ -325,7 +326,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         clipCount -= 1
 
                         do{
-                            try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mp4")
+                            try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
                             arrayofText.removeLastObject()
 
                         }
@@ -351,7 +352,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
-
+            
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
                 self.headerView.backgroundColor = UIColor .clearColor()
@@ -496,28 +497,43 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("starting recording...")
         print("SOUND EFFECT HERE")
         recording = true;
-        let clipCountString = String(clipCount)
-        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mp4",isDirectory: true), size: view.frame.size)
+        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount).mov",isDirectory: true), size: view.frame.size)
         filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
         self.videoCamera?.frameRate = 60
         movieWriter?.startRecording()
-
-
     }
+    
+    
     func stopRecording() {
         newImage?.removeFromSuperview()
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
-        clipCount += 1
         recording = false;
         showStatusBar(true)
         self.headerView.hidden = false
         self.longPressRecognizer.enabled = true
         movieWriter?.finishRecording()
-
-
+        self.clipCount += 1
+        exportCurrentVideo()
+    }
+    
+    func exportCurrentVideo() {
+        
+        var shutterLayers = [ShutterLayer]()
+        
+        print(arrayofText)
+        
+        for i in 0..<arrayofText.count {
+             shutterLayers.append(ShutterLayer(title: arrayofText[i] as! String, line: i))
+        }
+        
+        let movieURL = "\(NSTemporaryDirectory())\(clipCount - 1).mov"
+        let shutter = Shutter(path: movieURL, layers: shutterLayers)
+        shutter.export("\(NSTemporaryDirectory())edited_video(\(clipCount - 1)).mov", callback: {
+            ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video(\(self.clipCount - 1)).mov"), completionBlock: nil)
+        })
     }
 
     // edit view
