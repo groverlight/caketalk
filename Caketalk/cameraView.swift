@@ -522,9 +522,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     func exportCurrentVideo() {
         
         var shutterLayers = [ShutterLayer]()
-        
-        print(arrayofText)
-        
         for i in 0..<arrayofText.count {
              shutterLayers.append(ShutterLayer(title: arrayofText[i] as! String, line: i))
         }
