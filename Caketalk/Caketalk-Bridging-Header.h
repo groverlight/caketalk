@@ -9,9 +9,6 @@
 #ifndef Caketalk_Bridging_Header_h
 #define Caketalk_Bridging_Header_h
 
-#import "Mixpanel.h"
 #import <pop/POP.h>
-
-
 
 #endif /* Caketalk_Bridging_Header_h */
