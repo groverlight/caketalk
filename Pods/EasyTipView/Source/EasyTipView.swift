@@ -175,7 +175,7 @@ public class EasyTipView: UIView {
             public var bubbleVInset         = CGFloat(1)
             public var textHInset           = CGFloat(10)
             public var textVInset           = CGFloat(10)
-            public var maxWidth             = CGFloat(200)
+            public var maxWidth             = CGFloat(350)
         }
         
         public struct Animating {
