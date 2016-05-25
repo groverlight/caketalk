@@ -13,6 +13,7 @@ import UIKit
 import GPUImage
 import Social
 import Accounts
+import EasyTipView
 
 //import FBSDKShareKit
 //import FBSDKCoreKit
@@ -20,7 +21,7 @@ import Accounts
 import Photos
 import MobileCoreServices
 
-class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate {
+class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate, EasyTipViewDelegate {
 
 var moviePlayer: AVPlayer?
 var numOfClips = 0
@@ -137,7 +138,6 @@ var showStatusBar = false
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton.layer.cornerRadius = 6
-
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -308,11 +308,32 @@ var showStatusBar = false
 
                 })
 
+                if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-line") == nil {
+                    // EasyTipView global preferences
+                    var preferences = EasyTipView.Preferences()
+                    preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+                    preferences.drawing.foregroundColor = UIColor.blackColor()
+                    preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                    preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+                    EasyTipView.show(forView: self.line,
+                        withinSuperview: self.view,
+                        text: "Share it on the web",
+                        preferences: preferences,
+                        delegate: self)
+                    
+                    NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-line")
+                }
+                
 
 
             })
             
         }
+        
+    }
+    
+    // MARK: EasyTipViewDelegate
+    func easyTipViewDidDismiss(tipView : EasyTipView) {
         
     }
 
