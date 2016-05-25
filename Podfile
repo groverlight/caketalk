@@ -7,6 +7,7 @@ target 'Caketalk' do
 pod 'pop', '~> 1.0'
 pod 'Mixpanel'
 pod 'EasyTipView', '~> 0.1.3'
+pod 'Hue'
 end
 
 target 'CaketalkTests' do
