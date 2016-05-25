@@ -18,6 +18,7 @@ class ShutterLayer : CALayer {
     init(title: String, line : Int) {
         super.init()
         
+        iPhoneScreenSizes()
         textLayer.string = title
         textLayer.foregroundColor = UIColor.whiteColor().CGColor
         textLayer.frame = CGRectMake(30, 500 - (CGFloat(line) * 70), 350, 50)
@@ -26,14 +27,19 @@ class ShutterLayer : CALayer {
         
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.duration = 1
-        animation.beginTime = AVCoreAnimationBeginTimeAtZero
+                    if line == 0 {
+            animation.beginTime = AVCoreAnimationBeginTimeAtZero
+        } else {
+            animation.beginTime = Double(line) * 2
+        }
+        
         animation.fromValue = NSNumber(float: 0)
         animation.toValue = NSNumber(float: 1)
         animation.removedOnCompletion = false
         animation.fillMode = kCAFillModeBoth
         animation.additive = false
         textLayer.addAnimation(animation, forKey: "opacityIN")
-
+    
 //        CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
 //        animation.beginTime = CMTimeGetSeconds(img.startTime);
 //        animation.duration = CMTimeGetSeconds(_timeline.transitionDuration);
