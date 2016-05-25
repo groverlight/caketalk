@@ -8,11 +8,13 @@
 
 import UIKit
 import GPUImage
+import Hue
+import EasyTipView
 
 var arrayofText: NSMutableArray = []
 
 
-class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
+class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, EasyTipViewDelegate {
 
     var recording = false
     var shouldGoDown = false
@@ -179,8 +181,25 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         }
         
         iPhoneScreenSizes()
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-cameraTextView") == nil {
+            // EasyTipView global preferences
+            var preferences = EasyTipView.Preferences()
+            preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+            preferences.drawing.foregroundColor = UIColor.blackColor()
+            preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+            EasyTipView.show(forView: cameraTextView,
+                             withinSuperview: self.view,
+                             text: "Type something that you like",
+                             preferences: preferences,
+                             delegate: self)
+            
+            NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-cameraTextView")
+        }
 
     }
+    
     override func viewWillAppear(animated: Bool) {
 //        self.recordButton.transform = CGAffineTransformMakeScale(0.5, 0.5)
 //        self.recordEmoji.transform = CGAffineTransformMakeScale(0.5, 0.5)
@@ -190,7 +209,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 //            self.recordEmoji.transform = CGAffineTransformMakeScale(1, 1)
 //            self.characterCount.transform = CGAffineTransformMakeScale(1, 1)
 //            }, completion: nil)
-
+        
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
             if (files?.count == 0){
@@ -1016,10 +1035,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             self.cameraTextView.becomeFirstResponder()
         }
+    
+    
+    // MARK: EasyTipViewDelegate
+    func easyTipViewDidDismiss(tipView : EasyTipView) {
+        
+    }
 
 }
-
-
 
 //MARK: This extension sets the line height of recorded labels
 
