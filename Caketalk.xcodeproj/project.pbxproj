@@ -45,6 +45,9 @@
 		F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */; };
 		F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */; };
 		F47C01861CE3D09200891EB1 /* splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01851CE3D09200891EB1 /* splash.swift */; };
+		F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */; };
+		F4864AF71CF810C40074A427 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */; };
+		F4864AF81CF810C40074A427 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */; };
 		F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */; };
 		F4FB95551CE3D1C500E2977B /* permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95541CE3D1C500E2977B /* permission.swift */; };
 		F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95561CE3D2CD00E2977B /* ViewController.swift */; };
@@ -174,6 +177,9 @@
 		F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Regular.otf"; sourceTree = "<group>"; };
 		F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RionaSans-Thin.otf"; sourceTree = "<group>"; };
 		F47C01851CE3D09200891EB1 /* splash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splash.swift; sourceTree = "<group>"; };
+		F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		F4D5F38E1CE3D0F4008AE6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4FB95541CE3D1C500E2977B /* permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permission.swift; sourceTree = "<group>"; };
 		F4FB95561CE3D2CD00E2977B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,11 +205,14 @@
 			files = (
 				27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */,
 				F4FB95781CE3F5C300E2977B /* CFNetwork.framework in Frameworks */,
+				F4864AF71CF810C40074A427 /* FBSDKLoginKit.framework in Frameworks */,
 				F4FB95741CE3F5AB00E2977B /* QuartzCore.framework in Frameworks */,
 				F4FB95721CE3F59200E2977B /* AVKit.framework in Frameworks */,
 				F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */,
+				F4864AF81CF810C40074A427 /* FBSDKShareKit.framework in Frameworks */,
 				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
+				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
 				E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +358,9 @@
 		FCFC2848D6592F2DEC3BA40C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */,
+				F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */,
+				F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */,
 				F45844991CE54B5D000D8B41 /* CloudKit.framework */,
 				F4FB95771CE3F5C300E2977B /* CFNetwork.framework */,
 				F4FB95731CE3F5AB00E2977B /* QuartzCore.framework */,
@@ -740,6 +752,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -762,6 +778,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
