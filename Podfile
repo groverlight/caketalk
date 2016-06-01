@@ -6,6 +6,7 @@
 target 'Caketalk' do
 pod 'pop', '~> 1.0'
 pod 'Mixpanel'
+pod 'YUGPUImageHighPassSkinSmoothing'
 end
 
 target 'CaketalkTests' do

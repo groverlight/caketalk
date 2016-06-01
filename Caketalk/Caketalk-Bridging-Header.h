@@ -12,6 +12,6 @@
 #import "Mixpanel.h"
 #import <pop/POP.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
+#import "YUGPUImageHighPassSkinSmoothingFilter.h"
 
 #endif /* Caketalk_Bridging_Header_h */

@@ -31,7 +31,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     var previewLayer : AVCaptureVideoPreviewLayer?
     var shouldEdit = true
     var videoCamera:GPUImageVideoCamera?
-    var filter:GPUImageMissEtikateFilter?
+    var filter:YUGPUImageHighPassSkinSmoothingFilter?
     var filteredImage: GPUImageView?
     var newImage: GPUImageView?
     var movieWriter: GPUImageMovieWriter?
@@ -150,7 +150,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             videoCamera?.frameRate = 30
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.frame = self.view.bounds
-            filter = GPUImageMissEtikateFilter()
+            filter = YUGPUImageHighPassSkinSmoothingFilter()
+            filter!.amount = 1
             videoCamera?.addTarget(filter)
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 0)
