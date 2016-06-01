@@ -13,14 +13,12 @@ import UIKit
 import GPUImage
 import Social
 import Accounts
-
-//import FBSDKShareKit
-//import FBSDKCoreKit
 //import FBSDKLoginKit
+
 import Photos
 import MobileCoreServices
 
-class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate {
+class playerView: UIViewController, FBSDKSharingDelegate, UIScrollViewDelegate {
 
 var moviePlayer: AVPlayer?
 var numOfClips = 0
@@ -47,10 +45,10 @@ var showStatusBar = false
     @IBOutlet var line: UIView!
 
 
-    @IBOutlet var facebookButton: UIImageView!
-    @IBOutlet var twitterButton: UIImageView!
-    @IBOutlet var instagramButton: UIImageView!
-    @IBOutlet var moreButton: UIImageView!
+    @IBOutlet var facebookButton: UIButton!
+    @IBOutlet var twitterButton: UIButton!
+    @IBOutlet var instagramButton: UIButton!
+    @IBOutlet var moreButton: UIButton!
 
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backEmoji: UILabel!
@@ -301,6 +299,10 @@ var showStatusBar = false
                 self.moreButton.hidden = false
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
+                
+                
+                print(self.facebookButton)
+                
                 self.backButton.transform = CGAffineTransformMakeScale(1.5, 1.5)
                 UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                     self.backButton.transform = CGAffineTransformMakeScale(1, 1)
@@ -372,8 +374,158 @@ var showStatusBar = false
         }
     }
 
-
+    @IBAction func twitter(sender: AnyObject) {
+        
+        self.backButton.setTitle("another one", forState: .Normal)
+        self.backButton.layer.cornerRadius = 6
+        self.backEmoji.text = "👔"
+        self.backEmoji.hidden = false
+        
+        let alertController = UIAlertController(title: "Twitter Video sharing", message: "Enter your tweet", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "#cakeTalk"
+        }
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
+            //Just dismiss the action sheet
+        }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+            let outputPath = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
+            let videoData = NSData(contentsOfURL: outputPath)
+            // if (SocialVideoHelper.userHasAccessToTwitter()){
+            let accountStore = ACAccountStore()
+            let accountType = accountStore.accountTypeWithAccountTypeIdentifier(ACAccountTypeIdentifierTwitter)
+            
+            
+            accountStore.requestAccessToAccountsWithType(accountType, options: nil) { granted, error in
+                if (granted){
+                    guard let tweetAcc = accountStore.accountsWithAccountType(accountType) where !tweetAcc.isEmpty else {
+                        print("There are no Twitter accounts configured. You can add or create a Twitter account in Settings.")
+                        return
+                    }
+                    let twitAccount = tweetAcc[0] as! ACAccount
+                    print (twitAccount)
+                    let textfield = alertController.textFields![0] as UITextField
+                    //SocialVideoHelper.uploadTwitterVideo(videoData,comment:textfield.text,account: twitAccount, withCompletion: nil)
+                }
+                else{
+                    print (error)
+                }
+                
+                
+                
+                
+                
+            }
+            
+        })
+        
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        
+    }
     
+    @IBAction func instagram(sender: AnyObject) {
+        self.backButton.setTitle("another one", forState: .Normal)
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let destinationPath = "\(NSTemporaryDirectory())edited_video.mov"
+        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath)) {
+            
+            UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, self,#selector(playerView.video(_:didFinishSavingWithError:contextInfo:)),nil)
+            
+            
+            
+        }
+    }
+    func video(video: NSString, didFinishSavingWithError error:NSError, contextInfo:UnsafeMutablePointer<Void>){
+        print("saved")
+        let instagramURL = NSURL(string:  "instagram://library?AssetPath=\(video)" )
+        // if(UIApplication.sharedApplication().canOpenURL(instagramURL!)){
+        UIApplication.sharedApplication().openURL(instagramURL!)
+        //}
+        
+    }
+    
+    
+    @IBAction func share(sender: AnyObject) {
+        self.backButton.setTitle("another one", forState: .Normal)
+        let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
+        let objectsToShare = [outputPath]
+        
+        let activityViewController  = UIActivityViewController(activityItems:objectsToShare as [AnyObject], applicationActivities: nil)
+        
+        presentViewController(activityViewController, animated: true, completion: nil)
+        
+        
+    }
+
+    @IBAction func facebook(sender: AnyObject) {
+        self.backButton.setTitle("another one", forState: .Normal)
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+        let destinationPath = "\(NSTemporaryDirectory())edited_video.mov"
+        let outputPath = NSURL(fileURLWithPath: destinationPath)
+        
+        let photoLibrary = PHPhotoLibrary.sharedPhotoLibrary()
+        var videoAssetPlaceholder:PHObjectPlaceholder!
+        photoLibrary.performChanges({
+            let request = PHAssetChangeRequest.creationRequestForAssetFromVideoAtFileURL(outputPath)
+            videoAssetPlaceholder = request!.placeholderForCreatedAsset
+            },
+                                    completionHandler: { success, error in
+                                        if success {
+                                            let localID = videoAssetPlaceholder.localIdentifier
+                                            let assetID =
+                                                localID.stringByReplacingOccurrencesOfString(
+                                                    "/.*", withString: "",
+                                                    options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
+                                            let ext = "mov"
+                                            let assetURLStr =
+                                                "assets-library://asset/asset.\(ext)?id=\(assetID)&ext=\(ext)"
+                                            let video : FBSDKShareVideo = FBSDKShareVideo()
+                                            video.videoURL = NSURL(string:assetURLStr)
+                                            let content : FBSDKShareVideoContent = FBSDKShareVideoContent()
+                                            content.video = video
+                                            
+                                            // FBSDKShareDialog.showFromViewController(self, withContent: content, delegate: nil)
+                                            
+                                            let dialog = FBSDKShareDialog()
+                                            let newURL = NSURL(string: "fbauth2://")
+                                            if (UIApplication.sharedApplication() .canOpenURL(newURL!)){
+                                                print("native")
+                                                dialog.mode = FBSDKShareDialogMode.ShareSheet
+                                            }
+                                            else{
+                                                print("browser")
+                                                dialog.mode = FBSDKShareDialogMode.Browser
+                                            }
+                                            
+                                            dialog.shareContent = content;
+                                            dialog.delegate = self;
+                                            dialog.fromViewController = self;
+                                            dialog.show()
+                                            // Do something with assetURLStr
+                                        }
+        })
+    }
+    
+    func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
+        
+    }
+    
+    func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject : AnyObject]!) {
+        
+    }
+    
+    func sharerDidCancel(sharer: FBSDKSharing!) {
+        
+    }
+    
+
 
 }
 

@@ -1,15 +1,32 @@
 PODS:
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - FBSDKCoreKit (4.11.0):
+    - Bolts (~> 1.7)
+  - FBSDKShareKit (4.11.0):
+    - FBSDKCoreKit
   - Mixpanel (2.9.9):
     - Mixpanel/Mixpanel (= 2.9.9)
   - Mixpanel/Mixpanel (2.9.9)
   - pop (1.0.9)
 
 DEPENDENCIES:
+  - FBSDKCoreKit
+  - FBSDKShareKit
   - Mixpanel
   - pop (~> 1.0)
 
 SPEC CHECKSUMS:
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FBSDKCoreKit: 686ac982723a14ec9ddb85e2f81235d7706c891b
+  FBSDKShareKit: 2d1746144cfc8a9dbbd24997c34ee0471be51b6a
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 05961d7930ad6f4f3bf8840d8a2816c76e427a7e
+
+COCOAPODS: 1.0.0

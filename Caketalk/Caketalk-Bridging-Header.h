@@ -11,7 +11,7 @@
 
 #import "Mixpanel.h"
 #import <pop/POP.h>
-
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 
 #endif /* Caketalk_Bridging_Header_h */

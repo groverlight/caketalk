@@ -6,6 +6,8 @@
 target 'Caketalk' do
 pod 'pop', '~> 1.0'
 pod 'Mixpanel'
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
 end
 
 target 'CaketalkTests' do

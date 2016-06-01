@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -1129,7 +1129,7 @@
                                     <constraint firstItem="rrI-oJ-TSJ" firstAttribute="top" secondItem="h3W-p5-mHp" secondAttribute="top" constant="26" id="glL-L2-YYz"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-fc-Nl5" userLabel="line">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-fc-Nl5" userLabel="line">
                                 <rect key="frame" x="155" y="370" width="290" height="1"/>
                                 <color key="backgroundColor" red="1" green="0.74509803919999995" blue="0.43137254899999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -1144,34 +1144,50 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb.png" translatesAutoresizingMaskIntoConstraints="NO" id="Dkw-iu-CFV">
-                                <rect key="frame" x="155" y="420" width="50" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXQ-aC-5b8">
+                                <rect key="frame" x="190" y="390" width="45" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="N1z-DZ-0tu"/>
-                                    <constraint firstAttribute="height" constant="50" id="kUK-ld-FeM"/>
+                                    <constraint firstAttribute="width" constant="60" id="Dqq-CH-LQw"/>
+                                    <constraint firstAttribute="height" constant="60" id="k4b-yw-pcE"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twtr.png" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-IJ-bFD">
-                                <rect key="frame" x="235" y="420" width="50" height="50"/>
+                                <state key="normal" title="Button" image="fb.png"/>
+                                <connections>
+                                    <action selector="facebook:" destination="QGq-kU-ANf" eventType="touchUpInside" id="wOU-Qx-I2p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccw-bv-hvF">
+                                <rect key="frame" x="253" y="402" width="39" height="39"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="C7A-tG-qRZ"/>
-                                    <constraint firstAttribute="width" constant="50" id="Ks8-Y1-ZVC"/>
+                                    <constraint firstAttribute="width" constant="60" id="DSa-UF-Nm8"/>
+                                    <constraint firstAttribute="height" constant="60" id="U1J-rT-VyU"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insta.png" translatesAutoresizingMaskIntoConstraints="NO" id="HqY-Hy-WZt">
-                                <rect key="frame" x="315" y="420" width="50" height="50"/>
+                                <state key="normal" title="Button" image="twtr.png"/>
+                                <connections>
+                                    <action selector="twitter:" destination="QGq-kU-ANf" eventType="touchUpInside" id="w9O-de-rw2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndy-Rs-gHz">
+                                <rect key="frame" x="324" y="401" width="52" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="UCF-ed-tFR"/>
-                                    <constraint firstAttribute="width" constant="50" id="h4P-qJ-p9V"/>
+                                    <constraint firstAttribute="height" constant="60" id="BrK-jk-I1N"/>
+                                    <constraint firstAttribute="width" constant="60" id="gSR-j5-XWa"/>
                                 </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more.png" translatesAutoresizingMaskIntoConstraints="NO" id="eza-wi-tCp">
-                                <rect key="frame" x="395" y="420" width="50" height="50"/>
+                                <state key="normal" title="Button" image="insta.png"/>
+                                <connections>
+                                    <action selector="instagram:" destination="QGq-kU-ANf" eventType="touchUpInside" id="3eh-nO-cAU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tv1-JZ-XbA">
+                                <rect key="frame" x="390" y="401" width="55" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="0qh-rM-iAu"/>
-                                    <constraint firstAttribute="width" constant="50" id="3zF-ch-Q2q"/>
+                                    <constraint firstAttribute="width" constant="60" id="7oA-Ft-EY6"/>
+                                    <constraint firstAttribute="height" constant="60" id="KYZ-X2-en0"/>
                                 </constraints>
-                            </imageView>
+                                <state key="normal" title="Button" image="more.png"/>
+                                <connections>
+                                    <action selector="share:" destination="QGq-kU-ANf" eventType="touchUpInside" id="q85-v0-NMc"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvP-SD-QVm" userLabel="progressBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="6"/>
                                 <subviews>
@@ -1192,49 +1208,55 @@
                                     <constraint firstAttribute="trailing" secondItem="FYa-A2-iDM" secondAttribute="trailing" id="l1D-Jk-NXR"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zT1-FO-vFW">
+                                <rect key="frame" x="308" y="379" width="8" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="1Fg-F6-Wj1"/>
+                                    <constraint firstAttribute="width" id="MMG-PD-bPp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="top" secondItem="KSB-2V-Yh9" secondAttribute="top" id="0RY-XN-L4J"/>
                             <constraint firstItem="KvP-SD-QVm" firstAttribute="centerX" secondItem="KSB-2V-Yh9" secondAttribute="centerX" id="3YC-EH-uwI"/>
-                            <constraint firstItem="RHr-IJ-bFD" firstAttribute="top" secondItem="Pan-fc-Nl5" secondAttribute="bottom" constant="49" id="4Ep-3f-phR"/>
-                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="Dkw-iu-CFV" secondAttribute="bottom" constant="53" id="6Fn-Uy-Tdd"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="centerX" secondItem="D1D-Xz-tZ0" secondAttribute="centerX" id="6Li-Ck-pfu"/>
-                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="RHr-IJ-bFD" secondAttribute="bottom" constant="53" id="7Wo-lJ-kFP"/>
-                            <constraint firstItem="Pan-fc-Nl5" firstAttribute="leading" secondItem="Dkw-iu-CFV" secondAttribute="leading" id="7X0-Eh-kyT"/>
+                            <constraint firstItem="ccw-bv-hvF" firstAttribute="leading" secondItem="rXQ-aC-5b8" secondAttribute="trailing" constant="16" id="85l-ZW-CwR"/>
                             <constraint firstAttribute="trailing" secondItem="D1D-Xz-tZ0" secondAttribute="trailing" constant="20" id="9Hw-rQ-fux"/>
                             <constraint firstAttribute="trailing" secondItem="KvP-SD-QVm" secondAttribute="trailing" id="9fC-mH-XrM"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="top" secondItem="KSB-2V-Yh9" secondAttribute="top" id="BIv-pE-AEh"/>
-                            <constraint firstItem="HqY-Hy-WZt" firstAttribute="leading" secondItem="RHr-IJ-bFD" secondAttribute="trailing" constant="30" id="BTH-So-QG1"/>
                             <constraint firstItem="KvP-SD-QVm" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" id="Bo6-p3-Mbf"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="bottom" secondItem="lFi-XJ-ULe" secondAttribute="top" id="DTn-RA-cpg"/>
-                            <constraint firstItem="eza-wi-tCp" firstAttribute="top" secondItem="Pan-fc-Nl5" secondAttribute="bottom" constant="49" id="Dqg-dU-bgX"/>
                             <constraint firstItem="h3W-p5-mHp" firstAttribute="top" secondItem="KSB-2V-Yh9" secondAttribute="top" id="EdH-OX-r3N"/>
+                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="rXQ-aC-5b8" secondAttribute="bottom" constant="40" id="FYV-aQ-0pf"/>
                             <constraint firstItem="vwG-GM-Oeg" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" constant="50" id="G6t-3D-AFu"/>
-                            <constraint firstItem="HqY-Hy-WZt" firstAttribute="leading" secondItem="RHr-IJ-bFD" secondAttribute="trailing" constant="30" id="HwJ-Xs-0jQ"/>
+                            <constraint firstItem="ccw-bv-hvF" firstAttribute="leading" secondItem="rXQ-aC-5b8" secondAttribute="trailing" constant="10" id="G9l-jx-9OU"/>
+                            <constraint firstItem="zT1-FO-vFW" firstAttribute="centerX" secondItem="udc-2V-L6j" secondAttribute="centerX" id="HSR-Rj-Qwd"/>
                             <constraint firstItem="KvP-SD-QVm" firstAttribute="leading" secondItem="udc-2V-L6j" secondAttribute="leading" id="IxX-lI-uUz"/>
-                            <constraint firstItem="RHr-IJ-bFD" firstAttribute="leading" secondItem="Dkw-iu-CFV" secondAttribute="trailing" constant="30" id="O0o-kC-JRp"/>
                             <constraint firstItem="lFi-XJ-ULe" firstAttribute="top" secondItem="D1D-Xz-tZ0" secondAttribute="bottom" constant="17" id="OUt-ye-h6s"/>
-                            <constraint firstItem="HqY-Hy-WZt" firstAttribute="top" secondItem="Pan-fc-Nl5" secondAttribute="bottom" constant="49" id="Okh-SN-IzR"/>
-                            <constraint firstItem="Pan-fc-Nl5" firstAttribute="trailing" secondItem="eza-wi-tCp" secondAttribute="trailing" id="Pxh-ov-cOA"/>
-                            <constraint firstItem="RHr-IJ-bFD" firstAttribute="leading" secondItem="Dkw-iu-CFV" secondAttribute="trailing" constant="30" id="Rde-6J-vpd"/>
-                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="eza-wi-tCp" secondAttribute="bottom" constant="53" id="XgS-8J-RAq"/>
+                            <constraint firstAttribute="trailing" secondItem="Tv1-JZ-XbA" secondAttribute="trailing" constant="100" id="Qlc-N0-nqp"/>
+                            <constraint firstItem="Tv1-JZ-XbA" firstAttribute="leading" secondItem="ndy-Rs-gHz" secondAttribute="trailing" constant="16" id="SFZ-Iy-dEz"/>
+                            <constraint firstItem="Tv1-JZ-XbA" firstAttribute="leading" secondItem="ndy-Rs-gHz" secondAttribute="trailing" constant="10" id="X1z-qC-r2J"/>
                             <constraint firstItem="lFi-XJ-ULe" firstAttribute="top" secondItem="vwG-GM-Oeg" secondAttribute="bottom" constant="37" id="a7u-Aa-H5Z"/>
-                            <constraint firstItem="eza-wi-tCp" firstAttribute="leading" secondItem="HqY-Hy-WZt" secondAttribute="trailing" constant="30" id="cFi-Lk-REQ"/>
+                            <constraint firstItem="zT1-FO-vFW" firstAttribute="leading" secondItem="ccw-bv-hvF" secondAttribute="trailing" constant="10" id="bYu-sz-RQ0"/>
                             <constraint firstItem="h3W-p5-mHp" firstAttribute="centerX" secondItem="KSB-2V-Yh9" secondAttribute="centerX" id="d1w-nA-3wF"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="centerX" secondItem="D1D-Xz-tZ0" secondAttribute="centerX" id="dH5-Rn-i6j"/>
                             <constraint firstItem="D1D-Xz-tZ0" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" constant="20" id="fNA-yh-hBZ"/>
                             <constraint firstAttribute="trailing" secondItem="h3W-p5-mHp" secondAttribute="trailing" id="gQj-Xl-n5M"/>
+                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="Tv1-JZ-XbA" secondAttribute="bottom" constant="40" id="h6v-Wi-EHa"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="bottom" secondItem="lFi-XJ-ULe" secondAttribute="top" id="irP-Ap-fEi"/>
-                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="HqY-Hy-WZt" secondAttribute="bottom" constant="53" id="j4n-vr-OYj"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" id="mAA-Zf-FY2"/>
                             <constraint firstItem="Pan-fc-Nl5" firstAttribute="centerX" secondItem="KvP-SD-QVm" secondAttribute="centerX" id="mEw-wy-Ecq"/>
                             <constraint firstItem="h3W-p5-mHp" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" id="mZe-3k-sdI"/>
                             <constraint firstItem="KvP-SD-QVm" firstAttribute="top" secondItem="KSB-2V-Yh9" secondAttribute="top" id="mdD-JF-lRq"/>
                             <constraint firstItem="Pan-fc-Nl5" firstAttribute="centerX" secondItem="D1D-Xz-tZ0" secondAttribute="centerX" id="nVa-X7-CVM"/>
+                            <constraint firstItem="rXQ-aC-5b8" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" constant="100" id="oyb-Mw-r3d"/>
+                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="ccw-bv-hvF" secondAttribute="bottom" constant="40" id="wJA-kw-YIx"/>
                             <constraint firstItem="NEJ-vZ-rTm" firstAttribute="top" secondItem="KvP-SD-QVm" secondAttribute="bottom" constant="14" id="wMR-WD-Pvx"/>
-                            <constraint firstItem="eza-wi-tCp" firstAttribute="leading" secondItem="HqY-Hy-WZt" secondAttribute="trailing" constant="30" id="x8n-FC-qrh"/>
-                            <constraint firstItem="Dkw-iu-CFV" firstAttribute="top" secondItem="Pan-fc-Nl5" secondAttribute="bottom" constant="49" id="xj7-3t-lQu"/>
+                            <constraint firstItem="ndy-Rs-gHz" firstAttribute="leading" secondItem="zT1-FO-vFW" secondAttribute="trailing" constant="10" id="wvz-r5-UYV"/>
+                            <constraint firstItem="ndy-Rs-gHz" firstAttribute="leading" secondItem="ccw-bv-hvF" secondAttribute="trailing" constant="10" id="zTp-8a-PvO"/>
+                            <constraint firstItem="D1D-Xz-tZ0" firstAttribute="top" secondItem="ndy-Rs-gHz" secondAttribute="bottom" constant="40" id="zVz-rL-NdR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1244,6 +1266,11 @@
                                 <exclude reference="DTn-RA-cpg"/>
                                 <exclude reference="wMR-WD-Pvx"/>
                                 <exclude reference="mEw-wy-Ecq"/>
+                                <exclude reference="oyb-Mw-r3d"/>
+                                <exclude reference="G9l-jx-9OU"/>
+                                <exclude reference="zTp-8a-PvO"/>
+                                <exclude reference="Qlc-N0-nqp"/>
+                                <exclude reference="X1z-qC-r2J"/>
                             </mask>
                         </variation>
                     </view>
@@ -1251,16 +1278,16 @@
                         <outlet property="animatedProgressBarView" destination="FYa-A2-iDM" id="0dd-J8-p3b"/>
                         <outlet property="backButton" destination="D1D-Xz-tZ0" id="767-lH-YTB"/>
                         <outlet property="backEmoji" destination="vwG-GM-Oeg" id="RkC-M9-hBF"/>
-                        <outlet property="facebookButton" destination="Dkw-iu-CFV" id="HwB-Ay-USJ"/>
+                        <outlet property="facebookButton" destination="rXQ-aC-5b8" id="wze-RZ-09m"/>
                         <outlet property="headerLabel" destination="rrI-oJ-TSJ" id="e2D-7D-b4v"/>
                         <outlet property="headerView" destination="h3W-p5-mHp" id="rNV-72-36a"/>
-                        <outlet property="instagramButton" destination="HqY-Hy-WZt" id="1Jo-jw-2St"/>
+                        <outlet property="instagramButton" destination="ndy-Rs-gHz" id="Lit-Ag-EmG"/>
                         <outlet property="label" destination="6Q6-0c-Zmm" id="ftS-iF-5QZ"/>
                         <outlet property="line" destination="Pan-fc-Nl5" id="L0h-qq-6J0"/>
-                        <outlet property="moreButton" destination="eza-wi-tCp" id="e2j-wn-quL"/>
+                        <outlet property="moreButton" destination="Tv1-JZ-XbA" id="KLt-cp-6ne"/>
                         <outlet property="movieView" destination="udc-2V-L6j" id="D9d-4s-Dg6"/>
                         <outlet property="progressBarView" destination="KvP-SD-QVm" id="fRW-GO-dK1"/>
-                        <outlet property="twitterButton" destination="RHr-IJ-bFD" id="yGb-6N-pNi"/>
+                        <outlet property="twitterButton" destination="ccw-bv-hvF" id="Oo9-io-mpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdN-r5-v5t" userLabel="First Responder" sceneMemberID="firstResponder"/>
