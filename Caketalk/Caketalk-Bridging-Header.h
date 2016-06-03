@@ -12,6 +12,6 @@
 #import "Mixpanel.h"
 #import <pop/POP.h>
 #import <FBSDKShareKit/FBSDKShareKit.h>
-
+#import "SocialVideoHelper.h"
 
 #endif /* Caketalk_Bridging_Header_h */
