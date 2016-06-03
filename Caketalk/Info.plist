@@ -56,5 +56,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbauth2</string>
+        <string>fbapi20150629</string>
+        <string>fbshareextension</string>
+    </array>
 </dict>
 </plist>
