@@ -77,6 +77,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("SOUND EFFECT HERE")
         super.viewDidLoad()
         self.cameraTextView.delegate = self
+        self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -147,7 +148,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             filteredImage = GPUImageView()
             videoCamera = GPUImageVideoCamera(sessionPreset: AVCaptureSessionPresetHigh, cameraPosition: .Front)
             videoCamera?.horizontallyMirrorFrontFacingCamera = true
-            videoCamera?.frameRate = 60
+            videoCamera?.frameRate = 30
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.frame = self.view.bounds
             filter = GPUImageMissEtikateFilter()
@@ -502,7 +503,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
-        self.videoCamera?.frameRate = 60
+        self.videoCamera?.frameRate = 30
         movieWriter?.startRecording()
 
 
@@ -623,7 +624,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.clearButton.hidden = false
             self.backButton.hidden = false
             self.clearEmoji.hidden = false
-
+          
             cameraTextView.resignFirstResponder()
             UIView.animateWithDuration(0.1, animations: {
 
@@ -642,7 +643,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         self.view.bringSubviewToFront(self.clearButton)
                         self.view.bringSubviewToFront(self.backButton)
                         self.view.bringSubviewToFront(self.headerView)
-
+                        self.line.hidden = false
+                        self.view.bringSubviewToFront(self.line)
                         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 3, options: .CurveEaseInOut, animations: {
 
                             self.backButton.transform = CGAffineTransformMakeTranslation(0, 0)
@@ -768,7 +770,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.newImage = GPUImageView()
             self.newImage?.frame = self.view.bounds
             let newfilter = GPUImagePixellateFilter()
-            self.videoCamera?.frameRate = 60
+            self.videoCamera?.frameRate = 30
             self.videoCamera?.addTarget(newfilter)
             newfilter.addTarget(self.newImage)
             self.view.insertSubview(self.newImage!, aboveSubview:(self.filteredImage)!)
@@ -924,7 +926,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.clearButton.hidden = true
         self.clearEmoji.hidden = true
         self.headerView.hidden = true
-
+        self.line.hidden = true
 
         self.recordButton.userInteractionEnabled = true
         longPressRecognizer.enabled = true
@@ -993,6 +995,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.clearEmoji.hidden = true
         self.backEmoji.hidden = true
         self.headerView.hidden = true
+        self.line.hidden = true
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             //self.headerView.textColor = UIColor .blackColor()
             self.headerView.backgroundColor = UIColor .clearColor()

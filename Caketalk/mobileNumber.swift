@@ -50,6 +50,9 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
         self.codeButton.hidden = true
         self.codeEmoji.hidden = true
         self.mobileNumberField.delegate = self
+        let paddingView = UIView(frame: CGRectMake(0, 0, 15, self.mobileNumberField.frame.height))
+        self.mobileNumberField.leftView = paddingView
+        self.mobileNumberField.leftViewMode = UITextFieldViewMode.Always
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(mobileNumber.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(mobileNumber.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
 

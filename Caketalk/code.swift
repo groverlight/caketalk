@@ -11,6 +11,7 @@ import CloudKit
 
 class code: UIViewController, UITextFieldDelegate {
     var labelCounter = 0
+    //var loader = MAActivityIndicatorView()
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -38,11 +39,15 @@ class code: UIViewController, UITextFieldDelegate {
 /*---------------END OUTLETS----------------------*/
 
 
-    override func viewDidLoad() {
-        print ("code view is loaded")
-        super.viewDidLoad()
-        self.invisibleTextField.delegate = self
-
+override func viewDidLoad() {
+    print ("code view is loaded")
+    super.viewDidLoad()
+    self.invisibleTextField.delegate = self
+   // loader.frame = CGRectMake(0, self.view.bounds.size.height/3, self.view.bounds.size.width,100)
+    //loader.hidden = true
+    //self.view.addSubview(loader)
+    //loader.startAnimating()
+    
 /*---------------BEGIN STYLE 🎨----------------------*/
 
         //rounding edges out use MASKTOBOUNDS=true
@@ -109,14 +114,8 @@ class code: UIViewController, UITextFieldDelegate {
         // print (newDigit)
         if (labelCounter == 5){
             digitFive.text = string
-            // let animation = MAActivityIndicatorView(frame: self.view.bounds)
             if ( codeFired == textField.text! + string){
-                // NSNotificationCenter.defaultCenter().postNotificationName("move", object: nil)
 
-                //self.dismissViewControllerAnimated(true, completion: nil)
-               // let delay = 1 * Double(NSEC_PER_SEC)
-                //let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-                //dispatch_after(time, dispatch_get_main_queue()) {
                 dispatch_async(dispatch_get_main_queue()) {
                     let prefs = NSUserDefaults.standardUserDefaults()
                     prefs.setValue("didLogin", forKey: "Login")
