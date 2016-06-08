@@ -4,12 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< HEAD
 		<key>Mixpanel.xcscheme</key>
+=======
+		<key>GPUImage.xcscheme</key>
+>>>>>>> skin-smoothing
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+<<<<<<< HEAD
 		<key>Player.xcscheme</key>
+=======
+		<key>Mixpanel.xcscheme</key>
+>>>>>>> skin-smoothing
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -19,6 +27,24 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+<<<<<<< HEAD
+=======
+		<key>Pods-CaketalkTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CaketalkUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>YUGPUImageHighPassSkinSmoothing.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+>>>>>>> skin-smoothing
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +53,53 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+<<<<<<< HEAD
 		<key>35EF443ED3A04D060D6C2B10B805CFE4</key>
+=======
+		<key>14EC09C63496FC8BA0166D9C8A063413</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>19CAD7EEE48D57CF5E6021CFA3345560</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>28BB486628F7F460E4498073AE4259AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3D102CC649C1DE17664D3919023CBBEF</key>
+>>>>>>> skin-smoothing
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+<<<<<<< HEAD
 		<key>B3DBC22202E722516B7290AC29C0C031</key>
+=======
+		<key>6610362E50A6DE8BACCA1F2885CD9157</key>
+>>>>>>> skin-smoothing
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>B5F312ABB371123942048FA3C80AB971</key>
+=======
+		<key>7DEDECA0CCF0B344F57A0A9CD062A4D0</key>
+>>>>>>> skin-smoothing
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< HEAD
 		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
+=======
+		<key>95EC257F43958A7C61AABAAF154127C1</key>
+>>>>>>> skin-smoothing
 		<dict>
 			<key>primary</key>
 			<true/>

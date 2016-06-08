@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '240F1AB4D8AD72899189F250'
+               BlueprintIdentifier = '28BB486628F7F460E4498073AE4259AB'
                BlueprintName = 'Pods-Caketalk'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_Caketalk.framework'>
+               BuildableName = 'libPods-Caketalk.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
@@ -6,3 +7,14 @@ OTHER_LDFLAGS = $(inherited) -framework "Mixpanel" -framework "Player" -framewor
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Caketalk
 PODS_ROOT = ${SRCROOT}/Pods
+=======
+CLANG_MODULES_AUTOLINK = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GPUImage" "${PODS_ROOT}/Headers/Public/Mixpanel" "${PODS_ROOT}/Headers/Public/YUGPUImageHighPassSkinSmoothing" "${PODS_ROOT}/Headers/Public/pop"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/GPUImage" "$PODS_CONFIGURATION_BUILD_DIR/Mixpanel" "$PODS_CONFIGURATION_BUILD_DIR/YUGPUImageHighPassSkinSmoothing" "$PODS_CONFIGURATION_BUILD_DIR/pop"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/GPUImage" -isystem "${PODS_ROOT}/Headers/Public/Mixpanel" -isystem "${PODS_ROOT}/Headers/Public/YUGPUImageHighPassSkinSmoothing" -isystem "${PODS_ROOT}/Headers/Public/pop"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"GPUImage" -l"Mixpanel" -l"YUGPUImageHighPassSkinSmoothing" -l"c++" -l"icucore" -l"pop" -framework "AVFoundation" -framework "Accelerate" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreTelephony" -framework "Foundation" -framework "OpenGLES" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
+>>>>>>> skin-smoothing
