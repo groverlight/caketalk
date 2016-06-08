@@ -13,6 +13,7 @@ import UIKit
 import GPUImage
 import Social
 import Accounts
+import pop
 
 //import FBSDKShareKit
 //import FBSDKCoreKit
