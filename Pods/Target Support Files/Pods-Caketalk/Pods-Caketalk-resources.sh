@@ -48,8 +48,8 @@ EOM
       ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .storyboard`.storyboardc" "$RESOURCE_PATH" --sdk "${SDKROOT}" ${TARGET_DEVICE_ARGS}
       ;;
     *.xib)
-      echo "ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib $RESOURCE_PATH --sdk ${SDKROOT}"
-      ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib" "$RESOURCE_PATH" --sdk "${SDKROOT}"
+      echo "ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib $RESOURCE_PATH --sdk ${SDKROOT} ${TARGET_DEVICE_ARGS}"
+      ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target ${!DEPLOYMENT_TARGET_SETTING_NAME} --output-format human-readable-text --compile "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/`basename \"$RESOURCE_PATH\" .xib`.nib" "$RESOURCE_PATH" --sdk "${SDKROOT}" ${TARGET_DEVICE_ARGS}
       ;;
     *.framework)
       echo "mkdir -p ${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
@@ -79,69 +79,9 @@ EOM
       ;;
   esac
 }
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-
-mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
-rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
-=======
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "GPUImage/framework/Resources/lookup.png"
-  install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
-  install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
-  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
-  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowLeft.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowLeft@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowRight.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowRight@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCheckmark.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCheckmark@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCloseButton.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCloseButton@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCloseButton@3x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPDismissKeyboard.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPDismissKeyboard@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPLogo.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPLogo@2x.png"
-  install_resource "Mixpanel/Mixpanel/MPNotification~ipad.storyboard"
-  install_resource "Mixpanel/Mixpanel/MPNotification~iphonelandscape.storyboard"
-  install_resource "Mixpanel/Mixpanel/MPNotification~iphoneportrait.storyboard"
-  install_resource "Mixpanel/Mixpanel/MPSurvey.storyboard"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "GPUImage/framework/Resources/lookup.png"
-  install_resource "GPUImage/framework/Resources/lookup_amatorka.png"
-  install_resource "GPUImage/framework/Resources/lookup_miss_etikate.png"
-  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_1.png"
-  install_resource "GPUImage/framework/Resources/lookup_soft_elegance_2.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowLeft.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowLeft@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowRight.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPArrowRight@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCheckmark.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCheckmark@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCloseButton.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCloseButton@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPCloseButton@3x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPDismissKeyboard.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPDismissKeyboard@2x.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPLogo.png"
-  install_resource "Mixpanel/Mixpanel/Images/MPLogo@2x.png"
-  install_resource "Mixpanel/Mixpanel/MPNotification~ipad.storyboard"
-  install_resource "Mixpanel/Mixpanel/MPNotification~iphonelandscape.storyboard"
-  install_resource "Mixpanel/Mixpanel/MPNotification~iphoneportrait.storyboard"
-  install_resource "Mixpanel/Mixpanel/MPSurvey.storyboard"
-fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
->>>>>>> skin-smoothing
-=======
-
-mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
-rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
->>>>>>> Stashed changes
 if [[ "${ACTION}" == "install" ]] && [[ "${SKIP_INSTALL}" == "NO" ]]; then
   mkdir -p "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
   rsync -avr --copy-links --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

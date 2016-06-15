@@ -1,7 +1,7 @@
 use_frameworks!
 target 'Caketalk' do
-pod 'pop', '~> 1.0'
 pod 'Mixpanel'
+pod 'pop', '~> 1.0'
 end 
 
 target 'CaketalkTests' do

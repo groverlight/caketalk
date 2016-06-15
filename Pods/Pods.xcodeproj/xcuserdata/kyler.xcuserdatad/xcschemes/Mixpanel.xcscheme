@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '14EC09C63496FC8BA0166D9C8A063413'
+               BlueprintIdentifier = 'B5F312ABB371123942048FA3C80AB971'
                BlueprintName = 'Mixpanel'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libMixpanel.a'>
+               BuildableName = 'Mixpanel.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

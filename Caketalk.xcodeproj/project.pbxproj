@@ -20,20 +20,10 @@
 		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; };
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-		E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6A24521B5CB7D3AD43ADD2 /* Pods_Caketalk.framework */; };
-=======
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
-		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
->>>>>>> master
-=======
-		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
-		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
-=======
-		E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6A24521B5CB7D3AD43ADD2 /* Pods_Caketalk.framework */; };
->>>>>>> fullscreen-background
->>>>>>> Stashed changes
+		4C5C93049C6CEDAC6D51B10D /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C10F0042D713EDF580E6B32 /* Pods_CaketalkUITests.framework */; };
+		CE6F9E6BBAD4472BDECB5D65 /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725D2C5DED94D2CFBA821E3 /* Pods_Caketalk.framework */; };
+		DEED77FF10FF2CEB27DAB3B6 /* Pods_CaketalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDD3B46C7E986FB5819DDA7 /* Pods_CaketalkTests.framework */; };
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
 		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
 		F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */; };
@@ -141,7 +131,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		231FB45B1A03119C9C17888E /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
+		05CEDB0C0E4F827BD449066E /* Pods-CaketalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		0C10F0042D713EDF580E6B32 /* Pods_CaketalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27049A9B1CE823FD002D69EF /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
 		27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_1.png; sourceTree = "<group>"; };
 		27049A9D1CE823FD002D69EF /* CloudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
@@ -155,8 +146,13 @@
 		27049AA51CE823FD002D69EF /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		27049AA61CE823FD002D69EF /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27049ACC1CE824F8002D69EF /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Caketalk/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
+		2725D2C5DED94D2CFBA821E3 /* Pods_Caketalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caketalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAActivityIndicatorView.swift; sourceTree = "<group>"; };
-		74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
+		34458290B9F4BA30D71ECF47 /* Pods-CaketalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BDD3B46C7E986FB5819DDA7 /* Pods_CaketalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
+		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
 		F45844981CE54B5B000D8B41 /* Caketalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
 		F45844991CE54B5D000D8B41 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F47C01261CE3B3D700891EB1 /* Caketalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caketalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +202,7 @@
 		F4FB95711CE3F59200E2977B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		F4FB95731CE3F5AB00E2977B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F4FB95771CE3F5C300E2977B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		FD6A24521B5CB7D3AD43ADD2 /* Pods_Caketalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caketalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFA543435461F4942D774E81 /* Pods-CaketalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,20 +219,9 @@
 				F4864AF81CF810C40074A427 /* FBSDKShareKit.framework in Frameworks */,
 				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-				E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */,
-=======
 				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
-				E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */,
->>>>>>> master
-=======
 				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
-				E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */,
-=======
-				E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */,
->>>>>>> fullscreen-background
->>>>>>> Stashed changes
+				CE6F9E6BBAD4472BDECB5D65 /* Pods_Caketalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEED77FF10FF2CEB27DAB3B6 /* Pods_CaketalkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C5C93049C6CEDAC6D51B10D /* Pods_CaketalkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,15 +253,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6F43CF4A25F5BAFFF4B3515E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				231FB45B1A03119C9C17888E /* Pods-Caketalk.debug.xcconfig */,
-				74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		F47C011D1CE3B3D700891EB1 = {
 			isa = PBXGroup;
 			children = (
@@ -283,8 +261,8 @@
 				F47C01401CE3B3D700891EB1 /* CaketalkTests */,
 				F47C014B1CE3B3D700891EB1 /* CaketalkUITests */,
 				F47C01271CE3B3D700891EB1 /* Products */,
-				6F43CF4A25F5BAFFF4B3515E /* Pods */,
 				FCFC2848D6592F2DEC3BA40C /* Frameworks */,
+				FE5738296B2286BB391EAEC0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -389,9 +367,24 @@
 				F4FB95711CE3F59200E2977B /* AVKit.framework */,
 				F4FB956F1CE3F57B00E2977B /* MediaPlayer.framework */,
 				F4FB956D1CE3F57300E2977B /* AVFoundation.framework */,
-				FD6A24521B5CB7D3AD43ADD2 /* Pods_Caketalk.framework */,
+				2725D2C5DED94D2CFBA821E3 /* Pods_Caketalk.framework */,
+				6BDD3B46C7E986FB5819DDA7 /* Pods_CaketalkTests.framework */,
+				0C10F0042D713EDF580E6B32 /* Pods_CaketalkUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE5738296B2286BB391EAEC0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */,
+				CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */,
+				34458290B9F4BA30D71ECF47 /* Pods-CaketalkTests.debug.xcconfig */,
+				05CEDB0C0E4F827BD449066E /* Pods-CaketalkTests.release.xcconfig */,
+				FFA543435461F4942D774E81 /* Pods-CaketalkUITests.debug.xcconfig */,
+				9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -401,14 +394,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F47C01511CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "Caketalk" */;
 			buildPhases = (
-				CE084240830A1E869FA6BCFB /* Check Pods Manifest.lock */,
+				463E94ACA0265E993F0E1638 /* [CP] Check Pods Manifest.lock */,
 				F47C01221CE3B3D700891EB1 /* Sources */,
 				F47C01231CE3B3D700891EB1 /* Frameworks */,
 				F47C01241CE3B3D700891EB1 /* Resources */,
-				040357FE3B2A599C0F0AB8D7 /* Copy Pods Resources */,
 				F45844B21CE5562F000D8B41 /* Embed Frameworks */,
 				27049ABD1CE8245D002D69EF /* CopyFiles */,
-				100B087052E66F141AF61A05 /* Embed Pods Frameworks */,
+				092522BF086C505BD68E9A6E /* [CP] Embed Pods Frameworks */,
+				9759A4D211516BC11171C523 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -424,9 +417,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F47C01541CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "CaketalkTests" */;
 			buildPhases = (
+				8D5AB12FF557EA9D7BF36F98 /* [CP] Check Pods Manifest.lock */,
 				F47C01391CE3B3D700891EB1 /* Sources */,
 				F47C013A1CE3B3D700891EB1 /* Frameworks */,
 				F47C013B1CE3B3D700891EB1 /* Resources */,
+				8FB8ADB683307BDDDFBF35CE /* [CP] Embed Pods Frameworks */,
+				756002C2E56C713A0FA37416 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,9 +438,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F47C01571CE3B3D700891EB1 /* Build configuration list for PBXNativeTarget "CaketalkUITests" */;
 			buildPhases = (
+				080EC639C5F1DBDD30622E82 /* [CP] Check Pods Manifest.lock */,
 				F47C01441CE3B3D700891EB1 /* Sources */,
 				F47C01451CE3B3D700891EB1 /* Frameworks */,
 				F47C01461CE3B3D700891EB1 /* Resources */,
+				EAB4CC0EC51077CC25434AD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -572,29 +570,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		040357FE3B2A599C0F0AB8D7 /* Copy Pods Resources */ = {
+		080EC639C5F1DBDD30622E82 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		100B087052E66F141AF61A05 /* Embed Pods Frameworks */ = {
+		092522BF086C505BD68E9A6E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,19 +600,94 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CE084240830A1E869FA6BCFB /* Check Pods Manifest.lock */ = {
+		463E94ACA0265E993F0E1638 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		756002C2E56C713A0FA37416 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D5AB12FF557EA9D7BF36F98 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8FB8ADB683307BDDDFBF35CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9759A4D211516BC11171C523 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAB4CC0EC51077CC25434AD6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -786,29 +859,16 @@
 		};
 		F47C01521CE3B3D700891EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 231FB45B1A03119C9C17888E /* Pods-Caketalk.debug.xcconfig */;
+			baseConfigurationReference = A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-=======
-=======
->>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-<<<<<<< Updated upstream
->>>>>>> master
-=======
-=======
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
->>>>>>> fullscreen-background
->>>>>>> Stashed changes
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -829,29 +889,16 @@
 		};
 		F47C01531CE3B3D700891EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 74932C855231F106DCF7EBEB /* Pods-Caketalk.release.xcconfig */;
+			baseConfigurationReference = CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-=======
-=======
->>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-<<<<<<< Updated upstream
->>>>>>> master
-=======
-=======
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
->>>>>>> fullscreen-background
->>>>>>> Stashed changes
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -872,6 +919,7 @@
 		};
 		F47C01551CE3B3D700891EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34458290B9F4BA30D71ECF47 /* Pods-CaketalkTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CaketalkTests/Info.plist;
@@ -884,6 +932,7 @@
 		};
 		F47C01561CE3B3D700891EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05CEDB0C0E4F827BD449066E /* Pods-CaketalkTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = CaketalkTests/Info.plist;
@@ -896,6 +945,7 @@
 		};
 		F47C01581CE3B3D700891EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFA543435461F4942D774E81 /* Pods-CaketalkUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CaketalkUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -907,6 +957,7 @@
 		};
 		F47C01591CE3B3D700891EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = CaketalkUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -1,0 +1,6 @@
+framework module Pods_CaketalkTests {
+  umbrella header "Pods-CaketalkTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
