@@ -300,11 +300,15 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<key>FooterText</key>
 			<string>The MIT License (MIT)
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 Copyright (c) 2014-present patrick piemonte (http://patrickpiemonte.com/)
 =======
 Copyright (c) 2016 Yu Ao
 >>>>>>> skin-smoothing
+=======
+Copyright (c) 2014-present patrick piemonte (http://patrickpiemonte.com/)
+>>>>>>> Stashed changes
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -325,11 +329,15 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 </string>
 			<key>Title</key>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 			<string>Player</string>
 =======
 			<string>YUGPUImageHighPassSkinSmoothing</string>
 >>>>>>> skin-smoothing
+=======
+			<string>Player</string>
+>>>>>>> Stashed changes
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

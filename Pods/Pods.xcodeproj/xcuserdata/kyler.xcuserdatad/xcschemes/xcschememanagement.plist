@@ -4,20 +4,28 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 		<key>Mixpanel.xcscheme</key>
 =======
 		<key>GPUImage.xcscheme</key>
 >>>>>>> skin-smoothing
+=======
+		<key>Mixpanel.xcscheme</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 		<key>Player.xcscheme</key>
 =======
 		<key>Mixpanel.xcscheme</key>
 >>>>>>> skin-smoothing
+=======
+		<key>Player.xcscheme</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,6 +35,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 		<key>Pods-CaketalkTests.xcscheme</key>
@@ -45,6 +54,8 @@
 			<false/>
 		</dict>
 >>>>>>> skin-smoothing
+=======
+>>>>>>> Stashed changes
 		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -53,6 +64,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 		<key>35EF443ED3A04D060D6C2B10B805CFE4</key>
 =======
@@ -73,33 +85,48 @@
 		</dict>
 		<key>3D102CC649C1DE17664D3919023CBBEF</key>
 >>>>>>> skin-smoothing
+=======
+		<key>35EF443ED3A04D060D6C2B10B805CFE4</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 		<key>B3DBC22202E722516B7290AC29C0C031</key>
 =======
 		<key>6610362E50A6DE8BACCA1F2885CD9157</key>
 >>>>>>> skin-smoothing
+=======
+		<key>B3DBC22202E722516B7290AC29C0C031</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 		<key>B5F312ABB371123942048FA3C80AB971</key>
 =======
 		<key>7DEDECA0CCF0B344F57A0A9CD062A4D0</key>
 >>>>>>> skin-smoothing
+=======
+		<key>B5F312ABB371123942048FA3C80AB971</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
 =======
 		<key>95EC257F43958A7C61AABAAF154127C1</key>
 >>>>>>> skin-smoothing
+=======
+		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
+>>>>>>> Stashed changes
 		<dict>
 			<key>primary</key>
 			<true/>

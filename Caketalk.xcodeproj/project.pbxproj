@@ -21,11 +21,19 @@
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 		E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6A24521B5CB7D3AD43ADD2 /* Pods_Caketalk.framework */; };
 =======
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
 		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
 >>>>>>> master
+=======
+		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
+		E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 063EC8AD0B361FBA84A07541 /* libPods-Caketalk.a */; };
+=======
+		E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6A24521B5CB7D3AD43ADD2 /* Pods_Caketalk.framework */; };
+>>>>>>> fullscreen-background
+>>>>>>> Stashed changes
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
 		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
 		F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */; };
@@ -216,11 +224,19 @@
 				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 				E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */,
 =======
 				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
 				E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */,
 >>>>>>> master
+=======
+				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
+				E1ED9FA42EBFB08DBEFE04AB /* libPods-Caketalk.a in Frameworks */,
+=======
+				E39AED99D66717E8495BC3C4 /* Pods_Caketalk.framework in Frameworks */,
+>>>>>>> fullscreen-background
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,14 +791,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 =======
+=======
+>>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+<<<<<<< Updated upstream
 >>>>>>> master
+=======
+=======
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> fullscreen-background
+>>>>>>> Stashed changes
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -808,14 +834,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
 <<<<<<< HEAD
+<<<<<<< Updated upstream
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 =======
+=======
+>>>>>>> Stashed changes
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+<<<<<<< Updated upstream
 >>>>>>> master
+=======
+=======
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+>>>>>>> fullscreen-background
+>>>>>>> Stashed changes
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

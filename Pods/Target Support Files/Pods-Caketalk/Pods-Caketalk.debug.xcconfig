@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
@@ -6,6 +9,7 @@ OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Mixpanel.framework
 OTHER_LDFLAGS = $(inherited) -framework "Mixpanel" -framework "Player" -framework "pop"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-Caketalk
+<<<<<<< Updated upstream
 PODS_ROOT = ${SRCROOT}/Pods
 =======
 CLANG_MODULES_AUTOLINK = YES
@@ -18,3 +22,6 @@ PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods
 >>>>>>> skin-smoothing
+=======
+PODS_ROOT = ${SRCROOT}/Pods
+>>>>>>> Stashed changes

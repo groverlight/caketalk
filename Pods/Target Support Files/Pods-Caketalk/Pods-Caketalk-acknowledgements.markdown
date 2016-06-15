@@ -277,12 +277,16 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 ## Player
 
 The MIT License (MIT)
 
 Copyright (c) 2014-present patrick piemonte (http://patrickpiemonte.com/)
+<<<<<<< Updated upstream
 =======
 ## YUGPUImageHighPassSkinSmoothing
 
@@ -290,6 +294,8 @@ The MIT License (MIT)
 
 Copyright (c) 2016 Yu Ao
 >>>>>>> skin-smoothing
+=======
+>>>>>>> Stashed changes
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
