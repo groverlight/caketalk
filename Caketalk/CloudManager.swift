@@ -37,9 +37,6 @@ class CloudManager: NSObject {
                     if (error != nil) {
                         completionHandler(success: false, user: nil)
                     } else {
-                        
-                        print(userRecord!)
-                        
                         userRecord!["firstName"] = userFull?.firstName
                         userRecord!["lastName"] = userFull?.lastName
                         userRecord!["phoneNumber"] = phoneNumber
