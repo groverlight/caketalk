@@ -181,13 +181,13 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
         let length = getLength(textField.text!)
         //print (length)
 
-        if (length < 9){
+        if (length < 9 || string.characters.count == 0){
             self.codeButton.hidden = true
             self.codeEmoji.hidden = true
             print ("length")
         }
 
-        if (length == 9){
+        if (length == 9 && string.characters.count != 0){
             self.codeButton.hidden = false
             self.codeEmoji.hidden = false
             print (length)
