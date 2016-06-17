@@ -9,6 +9,7 @@
 import UIKit
 import GPUImage
 import pop
+import YUGPUImageHighPassSkinSmoothing
 
 var arrayofText: NSMutableArray = []
 
