@@ -374,7 +374,7 @@ var gradientView:GradientView = GradientView()
         print("back button pressed")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
 
         print("Mixpanel event here")
         arrayofText.removeAllObjects()
