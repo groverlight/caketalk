@@ -14,6 +14,7 @@ import GPUImage
 import Social
 import Accounts
 import pop
+import AVFoundation
 
 //import FBSDKShareKit
 //import FBSDKCoreKit
@@ -370,9 +371,12 @@ var gradientView:GradientView = GradientView()
 //MARK: This clears draft and takes you back
 
     @IBAction func backButtonPressed(sender: AnyObject) {
-         print("back button pressed")
-         print("SOUND EFFECT HERE")
-         print("Mixpanel event here")
+        print("back button pressed")
+        print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("/path/to/audio.mp3")
+
+        print("Mixpanel event here")
         arrayofText.removeAllObjects()
         do {
             let files = try self.fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -389,7 +393,17 @@ var gradientView:GradientView = GradientView()
         }
     }
 
-
+    func playSoundWithPath(path : String) {
+        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            sound.play()
+        } catch {
+            
+        }
+    }
     
 
 }

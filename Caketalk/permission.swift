@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import AVFoundation
 
 class permission: UIViewController {
 
@@ -28,6 +29,8 @@ class permission: UIViewController {
         super.viewDidLoad()
         print ("permission view loaded")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("/path/to/audio.mp3")
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -60,6 +63,9 @@ class permission: UIViewController {
     @IBAction func icloudPressed(sender: AnyObject) {
         print("iCloud button pressed")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("/path/to/audio.mp3")
+        
         self.alertView.hidden = true
         
 
@@ -110,7 +116,17 @@ class permission: UIViewController {
         }
     }
 
-
+    func playSoundWithPath(path : String) {
+        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            sound.play()
+        } catch {
+            
+        }
+    }
 
 }
 
