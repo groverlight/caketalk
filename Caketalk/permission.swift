@@ -30,7 +30,7 @@ class permission: UIViewController {
         print ("permission view loaded")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -64,7 +64,7 @@ class permission: UIViewController {
         print("iCloud button pressed")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
         
         self.alertView.hidden = true
         

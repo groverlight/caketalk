@@ -81,7 +81,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("camera view loaded")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
         
         super.viewDidLoad()
         self.cameraTextView.delegate = self
@@ -311,7 +311,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         print("button brought back")
                         print("SOUND EFFECT HERE")
                         
-                        playSoundWithPath("/path/to/audio.mp3")
+                        playSoundWithPath("chime.dim.aif")
 
                         //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -375,7 +375,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("1st character on new line")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath("/path/to/audio.mp3")
+            playSoundWithPath("chime.dim.aif")
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
@@ -524,7 +524,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("starting recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
         
         recording = true;
         let clipCountString = String(clipCount)
@@ -542,7 +542,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
         
         clipCount += 1
         recording = false;
@@ -564,7 +564,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("edit view loaded")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath("/path/to/audio.mp3")
+            playSoundWithPath("chime.dim.aif")
             
             print("Mixpanel event here")
 
@@ -954,7 +954,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("text cleared")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
         
         print("Mixpanel event here")
 
@@ -1027,7 +1027,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("decided not to clear")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("/path/to/audio.mp3")
+        playSoundWithPath("chime.dim.aif")
         
         print("Mixpanel event here")
 
