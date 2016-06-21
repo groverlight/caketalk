@@ -9,7 +9,11 @@
 import UIKit
 import GPUImage
 import pop
+<<<<<<< HEAD
+import AVFoundation
+=======
 import YUGPUImageHighPassSkinSmoothing
+>>>>>>> master
 
 var arrayofText: NSMutableArray = []
 
@@ -76,6 +80,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     override func viewDidLoad() {
         print("camera view loaded")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("chime.dim.aif")
+        
         super.viewDidLoad()
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -233,6 +240,19 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         shouldEdit = true
 
     }
+    
+    func playSoundWithPath(path : String) {
+        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            sound.play()
+        } catch {
+
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
         self.cameraTextView.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0)
     }
@@ -290,6 +310,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                     if (scrollView.subviews[scrollView.subviews.count-1] is UILabel){
                         print("button brought back")
                         print("SOUND EFFECT HERE")
+                        
+                        playSoundWithPath("chime.dim.aif")
 
                         //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -352,6 +374,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         if (textView.text.characters.count == 0 && text != ""){
             print("1st character on new line")
             print("SOUND EFFECT HERE")
+            
+            playSoundWithPath("chime.dim.aif")
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
@@ -499,6 +523,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     func startRecording() {
         print ("starting recording...")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("chime.dim.aif")
+        
         recording = true;
         let clipCountString = String(clipCount)
         movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mp4",isDirectory: true), size: view.frame.size)
@@ -514,6 +541,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         newImage?.removeFromSuperview()
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("chime.dim.aif")
+        
         clipCount += 1
         recording = false;
         showStatusBar(true)
@@ -533,6 +563,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         if (sender.state == UIGestureRecognizerState.Began){
             print("edit view loaded")
             print("SOUND EFFECT HERE")
+            
+            playSoundWithPath("chime.dim.aif")
+            
             print("Mixpanel event here")
 
 
@@ -920,6 +953,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBAction func clearButtonPressed(sender: AnyObject) {
         print("text cleared")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("chime.dim.aif")
+        
         print("Mixpanel event here")
 
         self.headerView.backgroundColor = UIColor .clearColor()
@@ -990,6 +1026,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBAction func backButtonPressed(sender: AnyObject) {
         print("decided not to clear")
         print("SOUND EFFECT HERE")
+        
+        playSoundWithPath("chime.dim.aif")
+        
         print("Mixpanel event here")
 
         self.recordButton.userInteractionEnabled = true
