@@ -9,7 +9,11 @@
 import UIKit
 import GPUImage
 import pop
+<<<<<<< HEAD
 import AVFoundation
+=======
+import YUGPUImageHighPassSkinSmoothing
+>>>>>>> master
 
 var arrayofText: NSMutableArray = []
 

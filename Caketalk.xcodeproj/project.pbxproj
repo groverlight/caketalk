@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BE36194C3FA0782DB5B8B1E /* Pods_CaketalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69996C00CFFC7216FFBF10C3 /* Pods_CaketalkTests.framework */; };
 		27049AA71CE823FD002D69EF /* lookup_miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 27049A9B1CE823FD002D69EF /* lookup_miss_etikate.png */; };
 		27049AA81CE823FD002D69EF /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */; };
 		27049AA91CE823FD002D69EF /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049A9D1CE823FD002D69EF /* CloudManager.swift */; };
@@ -17,13 +18,12 @@
 		27049AAE1CE823FD002D69EF /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA31CE823FD002D69EF /* RandomColor.swift */; };
 		27049AAF1CE823FD002D69EF /* paddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA41CE823FD002D69EF /* paddedLabel.swift */; };
 		27049AB01CE823FD002D69EF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA61CE823FD002D69EF /* GradientView.swift */; };
-		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; };
+		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
-		4C5C93049C6CEDAC6D51B10D /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C10F0042D713EDF580E6B32 /* Pods_CaketalkUITests.framework */; };
-		CE6F9E6BBAD4472BDECB5D65 /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725D2C5DED94D2CFBA821E3 /* Pods_Caketalk.framework */; };
-		DEED77FF10FF2CEB27DAB3B6 /* Pods_CaketalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDD3B46C7E986FB5819DDA7 /* Pods_CaketalkTests.framework */; };
+		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
+		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
 		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
 		F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */; };
@@ -132,7 +132,8 @@
 
 /* Begin PBXFileReference section */
 		05CEDB0C0E4F827BD449066E /* Pods-CaketalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests.release.xcconfig"; sourceTree = "<group>"; };
-		0C10F0042D713EDF580E6B32 /* Pods_CaketalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caketalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27049A9B1CE823FD002D69EF /* lookup_miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_miss_etikate.png; sourceTree = "<group>"; };
 		27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_1.png; sourceTree = "<group>"; };
 		27049A9D1CE823FD002D69EF /* CloudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudManager.swift; sourceTree = "<group>"; };
@@ -146,10 +147,10 @@
 		27049AA51CE823FD002D69EF /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		27049AA61CE823FD002D69EF /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		27049ACC1CE824F8002D69EF /* GPUImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GPUImage.xcodeproj; path = Caketalk/framework/GPUImage.xcodeproj; sourceTree = "<group>"; };
-		2725D2C5DED94D2CFBA821E3 /* Pods_Caketalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Caketalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAActivityIndicatorView.swift; sourceTree = "<group>"; };
 		34458290B9F4BA30D71ECF47 /* Pods-CaketalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6BDD3B46C7E986FB5819DDA7 /* Pods_CaketalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		364ADCBB1D1A045A00472DBF /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
+		69996C00CFFC7216FFBF10C3 /* Pods_CaketalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
 		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,7 +222,7 @@
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
 				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
 				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
-				CE6F9E6BBAD4472BDECB5D65 /* Pods_Caketalk.framework in Frameworks */,
+				D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEED77FF10FF2CEB27DAB3B6 /* Pods_CaketalkTests.framework in Frameworks */,
+				0BE36194C3FA0782DB5B8B1E /* Pods_CaketalkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C5C93049C6CEDAC6D51B10D /* Pods_CaketalkUITests.framework in Frameworks */,
+				AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +312,7 @@
 				F4FB95661CE3EC0900E2977B /* code.swift */,
 				F4FB95681CE3ED5B00E2977B /* cameraView.swift */,
 				F4FB956A1CE3F0B600E2977B /* playerView.swift */,
+				364ADCBB1D1A045A00472DBF /* bridging-header.h */,
 			);
 			path = Caketalk;
 			sourceTree = "<group>";
@@ -367,9 +369,9 @@
 				F4FB95711CE3F59200E2977B /* AVKit.framework */,
 				F4FB956F1CE3F57B00E2977B /* MediaPlayer.framework */,
 				F4FB956D1CE3F57300E2977B /* AVFoundation.framework */,
-				2725D2C5DED94D2CFBA821E3 /* Pods_Caketalk.framework */,
-				6BDD3B46C7E986FB5819DDA7 /* Pods_CaketalkTests.framework */,
-				0C10F0042D713EDF580E6B32 /* Pods_CaketalkUITests.framework */,
+				22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */,
+				69996C00CFFC7216FFBF10C3 /* Pods_CaketalkTests.framework */,
+				26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -862,6 +864,7 @@
 			baseConfigurationReference = A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -880,10 +883,10 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEdits.Caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyle.Caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
 			};
 			name = Debug;
 		};
@@ -892,6 +895,7 @@
 			baseConfigurationReference = CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -910,10 +914,10 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEdits.Caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyle.Caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
 			};
 			name = Release;
 		};
