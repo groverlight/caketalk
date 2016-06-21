@@ -373,6 +373,9 @@ var gradientView:GradientView = GradientView()
          print("back button pressed")
          print("SOUND EFFECT HERE")
          print("Mixpanel event here")
+        
+        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Player back button pressed");
+        
         arrayofText.removeAllObjects()
         do {
             let files = try self.fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
