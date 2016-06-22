@@ -8,8 +8,11 @@
 
 import UIKit
 import GPUImage
+<<<<<<< HEAD
+=======
 import pop
 import YUGPUImageHighPassSkinSmoothing
+>>>>>>> master
 
 var arrayofText: NSMutableArray = []
 
@@ -534,7 +537,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("edit view loaded")
             print("SOUND EFFECT HERE")
             print("Mixpanel event here")
-
+            
+            Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Edited a blurb", properties: nil)
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
        
@@ -730,6 +734,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBAction func recordButtonPressed(sender: AnyObject) {
         print("record button pressed")
         print("Mixpanel event here")
+        
+        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Record button pressed", properties: nil)
 
         if (cameraTextView.text.characters.count == 0){
 
@@ -921,6 +927,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("text cleared")
         print("SOUND EFFECT HERE")
         print("Mixpanel event here")
+        
+        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Clear button pressed", properties: nil)
 
         self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
@@ -991,6 +999,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("decided not to clear")
         print("SOUND EFFECT HERE")
         print("Mixpanel event here")
+        
+        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Camera back button pressed", properties: nil)
 
         self.recordButton.userInteractionEnabled = true
         longPressRecognizer.enabled = true
