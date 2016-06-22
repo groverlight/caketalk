@@ -8,14 +8,10 @@
 
 import UIKit
 import GPUImage
-<<<<<<< HEAD
-=======
 import pop
-<<<<<<< HEAD
 import AVFoundation
-=======
 import YUGPUImageHighPassSkinSmoothing
->>>>>>> master
+import Mixpanel
 
 var arrayofText: NSMutableArray = []
 

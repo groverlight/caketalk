@@ -15,6 +15,7 @@ import Social
 import Accounts
 import pop
 import AVFoundation
+import Mixpanel
 
 //import FBSDKShareKit
 //import FBSDKCoreKit
@@ -376,7 +377,7 @@ var gradientView:GradientView = GradientView()
          print("Mixpanel event here")
         
         Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Player back button pressed");
-        
+    
         playSoundWithPath("chime.dim.aif")
 
         arrayofText.removeAllObjects()

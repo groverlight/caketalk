@@ -61,9 +61,6 @@
 		F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */; };
 		F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */; };
 		F47C01861CE3D09200891EB1 /* splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01851CE3D09200891EB1 /* splash.swift */; };
-		F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */; };
-		F4864AF71CF810C40074A427 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */; };
-		F4864AF81CF810C40074A427 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */; };
 		F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */; };
 		F4FB95551CE3D1C500E2977B /* permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95541CE3D1C500E2977B /* permission.swift */; };
 		F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95561CE3D2CD00E2977B /* ViewController.swift */; };
@@ -241,15 +238,11 @@
 			files = (
 				27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */,
 				F4FB95781CE3F5C300E2977B /* CFNetwork.framework in Frameworks */,
-				F4864AF71CF810C40074A427 /* FBSDKLoginKit.framework in Frameworks */,
 				F4FB95741CE3F5AB00E2977B /* QuartzCore.framework in Frameworks */,
 				F4FB95721CE3F59200E2977B /* AVKit.framework in Frameworks */,
 				F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */,
-				F4864AF81CF810C40074A427 /* FBSDKShareKit.framework in Frameworks */,
 				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
-				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
-				F4864AF61CF810C40074A427 /* FBSDKCoreKit.framework in Frameworks */,
 				D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +503,6 @@
 				TargetAttributes = {
 					F47C01251CE3B3D700891EB1 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4THJ5Z3YGF;
 					};
 					F47C013C1CE3B3D700891EB1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -939,7 +931,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tgl.Caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEdits.Caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
@@ -970,7 +962,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tgl.Caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEdits.Caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";

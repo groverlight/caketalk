@@ -9,5 +9,4 @@
 #ifndef bridging_header_h
 #define bridging_header_h
 
-#import <Mixpanel/Mixpanel.h>
 #endif /* bridging_header_h */
