@@ -14,6 +14,7 @@ import GPUImage
 import Social
 import Accounts
 import pop
+import AVFoundation
 
 //import FBSDKShareKit
 //import FBSDKCoreKit
@@ -376,6 +377,8 @@ var gradientView:GradientView = GradientView()
         
         Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Player back button pressed");
         
+        playSoundWithPath("chime.dim.aif")
+
         arrayofText.removeAllObjects()
         do {
             let files = try self.fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -392,7 +395,17 @@ var gradientView:GradientView = GradientView()
         }
     }
 
-
+    func playSoundWithPath(path : String) {
+        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            sound.play()
+        } catch {
+            
+        }
+    }
     
 
 }
