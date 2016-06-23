@@ -35,6 +35,10 @@ var didPlay = false
 var showStatusBar = false
 var gradientView:GradientView = GradientView()
 
+    @IBOutlet var facebookButtonHeight : NSLayoutConstraint!
+    @IBOutlet var instagramButtonHeight : NSLayoutConstraint!
+    @IBOutlet var twitterButtonHeight : NSLayoutConstraint!
+    @IBOutlet var moreButtonHeight : NSLayoutConstraint!
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -46,9 +50,6 @@ var gradientView:GradientView = GradientView()
 
     @IBOutlet var movieView: UIView!
     @IBOutlet var label: UILabel!
-
-    @IBOutlet var line: UIView!
-
 
     @IBOutlet var facebookButton: UIImageView!
     @IBOutlet var twitterButton: UIImageView!
@@ -291,6 +292,11 @@ var gradientView:GradientView = GradientView()
             overlayScrollView.addSubview(emojiLabel)
             showStatusBar(true)
 
+            
+            self.facebookButtonHeight.constant = -200
+            self.instagramButtonHeight.constant = -200
+            self.twitterButtonHeight.constant = -200
+            self.moreButtonHeight.constant = -200
 
             overlay!.frame = self.view.bounds
             self.view.addSubview(overlay!)
@@ -311,15 +317,43 @@ var gradientView:GradientView = GradientView()
                 self.view.bringSubviewToFront(self.instagramButton)
                 self.view.bringSubviewToFront(self.moreButton)
                 self.view.bringSubviewToFront(self.headerView)
-                self.view.bringSubviewToFront(self.line)
                 self.facebookButton.hidden = false
                 self.twitterButton.hidden = false
                 self.instagramButton.hidden = false
                 self.moreButton.hidden = false
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
-                self.line.hidden = false
-    
+                
+                self.facebookButtonHeight.constant = 50
+                
+                UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                    self.view.layoutIfNeeded()
+                    }, completion: {  finished in
+                        
+                        self.twitterButtonHeight.constant = 50
+                        
+                        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                            self.view.layoutIfNeeded()
+                            }, completion: {  finished in
+                                
+                                self.instagramButtonHeight.constant = 50
+                                
+                                UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                                    self.view.layoutIfNeeded()
+                                    }, completion: {  finished in
+                                        
+                                        self.moreButtonHeight.constant = 50
+                                        
+                                        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                                            self.view.layoutIfNeeded()
+                                            }, completion: {  finished in
+                                        })
+                                })
+                        })
+                        
+                        
+                })
+                
                 UIView.animateWithDuration(0.5, animations: {() -> Void in
                     self.backButton.transform = CGAffineTransformMakeTranslation(0, 0)
                     self.backEmoji.transform = CGAffineTransformMakeTranslation(0, 0)
