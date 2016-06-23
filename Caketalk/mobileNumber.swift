@@ -227,7 +227,12 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
 
     
 
-    //MARK: This blah blah blah
+    //MARK: IBAction
+    
+    @IBAction func showTermsAndConditions() {
+        let svc = SFSafariViewController(URL: NSURL(string: "http://google.com")!)
+        self.presentViewController(svc, animated: true, completion: nil)
+    }
     
     @IBAction func codeButtonPressed(sender: AnyObject) {
         print("get code button pressed")

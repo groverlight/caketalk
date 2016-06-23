@@ -453,6 +453,20 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFj-sV-BNw">
+                                <rect key="frame" x="208" y="378" width="191" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VRl-Ya-TNT"/>
+                                    <constraint firstAttribute="width" constant="180" id="fhi-UW-2OF"/>
+                                </constraints>
+                                <state key="normal" title="Terms and Conditions">
+                                    <color key="titleColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showTermsAndConditions" destination="AEk-k8-esj" eventType="touchUpInside" id="lcO-DI-6DR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -466,6 +480,7 @@
                             <constraint firstItem="7cd-Yb-Mhg" firstAttribute="leading" secondItem="dGk-CI-PmE" secondAttribute="leadingMargin" constant="35" id="AtW-9i-fmS"/>
                             <constraint firstItem="OYj-8S-Pel" firstAttribute="top" secondItem="6pl-LO-SFk" secondAttribute="bottom" constant="18" id="CcV-JG-WrQ"/>
                             <constraint firstItem="znV-ZO-pcV" firstAttribute="top" secondItem="uNd-nd-cMp" secondAttribute="top" id="EeR-1J-i5S"/>
+                            <constraint firstItem="XFj-sV-BNw" firstAttribute="top" secondItem="P9P-Al-UFr" secondAttribute="bottom" constant="10" id="L9t-CI-Se3"/>
                             <constraint firstItem="ZUb-wQ-6jU" firstAttribute="top" secondItem="SyU-Cm-pBq" secondAttribute="bottom" constant="17" id="OQK-ir-1Ak"/>
                             <constraint firstItem="OYj-8S-Pel" firstAttribute="centerX" secondItem="ZyH-gY-bek" secondAttribute="centerX" id="TOR-cT-1Ea"/>
                             <constraint firstItem="ZyH-gY-bek" firstAttribute="trailing" secondItem="SyU-Cm-pBq" secondAttribute="trailing" id="U5B-sv-ffj"/>
@@ -489,6 +504,7 @@
                             <constraint firstItem="uNd-nd-cMp" firstAttribute="top" secondItem="OYj-8S-Pel" secondAttribute="bottom" constant="20" id="rbW-Oh-41e"/>
                             <constraint firstItem="7cd-Yb-Mhg" firstAttribute="centerY" secondItem="SyU-Cm-pBq" secondAttribute="centerY" id="s6I-NZ-D2V"/>
                             <constraint firstItem="P9P-Al-UFr" firstAttribute="top" secondItem="uNd-nd-cMp" secondAttribute="bottom" constant="57" id="sFx-uc-Flr"/>
+                            <constraint firstItem="XFj-sV-BNw" firstAttribute="centerX" secondItem="dGk-CI-PmE" secondAttribute="centerX" id="uQy-OO-CT7"/>
                             <constraint firstItem="P9P-Al-UFr" firstAttribute="top" secondItem="dGk-CI-PmE" secondAttribute="top" constant="254" id="vu2-wz-YY8"/>
                             <constraint firstItem="ZyH-gY-bek" firstAttribute="top" secondItem="znV-ZO-pcV" secondAttribute="bottom" constant="35" id="x4m-sC-oU8"/>
                             <constraint firstItem="cSq-q9-Y8F" firstAttribute="trailing" secondItem="uNd-nd-cMp" secondAttribute="trailing" id="ycG-0Y-ne5"/>
