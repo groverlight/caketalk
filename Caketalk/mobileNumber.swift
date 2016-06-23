@@ -9,6 +9,7 @@
 import UIKit
 import CloudKit
 import CoreTelephony
+import SafariServices
 
 var phoneNumber:String = ""
 var cloudManager: CloudManager = CloudManager()
