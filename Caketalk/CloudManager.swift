@@ -37,7 +37,8 @@ class CloudManager: NSObject {
                     if (error != nil) {
                         completionHandler(success: false, user: nil)
                     } else {
-                        //print (error)
+                        userRecord!["firstName"] = userFull?.firstName
+                        userRecord!["lastName"] = userFull?.lastName
                         userRecord!["phoneNumber"] = phoneNumber
                         
                         userFull?.phoneNumber = phoneNumber
@@ -58,8 +59,8 @@ class CloudManager: NSObject {
             if fetchError != nil {
                 completionHandler(success: false, user: nil)
             } else {
-                user.firstName = info!.displayContact!.givenName
-                user.lastName = info!.displayContact!.familyName
+                userFull?.firstName = info!.displayContact!.givenName
+                userFull?.lastName = info!.displayContact!.familyName
                 completionHandler(success: true, user: user)
             }
         }
