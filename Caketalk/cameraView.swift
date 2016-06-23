@@ -17,7 +17,8 @@ var arrayofText: NSMutableArray = []
 
 
 class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
-
+    
+    var audioPlayer : AVAudioPlayer!
     var recording = false
     var shouldGoDown = false
     var previousRect = CGRectZero
@@ -241,13 +242,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     
     func playSoundWithPath(path : String) {
         let url = NSURL(fileURLWithPath: path)
-        
-        do {
-            let sound = try AVAudioPlayer(contentsOfURL: url)
-            sound.play()
-        } catch {
-
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
         }
+        
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
     
     override func viewDidAppear(animated: Bool) {

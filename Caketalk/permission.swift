@@ -11,7 +11,9 @@ import CloudKit
 import AVFoundation
 
 class permission: UIViewController {
-
+    
+    var audioPlayer : AVAudioPlayer!
+    
 /*---------------BEGIN OUTLETS----------------------*/
 
     @IBOutlet var oneLabel: UILabel!
@@ -118,13 +120,14 @@ class permission: UIViewController {
 
     func playSoundWithPath(path : String) {
         let url = NSURL(fileURLWithPath: path)
-        
-        do {
-            let sound = try AVAudioPlayer(contentsOfURL: url)
-            sound.play()
-        } catch {
-            
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
         }
+        
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
 
 }

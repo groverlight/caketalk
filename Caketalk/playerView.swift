@@ -24,16 +24,16 @@ import Photos
 import MobileCoreServices
 
 class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate {
-
-var moviePlayer: AVPlayer?
-var numOfClips = 0
-var totalReceivedClips = 0
-var fileManager: NSFileManager? = NSFileManager()
-var labelFont: UIFont?
-var overlay: UIVisualEffectView?
-var didPlay = false
-var showStatusBar = false
-var gradientView:GradientView = GradientView()
+    var audioPlayer : AVAudioPlayer!
+    var moviePlayer: AVPlayer?
+    var numOfClips = 0
+    var totalReceivedClips = 0
+    var fileManager: NSFileManager? = NSFileManager()
+    var labelFont: UIFont?
+    var overlay: UIVisualEffectView?
+    var didPlay = false
+    var showStatusBar = false
+    var gradientView:GradientView = GradientView()
 
     @IBOutlet var facebookButtonHeight : NSLayoutConstraint!
     @IBOutlet var instagramButtonHeight : NSLayoutConstraint!
@@ -432,13 +432,14 @@ var gradientView:GradientView = GradientView()
 
     func playSoundWithPath(path : String) {
         let url = NSURL(fileURLWithPath: path)
-        
-        do {
-            let sound = try AVAudioPlayer(contentsOfURL: url)
-            sound.play()
-        } catch {
-            
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
         }
+        
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
     }
     
 
