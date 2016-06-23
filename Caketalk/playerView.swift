@@ -412,7 +412,7 @@ var gradientView:GradientView = GradientView()
         
         Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Player back button pressed");
     
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
         arrayofText.removeAllObjects()
         do {
@@ -431,7 +431,6 @@ var gradientView:GradientView = GradientView()
     }
 
     func playSoundWithPath(path : String) {
-        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
         do {

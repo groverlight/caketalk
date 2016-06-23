@@ -79,7 +79,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("camera view loaded")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         super.viewDidLoad()
         self.cameraTextView.delegate = self
@@ -240,7 +240,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     }
     
     func playSoundWithPath(path : String) {
-        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
         do {
@@ -309,7 +308,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         print("button brought back")
                         print("SOUND EFFECT HERE")
                         
-                        playSoundWithPath("chime.dim.aif")
+                        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
                         //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -373,7 +372,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("1st character on new line")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath("chime.dim.aif")
+            playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
@@ -522,7 +521,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("starting recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         recording = true;
         let clipCountString = String(clipCount)
@@ -540,7 +539,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         clipCount += 1
         recording = false;
@@ -562,7 +561,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("edit view loaded")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath("chime.dim.aif")
+            playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
             
             print("Mixpanel event here")
             
@@ -955,7 +954,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("text cleared")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         print("Mixpanel event here")
         
@@ -1030,7 +1029,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("decided not to clear")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         print("Mixpanel event here")
         

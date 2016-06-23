@@ -30,7 +30,7 @@ class permission: UIViewController {
         print ("permission view loaded")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -64,7 +64,7 @@ class permission: UIViewController {
         print("iCloud button pressed")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath("chime.dim.aif")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         self.alertView.hidden = true
         
@@ -117,7 +117,6 @@ class permission: UIViewController {
     }
 
     func playSoundWithPath(path : String) {
-        let path = NSBundle.mainBundle().pathForResource(path, ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
         do {
