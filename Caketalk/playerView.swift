@@ -315,7 +315,7 @@ var showStatusBar = false
                     preferences.drawing.foregroundColor = UIColor.blackColor()
                     preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                     preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-                    EasyTipView.show(forView: self.line,
+                    EasyTipView.show(forView: self.twitterButton,
                         withinSuperview: self.view,
                         text: "Share it on the web",
                         preferences: preferences,
