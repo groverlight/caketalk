@@ -72,6 +72,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBOutlet var cameraTextViewBottom: NSLayoutConstraint!
     @IBOutlet var recordButtonBottom: NSLayoutConstraint!
     @IBOutlet var scrollViewBottom: NSLayoutConstraint!
+    @IBOutlet var draftBottomSpacing : NSLayoutConstraint!
 
 /*---------------END OUTLETS----------------------*/
 
@@ -652,9 +653,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
 
 
-
-            self.clearButton.transform = CGAffineTransformMakeTranslation(0, 2000)
-            self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+            draftBottomSpacing.constant = -200
+            
             overlayScrollView.transform = CGAffineTransformMakeTranslation (0, -1000)
             self.clearButton.hidden = false
             self.backButton.hidden = false
@@ -700,8 +700,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
                             self.clearEmoji.pop_addAnimation(buttonSpring, forKey: "spring")
                         }
-                        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.85, initialSpringVelocity: 3, options: .CurveEaseInOut, animations: {
-                            self.clearButton.transform = CGAffineTransformMakeTranslation(0, 0)
+                        
+                        self.draftBottomSpacing.constant = 17
+                        UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: .CurveEaseOut, animations: {
+                            self.view.layoutIfNeeded()
 
                         }) { _ in
                             let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -999,10 +1001,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
         arrayofText.removeAllObjects()
 
+        draftBottomSpacing.constant = -200
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-
-            self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
-            self.clearButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+            self.view.layoutIfNeeded()
         }) { (finished) -> Void in
 
             self.headerView.hidden = false
@@ -1043,11 +1044,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.backEmoji.hidden = true
         self.headerView.hidden = true
         self.line.hidden = true
+        
+        draftBottomSpacing.constant = -200
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-            //self.headerView.textColor = UIColor .blackColor()
             self.headerView.backgroundColor = UIColor .clearColor()
-            self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
-            self.clearButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+            self.view.layoutIfNeeded()
         }) { (finished) -> Void in
             self.headerView.hidden = false
            // self.headerView.text = "caketalk"
