@@ -12,6 +12,8 @@ import pop
 import AVFoundation
 import YUGPUImageHighPassSkinSmoothing
 import Mixpanel
+import Hue
+import UIImageColors
 
 var arrayofText: NSMutableArray = []
 
@@ -73,19 +75,26 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBOutlet var recordButtonBottom: NSLayoutConstraint!
     @IBOutlet var scrollViewBottom: NSLayoutConstraint!
     @IBOutlet var draftBottomSpacing : NSLayoutConstraint!
+    
+    var coloredBackgroundView : UIView!
+    
+    var colorSamplingRate : Double = 1
 
 /*---------------END OUTLETS----------------------*/
 
     //override functions
     override func viewDidLoad() {
+        super.viewDidLoad()
         print("camera view loaded")
         print("SOUND EFFECT HERE")
-        
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
-        super.viewDidLoad()
+    
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        coloredBackgroundView = UIView(frame: self.view.bounds)
+        self.view.addSubview(coloredBackgroundView)
+        
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -158,7 +167,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             videoCamera?.horizontallyMirrorFrontFacingCamera = true
             videoCamera?.frameRate = 30
             videoCamera!.outputImageOrientation = .Portrait
-            filteredImage?.frame = self.view.bounds
+            filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
+            filteredImage?.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 200)
             filter = YUGPUImageHighPassSkinSmoothingFilter()
             filter!.amount = 1
             videoCamera?.addTarget(filter)
@@ -180,6 +190,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             // make gradient a subview
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
+            
+            self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 1)
+
         }
         else
 
@@ -189,8 +202,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             recordButton.userInteractionEnabled = false
         }
         
+        self.view.sendSubviewToBack(coloredBackgroundView)
         iPhoneScreenSizes()
-
+    
     }
     override func viewWillAppear(animated: Bool) {
 //        self.recordButton.transform = CGAffineTransformMakeScale(0.5, 0.5)
@@ -279,6 +293,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             showStatusBar = enabled
             self.setNeedsStatusBarAppearanceUpdate()
         }
+    
+    
+    func startSamplingColors() {
+        let timer = NSTimer.scheduledTimerWithTimeInterval(colorSamplingRate, target: self, selector: #selector(cameraView.updateBackgroundColorTransition), userInfo: nil, repeats: true)
+    }
     
     //UITextView delegate functions
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
@@ -379,7 +398,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
-
+            
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
                 self.headerView.backgroundColor = UIColor .clearColor()
@@ -759,8 +778,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
 
     @IBAction func recordButtonPressed(sender: AnyObject) {
         print("record button pressed")
@@ -807,7 +824,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             self.longPressRecognizer.enabled = false
             self.headerView.hidden = true
             self.newImage = GPUImageView()
-            self.newImage?.frame = self.view.bounds
+            self.newImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
+            self.newImage?.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 200)
             let newfilter = GPUImagePixellateFilter()
             self.videoCamera?.frameRate = 30
             self.videoCamera?.addTarget(newfilter)
@@ -820,6 +838,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             if (self.oldLabel?.bounds.size.height != nil){
                 self.scrollHeight = self.scrollHeight + (self.oldLabel?.bounds.size.height)!
             }
+            
+            
+            self.filteredImage?.hidden = true
+            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                self.newImage?.center.y = (self.newImage?.center.y)! + 40
+                self.scrollView.center.y = self.scrollView.center.y + 40
+                }, completion: nil)
 
 
             let newLabel = UILabel(frame: CGRectMake(20, self.scrollView.bounds.size.height + self.scrollHeight, self.view.bounds.size.width*(2/3)-20, textHeight! ))
@@ -896,7 +921,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                     }, completion: { (finished) -> Void in
                         if (finished){
 
-
+                            self.filteredImage?.hidden = false
+                            
+                            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                                self.newImage?.center.y = (self.newImage?.center.y)! - 40
+                                self.scrollView.center.y = self.scrollView.center.y - 40
+                                }, completion: {
+                                    completion in
+                                    self.newImage?.hidden = true
+                            })
 
                             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                                 self.recordButton.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
@@ -949,6 +982,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         }
 
 
+        func willOutputSampleBuffer(sampleBuffer: CMSampleBuffer!) {
+        }
 
     }
 
@@ -1068,7 +1103,45 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             self.cameraTextView.becomeFirstResponder()
         }
+    
+    func updateBackgroundColorTransition() {
+        filter?.useNextFrameForImageCapture()
+        let capturedImage : UIImage? = filter?.imageFromCurrentFramebuffer()
+        if let image = capturedImage {
+            print(image.areaAverage())
+            UIView.animateWithDuration(colorSamplingRate, animations: {
+                self.coloredBackgroundView.backgroundColor = image.areaAverage()
+                }, completion: nil)
+        }
 
+        
+//        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
+//        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
+//        dispatch_async(backgroundQueue, {
+//            
+//            if let image = capturedImage {
+//                print(image.ar)
+//                UIView.animateWithDuration(1, animations: {
+//                    self.coloredBackgroundView.backgroundColor = image.areaAverage()
+//                    }, completion: nil)
+//            }
+//       
+////            if let image = capturedImage {
+////                image.getColors( {
+////                    colors in
+////                    print("colors \(colors.primaryColor)")
+////                    UIView.animateWithDuration(1, animations: {
+////                        self.coloredBackgroundView.backgroundColor = 
+////                        }, completion: nil)
+////                    
+////                })
+////            }
+//
+//            
+//        })
+        
+    }
+    
 }
 
 
@@ -1105,5 +1178,19 @@ extension CALayer {
 
 }
 
-
-
+extension UIImage {
+    func areaAverage() -> UIColor {
+        var bitmap = [UInt8](count: 4, repeatedValue: 0)
+        
+        // Create 1x1 context that interpolates pixels when drawing to it.
+        let context = CGBitmapContextCreate(&bitmap, 1, 1, 8, 4, CGColorSpaceCreateDeviceRGB(), CGBitmapInfo.ByteOrderDefault.rawValue | CGImageAlphaInfo.PremultipliedLast.rawValue)!
+        let inputImage = CGImage ?? CIContext().createCGImage(CIImage!, fromRect: CIImage!.extent)
+        
+        // Render to bitmap.
+        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: 1, height: 1), inputImage)
+        
+        // Compute result.
+        let result = UIColor(red: CGFloat(bitmap[0]) / 255.0, green: CGFloat(bitmap[1]) / 255.0, blue: CGFloat(bitmap[2]) / 255.0, alpha: CGFloat(bitmap[3]) / 255.0)
+        return result
+    }
+}

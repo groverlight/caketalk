@@ -71,7 +71,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         moviePlayer = AVPlayer(playerItem: avPlayerItem)
         let avLayer = AVPlayerLayer(player: moviePlayer)
         avLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        avLayer.frame = self.view.bounds
+        avLayer.frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 200)
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
         self.view.bringSubviewToFront(self.gradientView)

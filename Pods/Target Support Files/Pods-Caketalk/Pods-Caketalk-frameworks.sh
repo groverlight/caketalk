@@ -85,15 +85,19 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GPUImage/GPUImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Hue/Hue.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Mixpanel/Mixpanel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Player/Player.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIImageColors/UIImageColors.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YUGPUImageHighPassSkinSmoothing/YUGPUImageHighPassSkinSmoothing.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/GPUImage/GPUImage.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Hue/Hue.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Mixpanel/Mixpanel.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Player/Player.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIImageColors/UIImageColors.framework"
   install_framework "$BUILT_PRODUCTS_DIR/YUGPUImageHighPassSkinSmoothing/YUGPUImageHighPassSkinSmoothing.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi

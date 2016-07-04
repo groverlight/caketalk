@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Hue.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Mixpanel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIImageColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YUGPUImageHighPassSkinSmoothing.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -52,12 +62,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47C800E42623009B7192B025B3DD25A1</key>
+		<key>090B759FBC4AF84B9CCCD6FF084B0FB0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>94ECD111A1D446AE59049D30DEDFC0B6</key>
+		<key>0F040541299EC151A5F3E2AB32754268</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A210E596F963B96C873C4C36856A189</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74160AE84147928613BC1A77A72FF3CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DA8BA57ABBFCD7C8E1CD68B44B1DECD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,27 +102,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D1C113210310034E1F166F5763607FC8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E035115FE567819FF736AC2B1C74C97A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>EA0DD8ED489933744D70DD4A9719ED01</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED6B71CB46ACB8B23E69D3F29AB710C0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FFA9EC3068174A0240ECCDED8FB58A84</key>
 		<dict>
 			<key>primary</key>
 			<true/>

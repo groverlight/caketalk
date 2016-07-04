@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1062,6 +1063,7 @@
                         <outlet property="characterCount" destination="tgq-4S-Z91" id="LoT-5q-LSk"/>
                         <outlet property="clearButton" destination="9jG-Od-ZKT" id="W9B-Ib-ZqK"/>
                         <outlet property="clearEmoji" destination="uJa-gf-rSj" id="8mK-6Z-9H2"/>
+                        <outlet property="draftBottomSpacing" destination="5Nw-YV-TbB" id="xl9-KK-2UC"/>
                         <outlet property="headerLabel" destination="Y19-XX-MGk" id="edv-pC-dvA"/>
                         <outlet property="headerView" destination="cVs-rJ-vfS" id="6Sl-LI-g68"/>
                         <outlet property="line" destination="vQx-RX-jWT" id="eNI-Lb-vZc"/>
@@ -1076,7 +1078,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2h-jn-ZCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2568" y="1107"/>
+            <point key="canvasLocation" x="2568" y="1112"/>
         </scene>
         <!--Player View-->
         <scene sceneID="N9z-hD-mCE">

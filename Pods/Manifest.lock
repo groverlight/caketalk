@@ -1,26 +1,32 @@
 PODS:
   - GPUImage (0.1.7)
+  - Hue (1.1)
   - Mixpanel (2.9.9):
     - Mixpanel/Mixpanel (= 2.9.9)
   - Mixpanel/Mixpanel (2.9.9)
   - Player (0.1.1)
   - pop (1.0.9)
+  - UIImageColors (1.0.4)
   - YUGPUImageHighPassSkinSmoothing (1.2):
     - GPUImage
 
 DEPENDENCIES:
+  - Hue
   - Mixpanel
   - Player
   - pop (~> 1.0)
+  - UIImageColors
   - YUGPUImageHighPassSkinSmoothing
 
 SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
+  Hue: ed6781be844b58b2a38150cfd4bf24c33449faf8
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
   Player: 575e1e8cde1e6b7cd62d6d6bc06e492d02e62b9e
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  UIImageColors: ac2a42c61e870849c7fa5b9cbae2744a0873f5f7
   YUGPUImageHighPassSkinSmoothing: 1a3a8bc880b33304de3c4aba2e838fa2b56bfc80
 
-PODFILE CHECKSUM: 4926c54bdf7b1837801c00f57b321200524a4059
+PODFILE CHECKSUM: 27611e70dbdc3d5821302561389c860744e60033
 
 COCOAPODS: 1.0.1

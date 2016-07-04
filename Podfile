@@ -4,6 +4,8 @@ pod 'Mixpanel'
 pod 'pop', '~> 1.0'
 pod 'YUGPUImageHighPassSkinSmoothing'
 pod 'Player'
+pod 'Hue'
+pod 'UIImageColors'
 end 
 
 target 'CaketalkTests' do

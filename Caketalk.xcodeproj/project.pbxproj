@@ -332,6 +332,7 @@
 				F4FB95641CE3E93700E2977B /* mobileNumber.swift */,
 				F4FB95661CE3EC0900E2977B /* code.swift */,
 				F4FB95681CE3ED5B00E2977B /* cameraView.swift */,
+				F4FB956A1CE3F0B600E2977B /* playerView.swift */,
 				F46892211D19EA97001FA942 /* chime_dim.aif */,
 				F46892221D19EA97001FA942 /* click_pen (typing screen).aif */,
 				F46892231D19EA97001FA942 /* click_pop (button pressed).aif */,
@@ -346,7 +347,6 @@
 				F468922C1D19EA97001FA942 /* pop_drip_echo.aif */,
 				F468922D1D19EA97001FA942 /* pop_drip_snap (bubbles).aif */,
 				F468922E1D19EA97001FA942 /* pop_echo (start record).aif */,
-				F4FB956A1CE3F0B600E2977B /* playerView.swift */,
 				364ADCBB1D1A045A00472DBF /* bridging-header.h */,
 			);
 			path = Caketalk;
