@@ -79,6 +79,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     var coloredBackgroundView : UIView!
     
     var colorSamplingRate : Double = 1
+    var screenshotTimer : NSTimer!
 
 /*---------------END OUTLETS----------------------*/
 
@@ -207,14 +208,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     
     }
     override func viewWillAppear(animated: Bool) {
-//        self.recordButton.transform = CGAffineTransformMakeScale(0.5, 0.5)
-//        self.recordEmoji.transform = CGAffineTransformMakeScale(0.5, 0.5)
-//        self.characterCount.transform = CGAffineTransformMakeScale(0.5, 0.5)
-//        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
-//            self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
-//            self.recordEmoji.transform = CGAffineTransformMakeScale(1, 1)
-//            self.characterCount.transform = CGAffineTransformMakeScale(1, 1)
-//            }, completion: nil)
+        
+        startSamplingColors()
 
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -296,7 +291,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     
     
     func startSamplingColors() {
-        let timer = NSTimer.scheduledTimerWithTimeInterval(colorSamplingRate, target: self, selector: #selector(cameraView.updateBackgroundColorTransition), userInfo: nil, repeats: true)
+        if screenshotTimer == nil {
+            screenshotTimer = NSTimer.scheduledTimerWithTimeInterval(colorSamplingRate, target: self, selector: #selector(cameraView.updateBackgroundColorTransition), userInfo: nil, repeats: true)
+        }
+    }
+    
+    func stopSamplingColors() {
+        screenshotTimer.invalidate()
+        screenshotTimer = nil
     }
     
     //UITextView delegate functions
@@ -398,7 +400,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
-            
+                
+                stopSamplingColors()
+                
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
                 self.headerView.backgroundColor = UIColor .clearColor()
@@ -471,7 +475,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                     self.cameraTextView.resignFirstResponder()
                     self.cameraTextView.returnKeyType = UIReturnKeyType.Send
                     self.cameraTextView.becomeFirstResponder()
-
                 }
             }
         }
@@ -570,7 +573,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         self.longPressRecognizer.enabled = true
         movieWriter?.finishRecording()
 
-
+        startSamplingColors()
     }
 
     // edit view
@@ -782,6 +785,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBAction func recordButtonPressed(sender: AnyObject) {
         print("record button pressed")
         print("Mixpanel event here")
+        
+        stopSamplingColors()
         
         Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Record button pressed", properties: nil)
 
