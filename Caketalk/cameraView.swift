@@ -10,6 +10,7 @@ import UIKit
 import GPUImage
 import Hue
 import EasyTipView
+import pop
 
 var arrayofText: NSMutableArray = []
 

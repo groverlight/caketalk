@@ -14,6 +14,7 @@ import GPUImage
 import Social
 import Accounts
 import EasyTipView
+import pop
 
 //import FBSDKShareKit
 //import FBSDKCoreKit
