@@ -426,7 +426,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         catch {
         }
         dispatch_async(dispatch_get_main_queue()) {
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(false, completion: nil)
         }
     }
 
