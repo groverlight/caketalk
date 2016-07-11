@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -1073,7 +1072,7 @@
                         <outlet property="recordEmoji" destination="EaO-0f-dqd" id="Wrb-ir-jnV"/>
                         <outlet property="scrollView" destination="k2J-4J-oop" id="Lag-9y-mpn"/>
                         <outlet property="scrollViewBottom" destination="iDL-HV-rST" id="DXa-aC-pD9"/>
-                        <segue destination="QGq-kU-ANf" kind="show" identifier="goPlayer" id="gkS-wK-zIf"/>
+                        <segue destination="QGq-kU-ANf" kind="show" identifier="goPlayer" animates="NO" id="gkS-wK-zIf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2h-jn-ZCO" userLabel="First Responder" sceneMemberID="firstResponder"/>

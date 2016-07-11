@@ -1108,40 +1108,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         filter?.useNextFrameForImageCapture()
         let capturedImage : UIImage? = filter?.imageFromCurrentFramebuffer()
         if let image = capturedImage {
-            print(image.areaAverage())
             UIView.animateWithDuration(colorSamplingRate, animations: {
                 self.coloredBackgroundView.backgroundColor = image.areaAverage()
                 }, completion: nil)
         }
-
-        
-//        let qualityOfServiceClass = QOS_CLASS_BACKGROUND
-//        let backgroundQueue = dispatch_get_global_queue(qualityOfServiceClass, 0)
-//        dispatch_async(backgroundQueue, {
-//            
-//            if let image = capturedImage {
-//                print(image.ar)
-//                UIView.animateWithDuration(1, animations: {
-//                    self.coloredBackgroundView.backgroundColor = image.areaAverage()
-//                    }, completion: nil)
-//            }
-//       
-////            if let image = capturedImage {
-////                image.getColors( {
-////                    colors in
-////                    print("colors \(colors.primaryColor)")
-////                    UIView.animateWithDuration(1, animations: {
-////                        self.coloredBackgroundView.backgroundColor = 
-////                        }, completion: nil)
-////                    
-////                })
-////            }
-//
-//            
-//        })
-        
     }
-    
 }
 
 
