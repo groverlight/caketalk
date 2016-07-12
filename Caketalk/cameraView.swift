@@ -124,8 +124,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
         typingButtonFrame = recordButton.frame
 
-
-
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(cameraView.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(cameraView.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
 
@@ -172,6 +170,24 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             // make gradient a subview
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
+            
+            if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-cameraTextView") == nil {
+                // EasyTipView global preferences
+                var preferences = EasyTipView.Preferences()
+                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+                preferences.drawing.foregroundColor = UIColor.blackColor()
+                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+                preferences.animating.showDuration = 1.5
+                EasyTipView.show(forView: cameraTextView,
+                                 withinSuperview: self.view,
+                                 text: "Type: \"I like [something you like - i.e. waffles]\"",
+                                 preferences: preferences,
+                                 delegate: self)
+                
+                NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-cameraTextView")
+            }
+
         }
         else
 
@@ -182,22 +198,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         }
         
         iPhoneScreenSizes()
-        
-        if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-cameraTextView") == nil {
-            // EasyTipView global preferences
-            var preferences = EasyTipView.Preferences()
-            preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-            preferences.drawing.foregroundColor = UIColor.blackColor()
-            preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
-            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-            EasyTipView.show(forView: cameraTextView,
-                             withinSuperview: self.view,
-                             text: "Type something that you like",
-                             preferences: preferences,
-                             delegate: self)
-            
-            NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-cameraTextView")
-        }
 
     }
     
@@ -783,31 +783,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 preferences.drawing.foregroundColor = UIColor.blackColor()
                 preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-                EasyTipView.show(forView: headerView,
+                preferences.animating.showDuration = 1.5
+                EasyTipView.show(forView: headerLabel,
                                  withinSuperview: self.view,
-                                 text: "String",
+                                 text: "string 2",
                                  preferences: preferences,
                                  delegate: self)
                 
                 NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-headerView1")
             }
-            
-            if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView4") == nil && NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView1") != nil {
-                // EasyTipView global preferences
-                var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                preferences.drawing.foregroundColor = UIColor.blackColor()
-                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
-                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-                EasyTipView.show(forView: headerView,
-                                 withinSuperview: self.view,
-                                 text: "String",
-                                 preferences: preferences,
-                                 delegate: self)
-                
-                NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-headerView4")
-            }
-
 
         }
         else {
@@ -885,39 +869,25 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             // record button visual state as its recording
             
-            if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView2") == nil {
-                // EasyTipView global preferences
-                var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                preferences.drawing.foregroundColor = UIColor.blackColor()
-                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
-                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-                EasyTipView.show(forView: headerView,
-                                 withinSuperview: self.view,
-                                 text: "String",
-                                 preferences: preferences,
-                                 delegate: self)
-                
-                NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-headerView2")
-                
-            }
-            
-            if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView3") == nil && NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView2") != nil {
+
+            if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView3") == nil {
                 // EasyTipView global preferences
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
                 preferences.drawing.foregroundColor = UIColor.blackColor()
                 preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-                EasyTipView.show(forView: cameraTextView,
+                preferences.animating.showDuration = 1.5
+                EasyTipView.show(forView: headerLabel,
                                  withinSuperview: self.view,
-                                 text: "String",
+                                 text: "string 4",
                                  preferences: preferences,
                                  delegate: self)
                 
                 NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-headerView3")
+                
             }
-
+            
             let moveUp = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             let scaleDown = POPSpringAnimation(propertyNamed: kPOPViewSize)
             scaleDown.toValue = NSValue(CGSize: CGSize(width: self.recordButton.bounds.size.width*0.2, height: self.recordButton.bounds.size.height*0.5))
