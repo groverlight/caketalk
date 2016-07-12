@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import CloudKit
+import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Mixpanel.sharedInstanceWithToken("b4a812dc0f106347e3d71809644c8d99", launchOptions: launchOptions)
         // Override point for customization after application launch.
         //  frontWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
