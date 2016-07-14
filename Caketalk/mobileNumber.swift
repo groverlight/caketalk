@@ -10,12 +10,17 @@ import UIKit
 import CloudKit
 import CoreTelephony
 import SafariServices
+import AVFoundation
 
 var phoneNumber:String = ""
 var cloudManager: CloudManager = CloudManager()
 var userFull: User?
 var codeFired:String = ""
 var twilioView: UIWebView = UIWebView(frame: CGRect.zero)
+
+var audioPlayer : AVAudioPlayer!
+
+
 
 
 
@@ -119,6 +124,8 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
         }
 
     }
+
+
 
 
     func getCountryPhoneCode (country : String)
@@ -226,6 +233,8 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
     }
 
+
+    
     
 
     //MARK: IBAction
@@ -237,6 +246,9 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
     
     @IBAction func codeButtonPressed(sender: AnyObject) {
         print("get code button pressed")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_pop", ofType: "wav")!)
+
+        
 
         let lower : UInt32 = 10000
         let upper : UInt32 = 99999
@@ -249,6 +261,18 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
 
     }
 
+    
+    func playSoundWithPath(path : String) {
+        let url = NSURL(fileURLWithPath: path)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
+        }
+
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
 
 
 

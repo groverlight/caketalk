@@ -148,17 +148,21 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         gradientView.locations = [0, 1]
         gradientView.direction = .Vertical
         gradientView.alpha = 0.8
-        
+        NSLog("IS IT HERE?");
+
         
         // make gradient a subview
 
         self.view.insertSubview(self.gradientView, aboveSubview: self.movieView)
+
 
     }
 
     override func viewWillAppear(animated: Bool) {
         self.view.bringSubviewToFront(movieView)
         self.view.bringSubviewToFront(self.progressBarView)
+         NSLog("IS IT HERE - KENDALL?");
+
         do{
             let String = "MediaCache"
             try self.fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(String)")        }
@@ -171,6 +175,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             totalReceivedClips = numOfClips
             print (numOfClips) // last where I Started
             //print (files)
+            NSLog("IS IT HERE - KYLIE");
         }
         catch {
         }
@@ -181,6 +186,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         moreButton.hidden = true
         backButton.hidden = true
         backEmoji.hidden = true
+
+        NSLog("IS IT HERE - KHOLE");
 
 
         iPhoneScreenSizes()
@@ -259,6 +266,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 let newerLabel = UILabel(frame: CGRectMake(6, scrollHeightOverlay, self.view.bounds.size.width*(2/3)-20, 25))
                 newerLabel.font =  self.labelFont
                 newerLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.4)
+                newerLabel.shadowOffset = CGSizeMake(5, 5);
+                newerLabel.layer.masksToBounds = false
+                newerLabel.layer.shadowColor = UIColor.blackColor().CGColor
                 newerLabel.text = text as? String
                 newerLabel.numberOfLines = 0
                 newerLabel.sizeToFit()
@@ -323,28 +333,31 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.moreButton.hidden = false
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
+
+                NSLog("IS IT HERE - KRIS");
+                self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_mouse", ofType: "wav")!)
                 
                 self.facebookButtonHeight.constant = 50
                 
-                UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     self.view.layoutIfNeeded()
                     }, completion: {  finished in
                         
                         self.twitterButtonHeight.constant = 50
                         
-                        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                        UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                             self.view.layoutIfNeeded()
                             }, completion: {  finished in
                                 
                                 self.instagramButtonHeight.constant = 50
                                 
-                                UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                                UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                                     self.view.layoutIfNeeded()
                                     }, completion: {  finished in
                                         
                                         self.moreButtonHeight.constant = 50
                                         
-                                        UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                                        UIView.animateWithDuration(1.0, delay: 0.0, usingSpringWithDamping:  0.5, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                                             self.view.layoutIfNeeded()
                                             }, completion: {  finished in
                                         })
@@ -359,6 +372,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                     self.backEmoji.transform = CGAffineTransformMakeTranslation(0, 0)
                     }, completion: { finished in
 
+
+
+                      
                 })
 
 
@@ -412,7 +428,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         
         Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Player back button pressed");
     
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "wav")!)
 
         arrayofText.removeAllObjects()
         do {

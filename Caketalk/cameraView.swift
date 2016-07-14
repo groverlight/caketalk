@@ -87,7 +87,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("camera view loaded")
-        print("SOUND EFFECT HERE")
+        //print("SOUND EFFECT HERE")
     
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -95,7 +95,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         coloredBackgroundView = UIView(frame: self.view.bounds)
         self.view.addSubview(coloredBackgroundView)
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+       // playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_echo", ofType: "wav")!)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -332,7 +332,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         print("button brought back")
                         print("SOUND EFFECT HERE")
                         
-                        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+                        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drum_stepdown_fast", ofType: "wav")!)
 
                         //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -396,7 +396,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("1st character on new line")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+            playSoundWithPath(NSBundle.mainBundle().pathForResource("zap_mini_up", ofType: "wav")!)
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
@@ -546,7 +546,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("starting recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_blip_on", ofType: "wav")!)
         
         recording = true;
         let clipCountString = String(clipCount)
@@ -564,7 +564,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_blip_off", ofType: "wav")!)
         
         clipCount += 1
         recording = false;
@@ -586,7 +586,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("edit view loaded")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+            playSoundWithPath(NSBundle.mainBundle().pathForResource("click_mouse", ofType: "wav")!)
             
             print("Mixpanel event here")
             
@@ -704,6 +704,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         self.view.bringSubviewToFront(self.line)
                         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 3, options: .CurveEaseInOut, animations: {
 
+
                             self.backButton.transform = CGAffineTransformMakeTranslation(0, 0)
                             overlayScrollView.transform = CGAffineTransformMakeTranslation(0, 0)
                             self.view.layoutIfNeeded()
@@ -726,6 +727,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                         self.draftBottomSpacing.constant = 17
                         UIView.animateWithDuration(0.5, delay: 0.1, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.7, options: .CurveEaseOut, animations: {
                             self.view.layoutIfNeeded()
+
+
 
                         }) { _ in
                             let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -785,6 +788,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     @IBAction func recordButtonPressed(sender: AnyObject) {
         print("record button pressed")
         print("Mixpanel event here")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_pop", ofType: "wav")!)
         
         stopSamplingColors()
         
@@ -998,7 +1002,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("text cleared")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("etc_woosh_short", ofType: "wav")!)
         
         print("Mixpanel event here")
         
@@ -1072,7 +1076,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("decided not to clear")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "wav")!)
         
         print("Mixpanel event here")
         

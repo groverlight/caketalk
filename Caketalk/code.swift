@@ -8,9 +8,12 @@
 
 import UIKit
 import CloudKit
+import AVFoundation
 
 class code: UIViewController, UITextFieldDelegate {
     var labelCounter = 0
+    var audioPlayer : AVAudioPlayer!
+    
     //var loader = MAActivityIndicatorView()
 
 /*---------------BEGIN OUTLETS----------------------*/
@@ -127,8 +130,10 @@ override func viewDidLoad() {
             }
             else {
                 let wrongCode = UIAlertController(title: "Wrong Code Bruh", message: "Looks like the verification code was incorrect. Please Try Again.", preferredStyle: UIAlertControllerStyle.Alert)
+                    self.playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_error_2x", ofType: "wav")!)
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
                     NSNotificationCenter.defaultCenter().postNotificationName("move", object: nil)
+
                 })
                 wrongCode.addAction(okAction)
                 dispatch_async(dispatch_get_main_queue()) {
@@ -148,6 +153,18 @@ override func viewDidLoad() {
         return true
     }
 
+    func playSoundWithPath(path : String) {
+        let url = NSURL(fileURLWithPath: path)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
+        }
+
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -155,6 +172,8 @@ override func viewDidLoad() {
 
 
     //Mark: blah blah blah
+
+
 
 
 }

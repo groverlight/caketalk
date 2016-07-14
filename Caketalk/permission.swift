@@ -30,9 +30,7 @@ class permission: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("permission view loaded")
-        print("SOUND EFFECT HERE")
-        
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -66,7 +64,7 @@ class permission: UIViewController {
         print("iCloud button pressed")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_pop", ofType: "wav")!)
         
         self.alertView.hidden = true
         

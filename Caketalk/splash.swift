@@ -8,8 +8,11 @@
 
 import UIKit
 import Player
+import AVFoundation
 
 class splash: UIViewController, PlayerDelegate {
+
+    var audioPlayer : AVAudioPlayer!
     
     let videoUrl = NSURL(string: "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4")!
     
@@ -57,6 +60,9 @@ class splash: UIViewController, PlayerDelegate {
 
     @IBAction func loginButtonPressed(sender: AnyObject) {
         print("login button pressed")
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_pop", ofType: "wav")!)
+
+
 
     }
 
@@ -82,4 +88,18 @@ class splash: UIViewController, PlayerDelegate {
     
     }
 
+    func playSoundWithPath(path : String) {
+        let url = NSURL(fileURLWithPath: path)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
+        }
+
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+
 }
+
+
