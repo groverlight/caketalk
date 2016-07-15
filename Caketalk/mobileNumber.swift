@@ -19,7 +19,7 @@ var twilioView: UIWebView = UIWebView(frame: CGRect.zero)
 
 
 
-class mobileNumber: UIViewController, UITextFieldDelegate {
+class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -34,7 +34,7 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var line: UIView!
 
-    @IBOutlet var termsAndPrivacy: UILabel!
+    @IBOutlet var termsAndPrivacy: UITextView!
 
     @IBOutlet var codeButton: UIButton!
     @IBOutlet var codeEmoji: UILabel!
@@ -57,6 +57,14 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(mobileNumber.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(mobileNumber.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
 
+        let attributedString = NSMutableAttributedString(string: "By continuing you agree to the Terms of Use and Privacy Policy")
+        attributedString.addAttribute(NSLinkAttributeName, value: "https://www.terms.com", range: NSRange(location: 31, length: 12))
+        attributedString.addAttribute(NSLinkAttributeName, value: "https://www.privacypolicy.com", range: NSRange(location: 48, length: 14))
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.hex("#FCF5E2"), range: NSRange(location: 0, length: 62))
+        termsAndPrivacy.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.hex("#545454"), NSFontAttributeName : UIFont.boldSystemFontOfSize(14)]
+        termsAndPrivacy.attributedText = attributedString
+        termsAndPrivacy.textAlignment = .Center
+        termsAndPrivacy.font = UIFont.systemFontOfSize(14)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -248,7 +256,13 @@ class mobileNumber: UIViewController, UITextFieldDelegate {
 
 
     }
-
+    
+    // MARK: Attributed Text Delegate
+    
+    func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
+        showTermsAndConditions()
+        return false
+    }
 
 
 
