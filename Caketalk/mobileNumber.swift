@@ -238,7 +238,12 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     //MARK: IBAction
     
-    @IBAction func showTermsAndConditions() {
+    func showTerms() {
+        let svc = SFSafariViewController(URL: NSURL(string: "http://google.com")!)
+        self.presentViewController(svc, animated: true, completion: nil)
+    }
+    
+    func showPrivacy() {
         let svc = SFSafariViewController(URL: NSURL(string: "http://google.com")!)
         self.presentViewController(svc, animated: true, completion: nil)
     }
@@ -257,10 +262,9 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     }
     
-    // MARK: Attributed Text Delegate
-    
+    // MARK: UITextViewDelegate
     func textView(textView: UITextView, shouldInteractWithURL URL: NSURL, inRange characterRange: NSRange) -> Bool {
-        showTermsAndConditions()
+        showTerms()
         return false
     }
 
