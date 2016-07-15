@@ -435,7 +435,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="By continuing, you agree to the terms &amp; privacy policy" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-pU-5VW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="By continuing, you agree to the terms &amp; privacy policy" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hfu-pU-5VW">
                                 <rect key="frame" x="180" y="267" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -445,6 +445,7 @@
                                 <color key="textColor" red="0.3294117647" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="AEk-k8-esj" id="8tV-du-AHw"/>
                                 </connections>
