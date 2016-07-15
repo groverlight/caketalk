@@ -324,6 +324,10 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
                 
+                self.facebookButton.userInteractionEnabled = true
+                self.twitterButton.userInteractionEnabled = true
+                self.instagramButton.userInteractionEnabled = true
+                self.moreButton.userInteractionEnabled = true
                 
                 self.facebookButtonHeight.constant = 50
                 UIView.animateWithDuration(0.4, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
