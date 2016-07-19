@@ -50,6 +50,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
     var showStatusBar = true
     var firstTime = false
     var newOne = true
+    var mixPanel : Mixpanel!
 
 
 /*---------------BEGIN OUTLETS----------------------*/
@@ -88,6 +89,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         super.viewDidLoad()
         print("camera view loaded")
         print("SOUND EFFECT HERE")
+        
+        mixPanel = Mixpanel.sharedInstance()
     
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -590,7 +593,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             
             print("Mixpanel event here")
             
-            Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Edited a blurb", properties: nil)
+            mixPanel.track("Edited a blurb", properties: nil)
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
        
@@ -788,7 +791,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         
         stopSamplingColors()
         
-        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Record button pressed", properties: nil)
+        mixPanel.track("Record button pressed", properties: nil)
+        mixPanel.flush()
 
         if (cameraTextView.text.characters.count == 0){
 
@@ -1002,7 +1006,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         
         print("Mixpanel event here")
         
-        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Clear button pressed", properties: nil)
+        mixPanel.track("Clear button pressed", properties: nil)
 
         self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
@@ -1076,7 +1080,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         
         print("Mixpanel event here")
         
-        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Camera back button pressed", properties: nil)
+        mixPanel.track("Camera back button pressed", properties: nil)
 
         self.recordButton.userInteractionEnabled = true
         longPressRecognizer.enabled = true

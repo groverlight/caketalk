@@ -34,6 +34,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     var didPlay = false
     var showStatusBar = false
     var gradientView:GradientView = GradientView()
+    
+    let mixPanel : Mixpanel! = Mixpanel.sharedInstance()
 
     @IBOutlet var facebookButtonHeight : NSLayoutConstraint!
     @IBOutlet var instagramButtonHeight : NSLayoutConstraint!
@@ -148,7 +150,6 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         gradientView.locations = [0, 1]
         gradientView.direction = .Vertical
         gradientView.alpha = 0.8
-        
         
         // make gradient a subview
 
@@ -410,7 +411,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
          print("SOUND EFFECT HERE")
          print("Mixpanel event here")
         
-        Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c").track("Player back button pressed");
+        mixPanel.track("Player back button pressed");
     
         playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 

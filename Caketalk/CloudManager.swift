@@ -58,7 +58,7 @@ class CloudManager: NSObject {
                 userFull?.firstName = info!.displayContact!.givenName
                 userFull?.lastName = info!.displayContact!.familyName
 
-                let mixPanel = Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c")
+                let mixPanel = Mixpanel.sharedInstance()
                 mixPanel.identify(mixPanel.distinctId)
                 mixPanel.people.set(["first_name" : userFull!.firstName!, "last_name" : userFull!.lastName!])
                 mixPanel.flush()
