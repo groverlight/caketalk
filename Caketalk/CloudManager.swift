@@ -38,6 +38,8 @@ class CloudManager: NSObject {
                     if (error != nil) {
                         completionHandler(success: false, user: nil)
                     } else {
+                        userRecord!["firstName"] = userFull?.firstName
+                        userRecord!["lastName"] = userFull?.lastName
                         privateDatabase.saveRecord(userRecord!, completionHandler: { record, error in
                                                    })
                         let user = User(userRecordID: userRecordID!, phoneNumber:phoneNumber)
@@ -60,6 +62,10 @@ class CloudManager: NSObject {
                 mixPanel.identify(mixPanel.distinctId)
                 mixPanel.people.set(["first_name" : userFull!.firstName!, "last_name" : userFull!.lastName!])
                 mixPanel.flush()
+                
+                self.getUser( {
+                    success, error in
+                })
                 
                 completionHandler(success: true, user: user)
             }
