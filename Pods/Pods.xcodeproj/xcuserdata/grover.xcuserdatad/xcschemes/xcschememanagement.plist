@@ -4,10 +4,25 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>Hue.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>Mixpanel.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+		<key>Player.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
 		</dict>
 		<key>Pods-Caketalk.xcscheme</key>
 		<dict>
@@ -24,6 +39,21 @@
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>
+		<key>UIImageColors.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
+		<key>YUGPUImageHighPassSkinSmoothing.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>11</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -32,7 +62,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>090B759FBC4AF84B9CCCD6FF084B0FB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0F040541299EC151A5F3E2AB32754268</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>44B25314A287FAA9008726D45779D5D6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A210E596F963B96C873C4C36856A189</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>74160AE84147928613BC1A77A72FF3CD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9DA8BA57ABBFCD7C8E1CD68B44B1DECD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -43,6 +98,16 @@
 			<true/>
 		</dict>
 		<key>B5F312ABB371123942048FA3C80AB971</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA0DD8ED489933744D70DD4A9719ED01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
