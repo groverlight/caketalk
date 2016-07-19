@@ -7,6 +7,7 @@
 //
 
 import CloudKit
+import Mixpanel
 
 class CloudManager: NSObject {
    
@@ -37,13 +38,6 @@ class CloudManager: NSObject {
                     if (error != nil) {
                         completionHandler(success: false, user: nil)
                     } else {
-                        userRecord!["firstName"] = userFull?.firstName
-                        userRecord!["lastName"] = userFull?.lastName
-                        userRecord!["phoneNumber"] = phoneNumber
-                        
-                        userFull?.phoneNumber = phoneNumber
-                    
-                        
                         privateDatabase.saveRecord(userRecord!, completionHandler: { record, error in
                                                    })
                         let user = User(userRecordID: userRecordID!, phoneNumber:phoneNumber)
@@ -61,6 +55,12 @@ class CloudManager: NSObject {
             } else {
                 userFull?.firstName = info!.displayContact!.givenName
                 userFull?.lastName = info!.displayContact!.familyName
+
+                let mixPanel = Mixpanel.sharedInstanceWithToken("11b47df52a50300426d230d38fa9d30c")
+                mixPanel.identify(mixPanel.distinctId)
+                mixPanel.people.set(["first_name" : userFull!.firstName!, "last_name" : userFull!.lastName!])
+                mixPanel.flush()
+                
                 completionHandler(success: true, user: user)
             }
         }
