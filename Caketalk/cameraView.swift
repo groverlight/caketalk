@@ -594,6 +594,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             print("Mixpanel event here")
             
             mixPanel.track("Edited a blurb", properties: nil)
+            mixPanel.flush()
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
        
@@ -1007,7 +1008,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("Mixpanel event here")
         
         mixPanel.track("Clear button pressed", properties: nil)
-
+        mixPanel.flush()
+        
         self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
         self.backEmoji.hidden = true
@@ -1081,7 +1083,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         print("Mixpanel event here")
         
         mixPanel.track("Camera back button pressed", properties: nil)
-
+        mixPanel.flush()
+        
         self.recordButton.userInteractionEnabled = true
         longPressRecognizer.enabled = true
         self.clearEmoji.hidden = true

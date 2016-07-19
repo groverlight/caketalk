@@ -412,7 +412,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
          print("Mixpanel event here")
         
         mixPanel.track("Player back button pressed");
-    
+        mixPanel.flush()
+        
         playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
         arrayofText.removeAllObjects()
