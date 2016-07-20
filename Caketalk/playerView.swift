@@ -47,6 +47,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     @IBOutlet var progressBarView: UIView!
     @IBOutlet var animatedProgressBarView: UIView!
 
+    @IBOutlet var line: UIView!
     @IBOutlet var headerView: UIView!
     @IBOutlet var headerLabel: UILabel!
 
@@ -362,7 +363,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
                 })
 
-
+                self.view.bringSubviewToFront(self.line)
+                self.line.hidden = false
+                print("Line \(self.line.bounds)")
 
             })
             
