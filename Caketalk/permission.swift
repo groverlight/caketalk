@@ -87,16 +87,16 @@ class permission: UIViewController {
     private func iCloudLogin(completionHandler: (success: Bool) -> ()) {
         cloudManager.requestPermission { (granted) -> () in
             if !granted {
-                let iCloudAlert = UIAlertController(title: "iCloud Error", message: "There was an error connecting to iCloud. Check iCloud settings by going to Settings > iCloud.", preferredStyle: UIAlertControllerStyle.Alert)
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
-                    let url = NSURL(string: "prefs:root=CASTLE")
-                    UIApplication.sharedApplication().openURL(url!)
-                })
-
-                iCloudAlert.addAction(okAction)
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.presentViewController(iCloudAlert, animated: true, completion: nil)
-                }
+//                let iCloudAlert = UIAlertController(title: "iCloud Error", message: "There was an error connecting to iCloud. Check iCloud settings by going to Settings > iCloud.", preferredStyle: UIAlertControllerStyle.Alert)
+//                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+//                    let url = NSURL(string: "prefs:root=CASTLE")
+//                    UIApplication.sharedApplication().openURL(url!)
+//                })
+//
+//                iCloudAlert.addAction(okAction)
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self.presentViewController(iCloudAlert, animated: true, completion: nil)
+//                }
             } else {
                 dispatch_async(dispatch_get_main_queue()) {
                     self.performSegueWithIdentifier("permissionAsk", sender: self)
