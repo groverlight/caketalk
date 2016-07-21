@@ -841,6 +841,22 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.recordEmoji.pop_addAnimation(buttonNo2, forKey: "shake2")
             self.characterCount.pop_addAnimation(buttonNo3, forKey: "shake3")
             self.recordButton.pop_addAnimation(buttonNo, forKey: "shake")
+            
+                        if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView1") == nil {
+                                // EasyTipView global preferences
+                                var preferences = EasyTipView.Preferences()
+                                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+                                preferences.drawing.foregroundColor = UIColor.blackColor()
+                                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+                                EasyTipView.show(forView: headerView,
+                                                 withinSuperview: self.view,
+                                                 text: "String",
+                                                 preferences: preferences,
+                                                 delegate: self)
+                                
+                                NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-headerView1")
+                            }
 
 
         }
@@ -926,6 +942,23 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
 
             // record button visual state as its recording
+            
+                        if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-headerView2") == nil {
+                                // EasyTipView global preferences
+                                var preferences = EasyTipView.Preferences()
+                                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+                                preferences.drawing.foregroundColor = UIColor.blackColor()
+                                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+                                EasyTipView.show(forView: headerView,
+                                                 withinSuperview: self.view,
+                                                 text: "String",
+                                                 preferences: preferences,
+                                                 delegate: self)
+                                
+                                NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-headerView2")
+                                
+                            }
 
             let moveUp = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
             let scaleDown = POPSpringAnimation(propertyNamed: kPOPViewSize)
