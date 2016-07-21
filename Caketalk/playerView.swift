@@ -22,8 +22,9 @@ import Mixpanel
 //import FBSDKLoginKit
 import Photos
 import MobileCoreServices
+import EasyTipView
 
-class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate {
+class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate, EasyTipViewDelegate {
     var audioPlayer : AVAudioPlayer!
     var moviePlayer: AVPlayer?
     var numOfClips = 0
@@ -365,7 +366,22 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
                 self.view.bringSubviewToFront(self.line)
                 self.line.hidden = false
-                print("Line \(self.line.bounds)")
+                
+                                if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-line") == nil {
+                                        // EasyTipView global preferences
+                                        var preferences = EasyTipView.Preferences()
+                                        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+                                        preferences.drawing.foregroundColor = UIColor.blackColor()
+                                        preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                                        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+                                        EasyTipView.show(forView: self.line,
+                                            withinSuperview: self.view,
+                                            text: "Share it on the web",
+                                            preferences: preferences,
+                                            delegate: self)
+                                        
+                                        NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-line")
+                                    }
 
             })
             
@@ -404,6 +420,12 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: EasyTipViewDelegate
+    func easyTipViewDidDismiss(tipView : EasyTipView) {
+    
     }
     
 

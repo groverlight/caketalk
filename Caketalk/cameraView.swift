@@ -14,11 +14,12 @@ import YUGPUImageHighPassSkinSmoothing
 import Mixpanel
 import Hue
 import UIImageColors
+import EasyTipView
 
 var arrayofText: NSMutableArray = []
 
 
-class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
+class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, EasyTipViewDelegate {
     
     var audioPlayer : AVAudioPlayer!
     var recording = false
@@ -208,6 +209,22 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
         
         self.view.sendSubviewToBack(coloredBackgroundView)
         iPhoneScreenSizes()
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-cameraTextView") == nil {
+                        // EasyTipView global preferences
+                        var preferences = EasyTipView.Preferences()
+                        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+                        preferences.drawing.foregroundColor = UIColor.blackColor()
+                        preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+                        EasyTipView.show(forView: cameraTextView,
+                                         withinSuperview: self.view,
+                                         text: "Type something that you like",
+                                         preferences: preferences,
+                                         delegate: self)
+            
+            NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-cameraTextView")
+        }
     
     }
     override func viewWillAppear(animated: Bool) {
@@ -1124,6 +1141,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                 self.coloredBackgroundView.backgroundColor = image.areaAverage()
                 }, completion: nil)
         }
+    }
+    
+    // MARK: EasyTipViewDelegate
+    func easyTipViewDidDismiss(tipView : EasyTipView) {
+    
     }
 }
 
