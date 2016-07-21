@@ -29,7 +29,7 @@ class ShutterLayer : CALayer {
         textLayer.font = UIFont.systemFontOfSize(26, weight: UIFontWeightSemibold)
         textLayer.string = title
         textLayer.foregroundColor = UIColor.whiteColor().CGColor
-        textLayer.frame = CGRectMake(30, (CGFloat(line) * 70) + 350, 350, 50)
+        textLayer.frame = CGRectMake(30, 500 - (CGFloat(line) * 70), 350, 50)
         textLayer.alignmentMode = kCAAlignmentLeft;
         self.addSublayer(textLayer)
         
