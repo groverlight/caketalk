@@ -1,5 +1,15 @@
 PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - EasyTipView (0.2.2)
+  - FBSDKCoreKit (4.14.0):
+    - Bolts (~> 1.7)
+  - FBSDKShareKit (4.14.0):
+    - FBSDKCoreKit
   - GPUImage (0.1.7)
   - Hue (1.1)
   - Mixpanel (2.9.9):
@@ -13,6 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - EasyTipView
+  - FBSDKShareKit
   - Hue
   - Mixpanel
   - Player
@@ -21,7 +32,10 @@ DEPENDENCIES:
   - YUGPUImageHighPassSkinSmoothing
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   EasyTipView: 812278deb90bdbe5189b7460988f8df4d1cb4266
+  FBSDKCoreKit: 6e020b5db0b5bd1e01f5fb0902131befd129a502
+  FBSDKShareKit: e8e5d4ccef69b41132fe33acda26db1e33143e33
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   Hue: ed6781be844b58b2a38150cfd4bf24c33449faf8
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
@@ -30,6 +44,6 @@ SPEC CHECKSUMS:
   UIImageColors: ac2a42c61e870849c7fa5b9cbae2744a0873f5f7
   YUGPUImageHighPassSkinSmoothing: 1a3a8bc880b33304de3c4aba2e838fa2b56bfc80
 
-PODFILE CHECKSUM: d593b4dba3c547ed78003f09185c1a1b86f76428
+PODFILE CHECKSUM: 7a841f41c272eb2348a9d7f6018f27e2329bf8d6
 
 COCOAPODS: 1.0.1

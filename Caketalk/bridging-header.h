@@ -9,4 +9,6 @@
 #ifndef bridging_header_h
 #define bridging_header_h
 
+#import <FBSDKShareKit/FBSDKShareKit.h>
+
 #endif /* bridging_header_h */

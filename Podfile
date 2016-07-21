@@ -7,6 +7,7 @@ pod 'Player'
 pod 'Hue'
 pod 'UIImageColors'
 pod 'EasyTipView'
+pod 'FBSDKShareKit' 
 end 
 
 target 'CaketalkTests' do

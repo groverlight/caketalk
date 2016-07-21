@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>EasyTipView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKCoreKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,17 +82,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0A1D1143A2FBF1CFEAB9A58D62E3C56A</key>
+		<key>0EB19C1377A747F81110D44E2D5FCF78</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>391579E6E86A28A7D040CAE14DBD23DB</key>
+		<key>2869A9B05BA9D7946724E827DDF2F391</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>7C57575B6424B464B670D33FED322BE0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>87B8AAC9D95C15A94A5659219B7F5556</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9D0F2E5EA1B46A5D72FFD42B0B39DBBC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C8683B8CD6378B080D0374A5B123201C</key>
+		<key>C53DA8444D2A3D3C414D947BE18A49BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,7 +142,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F09A7878ABCC22E8F28EE8B46BCA3E5A</key>
+		<key>FDB6C6E9C92BAD9BDEB2BA821CE17066</key>
 		<dict>
 			<key>primary</key>
 			<true/>
