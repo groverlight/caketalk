@@ -22,6 +22,8 @@
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
+		36FEF4671D414AE100C7ABEF /* Shutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4661D414AE100C7ABEF /* Shutter.swift */; };
+		36FEF4691D414AFC00C7ABEF /* ShutterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */; };
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
@@ -161,6 +163,8 @@
 		2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MAActivityIndicatorView.swift; sourceTree = "<group>"; };
 		34458290B9F4BA30D71ECF47 /* Pods-CaketalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkTests/Pods-CaketalkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		364ADCBB1D1A045A00472DBF /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
+		36FEF4661D414AE100C7ABEF /* Shutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shutter.swift; sourceTree = "<group>"; };
+		36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShutterLayer.swift; sourceTree = "<group>"; };
 		69996C00CFFC7216FFBF10C3 /* Pods_CaketalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 		F47C01281CE3B3D700891EB1 /* Caketalk */ = {
 			isa = PBXGroup;
 			children = (
+				36FEF4661D414AE100C7ABEF /* Shutter.swift */,
+				36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */,
 				27049A9B1CE823FD002D69EF /* lookup_miss_etikate.png */,
 				27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */,
 				27049A9D1CE823FD002D69EF /* CloudManager.swift */,
@@ -753,6 +759,7 @@
 				F4FB95671CE3EC0900E2977B /* code.swift in Sources */,
 				27049AAD1CE823FD002D69EF /* Luminosity.swift in Sources */,
 				F4FB95551CE3D1C500E2977B /* permission.swift in Sources */,
+				36FEF4691D414AFC00C7ABEF /* ShutterLayer.swift in Sources */,
 				27049AB01CE823FD002D69EF /* GradientView.swift in Sources */,
 				F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */,
 				F4FB956B1CE3F0B600E2977B /* playerView.swift in Sources */,
@@ -765,6 +772,7 @@
 				F4FB95691CE3ED5B00E2977B /* cameraView.swift in Sources */,
 				27049AAF1CE823FD002D69EF /* paddedLabel.swift in Sources */,
 				27049AAA1CE823FD002D69EF /* User.swift in Sources */,
+				36FEF4671D414AE100C7ABEF /* Shutter.swift in Sources */,
 				2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

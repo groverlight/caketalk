@@ -13,8 +13,9 @@ import AVFoundation
 
 class ShutterLayer : CALayer {
     
-    init(title: String, yPosition : CGFloat, sequenceNumber : Double) {
-        
+    let textLayer : CATextLayer! = CATextLayer()
+    
+    init(title: String, line : Int) {
         super.init()
         
         let overlayerLayer = CALayer()
@@ -28,13 +29,13 @@ class ShutterLayer : CALayer {
         textLayer.font = UIFont.systemFontOfSize(26, weight: UIFontWeightSemibold)
         textLayer.string = title
         textLayer.foregroundColor = UIColor.whiteColor().CGColor
-        textLayer.frame = CGRectMake(30, yPosition, 350, 50)
+        textLayer.frame = CGRectMake(30, (CGFloat(line) * 70) + 350, 350, 50)
         textLayer.alignmentMode = kCAAlignmentLeft;
         self.addSublayer(textLayer)
         
         let animation = CABasicAnimation(keyPath: "opacity")
         animation.duration = 1
-        animation.beginTime = sequenceNumber * 2
+        animation.beginTime = AVCoreAnimationBeginTimeAtZero
         animation.fromValue = NSNumber(float: 0)
         animation.toValue = NSNumber(float: 1)
         animation.removedOnCompletion = false
@@ -54,6 +55,33 @@ class ShutterLayer : CALayer {
         
         
     }
+    
+    func iPhoneScreenSizes(){
+                let bounds = UIScreen.mainScreen().bounds
+                let height = bounds.size.height
+        
+                switch height {
+                    case 480.0:
+                            //print("iPhone 3,4")
+                                textLayer.font = UIFont(name: "RionaSans-Bold", size: 19)
+                    case 568.0:
+                            //print("iPhone 5")
+                                textLayer.font = UIFont(name: "RionaSans-Bold", size: 20)
+                    case 667.0:
+                            //print("iPhone 6")
+                                textLayer.font = UIFont(name: "RionaSans-Bold", size: 21)
+                    case 736.0:
+                            //print("iPhone 6")
+                                textLayer.font = UIFont(name: "RionaSans-Bold", size: 22 )
+                    default:
+                            break
+                            //print("not an iPhone")
+                                
+                    }
+    }
+        
+    
+    func resize(rect:CGSize){}
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

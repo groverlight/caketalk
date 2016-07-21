@@ -10,6 +10,7 @@
 import Foundation
 import UIKit
 import AVFoundation
+import AssetsLibrary
 
 class Shutter {
     
@@ -94,8 +95,8 @@ class Shutter {
         
         export.exportAsynchronouslyWithCompletionHandler({
             dispatch_async(dispatch_get_main_queue()) {
-                print("done")
-                print(export.status, export.error)
+                ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(exportURL, completionBlock: nil)
+                print("Status: \(export.status, export.error)")
                 callback()
             }
         })
