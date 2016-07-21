@@ -910,12 +910,17 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             // record button visual state as its recording
 
             let moveUp = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+
+            //let moveUpAgain = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
+
             let scaleDown = POPSpringAnimation(propertyNamed: kPOPViewSize)
             scaleDown.toValue = NSValue(CGSize: CGSize(width: self.recordButton.bounds.size.width*0.2, height: self.recordButton.bounds.size.height*0.5))
             moveUp.toValue = 27.5
+            moveUp.springBounciness = 10;
+
             self.recordEmoji.hidden = true
             self.characterCount.hidden = true
-            self.recordButton.setTitle("look", forState: UIControlState.Normal)
+            self.recordButton.setTitle("👆🏻", forState: UIControlState.Normal)
             self.recordButton.layer.cornerRadius = 15
             self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 13.0)
 
@@ -924,6 +929,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
             moveUp.completionBlock = { (animation, finished) in
                 arrayofText.addObject(newLabel.text!)
                 self.startRecording()
+
+
+    //--------------------------------------------------------------------------------------------------------------------------------
 
                 UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
                     self.animatedProgressBarView.transform = CGAffineTransformMakeScale(0.0001, 1)
@@ -940,11 +948,25 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
                                     self.newImage?.hidden = true
                             })
 
-                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
-                                self.recordButton.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
+                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 10, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+
                                 self.characterCount.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
                                 self.recordEmoji.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
+
+
+//                                moveUpAgain.toValue = -27.5
+//                                moveUpAgain.springSpeed = 20
+//                                moveUpAgain.springBounciness = 10
+//
+//
+//
+//                                self.recordButton.pop_addAnimation(moveUpAgain, forKey: "moveUpAgain")
+
+
                                 }, completion: {(finished) -> Void in
+
+
+    //--------------------------------------------------------------------------------------------------------------------------------
 
                                     // record buttton visual state after recording
 
@@ -978,7 +1000,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
 
                 })
             }
-            self.recordButton.pop_addAnimation(moveUp, forKey: "moveUP")
+            self.recordButton.pop_addAnimation(moveUp, forKey: "moveUp")
             self.recordButton.pop_addAnimation(scaleDown, forKey: "scaleDown")
 
 
