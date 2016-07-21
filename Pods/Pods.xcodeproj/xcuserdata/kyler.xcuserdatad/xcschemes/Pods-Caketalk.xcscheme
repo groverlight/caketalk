@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4A210E596F963B96C873C4C36856A189"
+               BlueprintIdentifier = "F09A7878ABCC22E8F28EE8B46BCA3E5A"
                BuildableName = "Pods_Caketalk.framework"
                BlueprintName = "Pods-Caketalk"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4A210E596F963B96C873C4C36856A189"
+            BlueprintIdentifier = "F09A7878ABCC22E8F28EE8B46BCA3E5A"
             BuildableName = "Pods_Caketalk.framework"
             BlueprintName = "Pods-Caketalk"
             ReferencedContainer = "container:Pods.xcodeproj">

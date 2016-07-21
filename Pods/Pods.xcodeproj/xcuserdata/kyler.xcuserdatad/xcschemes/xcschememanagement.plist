@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>EasyTipView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GPUImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,22 +67,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>090B759FBC4AF84B9CCCD6FF084B0FB0</key>
+		<key>0A1D1143A2FBF1CFEAB9A58D62E3C56A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0F040541299EC151A5F3E2AB32754268</key>
+		<key>391579E6E86A28A7D040CAE14DBD23DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4A210E596F963B96C873C4C36856A189</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>74160AE84147928613BC1A77A72FF3CD</key>
+		<key>7C57575B6424B464B670D33FED322BE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,7 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C8683B8CD6378B080D0374A5B123201C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EA0DD8ED489933744D70DD4A9719ED01</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F09A7878ABCC22E8F28EE8B46BCA3E5A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

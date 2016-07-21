@@ -6,6 +6,7 @@ pod 'YUGPUImageHighPassSkinSmoothing'
 pod 'Player'
 pod 'Hue'
 pod 'UIImageColors'
+pod 'EasyTipView'
 end 
 
 target 'CaketalkTests' do

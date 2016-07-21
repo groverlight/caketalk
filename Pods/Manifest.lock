@@ -1,4 +1,5 @@
 PODS:
+  - EasyTipView (0.2.2)
   - GPUImage (0.1.7)
   - Hue (1.1)
   - Mixpanel (2.9.9):
@@ -11,6 +12,7 @@ PODS:
     - GPUImage
 
 DEPENDENCIES:
+  - EasyTipView
   - Hue
   - Mixpanel
   - Player
@@ -19,6 +21,7 @@ DEPENDENCIES:
   - YUGPUImageHighPassSkinSmoothing
 
 SPEC CHECKSUMS:
+  EasyTipView: 812278deb90bdbe5189b7460988f8df4d1cb4266
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   Hue: ed6781be844b58b2a38150cfd4bf24c33449faf8
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
@@ -27,6 +30,6 @@ SPEC CHECKSUMS:
   UIImageColors: ac2a42c61e870849c7fa5b9cbae2744a0873f5f7
   YUGPUImageHighPassSkinSmoothing: 1a3a8bc880b33304de3c4aba2e838fa2b56bfc80
 
-PODFILE CHECKSUM: 27611e70dbdc3d5821302561389c860744e60033
+PODFILE CHECKSUM: d593b4dba3c547ed78003f09185c1a1b86f76428
 
 COCOAPODS: 1.0.1

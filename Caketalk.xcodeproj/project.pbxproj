@@ -503,7 +503,7 @@
 				TargetAttributes = {
 					F47C01251CE3B3D700891EB1 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4THJ5Z3YGF;
+						DevelopmentTeam = TGA9XQ7DER;
 					};
 					F47C013C1CE3B3D700891EB1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -932,7 +932,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEd.caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
@@ -963,7 +963,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEd.caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
