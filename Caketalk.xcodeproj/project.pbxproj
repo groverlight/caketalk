@@ -24,6 +24,7 @@
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
 		36FEF4671D414AE100C7ABEF /* Shutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4661D414AE100C7ABEF /* Shutter.swift */; };
 		36FEF4691D414AFC00C7ABEF /* ShutterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */; };
+		36FEF4711D41580400C7ABEF /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */; };
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
 		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
@@ -165,6 +166,8 @@
 		364ADCBB1D1A045A00472DBF /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
 		36FEF4661D414AE100C7ABEF /* Shutter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shutter.swift; sourceTree = "<group>"; };
 		36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShutterLayer.swift; sourceTree = "<group>"; };
+		36FEF46F1D41580400C7ABEF /* SocialVideoHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialVideoHelper.h; sourceTree = "<group>"; };
+		36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialVideoHelper.m; sourceTree = "<group>"; };
 		69996C00CFFC7216FFBF10C3 /* Pods_CaketalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaketalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +282,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		36FEF46C1D4157F200C7ABEF /* Shutter Export */ = {
+			isa = PBXGroup;
+			children = (
+				36FEF4661D414AE100C7ABEF /* Shutter.swift */,
+				36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */,
+			);
+			name = "Shutter Export";
+			sourceTree = "<group>";
+		};
 		F47C011D1CE3B3D700891EB1 = {
 			isa = PBXGroup;
 			children = (
@@ -305,8 +317,9 @@
 		F47C01281CE3B3D700891EB1 /* Caketalk */ = {
 			isa = PBXGroup;
 			children = (
-				36FEF4661D414AE100C7ABEF /* Shutter.swift */,
-				36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */,
+				36FEF46F1D41580400C7ABEF /* SocialVideoHelper.h */,
+				36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */,
+				36FEF46C1D4157F200C7ABEF /* Shutter Export */,
 				27049A9B1CE823FD002D69EF /* lookup_miss_etikate.png */,
 				27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */,
 				27049A9D1CE823FD002D69EF /* CloudManager.swift */,
@@ -755,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */,
+				36FEF4711D41580400C7ABEF /* SocialVideoHelper.m in Sources */,
 				27049AAE1CE823FD002D69EF /* RandomColor.swift in Sources */,
 				F4FB95671CE3EC0900E2977B /* code.swift in Sources */,
 				27049AAD1CE823FD002D69EF /* Luminosity.swift in Sources */,

@@ -10,5 +10,6 @@
 #define bridging_header_h
 
 #import <FBSDKShareKit/FBSDKShareKit.h>
+#import "SocialVideoHelper.h"
 
 #endif /* bridging_header_h */

@@ -16,7 +16,7 @@ import Accounts
 import pop
 import AVFoundation
 import Mixpanel
-
+import AssetsLibrary
 //import FBSDKShareKit
 //import FBSDKCoreKit
 //import FBSDKLoginKit
@@ -430,6 +430,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
 
 //MARK: This clears draft and takes you back
+    
 
     @IBAction func backButtonPressed(sender: AnyObject) {
          print("back button pressed")
@@ -484,7 +485,6 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             //Just dismiss the action sheet
         }
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
-            let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
             let outputPath = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
             let videoData = NSData(contentsOfURL: outputPath)
             // if (SocialVideoHelper.userHasAccessToTwitter()){
@@ -501,7 +501,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                     let twitAccount = tweetAcc[0] as! ACAccount
                     print (twitAccount)
                     let textfield = alertController.textFields![0] as UITextField
-                    //SocialVideoHelper.uploadTwitterVideo(videoData,comment:textfield.text,account: twitAccount, withCompletion: nil)
+                    SocialVideoHelper.uploadTwitterVideo(videoData,comment:textfield.text,account: twitAccount, withCompletion: nil)
                 }
                 else{
                     print (error)
@@ -527,16 +527,21 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     @IBAction func instagram(sender: AnyObject) {
         self.backButton.setTitle("another one", forState: .Normal)
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        let destinationPath = "\(NSTemporaryDirectory())edited_video.mov"
-        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath)) {
-            
-            UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, self,#selector(playerView.video(_:didFinishSavingWithError:contextInfo:)),nil)
-            
-            
-            
-        }
+        
+        // REFERENCE: http://stackoverflow.com/questions/20017266/posting-video-on-instagram-using-hooks/21888830#21888830
+        
+        ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: { (path:NSURL!, error:NSError!) -> Void in
+            let asset = AVAsset(URL: path)
+            print("Duration:\(asset.duration.seconds)")
+            let instagramURL = NSURL(string:  "instagram://library?AssetPath=\(path)")
+            if(UIApplication.sharedApplication().canOpenURL(instagramURL!)) {
+                UIApplication.sharedApplication().openURL(instagramURL!)
+            } else {
+                print("can't open this URL")
+            }
+        })
     }
+    
     func video(video: NSString, didFinishSavingWithError error:NSError, contextInfo:UnsafeMutablePointer<Void>){
         print("saved")
         let instagramURL = NSURL(string:  "instagram://library?AssetPath=\(video)" )
@@ -561,51 +566,27 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     @IBAction func facebook(sender: AnyObject) {
         self.backButton.setTitle("another one", forState: .Normal)
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-        let destinationPath = "\(NSTemporaryDirectory())edited_video.mov"
-        let outputPath = NSURL(fileURLWithPath: destinationPath)
         
-        let photoLibrary = PHPhotoLibrary.sharedPhotoLibrary()
-        var videoAssetPlaceholder:PHObjectPlaceholder!
-        photoLibrary.performChanges({
-            let request = PHAssetChangeRequest.creationRequestForAssetFromVideoAtFileURL(outputPath)
-            videoAssetPlaceholder = request!.placeholderForCreatedAsset
-            },
-                                    completionHandler: { success, error in
-                                        if success {
-                                            let localID = videoAssetPlaceholder.localIdentifier
-                                            let assetID =
-                                                localID.stringByReplacingOccurrencesOfString(
-                                                    "/.*", withString: "",
-                                                    options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
-                                            let ext = "mov"
-                                            let assetURLStr =
-                                                "assets-library://asset/asset.\(ext)?id=\(assetID)&ext=\(ext)"
-                                            let video : FBSDKShareVideo = FBSDKShareVideo()
-                                            video.videoURL = NSURL(string:assetURLStr)
-                                            let content : FBSDKShareVideoContent = FBSDKShareVideoContent()
-                                            content.video = video
-                                            
-                                            // FBSDKShareDialog.showFromViewController(self, withContent: content, delegate: nil)
-                                            
-                                            let dialog = FBSDKShareDialog()
-                                            let newURL = NSURL(string: "fbauth2://")
-                                            if (UIApplication.sharedApplication() .canOpenURL(newURL!)){
-                                                print("native")
-                                                dialog.mode = FBSDKShareDialogMode.ShareSheet
-                                            }
-                                            else{
-                                                print("browser")
-                                                dialog.mode = FBSDKShareDialogMode.Browser
-                                            }
-                                            
-                                            dialog.shareContent = content;
-                                            dialog.delegate = self;
-                                            dialog.fromViewController = self;
-                                            dialog.show()
-                                            // Do something with assetURLStr
-                                        }
-        })
+        let video : FBSDKShareVideo = FBSDKShareVideo()
+        video.videoURL = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
+        let content : FBSDKShareVideoContent = FBSDKShareVideoContent()
+        content.video = video
+        
+        let dialog = FBSDKShareDialog()
+        let newURL = NSURL(string: "fbauth2://")
+        if (UIApplication.sharedApplication() .canOpenURL(newURL!)){
+            print("native")
+            dialog.mode = FBSDKShareDialogMode.ShareSheet
+        }
+        else{
+            print("browser")
+            dialog.mode = FBSDKShareDialogMode.Browser
+        }
+        
+        dialog.shareContent = content;
+        dialog.delegate = self;
+        dialog.fromViewController = self;
+        dialog.show()
     }
     
     func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
