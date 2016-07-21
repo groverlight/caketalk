@@ -53,7 +53,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var firstTime = false
     var newOne = true
     var mixPanel : Mixpanel!
-
+    var videoClips : [NSURL]!
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -594,8 +594,56 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.headerView.hidden = false
         self.longPressRecognizer.enabled = true
         movieWriter?.finishRecording()
+        
+        if videoClips == nil {
+            videoClips = []
+            videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount).mov", isDirectory: true))
+        } else {
+            videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount).mov", isDirectory: true))
+        }
 
         startSamplingColors()
+    }
+    
+    func mergeAndExportVideo() {
+        let composition = AVMutableComposition()
+        let videoTrack = composition.addMutableTrackWithMediaType(AVMediaTypeVideo, preferredTrackID: kCMPersistentTrackID_Invalid)
+        
+        var time:Double = 0.0
+        for video in videoClips {
+            let asset = AVAsset(URL: video)
+            let videoAssetTrack = asset.tracksWithMediaType(AVMediaTypeVideo)[0]
+            let atTime = CMTime(seconds: time, preferredTimescale:1)
+            do{
+                try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, asset.duration) , ofTrack: videoAssetTrack, atTime: atTime)
+            }catch{
+                
+            }
+            time +=  asset.duration.seconds
+            
+        }
+        
+        let directory = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .LongStyle
+        dateFormatter.timeStyle = .ShortStyle
+        let date = dateFormatter.stringFromDate(NSDate())
+        let url = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
+        
+        let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality)
+        exporter?.outputURL = url
+        exporter?.shouldOptimizeForNetworkUse = true
+        exporter?.outputFileType = AVFileTypeQuickTimeMovie
+        
+        exporter?.exportAsynchronouslyWithCompletionHandler({ () -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.exportCurrentVideo()
+            })
+            
+        })
+        
+        
     }
     
     func exportCurrentVideo() {
@@ -605,10 +653,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             shutterLayers.append(ShutterLayer(title: arrayofText[i] as! String, line: i))
         }
         
-        let movieURL = "\(NSTemporaryDirectory())\(clipCount - 1).mov"
+        let movieURL = "\(NSTemporaryDirectory())edited_video.mov"
         let shutter = Shutter(path: movieURL, layers: shutterLayers)
-        shutter.export("\(NSTemporaryDirectory())edited_video(\(clipCount - 1)).mov", callback: {
-            ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video(\(self.clipCount - 1)).mov"), completionBlock: nil)
+        shutter.export("\(NSTemporaryDirectory())edited_video.mov", callback: {
+            ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: nil)
         })
     }
 
