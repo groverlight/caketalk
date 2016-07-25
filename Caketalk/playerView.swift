@@ -545,7 +545,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: { (path:NSURL!, error:NSError!) -> Void in
             let asset = AVAsset(URL: path)
             print("Duration:\(asset.duration.seconds)")
-            let instagramURL = NSURL(string:  "instagram://library?AssetPath=\(path)")
+            let instagramURL = NSURL(string:  "instagram://library")
             if(UIApplication.sharedApplication().canOpenURL(instagramURL!)) {
                 UIApplication.sharedApplication().openURL(instagramURL!)
             } else {
@@ -598,7 +598,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         dialog.shareContent = content;
         dialog.delegate = self;
         dialog.fromViewController = self;
-        dialog.show()
+        FBSDKShareDialog.showFromViewController(self, withContent: content, delegate: self)
     }
     
     func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {

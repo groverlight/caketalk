@@ -640,7 +640,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 //self.exportCurrentVideo()
-                //print("export current video")
+                print("export current video")
             })
             
         })
