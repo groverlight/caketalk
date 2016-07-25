@@ -17,7 +17,7 @@ import pop
 import AVFoundation
 import Mixpanel
 import AssetsLibrary
-//import FBSDKShareKit
+import FBSDKShareKit
 //import FBSDKCoreKit
 //import FBSDKLoginKit
 import Photos
@@ -332,6 +332,18 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.instagramButton.userInteractionEnabled = true
                 self.moreButton.userInteractionEnabled = true
                 
+                let handleFacebook = UITapGestureRecognizer(target: self, action: "facebook")
+                self.facebookButton.addGestureRecognizer(handleFacebook)
+                
+                let handleTwitter = UITapGestureRecognizer(target: self, action: "twitter")
+                self.twitterButton.addGestureRecognizer(handleTwitter)
+                
+                let handleInstagram = UITapGestureRecognizer(target: self, action: "instagram")
+                self.instagramButton.addGestureRecognizer(handleInstagram)
+                
+                let handleMore = UITapGestureRecognizer(target: self, action: "share")
+                self.moreButton.addGestureRecognizer(handleMore)
+                
                 self.facebookButtonHeight.constant = 50
                 UIView.animateWithDuration(0.8, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     self.view.layoutIfNeeded()
@@ -388,7 +400,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         }
         
     }
-
+    
     func iPhoneScreenSizes(){
         let bounds = UIScreen.mainScreen().bounds
         let height = bounds.size.height
@@ -470,7 +482,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         audioPlayer.play()
     }
     
-    @IBAction func twitter(sender: AnyObject) {
+    func twitter() {
         
         self.backButton.setTitle("another one", forState: .Normal)
         self.backButton.layer.cornerRadius = 6
@@ -525,7 +537,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         
     }
     
-    @IBAction func instagram(sender: AnyObject) {
+    func instagram() {
         self.backButton.setTitle("another one", forState: .Normal)
         
         // REFERENCE: http://stackoverflow.com/questions/20017266/posting-video-on-instagram-using-hooks/21888830#21888830
@@ -552,7 +564,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
     
     
-    @IBAction func share(sender: AnyObject) {
+    @IBAction func share() {
         self.backButton.setTitle("another one", forState: .Normal)
         let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
         let objectsToShare = [outputPath]
@@ -564,7 +576,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         
     }
     
-    @IBAction func facebook(sender: AnyObject) {
+    func facebook() {
         self.backButton.setTitle("another one", forState: .Normal)
         
         let video : FBSDKShareVideo = FBSDKShareVideo()

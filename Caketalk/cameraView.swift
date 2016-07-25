@@ -423,6 +423,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 print("send button pressed")
                 
                 stopSamplingColors()
+                mergeAndExportVideo()
                 
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
@@ -597,9 +598,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         if videoClips == nil {
             videoClips = []
-            videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount).mov", isDirectory: true))
+            videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         } else {
-            videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount).mov", isDirectory: true))
+            videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         }
 
         startSamplingColors()
@@ -638,7 +639,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         exporter?.exportAsynchronouslyWithCompletionHandler({ () -> Void in
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.exportCurrentVideo()
+                //self.exportCurrentVideo()
+                //print("export current video")
             })
             
         })
