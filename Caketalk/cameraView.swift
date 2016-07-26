@@ -218,7 +218,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         preferences.drawing.foregroundColor = UIColor.blackColor()
                         preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-                        preferences.animating.showDuration = 2
+                        preferences.animating.dismissDuration = 2
                         EasyTipView.show(forView: cameraTextView,
                                          withinSuperview: self.view,
                                          text: "Type something that you like",
@@ -640,7 +640,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         exporter?.exportAsynchronouslyWithCompletionHandler({ () -> Void in
             
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                //self.exportCurrentVideo()
+                self.exportCurrentVideo()
                 print("export current video")
             })
             
@@ -916,7 +916,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                 preferences.drawing.foregroundColor = UIColor.blackColor()
                                 preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-                                preferences.animating.showDuration = 2
+                                preferences.animating.dismissDuration = 2
                                 EasyTipView.show(forView: headerView,
                                                  withinSuperview: self.view,
                                                  text: "String",
@@ -1018,7 +1018,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                 preferences.drawing.foregroundColor = UIColor.blackColor()
                                 preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-                                preferences.animating.showDuration = 2
+                                preferences.animating.dismissDuration = 2
                                 EasyTipView.show(forView: headerView,
                                                  withinSuperview: self.view,
                                                  text: "String",
@@ -1236,8 +1236,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         }
     
     func updateBackgroundColorTransition() {
-        filter?.useNextFrameForImageCapture()
-        let capturedImage : UIImage? = filter?.imageFromCurrentFramebuffer()
+        filter!.useNextFrameForImageCapture()
+        let capturedImage : UIImage? = filter!.imageFromCurrentFramebuffer()
         if let image = capturedImage {
             UIView.animateWithDuration(colorSamplingRate, animations: {
                 self.coloredBackgroundView.backgroundColor = image.areaAverage()
