@@ -598,15 +598,15 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         dialog.shareContent = content;
         dialog.delegate = self;
         dialog.fromViewController = self;
-        FBSDKShareDialog.showFromViewController(self, withContent: content, delegate: self)
+        dialog.show()
     }
     
     func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
-        
+        print(error)
     }
     
     func sharer(sharer: FBSDKSharing!, didCompleteWithResults results: [NSObject : AnyObject]!) {
-        
+        print("did complete")
     }
     
     func sharerDidCancel(sharer: FBSDKSharing!) {
