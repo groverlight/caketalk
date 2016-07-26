@@ -581,25 +581,30 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         self.backButton.setTitle("another one", forState: .Normal)
         
         let video : FBSDKShareVideo = FBSDKShareVideo()
-        video.videoURL = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
-        let content : FBSDKShareVideoContent = FBSDKShareVideoContent()
-        content.video = video
         
-        let dialog = FBSDKShareDialog()
-        let newURL = NSURL(string: "fbauth2://")
-        if (UIApplication.sharedApplication() .canOpenURL(newURL!)){
-            print("native")
-            dialog.mode = FBSDKShareDialogMode.ShareSheet
-        }
-        else{
-            print("browser")
-            dialog.mode = FBSDKShareDialogMode.Browser
-        }
+        ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: { (path:NSURL!, error:NSError!) -> Void in
+            //let asset = AVAsset(URL: path)
+            video.videoURL = path
+            let content : FBSDKShareVideoContent = FBSDKShareVideoContent()
+            content.video = video
+            
+            let dialog = FBSDKShareDialog()
+            let newURL = NSURL(string: "fbauth2://")
+            if (UIApplication.sharedApplication() .canOpenURL(newURL!)){
+                print("native")
+                dialog.mode = FBSDKShareDialogMode.ShareSheet
+            }
+            else{
+                print("browser")
+                dialog.mode = FBSDKShareDialogMode.Browser
+            }
+            
+            dialog.shareContent = content;
+            dialog.delegate = self;
+            dialog.fromViewController = self;
+            dialog.show()
+        })
         
-        dialog.shareContent = content;
-        dialog.delegate = self;
-        dialog.fromViewController = self;
-        dialog.show()
     }
     
     func sharer(sharer: FBSDKSharing!, didFailWithError error: NSError!) {
