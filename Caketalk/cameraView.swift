@@ -218,6 +218,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         preferences.drawing.foregroundColor = UIColor.blackColor()
                         preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+                        preferences.animating.showDuration = 2
                         EasyTipView.show(forView: cameraTextView,
                                          withinSuperview: self.view,
                                          text: "Type something that you like",
@@ -915,6 +916,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                 preferences.drawing.foregroundColor = UIColor.blackColor()
                                 preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+                                preferences.animating.showDuration = 2
                                 EasyTipView.show(forView: headerView,
                                                  withinSuperview: self.view,
                                                  text: "String",
@@ -1016,6 +1018,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                 preferences.drawing.foregroundColor = UIColor.blackColor()
                                 preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+                                preferences.animating.showDuration = 2
                                 EasyTipView.show(forView: headerView,
                                                  withinSuperview: self.view,
                                                  text: "String",

@@ -386,6 +386,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                                         preferences.drawing.foregroundColor = UIColor.blackColor()
                                         preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
                                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+                                        preferences.animating.showDuration = 2
                                         EasyTipView.show(forView: self.line,
                                             withinSuperview: self.view,
                                             text: "Share it on the web",
