@@ -332,16 +332,16 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.instagramButton.userInteractionEnabled = true
                 self.moreButton.userInteractionEnabled = true
                 
-                let handleFacebook = UITapGestureRecognizer(target: self, action: "facebook")
+                let handleFacebook = UITapGestureRecognizer(target: self, action: #selector(playerView.facebook))
                 self.facebookButton.addGestureRecognizer(handleFacebook)
                 
-                let handleTwitter = UITapGestureRecognizer(target: self, action: "twitter")
+                let handleTwitter = UITapGestureRecognizer(target: self, action: #selector(playerView.twitter))
                 self.twitterButton.addGestureRecognizer(handleTwitter)
                 
-                let handleInstagram = UITapGestureRecognizer(target: self, action: "instagram")
+                let handleInstagram = UITapGestureRecognizer(target: self, action: #selector(playerView.instagram))
                 self.instagramButton.addGestureRecognizer(handleInstagram)
                 
-                let handleMore = UITapGestureRecognizer(target: self, action: "share")
+                let handleMore = UITapGestureRecognizer(target: self, action: #selector(playerView.share))
                 self.moreButton.addGestureRecognizer(handleMore)
                 
                 self.facebookButtonHeight.constant = 50
