@@ -83,6 +83,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     var colorSamplingRate : Double = 1
     var screenshotTimer : NSTimer!
+    
+    dynamic var currentImage : UIImage!
 
 /*---------------END OUTLETS----------------------*/
 
@@ -1237,12 +1239,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     func updateBackgroundColorTransition() {
         filter!.useNextFrameForImageCapture()
-        let capturedImage : UIImage? = filter!.imageFromCurrentFramebuffer()
-        if let image = capturedImage {
-            UIView.animateWithDuration(colorSamplingRate, animations: {
-                self.coloredBackgroundView.backgroundColor = image.areaAverage()
-                }, completion: nil)
-        }
+        currentImage = filter!.imageFromCurrentFramebuffer()
+        UIView.animateWithDuration(colorSamplingRate, animations: {
+            self.coloredBackgroundView.backgroundColor = self.currentImage.areaAverage()
+            }, completion: { value in
+        })
     }
     
     // MARK: EasyTipViewDelegate
