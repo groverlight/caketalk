@@ -36,6 +36,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     var showStatusBar = false
     var gradientView:GradientView = GradientView()
     
+    var arrayofText: NSMutableArray!
+    
     let mixPanel : Mixpanel! = Mixpanel.sharedInstance()
 
     @IBOutlet var facebookButtonHeight : NSLayoutConstraint!
@@ -82,10 +84,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         let scrollLabel = PaddingLabel()
 
         //height of where player label starts
-        scrollLabel.frame = CGRectMake(20,self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
-
+        scrollLabel.frame = CGRectMake(-400, self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
         scrollLabel.textColor = UIColor.whiteColor()
-        print (scrollLabel.frame)
         scrollLabel.font = labelFont
         scrollLabel.text = (arrayofText.objectAtIndex(index-1) as! String)
         print (scrollLabel.text)
@@ -94,51 +94,38 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         scrollLabel.layer.cornerRadius = 10
         scrollLabel.layer.masksToBounds = true
         scrollLabel.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
-
         scrollLabel.setLineHeight(0)
         self.view.addSubview(scrollLabel)
 
-        let animation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerPositionY)
+        let comeInAnimation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
+        comeInAnimation.repeatCount = 0
+        comeInAnimation.springBounciness = 4;
+        comeInAnimation.springSpeed = 5;
+        comeInAnimation.autoreverses = false
+        comeInAnimation.toValue = (scrollLabel.bounds.size.width / 2) + 20
+        comeInAnimation.beginTime = AVCoreAnimationBeginTimeAtZero + 0.5
+        comeInAnimation.completionBlock = {(animation,finished) in
+            let goUpAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerPositionY)
+            goUpAnimation.duration = CMTimeGetSeconds(avAsset.duration) + 4.25
+            goUpAnimation.repeatCount = 0
+            goUpAnimation.autoreverses = false
+            goUpAnimation.toValue = self.view.bounds.size.height / 3 - scrollLabel.bounds.size.height
+            goUpAnimation.beginTime = AVCoreAnimationBeginTimeAtZero
+            goUpAnimation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
+            scrollLabel.layer.pop_addAnimation(goUpAnimation, forKey: "goUpAnimation")
+            
+            let opacityOutAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
+            opacityOutAnimation.duration = CMTimeGetSeconds(avAsset.duration) + 4.25
+            opacityOutAnimation.repeatCount = 0
+            opacityOutAnimation.autoreverses = false
+            opacityOutAnimation.toValue = 0
+            opacityOutAnimation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
+            scrollLabel.layer.pop_addAnimation(opacityOutAnimation, forKey: "opacityOutAnimation")
 
-        animation.duration = CMTimeGetSeconds(avAsset.duration) + 4.25
-        animation.repeatCount = 0
-        animation.autoreverses = false
-        animation.toValue = self.view.bounds.size.height/3 - scrollLabel.bounds.size.height
-        animation.beginTime = AVCoreAnimationBeginTimeAtZero
-        animation.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
-
-
-        let animation3 = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
-        animation3.toValue = NSValue(CGPoint: CGPointMake(1, 1))
-        animation3.velocity = NSValue(CGPoint: CGPointMake(6, 6))
-        animation3.springBounciness = 20.0
-        animation3.beginTime = AVCoreAnimationBeginTimeAtZero
-        animation3.repeatCount = 0
-        animation3.autoreverses = false
-        let animation4 = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
-        animation4.duration = 0.00000001
-        animation4.repeatCount = 0
-        animation4.beginTime = AVCoreAnimationBeginTimeAtZero
-        animation4.autoreverses = false
-        animation4.fromValue = 0.0
-        animation4.toValue = 1.0
-        animation4.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
-
-        // animation4.removedOnCompletion = true
-        animation4.completionBlock = {(animation,finished) in
-            let animation2: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
-            animation2.duration = CMTimeGetSeconds(avAsset.duration) + 4.25
-            animation2.repeatCount = 0
-            animation2.autoreverses = false
-            animation2.toValue = 0
-            animation2.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionLinear)
-            scrollLabel.layer.pop_addAnimation(animation2, forKey: "goDisappear")
         }
-
-        scrollLabel.layer.pop_addAnimation(animation, forKey: "goUP")
-        scrollLabel.layer.pop_addAnimation(animation3, forKey: "spring)")
-        scrollLabel.layer.pop_addAnimation(animation4, forKey: "goAppear)")
-
+        
+        scrollLabel.layer.pop_addAnimation(comeInAnimation, forKey: "comeInAnimation")
+        
         numOfClips -= 1
 
     }
