@@ -17,9 +17,6 @@ import UIImageColors
 import EasyTipView
 import AssetsLibrary
 
-var arrayofText: NSMutableArray = []
-
-
 class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, EasyTipViewDelegate {
     
     var audioPlayer : AVAudioPlayer!
@@ -54,6 +51,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var newOne = true
     var mixPanel : Mixpanel!
     var videoClips : [NSURL]!
+    
+    var arrayofText: NSMutableArray = []
+    var arrayOfClipDurations: [Double] = []
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -199,7 +199,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
-            self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 1)
+            //self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 1)
 
         }
         else
@@ -233,7 +233,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     }
     override func viewWillAppear(animated: Bool) {
         
-        startSamplingColors()
+        //startSamplingColors()
 
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -425,7 +425,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
                 
-                stopSamplingColors()
+                //stopSamplingColors()
                 mergeAndExportVideo()
                 
                 self.view.bringSubviewToFront(recordButton)
@@ -606,7 +606,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         }
 
-        startSamplingColors()
+        //startSamplingColors()
     }
     
     func mergeAndExportVideo() {
@@ -620,6 +620,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             let atTime = CMTime(seconds: time, preferredTimescale:1)
             do{
                 try videoTrack.insertTimeRange(CMTimeRangeMake(kCMTimeZero, asset.duration) , ofTrack: videoAssetTrack, atTime: atTime)
+                arrayOfClipDurations.append(asset.duration.seconds)
             }catch{
                 
             }
@@ -655,7 +656,19 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         var shutterLayers = [ShutterLayer]()
 
         for i in 0..<arrayofText.count {
-            shutterLayers.append(ShutterLayer(title: arrayofText[i] as! String, line: i))
+            if arrayOfClipDurations.count == 1 {
+                shutterLayers.append(ShutterLayer(previousClipDuration: 0, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i))
+            } else if arrayOfClipDurations.count > 1 {
+                var preferredDelay: Double = 0
+                
+                for var k in 0..<i {
+                    preferredDelay += arrayOfClipDurations[k]
+                }
+                
+                print("Pref delay: \(preferredDelay)")
+                
+                shutterLayers.append(ShutterLayer(previousClipDuration: preferredDelay, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i))
+            }
         }
         
         let movieURL = "\(NSTemporaryDirectory())edited_video.mov"
@@ -876,7 +889,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("record button pressed")
         print("Mixpanel event here")
         
-        stopSamplingColors()
+        //stopSamplingColors()
         
         mixPanel.track("Record button pressed", properties: nil)
         mixPanel.flush()
@@ -1044,7 +1057,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.view.bringSubviewToFront(self.recordButton)
             self.view.bringSubviewToFront(self.progressBarView)
             moveUp.completionBlock = { (animation, finished) in
-                arrayofText.addObject(newLabel.text!)
+                self.arrayofText.addObject(newLabel.text!)
                 self.startRecording()
 
                 UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
@@ -1250,6 +1263,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     func easyTipViewDidDismiss(tipView : EasyTipView) {
     
     }
+    
+    // MARK: Prepare for Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.destinationViewController.classForCoder == playerView.classForCoder() {
+            let vc = segue.destinationViewController as! playerView
+            vc.arrayofText = self.arrayofText
+        }
+    }
+    
 }
 
 
