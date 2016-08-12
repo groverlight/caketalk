@@ -280,6 +280,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             emojiLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(emojiLabel)
+            
+            overlayScrollView.center = CGPointMake(self.view.center.x, -self.view.center.y * 2)
+            
             showStatusBar(true)
 
             
@@ -330,6 +333,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 
                 let handleMore = UITapGestureRecognizer(target: self, action: #selector(playerView.share))
                 self.moreButton.addGestureRecognizer(handleMore)
+                
+                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 3, options: .CurveEaseInOut, animations: {
+                    overlayScrollView.center = CGPointMake(self.view.center.x, self.view.center.y)
+                }) { _ in
+                }
                 
                 self.facebookButtonHeight.constant = 50
                 UIView.animateWithDuration(0.8, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
