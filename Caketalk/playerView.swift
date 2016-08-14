@@ -538,9 +538,20 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
         let objectsToShare = [outputPath]
         
-        let activityViewController  = UIActivityViewController(activityItems:objectsToShare as [AnyObject], applicationActivities: nil)
-        activityViewController.excludedActivityTypes = [UIActivityTypeMail, UIActivityTypePrint, UIActivityTypeAirDrop, UIActivityTypeMessage, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypePostToTwitter, UIActivityTypePostToFacebook, UIActivityTypeAssignToContact, UIActivityTypeAddToReadingList, UIActivityTypeCopyToPasteboard, UIActivityTypePostToTencentWeibo, UIActivityTypeOpenInIBooks]
-        presentViewController(activityViewController, animated: true, completion: nil)
+        let instagramURL = NSURL(string:  "instagram://library?AssetPath=\(video)")
+        if(UIApplication.sharedApplication().canOpenURL(instagramURL!)) {
+            let activityViewController  = UIActivityViewController(activityItems:objectsToShare as [AnyObject], applicationActivities: nil)
+            activityViewController.excludedActivityTypes = [UIActivityTypeMail, UIActivityTypePrint, UIActivityTypeAirDrop, UIActivityTypeMessage, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypePostToTwitter, UIActivityTypePostToFacebook, UIActivityTypeAssignToContact, UIActivityTypeAddToReadingList, UIActivityTypeCopyToPasteboard, UIActivityTypePostToTencentWeibo, UIActivityTypeOpenInIBooks]
+            presentViewController(activityViewController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "Instagram Error", message: "Instagram needs to be installed and turned on for sharing in Settings.", preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
+            })
+            alertController.addAction(okAction)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        }
     }
     
     func video(video: NSString, didFinishSavingWithError error:NSError, contextInfo:UnsafeMutablePointer<Void>){
