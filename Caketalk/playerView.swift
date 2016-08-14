@@ -535,19 +535,12 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     func instagram() {
         self.backButton.setTitle("another one", forState: .Normal)
+        let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
+        let objectsToShare = [outputPath]
         
-        // REFERENCE: http://stackoverflow.com/questions/20017266/posting-video-on-instagram-using-hooks/21888830#21888830
-        
-        ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: { (path:NSURL!, error:NSError!) -> Void in
-            let asset = AVAsset(URL: path)
-            print("Duration:\(asset.duration.seconds)")
-            let instagramURL = NSURL(string:  "instagram://library")
-            if(UIApplication.sharedApplication().canOpenURL(instagramURL!)) {
-                UIApplication.sharedApplication().openURL(instagramURL!)
-            } else {
-                print("can't open this URL")
-            }
-        })
+        let activityViewController  = UIActivityViewController(activityItems:objectsToShare as [AnyObject], applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypeMail, UIActivityTypePrint, UIActivityTypeAirDrop, UIActivityTypeMessage, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypePostToTwitter, UIActivityTypePostToFacebook, UIActivityTypeAssignToContact, UIActivityTypeAddToReadingList, UIActivityTypeCopyToPasteboard, UIActivityTypePostToTencentWeibo, UIActivityTypeOpenInIBooks]
+        presentViewController(activityViewController, animated: true, completion: nil)
     }
     
     func video(video: NSString, didFinishSavingWithError error:NSError, contextInfo:UnsafeMutablePointer<Void>){
