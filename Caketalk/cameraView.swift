@@ -54,6 +54,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     var arrayofText: NSMutableArray = []
     var arrayOfClipDurations: [Double] = []
+    
+    var indicatorView: UIView!
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -199,7 +201,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
-            self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 1)
+            //self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 1)
 
         }
         else
@@ -233,7 +235,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     }
     override func viewWillAppear(animated: Bool) {
         
-        startSamplingColors()
+        //startSamplingColors()
 
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -425,7 +427,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
                 
-                stopSamplingColors()
+                //stopSamplingColors()
                 mergeAndExportVideo()
                 
                 self.view.bringSubviewToFront(recordButton)
@@ -606,7 +608,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         }
 
-        startSamplingColors()
+        //startSamplingColors()
     }
     
     func mergeAndExportVideo() {
@@ -888,7 +890,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("record button pressed")
         print("Mixpanel event here")
         
-        stopSamplingColors()
+        //stopSamplingColors()
         
         mixPanel.track("Record button pressed", properties: nil)
         mixPanel.flush()
@@ -1043,87 +1045,95 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                 
                             }
 
-            let moveUp = POPSpringAnimation(propertyNamed: kPOPLayerPositionY)
-            let scaleDown = POPSpringAnimation(propertyNamed: kPOPViewSize)
-            scaleDown.toValue = NSValue(CGSize: CGSize(width: self.recordButton.bounds.size.width*0.2, height: self.recordButton.bounds.size.height*0.5))
-            moveUp.toValue = 27.5
-            self.recordEmoji.hidden = true
-            self.characterCount.hidden = true
-            self.recordButton.setTitle("look", forState: UIControlState.Normal)
-            self.recordButton.layer.cornerRadius = 15
-            self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 13.0)
-
             self.view.bringSubviewToFront(self.recordButton)
             self.view.bringSubviewToFront(self.progressBarView)
-            moveUp.completionBlock = { (animation, finished) in
-                self.arrayofText.addObject(newLabel.text!)
-                self.startRecording()
+            
+            self.arrayofText.addObject(newLabel.text!)
+            self.startRecording()
+     
+            self.recordButton.hidden = true
+            self.characterCount.hidden = true
+            self.recordEmoji.hidden = true
+            
+            // TODO : Bring in indicator
+            
+            self.indicatorView = UIView(frame: CGRectMake(0, 0, 96, 30))
+            self.indicatorView.center = CGPointMake(self.view.center.x, -30)
+            self.indicatorView.layer.cornerRadius = 15
+            self.indicatorView.clipsToBounds = true
+            self.indicatorView.backgroundColor = UIColor.hex("#FF90B3")
+            self.view.addSubview(indicatorView)
+            
+            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 96, 30))
+            indicatorLabel.textAlignment = NSTextAlignment.Center
+            indicatorLabel.text = "👆 Look here"
+            indicatorLabel.font = UIFont(name:"RionaSans-Bold", size: 12)
+            indicatorLabel.textColor = .whiteColor()
+            indicatorView.addSubview(indicatorLabel)
+            
+            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                self.indicatorView.center = CGPointMake(self.view.center.x, 30)
+                }, completion: {(finished) -> Void in
+            })
+            
+            print("wut \(self.indicatorView)")
+            
+            UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
+                self.animatedProgressBarView.transform = CGAffineTransformMakeScale(0.0001, 1)
+                
+                }, completion: { (finished) -> Void in
+                    if (finished){
+                        
+                        self.filteredImage?.hidden = false
+                        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                            self.newImage?.center.y = (self.newImage?.center.y)! - 40
+                            self.scrollView.center.y = self.scrollView.center.y - 40
+                            }, completion: {
+                                completion in
+                                self.newImage?.hidden = true
+                        })
 
-                UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
-                    self.animatedProgressBarView.transform = CGAffineTransformMakeScale(0.0001, 1)
-                    }, completion: { (finished) -> Void in
-                        if (finished){
-
-                            self.filteredImage?.hidden = false
-                            
-                            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                                self.newImage?.center.y = (self.newImage?.center.y)! - 40
-                                self.scrollView.center.y = self.scrollView.center.y - 40
-                                }, completion: {
-                                    completion in
-                                    self.newImage?.hidden = true
-                            })
-
-                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
-                                self.recordButton.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-                                self.characterCount.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-                                self.recordEmoji.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
-                                }, completion: {(finished) -> Void in
-
-                                    // record buttton visual state after recording
-
-                                    self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 15.0)
-                                    self.recordButton.layer.cornerRadius = 6
-                                    self.animatedProgressBarView.hidden = true
-                                    self.animatedProgressBarView.transform = CGAffineTransformMakeScale(1, 1)
-                                    self.progressBarView.hidden = true
-                                    self.stopRecording()
-                                    self.characterCount.text = "70"
-                                    self.recordEmoji.hidden = false
-                                    self.characterCount.hidden = false
-                                    self.view.bringSubviewToFront(self.recordEmoji)
-                                    self.view.bringSubviewToFront(self.characterCount)
-                                    self.recordButton.setTitle("record", forState: UIControlState.Normal)
-                                    self.cameraTextView.returnKeyType = UIReturnKeyType.Send
-                                    self.recordButton.hidden = true
-                                    self.recordEmoji.hidden = true
-                                    self.characterCount.hidden = true
-                                    self.cameraTextView.becomeFirstResponder()
-                                    self.recordButton.userInteractionEnabled = true
-                                    self.recordButton.layer.borderWidth = 0
-                                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in                                                   self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
-                                        self.characterCount.transform = CGAffineTransformMakeScale(1, 1)
-                                        self.recordEmoji.transform = CGAffineTransformMakeScale(1, 1)
-                                        }, completion: nil)
-
-                            })
-                        }
-
-
-                })
-            }
-            self.recordButton.pop_addAnimation(moveUp, forKey: "moveUP")
-            self.recordButton.pop_addAnimation(scaleDown, forKey: "scaleDown")
-
-
-
-
-
-
-
-
+                        
+                        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                            self.recordButton.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
+                            self.characterCount.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
+                            self.recordEmoji.transform = CGAffineTransformMakeScale(0.0001, 0.0001)
+                        
+                            }, completion: {(finished) -> Void in
+                                // record buttton visual state after recording
+                                UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                                    self.indicatorView.center = CGPointMake(self.view.center.x, -30)
+                                    }, completion: {(finished) -> Void in
+                                        self.indicatorView.removeFromSuperview()
+                                })
+                                
+                                self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 15.0)
+                                self.recordButton.layer.cornerRadius = 6
+                                self.recordButton.hidden = true
+                                self.stopRecording()
+                                self.characterCount.text = "70"
+                                self.recordEmoji.hidden = false
+                                self.characterCount.hidden = false
+                                self.view.bringSubviewToFront(self.recordEmoji)
+                                self.view.bringSubviewToFront(self.characterCount)
+                                self.recordButton.setTitle("record", forState: UIControlState.Normal)
+                                self.cameraTextView.returnKeyType = UIReturnKeyType.Send
+                                self.recordButton.hidden = true
+                                self.recordEmoji.hidden = true
+                                self.characterCount.hidden = true
+                                self.cameraTextView.becomeFirstResponder()
+                                self.recordButton.userInteractionEnabled = true
+                                self.recordButton.layer.borderWidth = 0
+                                UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in                                                   self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
+                                
+                                    }, completion: nil)
+                                
+                        })
+                    }
+                    
+                    
+            })
         }
-
 
         func willOutputSampleBuffer(sampleBuffer: CMSampleBuffer!) {
         }
