@@ -61,7 +61,7 @@ class ShutterLayer : CALayer {
         comeInAnimation.fillMode = kCAFillModeForwards;
         comeInAnimation.removedOnCompletion = false;
         comeInAnimation.toValue = (blurbLayer.bounds.size.width / 2) + 30
-        blurbLayer.addAnimation(comeInAnimation, forKey: "comeInAnimation")
+//        blurbLayer.addAnimation(comeInAnimation, forKey: "comeInAnimation")
 
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
         fadeOutAnimation.fromValue = 1
@@ -78,7 +78,7 @@ class ShutterLayer : CALayer {
         animationGroup.beginTime = AVCoreAnimationBeginTimeAtZero + previousClipDuration + 0.6
         animationGroup.duration = clipDuration + 4.25
         animationGroup.animations = [fadeOutAnimation, goUpAnimation]
-        blurbLayer.addAnimation(animationGroup, forKey: "animationGroup")
+//        blurbLayer.addAnimation(animationGroup, forKey: "animationGroup")
     }
 
     
