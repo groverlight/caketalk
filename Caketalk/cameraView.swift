@@ -289,6 +289,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     }
     
     override func viewDidAppear(animated: Bool) {
+        videoCamera?.resumeCameraCapture()
         self.cameraTextView.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0)
     }
     override func viewWillDisappear(animated: Bool) {
@@ -1301,6 +1302,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if segue.destinationViewController.classForCoder == playerView.classForCoder() {
             let vc = segue.destinationViewController as! playerView
             vc.arrayofText = self.arrayofText
+            videoCamera?.pauseCameraCapture()
         }
     }
     
