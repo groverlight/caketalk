@@ -1012,20 +1012,20 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             var duration:NSTimeInterval = 0
             switch (time){
             case 1:
-                duration = 1.5
+                duration = 2
 
                 break
             case 2:
-                duration = 2.25
+                duration = 3
                 break
             case 3:
-                duration = 3.0
+                duration = 4
                 break
             case 4:
-                duration = 3.75
+                duration = 5
                 break
             case 5:
-                duration = 4.55
+                duration = 5
                 break
             default:
                 break

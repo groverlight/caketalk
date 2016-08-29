@@ -103,7 +103,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         comeInAnimation.springSpeed = 5;
         comeInAnimation.autoreverses = false
         comeInAnimation.toValue = (scrollLabel.bounds.size.width / 2) + 20
-        comeInAnimation.beginTime = AVCoreAnimationBeginTimeAtZero + 0.5
+        comeInAnimation.beginTime = AVCoreAnimationBeginTimeAtZero + 1.5
         comeInAnimation.completionBlock = {(animation,finished) in
             let goUpAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerPositionY)
             goUpAnimation.duration = CMTimeGetSeconds(avAsset.duration) + 4.25

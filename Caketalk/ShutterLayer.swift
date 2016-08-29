@@ -13,94 +13,85 @@ import AVFoundation
 
 class ShutterLayer : CALayer {
     
-    let textLayer : CATextLayer! = CATextLayer()
-    let blurbLayer: CALayer! = CALayer()
-    let scrollLabel: UILabel! = UILabel()
+    let blurbTextView: UITextView! = UITextView()
     
-    init(previousClipDuration: Double, clipDuration: Double, title: String, line : Int) {
+    var labelFont: UIFont!
+    
+    init(previousClipDuration: Double, clipDuration: Double, title: String, line : Int, bounds: CGRect) {
         super.init()
+        
+        //-blurbLabel.bounds.size.width
 
-        scrollLabel.frame = CGRectMake(20, 400, 400 - 20, 50)
-        scrollLabel.textColor = UIColor.whiteColor()
-        scrollLabel.font = UIFont(name:"RionaSans-Bold", size: preferredFontSize())
-        scrollLabel.text = title
-        scrollLabel.numberOfLines = 0
-        scrollLabel.sizeToFit()
-        scrollLabel.layer.cornerRadius = 10
-        scrollLabel.layer.masksToBounds = true
-        scrollLabel.setLineHeight(0)
+        iPhoneScreenSizes()
+        blurbTextView.frame = CGRectMake(100, bounds.size.height * 0.40, bounds.size.width * (2 / 3) + 20, 50)
+        blurbTextView.textColor = UIColor.whiteColor()
+        blurbTextView.font = labelFont
+        blurbTextView.text = title
+        blurbTextView.sizeToFit()
+        blurbTextView.layer.cornerRadius = 10
+        blurbTextView.layer.masksToBounds = true
+        blurbTextView.alpha = 0
+        blurbTextView.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
+        self.addSublayer(blurbTextView.layer)
         
-        let overlayerLayer = CALayer()
-        overlayerLayer.frame = self.bounds
-        overlayerLayer.backgroundColor = UIColor.blackColor().CGColor
-        overlayerLayer.opacity = 0.2
-        overlayerLayer.masksToBounds = true
-        self.addSublayer(overlayerLayer)
         
-        blurbLayer.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70).CGColor
-        blurbLayer.cornerRadius = 10
-        blurbLayer.frame = CGRectMake(-300, 150, scrollLabel.bounds.size.width + 20, scrollLabel.bounds.size.height + 15)
-        self.addSublayer(blurbLayer)
         
-        let textLayer = CATextLayer()
-        textLayer.font = UIFont(name:"RionaSans-Bold", size: preferredFontSize())
-        textLayer.fontSize = preferredFontSize()
-        textLayer.string = title
-        textLayer.foregroundColor = UIColor.whiteColor().CGColor
-        textLayer.frame = CGRectMake(10, 0, blurbLayer.bounds.size.width - 10, blurbLayer.bounds.size.height - 10)
-        textLayer.alignmentMode = kCAAlignmentLeft;
-        textLayer.masksToBounds = true
-        blurbLayer.addSublayer(textLayer)
         
         let comeInAnimation = CASpringAnimation(keyPath: "position.x")
-        comeInAnimation.damping = 30
-        comeInAnimation.initialVelocity = 0.5
-        comeInAnimation.duration = 0.6
-        comeInAnimation.beginTime = AVCoreAnimationBeginTimeAtZero + previousClipDuration
-        comeInAnimation.fromValue = -300
-        comeInAnimation.fillMode = kCAFillModeForwards;
-        comeInAnimation.removedOnCompletion = false;
-        comeInAnimation.toValue = (blurbLayer.bounds.size.width / 2) + 30
-//        blurbLayer.addAnimation(comeInAnimation, forKey: "comeInAnimation")
-
+        comeInAnimation.damping = 10
+        comeInAnimation.initialVelocity = 1
+        comeInAnimation.fromValue = 0
+        comeInAnimation.toValue = (blurbTextView.bounds.size.width / 2) + 30
+        
+        let fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+        fadeInAnimation.fromValue = 0
+        fadeInAnimation.toValue = 1
+        
+        let firstAnimationGroup = CAAnimationGroup()
+        firstAnimationGroup.fillMode = kCAFillModeForwards;
+        firstAnimationGroup.removedOnCompletion = false;
+        firstAnimationGroup.duration = 2
+        firstAnimationGroup.animations = [comeInAnimation, fadeInAnimation]
+        firstAnimationGroup.beginTime = AVCoreAnimationBeginTimeAtZero + previousClipDuration
+        blurbTextView.layer.addAnimation(firstAnimationGroup, forKey: "firstAnimationGroup")
+        
+        
+        
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
         fadeOutAnimation.fromValue = 1
         fadeOutAnimation.toValue = 0
         
         let goUpAnimation = CABasicAnimation(keyPath: "position.y")
-        goUpAnimation.fromValue = 150
+        goUpAnimation.fromValue = blurbTextView.center.y
         goUpAnimation.toValue = 500
-        goUpAnimation.autoreverses = false
         
         let animationGroup = CAAnimationGroup()
         animationGroup.fillMode = kCAFillModeForwards;
         animationGroup.removedOnCompletion = false;
-        animationGroup.beginTime = AVCoreAnimationBeginTimeAtZero + previousClipDuration + 0.6
-        animationGroup.duration = clipDuration + 4.25
-        animationGroup.animations = [fadeOutAnimation, goUpAnimation]
-//        blurbLayer.addAnimation(animationGroup, forKey: "animationGroup")
+        animationGroup.beginTime = AVCoreAnimationBeginTimeAtZero + previousClipDuration + 0.5
+        animationGroup.duration = clipDuration + 4
+        animationGroup.animations = [goUpAnimation, fadeOutAnimation]
+        blurbTextView.layer.addAnimation(animationGroup, forKey: "animationGroup")
     }
 
     
-    func preferredFontSize() -> CGFloat {
+    func iPhoneScreenSizes(){
         let bounds = UIScreen.mainScreen().bounds
         let height = bounds.size.height
         
         switch height {
         case 480.0:
-            return 19
+            labelFont = UIFont(name: "RionaSans-Bold", size: 19)
         case 568.0:
-            return 20
+            labelFont = UIFont(name: "RionaSans-Bold", size: 20)
         case 667.0:
-            return 21
+            labelFont = UIFont(name: "RionaSans-Bold", size: 21)
         case 736.0:
-            return 22
+            labelFont = UIFont(name: "RionaSans-Bold", size: 22 )
         default:
             break
-            
         }
         
-        return 0
     }
     
     

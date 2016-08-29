@@ -54,11 +54,18 @@ class Shutter {
         overlayLayer.frame = CGRectMake(0, 0, size.width, size.height)
         
         for layer in layers {
+            print("Add sublayer")
             layer.resize(size)
             overlayLayer.addSublayer(layer)
         }
         
         parentLayer.addSublayer(videoLayer)
+        
+        let gradientLayer = CALayer()
+        overlayLayer.frame = CGRectMake(0, 0, size.width, size.height)
+        gradientLayer.backgroundColor = UIColor.blackColor().CGColor
+        parentLayer.addSublayer(gradientLayer)
+        
         parentLayer.addSublayer(overlayLayer)
         
         let videoComposition = AVMutableVideoComposition()
