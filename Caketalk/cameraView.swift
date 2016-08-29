@@ -83,10 +83,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     var coloredBackgroundView : UIView!
     
-    var colorSamplingRate : Double = 4
+    var colorSamplingRate : Double = 1
     var screenshotTimer : NSTimer!
     
     dynamic var currentImage : UIImage!
+    
+    var firstFrameToPassImage: UIImage!
 
 /*---------------END OUTLETS----------------------*/
 
@@ -201,7 +203,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
-            self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 1)
+            self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 0.3)
 
         }
         else
@@ -287,7 +289,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
-    
     override func viewDidAppear(animated: Bool) {
         videoCamera?.resumeCameraCapture()
         self.cameraTextView.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0)
@@ -319,6 +320,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     func startSamplingColors() {
         if screenshotTimer == nil {
+            filter!.useNextFrameForImageCapture()
+            firstFrameToPassImage = filter!.imageFromCurrentFramebuffer()
             screenshotTimer = NSTimer.scheduledTimerWithTimeInterval(colorSamplingRate, target: self, selector: #selector(cameraView.updateBackgroundColorTransition), userInfo: nil, repeats: true)
         }
     }
@@ -659,7 +662,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         for i in 0..<arrayofText.count {
             if arrayOfClipDurations.count == 1 {
-                shutterLayers.append(ShutterLayer(previousClipDuration: 0, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i))
+                shutterLayers.append(ShutterLayer(previousClipDuration: 0, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i, bounds: self.view.bounds))
             } else if arrayOfClipDurations.count > 1 {
                 var preferredDelay: Double = 0
                 
@@ -669,14 +672,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 
                 print("Pref delay: \(preferredDelay)")
                 
-                shutterLayers.append(ShutterLayer(previousClipDuration: preferredDelay, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i))
+                shutterLayers.append(ShutterLayer(previousClipDuration: preferredDelay, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i, bounds: self.view.bounds))
             }
         }
         
         let movieURL = "\(NSTemporaryDirectory())edited_video.mov"
         let shutter = Shutter(path: movieURL, layers: shutterLayers)
         shutter.export("\(NSTemporaryDirectory())edited_video.mov", callback: {
-            print("Timing")
             ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: nil)
         })
     }
@@ -1302,6 +1304,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if segue.destinationViewController.classForCoder == playerView.classForCoder() {
             let vc = segue.destinationViewController as! playerView
             vc.arrayofText = self.arrayofText
+            vc.firstFrameToPassImage = firstFrameToPassImage
             videoCamera?.pauseCameraCapture()
         }
     }

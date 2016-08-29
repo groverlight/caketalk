@@ -38,6 +38,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     var arrayofText: NSMutableArray!
     
+    var firstFrameToPassImage: UIImage!
+    var loadingPlaceholderImageView: UIImageView!
+    
     let mixPanel : Mixpanel! = Mixpanel.sharedInstance()
 
     @IBOutlet var facebookButtonHeight : NSLayoutConstraint!
@@ -80,6 +83,14 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         avLayer.frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 200)
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
+        
+        loadingPlaceholderImageView = UIImageView(frame: CGRectMake(0, 100, avLayer.bounds.size.width, avLayer.bounds.size.height))
+        loadingPlaceholderImageView.clipsToBounds = true
+        loadingPlaceholderImageView.image = firstFrameToPassImage
+        loadingPlaceholderImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        self.view.addSubview(loadingPlaceholderImageView)
+        self.performSelector(#selector(playerView.fadeOutLoadingPlaceholderImageView), withObject: nil, afterDelay: 0.3)
+        
         self.view.bringSubviewToFront(self.gradientView)
         let scrollLabel = PaddingLabel()
 
@@ -424,7 +435,15 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         // Do any additional setup after loading the view.
 
-
+    func fadeOutLoadingPlaceholderImageView() {
+        UIView.animateWithDuration(0.3, animations: {
+            self.loadingPlaceholderImageView.alpha = 0
+            }, completion: {
+                completion in
+                self.loadingPlaceholderImageView.removeFromSuperview()
+        })
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
