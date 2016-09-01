@@ -679,7 +679,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         let movieURL = "\(NSTemporaryDirectory())edited_video.mov"
         let shutter = Shutter(path: movieURL, layers: shutterLayers)
         shutter.export("\(NSTemporaryDirectory())edited_video.mov", callback: {
-            ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), completionBlock: nil)
+
         })
     }
 
@@ -1077,11 +1077,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             indicatorLabel.textColor = .whiteColor()
             indicatorView.addSubview(indicatorLabel)
             
+            self.startRecording()
+            
             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                 self.indicatorView.center = CGPointMake(self.view.center.x, 30)
                 }, completion: {(finished) -> Void in
                     self.arrayofText.addObject(newLabel.text!)
-                    self.startRecording()
             })
             
             self.view.bringSubviewToFront(self.recordButton)
