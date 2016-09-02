@@ -626,7 +626,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             dialog.fromViewController = self;
             dialog.show()
             
-            HUD.hide(afterDelay: 0.5)
+            HUD.hide(afterDelay: 1)
         })
         
     }
