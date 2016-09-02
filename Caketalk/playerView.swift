@@ -37,7 +37,6 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     var gradientView:GradientView = GradientView()
     
     var arrayofText: NSMutableArray!
-    var hasSavedVideoToCameraRoll = false
     
     var firstFrameToPassImage: UIImage!
     var loadingPlaceholderImageView: UIImageView!
