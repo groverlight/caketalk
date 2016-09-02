@@ -100,10 +100,11 @@ class Shutter {
         export.outputFileType = AVFileTypeQuickTimeMovie
         export.shouldOptimizeForNetworkUse = true
         
+        print("Export")
+        
         export.exportAsynchronouslyWithCompletionHandler({
+            print("Export done")
             dispatch_async(dispatch_get_main_queue()) {
-                ALAssetsLibrary().writeVideoAtPathToSavedPhotosAlbum(exportURL, completionBlock: nil)
-                print("Status: \(export.status, export.error)")
                 callback()
             }
         })
