@@ -23,6 +23,7 @@ import FBSDKShareKit
 import Photos
 import MobileCoreServices
 import EasyTipView
+import PKHUD
 
 class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegate, EasyTipViewDelegate, FBSDKSharingDelegate {
     var audioPlayer : AVAudioPlayer!
@@ -596,6 +597,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
     
     func facebook() {
+        
+        HUD.show(.Progress)
+    
         self.backButton.setTitle("another one", forState: .Normal)
         
         let video : FBSDKShareVideo = FBSDKShareVideo()
@@ -621,6 +625,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             dialog.delegate = self;
             dialog.fromViewController = self;
             dialog.show()
+            
+            HUD.hide(afterDelay: 1)
         })
         
     }
