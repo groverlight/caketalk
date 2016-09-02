@@ -6,73 +6,78 @@
 	<dict>
 		<key>Bolts.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>EasyTipView.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FBSDKCoreKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>FBSDKShareKit.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>GPUImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>8</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Hue.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>9</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Mixpanel.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>10</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PKHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Player.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>11</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Caketalk.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>12</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-CaketalkTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>13</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-CaketalkUITests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>14</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>UIImageColors.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>16</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>YUGPUImageHighPassSkinSmoothing.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>17</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>pop.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>15</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -87,22 +92,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2869A9B05BA9D7946724E827DDF2F391</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>30D7FCF8072F5D59AE1C98D94F9A6EC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C57575B6424B464B670D33FED322BE0</key>
+		<key>31F6B39F03807455B646D8FC2606B787</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87B8AAC9D95C15A94A5659219B7F5556</key>
+		<key>4ED182B9F3A08E3BDE12773C6ECCC7B4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C57575B6424B464B670D33FED322BE0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
+		<key>B698EC06309C0C5F7AD22B3BE41BA349</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C53DA8444D2A3D3C414D947BE18A49BD</key>
+		<key>C1E63A1BF93FD336FEC6B7950AA018F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,7 +147,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FDB6C6E9C92BAD9BDEB2BA821CE17066</key>
+		<key>F5E472A34FE575649E2D318803A58D1B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6F0516F82D07656D12F1C0716898F73</key>
 		<dict>
 			<key>primary</key>
 			<true/>

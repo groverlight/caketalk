@@ -15,6 +15,7 @@ PODS:
   - Mixpanel (2.9.9):
     - Mixpanel/Mixpanel (= 2.9.9)
   - Mixpanel/Mixpanel (2.9.9)
+  - PKHUD (3.2.1)
   - Player (0.1.1)
   - pop (1.0.9)
   - UIImageColors (1.0.4)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Hue
   - Mixpanel
+  - PKHUD
   - Player
   - pop (~> 1.0)
   - UIImageColors
@@ -39,11 +41,12 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   Hue: ed6781be844b58b2a38150cfd4bf24c33449faf8
   Mixpanel: 818d1940c2d9402453b349545022a86968097f57
+  PKHUD: 001c11518f125a273ddf026bcc64918423744ea2
   Player: 575e1e8cde1e6b7cd62d6d6bc06e492d02e62b9e
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   UIImageColors: ac2a42c61e870849c7fa5b9cbae2744a0873f5f7
   YUGPUImageHighPassSkinSmoothing: 1a3a8bc880b33304de3c4aba2e838fa2b56bfc80
 
-PODFILE CHECKSUM: 7a841f41c272eb2348a9d7f6018f27e2329bf8d6
+PODFILE CHECKSUM: 2326fea571d9b357f884ec48e04a93203799d336
 
 COCOAPODS: 1.0.1

@@ -8,6 +8,7 @@ pod 'Hue'
 pod 'UIImageColors'
 pod 'EasyTipView'
 pod 'FBSDKShareKit' 
+pod "PKHUD"
 end 
 
 target 'CaketalkTests' do

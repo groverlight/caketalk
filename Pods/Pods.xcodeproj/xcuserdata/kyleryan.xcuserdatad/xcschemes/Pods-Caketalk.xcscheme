@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C53DA8444D2A3D3C414D947BE18A49BD"
+               BlueprintIdentifier = "4ED182B9F3A08E3BDE12773C6ECCC7B4"
                BuildableName = "Pods_Caketalk.framework"
                BlueprintName = "Pods-Caketalk"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C53DA8444D2A3D3C414D947BE18A49BD"
+            BlueprintIdentifier = "4ED182B9F3A08E3BDE12773C6ECCC7B4"
             BuildableName = "Pods_Caketalk.framework"
             BlueprintName = "Pods-Caketalk"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,15 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C53DA8444D2A3D3C414D947BE18A49BD"
-            BuildableName = "Pods_Caketalk.framework"
-            BlueprintName = "Pods-Caketalk"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
