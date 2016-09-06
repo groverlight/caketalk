@@ -431,7 +431,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
                 
-                stopSamplingColors()
+                //stopSamplingColors()
                 mergeAndExportVideo()
                 
                 self.view.bringSubviewToFront(recordButton)
@@ -704,6 +704,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
        
 
 
+            arrayofText.removeLast()
+            arrayOfClipDurations.removeLast()
+            videoClips.removeLast()
 
             self.recordButton.userInteractionEnabled = false
             sender.enabled = false
