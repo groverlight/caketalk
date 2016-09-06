@@ -37,7 +37,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     var showStatusBar = false
     var gradientView:GradientView = GradientView()
     
-    var arrayofText: NSMutableArray!
+    var arrayofText: [String]!
     
     var firstFrameToPassImage: UIImage!
     var loadingPlaceholderImageView: UIImageView!
@@ -99,7 +99,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         scrollLabel.frame = CGRectMake(-400, self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
         scrollLabel.textColor = UIColor.whiteColor()
         scrollLabel.font = labelFont
-        scrollLabel.text = (arrayofText.objectAtIndex(index-1) as! String)
+        scrollLabel.text = (arrayofText[index-1] as! String)
         print (scrollLabel.text)
         scrollLabel.numberOfLines = 0
         scrollLabel.sizeToFit()
@@ -470,7 +470,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
-        arrayofText.removeAllObjects()
+        arrayofText.removeAll()
         do {
             let files = try self.fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
             for file:NSString in files!{

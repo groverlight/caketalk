@@ -52,7 +52,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var mixPanel : Mixpanel!
     var videoClips : [NSURL]!
     
-    var arrayofText: NSMutableArray = []
+    var arrayofText: [String] = []
     var arrayOfClipDurations: [Double] = []
     
     var indicatorView: UIView!
@@ -403,7 +403,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
                         do{
                             try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
-                            arrayofText.removeLastObject()
+                            arrayofText.removeLast()
 
                         }
                         catch{
@@ -1085,7 +1085,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                 self.indicatorView.center = CGPointMake(self.view.center.x, 30)
                 }, completion: {(finished) -> Void in
-                    self.arrayofText.addObject(newLabel.text!)
+                    self.arrayofText.append(newLabel.text!)
             })
             
             self.view.bringSubviewToFront(self.recordButton)
@@ -1216,7 +1216,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.cameraTextView.returnKeyType = UIReturnKeyType.Default
 
 
-        arrayofText.removeAllObjects()
+        arrayofText.removeAll()
 
         draftBottomSpacing.constant = -200
         UIView.animateWithDuration(0.3, animations: { () -> Void in
