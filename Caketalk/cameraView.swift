@@ -187,7 +187,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 0)
             videoCamera?.startCameraCapture()
-            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: view.frame.size)
+            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
             filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
@@ -581,7 +581,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         recording = true;
         let clipCountString = String(clipCount)
-        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: view.frame.size)
+        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
         filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
