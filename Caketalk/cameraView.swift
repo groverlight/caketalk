@@ -203,7 +203,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
-            self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 0.3)
             let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
             topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
             self.view.addSubview(topVisualEffectView)
@@ -214,6 +213,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             self.view.bringSubviewToFront(headerView)
             
+            //self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 0.3)
 
         }
         else
@@ -246,9 +246,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     }
     override func viewWillAppear(animated: Bool) {
-        
-        startSamplingColors()
-
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
             if (files?.count == 0){
@@ -337,8 +334,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     }
     
     func stopSamplingColors() {
-        screenshotTimer.invalidate()
-        screenshotTimer = nil
+        if screenshotTimer != nil {
+            screenshotTimer.invalidate()
+            screenshotTimer = nil
+        }
     }
     
     //UITextView delegate functions
@@ -622,7 +621,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         }
 
-        startSamplingColors()
+        //startSamplingColors()
     }
     
     func mergeAndExportVideo() {
@@ -907,7 +906,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("record button pressed")
         print("Mixpanel event here")
         
-        stopSamplingColors()
+        //stopSamplingColors()
         
         mixPanel.track("Record button pressed", properties: nil)
         mixPanel.flush()
