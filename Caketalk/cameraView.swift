@@ -180,7 +180,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera?.frameRate = 30
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
-            filteredImage?.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 200)
+            filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
             filter = YUGPUImageHighPassSkinSmoothingFilter()
             filter!.amount = 1
             videoCamera?.addTarget(filter)
@@ -204,6 +204,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
             self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 0.3)
+            let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
+            self.view.addSubview(topVisualEffectView)
+            
+            let bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
+            self.view.addSubview(bottomVisualEffectView)
+            
+            self.view.bringSubviewToFront(headerView)
+            
 
         }
         else
@@ -963,7 +973,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.headerView.hidden = true
             self.newImage = GPUImageView()
             self.newImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
-            self.newImage?.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 200)
+            self.newImage?.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 120)
             let newfilter = GPUImagePixellateFilter()
             self.videoCamera?.frameRate = 30
             self.videoCamera?.addTarget(newfilter)
