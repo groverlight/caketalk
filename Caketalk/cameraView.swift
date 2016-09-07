@@ -666,21 +666,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     func exportCurrentVideo() {
         var shutterLayers = [ShutterLayer]()
 
-        print("Array or text \(arrayofText, arrayOfClipDurations)")
-        
-        for i in 0..<arrayofText.count {
+        for i in 0..<arrayofText.count - 1  {
             if arrayOfClipDurations.count == 1 {
-                shutterLayers.append(ShutterLayer(previousClipDuration: 0, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i, bounds: self.view.bounds))
+                shutterLayers.append(ShutterLayer(previousClipDuration: 0, clipDuration:arrayOfClipDurations[i], title: arrayofText[i], line: i, bounds: self.view.bounds))
             } else if arrayOfClipDurations.count > 1 {
                 var preferredDelay: Double = 0
-                
                 for var k in 0..<i {
                     preferredDelay += arrayOfClipDurations[k]
                 }
                 
-                print("Pref delay: \(preferredDelay)")
-                
-                shutterLayers.append(ShutterLayer(previousClipDuration: preferredDelay, clipDuration:arrayOfClipDurations[i], title: arrayofText[i] as! String, line: i, bounds: self.view.bounds))
+                shutterLayers.append(ShutterLayer(previousClipDuration: preferredDelay, clipDuration:arrayOfClipDurations[i], title: arrayofText[i], line: i, bounds: self.view.bounds))
             }
         }
         
