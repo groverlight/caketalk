@@ -103,10 +103,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        coloredBackgroundView = UIView(frame: self.view.bounds)
-        self.view.addSubview(coloredBackgroundView)
-        
         playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        
+        let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        backgroundVisualEffectView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 60)
+        self.view.insertSubview(backgroundVisualEffectView, atIndex: 0)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -171,7 +172,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             catch {
 
             }
-
             //instantiating the camera
 
             filteredImage = GPUImageView()
@@ -185,7 +185,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             filter!.amount = 1
             videoCamera?.addTarget(filter)
             filter?.addTarget(filteredImage)
-            self.view.insertSubview(filteredImage!, atIndex: 0)
+            self.view.insertSubview(filteredImage!, atIndex: 1)
             videoCamera?.startCameraCapture()
             movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
             filter?.addTarget(movieWriter)
@@ -224,7 +224,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             recordButton.userInteractionEnabled = false
         }
         
-        self.view.sendSubviewToBack(coloredBackgroundView)
         iPhoneScreenSizes()
         
         if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-cameraTextView") == nil {
@@ -711,8 +710,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
        
-
-
             arrayofText.removeLast()
             arrayOfClipDurations.removeLast()
             videoClips.removeLast()
