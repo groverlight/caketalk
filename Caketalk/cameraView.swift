@@ -212,8 +212,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.view.addSubview(bottomVisualEffectView)
             
             self.view.bringSubviewToFront(headerView)
-            
-            //self.performSelector(#selector(cameraView.startSamplingColors), withObject: nil, afterDelay: 0.3)
 
         }
         else
@@ -323,22 +321,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.setNeedsStatusBarAppearanceUpdate()
         }
     
-    
-    func startSamplingColors() {
-        if screenshotTimer == nil {
-            filter!.useNextFrameForImageCapture()
-            firstFrameToPassImage = filter!.imageFromCurrentFramebuffer()
-            screenshotTimer = NSTimer.scheduledTimerWithTimeInterval(colorSamplingRate, target: self, selector: #selector(cameraView.updateBackgroundColorTransition), userInfo: nil, repeats: true)
-        }
-    }
-    
-    func stopSamplingColors() {
-        if screenshotTimer != nil {
-            screenshotTimer.invalidate()
-            screenshotTimer = nil
-        }
-    }
-    
     //UITextView delegate functions
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         print("getting text...")
@@ -438,8 +420,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
-                
-                //stopSamplingColors()
+
                 mergeAndExportVideo()
                 
                 self.view.bringSubviewToFront(recordButton)
@@ -620,7 +601,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         }
 
-        //startSamplingColors()
     }
     
     func mergeAndExportVideo() {
@@ -898,8 +878,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("record button pressed")
         print("Mixpanel event here")
         
-        //stopSamplingColors()
-        
         mixPanel.track("Record button pressed", properties: nil)
         mixPanel.flush()
 
@@ -1095,6 +1073,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         if (finished){
                             
                             self.filteredImage?.hidden = false
+    
                             
                             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                                 self.indicatorView.center = CGPointMake(self.view.center.x, -30)
