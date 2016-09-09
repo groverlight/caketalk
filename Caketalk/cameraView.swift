@@ -980,10 +980,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             
             self.filteredImage?.hidden = true
-            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                self.newImage?.center.y = (self.newImage?.center.y)! + 40
-                self.scrollView.center.y = self.scrollView.center.y + 40
-                }, completion: nil)
 
 
             let newLabel = UILabel(frame: CGRectMake(20, self.scrollView.bounds.size.height + self.scrollHeight, self.view.bounds.size.width*(2/3)-20, textHeight! ))
@@ -1099,14 +1095,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         if (finished){
                             
                             self.filteredImage?.hidden = false
-                            
-                            UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                                self.newImage?.center.y = (self.newImage?.center.y)! - 40
-                                self.scrollView.center.y = self.scrollView.center.y - 40
-                                }, completion: {
-                                    completion in
-                                    self.newImage?.hidden = true
-                            })
                             
                             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                                 self.indicatorView.center = CGPointMake(self.view.center.x, -30)
