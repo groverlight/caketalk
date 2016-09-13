@@ -279,6 +279,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.cameraTextView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.New, context: nil)
         cameraTextView.becomeFirstResponder()
         shouldEdit = true
+        
+        videoClips = [] // Attempts to solve a bug associated with video clips crashing the app after redo is pressed. 
+        arrayofText = [] // Clears array of text on view will appear. Attempts to solve the issue with unexpexted text in preview. 
 
     }
     
@@ -870,6 +873,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
 
     override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {   
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
