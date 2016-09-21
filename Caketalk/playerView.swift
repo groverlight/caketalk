@@ -81,9 +81,19 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         moviePlayer = AVPlayer(playerItem: avPlayerItem)
         let avLayer = AVPlayerLayer(player: moviePlayer)
         avLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        avLayer.frame = CGRectMake(0, 100, self.view.bounds.size.width, self.view.bounds.size.height - 200)
+        avLayer.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
+        
+        
+        let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
+        self.view.addSubview(topVisualEffectView)
+        
+        let bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
+        self.view.addSubview(bottomVisualEffectView)
+        
         
         loadingPlaceholderImageView = UIImageView(frame: CGRectMake(0, 100, avLayer.bounds.size.width, avLayer.bounds.size.height))
         loadingPlaceholderImageView.clipsToBounds = true
