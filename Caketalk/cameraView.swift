@@ -1060,10 +1060,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             self.startRecording()
             
+            
+            self.arrayofText.append(newLabel.text!)
             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                 self.indicatorView.center = CGPointMake(self.view.center.x, 30)
                 }, completion: {(finished) -> Void in
-                    self.arrayofText.append(newLabel.text!)
             })
             
             self.view.bringSubviewToFront(self.recordButton)
