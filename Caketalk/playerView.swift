@@ -94,6 +94,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
         self.view.addSubview(bottomVisualEffectView)
         
+        self.view.bringSubviewToFront(self.progressBarView)
+        self.view.bringSubviewToFront(self.animatedProgressBarView)
         
         loadingPlaceholderImageView = UIImageView(frame: CGRectMake(0, 100, avLayer.bounds.size.width, avLayer.bounds.size.height))
         loadingPlaceholderImageView.clipsToBounds = true
