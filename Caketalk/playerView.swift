@@ -96,6 +96,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         
         self.view.bringSubviewToFront(self.progressBarView)
         self.view.bringSubviewToFront(self.animatedProgressBarView)
+        self.view.bringSubviewToFront(headerView)
+        self.view.bringSubviewToFront(headerLabel)
         
         loadingPlaceholderImageView = UIImageView(frame: CGRectMake(0, 100, avLayer.bounds.size.width, avLayer.bounds.size.height))
         loadingPlaceholderImageView.clipsToBounds = true
