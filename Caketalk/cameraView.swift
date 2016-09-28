@@ -103,9 +103,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
-        let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        backgroundVisualEffectView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 60)
-        self.view.insertSubview(backgroundVisualEffectView, atIndex: 0)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -465,6 +462,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         return true
     }
     func textViewDidChange(textView: UITextView) {
+        self.view.bringSubviewToFront(cameraTextView)
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)
         let textHeight = self.cameraTextView.font?.lineHeight
         let pos = self.cameraTextView.endOfDocument
