@@ -54,6 +54,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var arrayOfClipDurations: [Double] = []
     
     var indicatorView: UIView!
+    
+    var tipsTracker: [Bool?] = []
 
 /*---------------BEGIN OUTLETS----------------------*/
 
@@ -95,6 +97,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         super.viewDidLoad()
         print("camera view loaded")
         print("SOUND EFFECT HERE")
+        
+        setTipsBaseCase()
         
         mixPanel = Mixpanel.sharedInstance()
     
@@ -215,21 +219,20 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         iPhoneScreenSizes()
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-cameraTextView") == nil {
-                        // EasyTipView global preferences
-                        var preferences = EasyTipView.Preferences()
-                        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                        preferences.drawing.foregroundColor = UIColor.blackColor()
-                        preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
-                        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-                        preferences.animating.dismissDuration = 2
-                        EasyTipView.show(forView: cameraTextView,
-                                         withinSuperview: self.view,
-                                         text: "Type something that you like",
-                                         preferences: preferences,
-                                         delegate: self)
-            
-            NSUserDefaults.standardUserDefaults().setObject(false, forKey: "isFirstLaunch-cameraTextView")
+        if tipsTracker.count == 0 {
+            // EasyTipView global preferences
+            var preferences = EasyTipView.Preferences()
+            preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+            preferences.drawing.foregroundColor = UIColor.blackColor()
+            preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+            preferences.animating.dismissDuration = 2
+            EasyTipView.show(forView: cameraTextView,
+                             withinSuperview: self.view,
+                             text: "Type something that you like",
+                             preferences: preferences,
+                             delegate: self)
+            incrementTipsTracker()
         }
     
     }
@@ -274,6 +277,22 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         videoClips = [] // Attempts to solve a bug associated with video clips crashing the app after redo is pressed. 
         arrayofText = [] // Clears array of text on view will appear. Attempts to solve the issue with unexpexted text in preview. 
 
+    }
+    
+    func setTipsBaseCase() {
+        if  NSUserDefaults.standardUserDefaults().valueForKey("tipsTracker") != nil {
+            tipsTracker = NSUserDefaults.standardUserDefaults().valueForKey("tipsTracker") as! [Bool?]
+        } else {
+            tipsTracker = []
+            NSUserDefaults.standardUserDefaults().setValue(tipsTracker as! AnyObject, forKey: "tipsTracker")
+        }
+    }
+    
+    
+    func incrementTipsTracker() {
+        if tipsTracker.count <= 6 {
+            tipsTracker.append(true)
+        }
     }
     
     func playSoundWithPath(path : String) {
