@@ -36,6 +36,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var previewLayer : AVCaptureVideoPreviewLayer?
     var shouldEdit = true
     var videoCamera:GPUImageVideoCamera?
+    var filter:GPUImageExposureFilter?
     var filteredImage: GPUImageView?
     var newImage: GPUImageView?
     var movieWriter: GPUImageMovieWriter?
@@ -107,6 +108,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
+        let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        backgroundVisualEffectView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 60)
+        self.view.insertSubview(backgroundVisualEffectView, atIndex: 0)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -180,9 +184,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
             filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
+            filter = GPUImageExposureFilter()
+            filter?.exposure = 0
+            videoCamera?.addTarget(filter)
+            filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 1)
             videoCamera?.startCameraCapture()
             movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
+            filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
             gradientView.frame = self.view.bounds
@@ -481,7 +490,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         return true
     }
     func textViewDidChange(textView: UITextView) {
-        self.view.bringSubviewToFront(cameraTextView)
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)
         let textHeight = self.cameraTextView.font?.lineHeight
         let pos = self.cameraTextView.endOfDocument
@@ -585,6 +593,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         recording = true;
         let clipCountString = String(clipCount)
         movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
+        filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
         self.videoCamera?.frameRate = 30
@@ -1233,7 +1242,18 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.cameraTextView.becomeFirstResponder()
         }
-
+    
+    func updateBackgroundColorTransition() {
+        filter!.useNextFrameForImageCapture()
+        currentImage = filter!.imageFromCurrentFramebuffer()
+        UIView.animateWithDuration(colorSamplingRate, animations: {
+            if let currentImage = self.currentImage {
+                self.coloredBackgroundView.backgroundColor = currentImage.areaAverage()
+            }
+            }, completion: { value in
+        })
+    }
+    
     // MARK: EasyTipViewDelegate
     func easyTipViewDidDismiss(tipView : EasyTipView) {
     
