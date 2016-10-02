@@ -68,6 +68,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
     @IBOutlet var backButton: UIButton!
     @IBOutlet var backEmoji: UILabel!
+    
+    var topVisualEffectView: UIVisualEffectView!
+    var bottomVisualEffectView: UIVisualEffectView!
 
 /*---------------END OUTLETS----------------------*/
 
@@ -81,18 +84,19 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         moviePlayer = AVPlayer(playerItem: avPlayerItem)
         let avLayer = AVPlayerLayer(player: moviePlayer)
         avLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        avLayer.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
+        avLayer.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 120)
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
         
-        
-        let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
-        self.view.addSubview(topVisualEffectView)
-        
-        let bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
-        self.view.addSubview(bottomVisualEffectView)
+        if topVisualEffectView == nil && bottomVisualEffectView == nil {
+            topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
+            self.view.addSubview(topVisualEffectView)
+            
+            bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
+            self.view.addSubview(bottomVisualEffectView)
+        }
         
         self.view.bringSubviewToFront(self.progressBarView)
         self.view.bringSubviewToFront(self.animatedProgressBarView)
