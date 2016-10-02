@@ -430,6 +430,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
 
+                NSUserDefaults.standardUserDefaults().setObject(true, forKey: "shownAllTips")
                 mergeAndExportVideo()
                 
                 self.view.bringSubviewToFront(recordButton)
