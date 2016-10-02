@@ -56,6 +56,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     var indicatorView: UIView!
     
+    var tipView: EasyTipView!
     var tipsTracker: [Bool?] = []
 
 /*---------------BEGIN OUTLETS----------------------*/
@@ -98,9 +99,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         super.viewDidLoad()
         print("camera view loaded")
         print("SOUND EFFECT HERE")
-        
-        setTipsBaseCase()
-        
+
         mixPanel = Mixpanel.sharedInstance()
     
         self.cameraTextView.delegate = self
@@ -228,19 +227,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         iPhoneScreenSizes()
         
-        if tipsTracker.count == 0 {
-            // EasyTipView global preferences
+        if NSUserDefaults.standardUserDefaults().objectForKey("shownAllTips") == nil {
             var preferences = EasyTipView.Preferences()
             preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
             preferences.drawing.foregroundColor = UIColor.blackColor()
             preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-            preferences.animating.dismissDuration = 2
-            EasyTipView.show(forView: cameraTextView,
-                             withinSuperview: self.view,
-                             text: "Type something that you like",
-                             preferences: preferences,
-                             delegate: self)
+            preferences.animating.dismissDuration = 0.5
+            tipView = EasyTipView(text: "Type something that you like", preferences: preferences, delegate: self)
+            tipView.show(animated: true, forView: cameraTextView, withinSuperview: self.view)
             incrementTipsTracker()
         }
     
@@ -287,21 +282,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         arrayofText = [] // Clears array of text on view will appear. Attempts to solve the issue with unexpexted text in preview. 
 
     }
-    
-    func setTipsBaseCase() {
-        if  NSUserDefaults.standardUserDefaults().valueForKey("tipsTracker") != nil {
-            tipsTracker = NSUserDefaults.standardUserDefaults().valueForKey("tipsTracker") as! [Bool?]
-        } else {
-            tipsTracker = []
-            NSUserDefaults.standardUserDefaults().setValue(tipsTracker as! AnyObject, forKey: "tipsTracker")
-        }
+
+    func incrementTipsTracker() {
+        self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
     }
     
-    
-    func incrementTipsTracker() {
-        if tipsTracker.count <= 6 {
-            tipsTracker.append(true)
-        }
+    func dismissTipView() {
+        tipView.dismiss()
     }
     
     func playSoundWithPath(path : String) {
@@ -623,6 +610,18 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoClips.append(NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCount - 1).mov", isDirectory: true))
         }
 
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("shownAllTips") == nil {
+            var preferences = EasyTipView.Preferences()
+            preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
+            preferences.drawing.foregroundColor = UIColor.blackColor()
+            preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+            preferences.animating.dismissDuration = 0.5
+            tipView = EasyTipView(text: "Say something more... And hit send.", preferences: preferences, delegate: self)
+            tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
+            incrementTipsTracker()
+        }
     }
     
     func mergeAndExportVideo() {
