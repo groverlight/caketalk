@@ -36,7 +36,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var previewLayer : AVCaptureVideoPreviewLayer?
     var shouldEdit = true
     var videoCamera:GPUImageVideoCamera?
-    var filter:GPUImageExposureFilter?
+    var filter:GPUImageCropFilter?
     var filteredImage: GPUImageView?
     var newImage: GPUImageView?
     var movieWriter: GPUImageMovieWriter?
@@ -183,13 +183,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
             filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
-            filter = GPUImageExposureFilter()
-            filter?.exposure = 0
+            filter = GPUImageCropFilter(cropRegion: CGRectMake(0.0, 0.1, 1.0, 0.8))
             videoCamera?.addTarget(filter)
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 1)
             videoCamera?.startCameraCapture()
-            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 120))
+            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height * 0.8))
             filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
@@ -580,7 +579,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         recording = true;
         let clipCountString = String(clipCount)
-        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 120))
+        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height * 0.8))
         filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
