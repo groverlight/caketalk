@@ -189,7 +189,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 1)
             videoCamera?.startCameraCapture()
-            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
+            movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())movie.mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 120))
             filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
@@ -580,7 +580,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         recording = true;
         let clipCountString = String(clipCount)
-        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 200))
+        movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height - 120))
         filter?.addTarget(movieWriter)
         movieWriter?.encodingLiveVideo = true
         movieWriter?.hasAudioTrack = false
@@ -947,7 +947,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.headerView.hidden = true
             self.newImage = GPUImageView()
             self.newImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
-            self.newImage?.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 120)
+            self.newImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
             let newfilter = GPUImagePixellateFilter()
             self.videoCamera?.frameRate = 30
             self.videoCamera?.addTarget(newfilter)
