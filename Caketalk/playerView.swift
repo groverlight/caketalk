@@ -84,16 +84,17 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         moviePlayer = AVPlayer(playerItem: avPlayerItem)
         let avLayer = AVPlayerLayer(player: moviePlayer)
         avLayer.videoGravity = AVLayerVideoGravityResize
+        avLayer.frame = CGRectMake(0, self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.8)
         self.movieView.layer.addSublayer(avLayer)
         self.moviePlayer?.play()
         
         if topVisualEffectView == nil && bottomVisualEffectView == nil {
             topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
+            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(topVisualEffectView)
             
             bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
+            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(bottomVisualEffectView)
         }
         
@@ -257,6 +258,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         if (numOfClips > 0){
             let clipsLeft = totalReceivedClips - numOfClips + 1
             setupVideo(clipsLeft)
+            print("Setup video")
         }
         else{
 

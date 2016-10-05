@@ -2,7 +2,6 @@ use_frameworks!
 target 'Caketalk' do
 pod 'Mixpanel'
 pod 'pop', '~> 1.0'
-pod 'YUGPUImageHighPassSkinSmoothing'
 pod "Player", '~> 0.1.3'
 pod 'Hue'
 pod 'UIImageColors'
