@@ -667,7 +667,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     func exportCurrentVideo() {
         var shutterLayers = [ShutterLayer]()
 
-        for i in 0..<arrayofText.count - 1  {
+        for i in 0..<arrayofText.count  {
             if arrayOfClipDurations.count == 1 {
                 shutterLayers.append(ShutterLayer(previousClipDuration: 0, clipDuration:arrayOfClipDurations[i], title: arrayofText[i], line: i, bounds: self.view.bounds))
             } else if arrayOfClipDurations.count > 1 {
