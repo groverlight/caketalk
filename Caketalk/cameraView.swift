@@ -948,10 +948,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         
         if NSUserDefaults.standardUserDefaults().valueForKey("tip-6") == nil {
-            let view = UIView(frame: CGRectMake(0, 0, 1, 1))
-            view.center = CGPointMake(self.view.center.x, self.view.center.y + 85)
-            self.view.addSubview(view)
-
             var preferences = EasyTipView.Preferences()
             preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
             preferences.drawing.foregroundColor = UIColor.blackColor()
@@ -959,7 +955,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
             preferences.animating.dismissDuration = 0.5
             tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
-            tipView.show(animated: true, forView: view, withinSuperview: self.view)
+            tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
             self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
             NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
         }
