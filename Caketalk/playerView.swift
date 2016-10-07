@@ -415,7 +415,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                                         preferences.animating.showDuration = 2
                                         EasyTipView.show(forView: self.line,
                                             withinSuperview: self.view,
-                                            text: "Share it on the web",
+                                            text: "Share with your favorite audience!",
                                             preferences: preferences,
                                             delegate: self)
                                         
