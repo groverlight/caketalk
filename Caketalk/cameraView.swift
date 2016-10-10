@@ -181,7 +181,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera?.horizontallyMirrorFrontFacingCamera = true
             videoCamera?.frameRate = 30
             videoCamera!.outputImageOrientation = .Portrait
-            filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
+            filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatio
             filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
             filter = GPUImageCropFilter(cropRegion: CGRectMake(0.0, 0.1, 1.0, 0.8))
             videoCamera?.addTarget(filter)
@@ -204,12 +204,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
-            let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 60)
+            let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(topVisualEffectView)
             
-            let bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 60, self.view.bounds.size.width, 60)
+            let bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(bottomVisualEffectView)
             
             
@@ -358,7 +358,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         print("getting text...")
         
-        dismissTipView()
+        if tipView != nil {
+            dismissTipView()
+        }
 
         let  char = text.cStringUsingEncoding(NSUTF8StringEncoding)!
         let isBackSpace = strcmp(char, "\\b")
@@ -699,9 +701,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         exporter?.outputURL = url
         exporter?.shouldOptimizeForNetworkUse = true
         exporter?.outputFileType = AVFileTypeQuickTimeMovie
-        
         exporter?.exportAsynchronouslyWithCompletionHandler({ () -> Void in
-            
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
                 self.exportCurrentVideo()
             })

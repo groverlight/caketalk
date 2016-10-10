@@ -89,11 +89,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         self.moviePlayer?.play()
         
         if topVisualEffectView == nil && bottomVisualEffectView == nil {
-            topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
             topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(topVisualEffectView)
             
-            bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
             bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(bottomVisualEffectView)
         }
