@@ -757,10 +757,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             mixPanel.flush()
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
-       
-            arrayofText.removeLast()
-            arrayOfClipDurations.removeLast()
-            videoClips.removeLast()
 
             self.recordButton.userInteractionEnabled = false
             sender.enabled = false
