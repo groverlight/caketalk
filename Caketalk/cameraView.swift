@@ -57,6 +57,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var indicatorView: UIView!
     
     var tipView: EasyTipView!
+    
+    var topVisualEffectView: UIVisualEffectView!
+    var bottomVisualEffectView: UIVisualEffectView!
 
 
 /*---------------BEGIN OUTLETS----------------------*/
@@ -203,11 +206,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
-            let topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+            topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
             topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(topVisualEffectView)
             
-            let bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+            bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
             bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
             self.view.addSubview(bottomVisualEffectView)
             
@@ -743,6 +746,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             print("edit view loaded")
             print("SOUND EFFECT HERE")
             
+            self.view.bringSubviewToFront(topVisualEffectView)
+            self.view.bringSubviewToFront(bottomVisualEffectView)
+
             playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
             
             print("Mixpanel event here")
@@ -1253,6 +1259,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.cameraTextView.becomeFirstResponder()
         }
 
+        
+        self.view.bringSubviewToFront(topVisualEffectView)
+        self.view.bringSubviewToFront(bottomVisualEffectView)
     }
 
 
@@ -1300,6 +1309,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
 
             self.cameraTextView.becomeFirstResponder()
+        
+            self.view.bringSubviewToFront(topVisualEffectView)
+            self.view.bringSubviewToFront(bottomVisualEffectView)
         }
     
     func updateBackgroundColorTransition() {
