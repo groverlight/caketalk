@@ -531,7 +531,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
         }
         
-        if cameraTextView.text.characters.count > 2 {
+        if cameraTextView.text.characters.count > 8 {
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-5") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
