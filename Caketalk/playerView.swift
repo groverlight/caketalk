@@ -135,6 +135,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         comeInAnimation.toValue = (scrollLabel.bounds.size.width / 2) + 20
         comeInAnimation.beginTime = AVCoreAnimationBeginTimeAtZero + 1.5
         comeInAnimation.completionBlock = {(animation,finished) in
+
             let goUpAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerPositionY)
             goUpAnimation.duration = CMTimeGetSeconds(avAsset.duration) + 4.25
             goUpAnimation.repeatCount = 0
@@ -291,6 +292,10 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
                 arrayofBorders.addObject(border)
                 scrollHeightOverlay = scrollHeightOverlay + newerLabel.bounds.size.height + 10
+
+
+
+
 
             }
 

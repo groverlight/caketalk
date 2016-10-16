@@ -36,7 +36,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var previewLayer : AVCaptureVideoPreviewLayer?
     var shouldEdit = true
     var videoCamera:GPUImageVideoCamera?
-    var filter:GPUImageCropFilter?
+    var filter:GPUImageSkinToneFilter?
     var filteredImage: GPUImageView?
     var newImage: GPUImageView?
     var movieWriter: GPUImageMovieWriter?
@@ -186,7 +186,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
             filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
-            filter = GPUImageCropFilter(cropRegion: CGRectMake(0.0, 0.0, 1.0, 1.0))
+            filter = GPUImageSkinToneFilter (0,3)
             videoCamera?.addTarget(filter)
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 1)

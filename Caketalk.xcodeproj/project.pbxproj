@@ -27,7 +27,6 @@
 		36FEF4711D41580400C7ABEF /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */; };
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
-		F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45844991CE54B5D000D8B41 /* CloudKit.framework */; };
 		F468922F1D19EA97001FA942 /* chime_dim.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892211D19EA97001FA942 /* chime_dim.aif */; };
 		F46892301D19EA97001FA942 /* click_pen (typing screen).aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892221D19EA97001FA942 /* click_pen (typing screen).aif */; };
 		F46892311D19EA97001FA942 /* click_pop (button pressed).aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892231D19EA97001FA942 /* click_pop (button pressed).aif */; };
@@ -64,6 +63,8 @@
 		F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */; };
 		F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */; };
 		F47C01861CE3D09200891EB1 /* splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01851CE3D09200891EB1 /* splash.swift */; };
+		F4CE512A1DB1A8A700AEB917 /* Caketalk.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */; };
+		F4CE512C1DB1A92A00AEB917 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */; };
 		F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */; };
 		F4FB95551CE3D1C500E2977B /* permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95541CE3D1C500E2977B /* permission.swift */; };
 		F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95561CE3D2CD00E2977B /* ViewController.swift */; };
@@ -172,8 +173,6 @@
 		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
 		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
-		F45844981CE54B5B000D8B41 /* Caketalk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
-		F45844991CE54B5D000D8B41 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F46892211D19EA97001FA942 /* chime_dim.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = chime_dim.aif; sourceTree = "<group>"; };
 		F46892221D19EA97001FA942 /* click_pen (typing screen).aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "click_pen (typing screen).aif"; sourceTree = "<group>"; };
 		F46892231D19EA97001FA942 /* click_pop (button pressed).aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = "click_pop (button pressed).aif"; sourceTree = "<group>"; };
@@ -219,6 +218,8 @@
 		F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
+		F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F4D5F38E1CE3D0F4008AE6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4FB95541CE3D1C500E2977B /* permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permission.swift; sourceTree = "<group>"; };
 		F4FB95561CE3D2CD00E2977B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -247,8 +248,8 @@
 				F4FB95781CE3F5C300E2977B /* CFNetwork.framework in Frameworks */,
 				F4FB95741CE3F5AB00E2977B /* QuartzCore.framework in Frameworks */,
 				F4FB95721CE3F59200E2977B /* AVKit.framework in Frameworks */,
-				F458449A1CE54B5D000D8B41 /* CloudKit.framework in Frameworks */,
 				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
+				F4CE512C1DB1A92A00AEB917 /* CloudKit.framework in Frameworks */,
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
 				D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */,
 			);
@@ -333,7 +334,6 @@
 				27049AA41CE823FD002D69EF /* paddedLabel.swift */,
 				27049AA51CE823FD002D69EF /* GradientView.h */,
 				27049AA61CE823FD002D69EF /* GradientView.swift */,
-				F45844981CE54B5B000D8B41 /* Caketalk.entitlements */,
 				F4FB95581CE3DCDD00E2977B /* fb.png */,
 				F4FB95601CE3DF2600E2977B /* insta.png */,
 				F4FB95611CE3DF2600E2977B /* more.png */,
@@ -345,6 +345,7 @@
 				F47C01331CE3B3D700891EB1 /* Assets.xcassets */,
 				F47C01351CE3B3D700891EB1 /* LaunchScreen.storyboard */,
 				F47C01381CE3B3D700891EB1 /* Info.plist */,
+				F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */,
 				F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */,
 				F47C01851CE3D09200891EB1 /* splash.swift */,
 				F4FB95541CE3D1C500E2977B /* permission.swift */,
@@ -414,10 +415,10 @@
 		FCFC2848D6592F2DEC3BA40C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */,
 				F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */,
 				F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */,
 				F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */,
-				F45844991CE54B5D000D8B41 /* CloudKit.framework */,
 				F4FB95771CE3F5C300E2977B /* CFNetwork.framework */,
 				F4FB95731CE3F5AB00E2977B /* QuartzCore.framework */,
 				F4FB95711CE3F59200E2977B /* AVKit.framework */,
@@ -522,9 +523,15 @@
 				TargetAttributes = {
 					F47C01251CE3B3D700891EB1 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = TGA9XQ7DER;
+						DevelopmentTeam = 4THJ5Z3YGF;
 						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -625,6 +632,7 @@
 				F46892351D19EA97001FA942 /* digi_hi_squeak.aif in Resources */,
 				F46892341D19EA97001FA942 /* digi_hi_select.aif in Resources */,
 				F47C01771CE3B51E00891EB1 /* RionaSans-Medium.otf in Resources */,
+				F4CE512A1DB1A8A700AEB917 /* Caketalk.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,6 +878,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -915,6 +924,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -959,7 +969,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEdd.caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
@@ -990,7 +1000,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyleEdd.caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
