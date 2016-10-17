@@ -287,7 +287,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 overlayScrollView.addSubview(newerLabel)
 
                 let border = CALayer()
-                border.frame = CGRectMake(0 , scrollHeightOverlay + 45 + self.headerView.bounds.size.height, 4, CGRectGetHeight(newerLabel.frame)-12)
+                border.frame = CGRectMake(0 , scrollHeightOverlay + 45 + self.headerView.bounds.size.height, 2, CGRectGetHeight(newerLabel.frame)-12)
                 border.backgroundColor = UIColor(red: 85/255, green: 172/255, blue: 238/255, alpha: 1.0).CGColor
 
                 arrayofBorders.addObject(border)
@@ -305,7 +305,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             let timeStampLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height , self.view.bounds.size.width*(2/3)-20,25))
             timeStampLabel.font = UIFont(name:"RionaSans-Bold", size: 10.0)
             timeStampLabel.textColor = UIColor.whiteColor() .colorWithAlphaComponent(0.4)
-            timeStampLabel.text = "now"
+            timeStampLabel.text = "recap"
             timeStampLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(timeStampLabel)

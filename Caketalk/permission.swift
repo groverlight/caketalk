@@ -45,6 +45,7 @@ class permission: UIViewController {
     self.threeLabel.layer.cornerRadius = 10
     self.threeLabel.clipsToBounds = true
 
+
     self.icloudButton.layer.cornerRadius = 6
     self.alertView.layer.cornerRadius = 20
     self.alertViewTitleLabel.font = UIFont (name: "RionaSans-Bold", size: 17)

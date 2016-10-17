@@ -8,6 +8,7 @@
 
 import UIKit
 import Player
+import pop
 
 class splash: UIViewController, PlayerDelegate {
     
@@ -41,7 +42,20 @@ class splash: UIViewController, PlayerDelegate {
         self.player.playbackLoops = true
         self.player.muted = true
         self.player.playFromBeginning()
-        
+
+
+        let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+        let buttonSpring2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+        buttonSpring.toValue = NSValue(CGPoint: CGPointMake(1, 1))
+        buttonSpring.velocity = NSValue(CGPoint: CGPointMake(6, 6))
+        buttonSpring.springBounciness = 20.0
+        buttonSpring2.toValue = NSValue(CGPoint: CGPointMake(1, 1))
+        buttonSpring2.velocity = NSValue(CGPoint: CGPointMake(6, 6))
+        buttonSpring2.springBounciness = 20.0
+
+        loginButton.pop_addAnimation(buttonSpring, forKey: "spring")
+        loginEmoji.pop_addAnimation(buttonSpring2, forKey: "spring2")
+
 /*---------------BEGIN STYLE 🎨----------------------*/
         self.loginButton.layer.cornerRadius = 6
 /*---------------END STYLE 🎨----------------------*/

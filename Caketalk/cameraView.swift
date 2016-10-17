@@ -36,7 +36,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var previewLayer : AVCaptureVideoPreviewLayer?
     var shouldEdit = true
     var videoCamera:GPUImageVideoCamera?
-    var filter:GPUImageSkinToneFilter?
+    var filter:GPUImageMissEtikateFilter?
     var filteredImage: GPUImageView?
     var newImage: GPUImageView?
     var movieWriter: GPUImageMovieWriter?
@@ -186,7 +186,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
             filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
-            filter = GPUImageSkinToneFilter (0,3)
+            filter = GPUImageMissEtikateFilter()
             videoCamera?.addTarget(filter)
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 1)
@@ -207,11 +207,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.view.insertSubview(gradientView, aboveSubview:filteredImage!)
             
             topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
+            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 62)
             self.view.addSubview(topVisualEffectView)
             
             bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
+            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 62, self.view.bounds.size.width, 62)
             self.view.addSubview(bottomVisualEffectView)
             
             
@@ -842,7 +842,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             let timeStampLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height , self.view.bounds.size.width*(2/3)-20,25))
             timeStampLabel.font = UIFont(name:"RionaSans-Bold", size: 10.0)
             timeStampLabel.textColor = UIColor.whiteColor()
-            timeStampLabel.text = "now"
+            timeStampLabel.text = "draft"
             timeStampLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(timeStampLabel)
@@ -1098,16 +1098,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.recordButton.layer.cornerRadius = 15
             self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 13.0)
             
-            self.indicatorView = UIView(frame: CGRectMake(0, 0, 96, 30))
+            self.indicatorView = UIView(frame: CGRectMake(0, 0, 86, 30))
             self.indicatorView.center = CGPointMake(self.view.center.x, -30)
             self.indicatorView.layer.cornerRadius = 15
             self.indicatorView.clipsToBounds = true
             self.indicatorView.backgroundColor = UIColor.hex("#FF90B3")
             self.view.addSubview(indicatorView)
             
-            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 96, 30))
+            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 86, 30))
             indicatorLabel.textAlignment = NSTextAlignment.Center
-            indicatorLabel.text = "👆 Look here"
+            indicatorLabel.text = "LOOK"
             indicatorLabel.font = UIFont(name:"RionaSans-Bold", size: 12)
             indicatorLabel.textColor = .whiteColor()
             indicatorView.addSubview(indicatorLabel)
@@ -1133,7 +1133,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                             self.filteredImage?.hidden = false
     
                             
-                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                                 self.indicatorView.center = CGPointMake(self.view.center.x, -30)
                                 }, completion: {(finished) -> Void in
                                     self.indicatorView.removeFromSuperview()

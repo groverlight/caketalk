@@ -10,6 +10,8 @@ import UIKit
 import CloudKit
 import CoreTelephony
 import SafariServices
+import pop
+
 
 var phoneNumber:String = ""
 var cloudManager: CloudManager = CloudManager()
@@ -57,14 +59,19 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(mobileNumber.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil);
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(mobileNumber.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil);
 
-        let attributedString = NSMutableAttributedString(string: "By continuing you agree to the Terms of Use and Privacy Policy")
+        let attributedString = NSMutableAttributedString(string: "By continuing you agree to the Terms of Use and Privacy Policy 📃")
         attributedString.addAttribute(NSLinkAttributeName, value: "https://www.terms.com", range: NSRange(location: 31, length: 12))
         attributedString.addAttribute(NSLinkAttributeName, value: "https://www.privacypolicy.com", range: NSRange(location: 48, length: 14))
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.hex("#FCF5E2"), range: NSRange(location: 0, length: 62))
-        termsAndPrivacy.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.hex("#545454"), NSFontAttributeName : UIFont.boldSystemFontOfSize(14)]
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.hex("#BF6282"), range: NSRange(location: 0, length: 62))
+        termsAndPrivacy.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.hex("#BF6282"), NSFontAttributeName : UIFont(name:"RionaSans-Bold", size: 13.0)!]
+
+
+
+
+
         termsAndPrivacy.attributedText = attributedString
         termsAndPrivacy.textAlignment = .Center
-        termsAndPrivacy.font = UIFont.systemFontOfSize(14)
+        termsAndPrivacy.font = UIFont(name:"RionaSans-Bold", size: 13.0)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -81,6 +88,8 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         self.mobileNumberField.layer.cornerRadius = 6
 
         self.codeButton.layer.cornerRadius = 6
+
+
 
 /*---------------END STYLE 🎨----------------------*/
 
@@ -199,6 +208,19 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         if (length == 9 && string.characters.count != 0){
             self.codeButton.hidden = false
             self.codeEmoji.hidden = false
+
+            let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+            let buttonSpring2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+            buttonSpring.toValue = NSValue(CGPoint: CGPointMake(1, 1))
+            buttonSpring.velocity = NSValue(CGPoint: CGPointMake(6, 6))
+            buttonSpring.springBounciness = 20.0
+            buttonSpring2.toValue = NSValue(CGPoint: CGPointMake(1, 1))
+            buttonSpring2.velocity = NSValue(CGPoint: CGPointMake(6, 6))
+            buttonSpring2.springBounciness = 20.0
+
+            codeButton.pop_addAnimation(buttonSpring, forKey: "spring")
+            codeEmoji.pop_addAnimation(buttonSpring2, forKey: "spring2")
+
             print (length)
 
         }

@@ -52,6 +52,7 @@ override func viewDidLoad() {
 
         //rounding edges out use MASKTOBOUNDS=true
 
+
     self.oneLabel.layer.cornerRadius = 10
     self.oneLabel.clipsToBounds = true
     self.twoLabel.layer.cornerRadius = 10
@@ -64,6 +65,18 @@ override func viewDidLoad() {
     self.digitThree.layer.cornerRadius = 6
     self.digitFour.layer.cornerRadius = 6
     self.digitFive.layer.cornerRadius = 6
+
+    self.digitOne.clipsToBounds = true
+    self.digitTwo.clipsToBounds = true
+    self.digitThree.clipsToBounds = true
+    self.digitFour.clipsToBounds = true
+    self.digitFive.clipsToBounds = true
+
+
+    
+
+
+
 
 /*---------------END STYLE 🎨----------------------*/
 
@@ -103,6 +116,8 @@ override func viewDidLoad() {
         default:
             return false
         }
+
+
         if (range.length == 0){
             newDigit.text = string
         }
@@ -126,7 +141,7 @@ override func viewDidLoad() {
                 }
             }
             else {
-                let wrongCode = UIAlertController(title: "Wrong Code Bruh", message: "Looks like the verification code was incorrect. Please Try Again.", preferredStyle: UIAlertControllerStyle.Alert)
+                let wrongCode = UIAlertController(title: "Oops wrong code", message: "Looks like the verification code was incorrect. Please Try Again.", preferredStyle: UIAlertControllerStyle.Alert)
                 let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action: UIAlertAction!) in
                     NSNotificationCenter.defaultCenter().postNotificationName("move", object: nil)
                 })
