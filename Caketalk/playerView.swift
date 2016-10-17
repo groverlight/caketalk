@@ -165,6 +165,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         super.viewDidLoad()
         backButton.layer.cornerRadius = 6
         gradientView.frame = self.view.bounds
+        self.gradientView.hidden = true
         gradientView.backgroundColor = UIColor.clearColor()
         gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
         gradientView.locations = [0, 1]
@@ -175,11 +176,16 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         self.view.insertSubview(self.gradientView, aboveSubview: self.movieView)
 
+
+
+
     }
 
     override func viewWillAppear(animated: Bool) {
         self.view.bringSubviewToFront(movieView)
         self.view.bringSubviewToFront(self.progressBarView)
+
+
         do{
             let String = "MediaCache"
             try self.fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(String)")        }
@@ -312,7 +318,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             let emojiLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height+16, self.view.bounds.size.width*(2/3)-20,25))
             emojiLabel.font = UIFont(name:"Avenir Next", size:14)
             emojiLabel.textColor = UIColor.whiteColor()
-            emojiLabel.text = "👁"
+            emojiLabel.text = "📜"
             emojiLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(emojiLabel)
@@ -335,8 +341,21 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 for border in arrayofBorders{
                     self.overlay!.layer.addSublayer(border as! CALayer)
                 }
-                self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
-                self.backEmoji.transform = CGAffineTransformMakeTranslation(0, 2000)
+                //self.backButton.transform = CGAffineTransformMakeTranslation(0, 2000)
+                //self.backEmoji.transform = CGAffineTransformMakeTranslation(0, 2000)
+
+                let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+                let buttonSpring2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
+                buttonSpring.toValue = NSValue(CGPoint: CGPointMake(1, 1))
+                buttonSpring.velocity = NSValue(CGPoint: CGPointMake(6, 6))
+                buttonSpring.springBounciness = 20.0
+                buttonSpring2.toValue = NSValue(CGPoint: CGPointMake(1, 1))
+                buttonSpring2.velocity = NSValue(CGPoint: CGPointMake(6, 6))
+                buttonSpring2.springBounciness = 20.0
+
+                self.backButton.pop_addAnimation(buttonSpring, forKey: "spring")
+                self.backEmoji.pop_addAnimation(buttonSpring2, forKey: "spring2")
+
                 self.view.addSubview(overlayScrollView)
                 self.view.bringSubviewToFront(overlayScrollView)
                 self.view.bringSubviewToFront(self.backButton)
@@ -523,6 +542,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
     
     func twitter() {
+
         
         self.backButton.setTitle("another one", forState: .Normal)
         self.backButton.layer.cornerRadius = 6

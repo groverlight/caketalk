@@ -1096,13 +1096,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.characterCount.hidden = true
             self.recordButton.setTitle("look", forState: UIControlState.Normal)
             self.recordButton.layer.cornerRadius = 15
-            self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 13.0)
+            self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Heavy", size: 13.0)
             
             self.indicatorView = UIView(frame: CGRectMake(0, 0, 86, 30))
             self.indicatorView.center = CGPointMake(self.view.center.x, -30)
             self.indicatorView.layer.cornerRadius = 15
             self.indicatorView.clipsToBounds = true
-            self.indicatorView.backgroundColor = UIColor.hex("#FF90B3")
+            self.indicatorView.backgroundColor = UIColor.hex("#FF6E6E")
             self.view.addSubview(indicatorView)
             
             let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 86, 30))
@@ -1116,14 +1116,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             
             self.arrayofText.append(newLabel.text!)
-            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+            UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.25, initialSpringVelocity: 0.25, options: [], animations: { () -> Void in
                 self.indicatorView.center = CGPointMake(self.view.center.x, 30)
                 }, completion: {(finished) -> Void in
             })
             
             self.view.bringSubviewToFront(self.recordButton)
+            self.gradientView.hidden = true
             self.view.bringSubviewToFront(self.progressBarView)
             moveUp.completionBlock = { (animation, finished) in
+
                 
                 UIView.animateWithDuration(duration, delay: 0, options: [], animations: { () -> Void in
                     self.animatedProgressBarView.transform = CGAffineTransformMakeScale(0.0001, 1)
@@ -1133,7 +1135,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                             self.filteredImage?.hidden = false
     
                             
-                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
+                            UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.25, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                                 self.indicatorView.center = CGPointMake(self.view.center.x, -30)
                                 }, completion: {(finished) -> Void in
                                     self.indicatorView.removeFromSuperview()
@@ -1153,7 +1155,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                     self.progressBarView.hidden = true
                                     
                                     self.stopRecording()
-                                    
+
+
+                                    self.gradientView.hidden = false
                                     self.characterCount.text = "70"
                                     self.recordEmoji.hidden = false
                                     self.characterCount.hidden = false

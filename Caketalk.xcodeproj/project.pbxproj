@@ -66,12 +66,12 @@
 		F4CE512A1DB1A8A700AEB917 /* Caketalk.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */; };
 		F4CE512C1DB1A92A00AEB917 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */; };
 		F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */; };
+		F4EB2EF11DB586350099FBC6 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EB2EED1DB586350099FBC6 /* more.png */; };
+		F4EB2EF21DB586350099FBC6 /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EB2EEE1DB586350099FBC6 /* insta.png */; };
+		F4EB2EF31DB586350099FBC6 /* twtr.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EB2EEF1DB586350099FBC6 /* twtr.png */; };
+		F4EB2EFA1DB587760099FBC6 /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = F4EB2EF91DB587760099FBC6 /* fb.png */; };
 		F4FB95551CE3D1C500E2977B /* permission.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95541CE3D1C500E2977B /* permission.swift */; };
 		F4FB95571CE3D2CD00E2977B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95561CE3D2CD00E2977B /* ViewController.swift */; };
-		F4FB955C1CE3DCDD00E2977B /* fb.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB95581CE3DCDD00E2977B /* fb.png */; };
-		F4FB955F1CE3DCDD00E2977B /* twtr.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB955B1CE3DCDD00E2977B /* twtr.png */; };
-		F4FB95621CE3DF2600E2977B /* insta.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB95601CE3DF2600E2977B /* insta.png */; };
-		F4FB95631CE3DF2600E2977B /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = F4FB95611CE3DF2600E2977B /* more.png */; };
 		F4FB95651CE3E93700E2977B /* mobileNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95641CE3E93700E2977B /* mobileNumber.swift */; };
 		F4FB95671CE3EC0900E2977B /* code.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95661CE3EC0900E2977B /* code.swift */; };
 		F4FB95691CE3ED5B00E2977B /* cameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB95681CE3ED5B00E2977B /* cameraView.swift */; };
@@ -221,12 +221,12 @@
 		F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
 		F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F4D5F38E1CE3D0F4008AE6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4EB2EED1DB586350099FBC6 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = more.png; path = ../more.png; sourceTree = "<group>"; };
+		F4EB2EEE1DB586350099FBC6 /* insta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = insta.png; path = ../insta.png; sourceTree = "<group>"; };
+		F4EB2EEF1DB586350099FBC6 /* twtr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twtr.png; path = ../twtr.png; sourceTree = "<group>"; };
+		F4EB2EF91DB587760099FBC6 /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb.png; path = ../fb.png; sourceTree = "<group>"; };
 		F4FB95541CE3D1C500E2977B /* permission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = permission.swift; sourceTree = "<group>"; };
 		F4FB95561CE3D2CD00E2977B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F4FB95581CE3DCDD00E2977B /* fb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb.png; sourceTree = "<group>"; };
-		F4FB955B1CE3DCDD00E2977B /* twtr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twtr.png; sourceTree = "<group>"; };
-		F4FB95601CE3DF2600E2977B /* insta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = insta.png; sourceTree = "<group>"; };
-		F4FB95611CE3DF2600E2977B /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		F4FB95641CE3E93700E2977B /* mobileNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mobileNumber.swift; sourceTree = "<group>"; };
 		F4FB95661CE3EC0900E2977B /* code.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = code.swift; sourceTree = "<group>"; };
 		F4FB95681CE3ED5B00E2977B /* cameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cameraView.swift; sourceTree = "<group>"; };
@@ -334,10 +334,10 @@
 				27049AA41CE823FD002D69EF /* paddedLabel.swift */,
 				27049AA51CE823FD002D69EF /* GradientView.h */,
 				27049AA61CE823FD002D69EF /* GradientView.swift */,
-				F4FB95581CE3DCDD00E2977B /* fb.png */,
-				F4FB95601CE3DF2600E2977B /* insta.png */,
-				F4FB95611CE3DF2600E2977B /* more.png */,
-				F4FB955B1CE3DCDD00E2977B /* twtr.png */,
+				F4EB2EF91DB587760099FBC6 /* fb.png */,
+				F4EB2EED1DB586350099FBC6 /* more.png */,
+				F4EB2EEE1DB586350099FBC6 /* insta.png */,
+				F4EB2EEF1DB586350099FBC6 /* twtr.png */,
 				F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */,
 				F4FB95561CE3D2CD00E2977B /* ViewController.swift */,
 				F47C015C1CE3B51E00891EB1 /* fonts */,
@@ -600,9 +600,11 @@
 				F47C01371CE3B3D700891EB1 /* LaunchScreen.storyboard in Resources */,
 				F47C01731CE3B51E00891EB1 /* RionaSans-ExtraLightIt.otf in Resources */,
 				F46892361D19EA97001FA942 /* digi_pulse_hi.aif in Resources */,
-				F4FB955C1CE3DCDD00E2977B /* fb.png in Resources */,
+				F4EB2EF11DB586350099FBC6 /* more.png in Resources */,
+				F4EB2EF31DB586350099FBC6 /* twtr.png in Resources */,
 				F46892381D19EA97001FA942 /* etc_trash_paper_short.aif in Resources */,
 				F46892331D19EA97001FA942 /* digi_error_2x (wrong code).aif in Resources */,
+				F4EB2EF21DB586350099FBC6 /* insta.png in Resources */,
 				F46892301D19EA97001FA942 /* click_pen (typing screen).aif in Resources */,
 				F47C01761CE3B51E00891EB1 /* RionaSans-LightIt.otf in Resources */,
 				F47C01341CE3B3D700891EB1 /* Assets.xcassets in Resources */,
@@ -610,19 +612,17 @@
 				27049AA71CE823FD002D69EF /* lookup_miss_etikate.png in Resources */,
 				F46892311D19EA97001FA942 /* click_pop (button pressed).aif in Resources */,
 				F468923A1D19EA97001FA942 /* pop_drip_echo.aif in Resources */,
-				F4FB95631CE3DF2600E2977B /* more.png in Resources */,
 				F46892321D19EA97001FA942 /* digi_blip_hi_2x (modal).aif in Resources */,
 				F47C016D1CE3B51E00891EB1 /* RionaSans-BlackIt.otf in Resources */,
 				F47C01701CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf in Resources */,
 				F47C01781CE3B51E00891EB1 /* RionaSans-MediumIt.otf in Resources */,
 				F47C01711CE3B51E00891EB1 /* RionaSans-ExtraBlackIt.otf in Resources */,
 				F47C016E1CE3B51E00891EB1 /* RionaSans-Bold.otf in Resources */,
-				F4FB95621CE3DF2600E2977B /* insta.png in Resources */,
 				F46892391D19EA97001FA942 /* etc_woosh_mouth (swipes).aif in Resources */,
 				F47C016C1CE3B51E00891EB1 /* RionaSans-Black.otf in Resources */,
+				F4EB2EFA1DB587760099FBC6 /* fb.png in Resources */,
 				F47C01751CE3B51E00891EB1 /* RionaSans-Light.otf in Resources */,
 				F47C01741CE3B51E00891EB1 /* RionaSans-Italic.otf in Resources */,
-				F4FB955F1CE3DCDD00E2977B /* twtr.png in Resources */,
 				F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */,
 				F47C016F1CE3B51E00891EB1 /* RionaSans-BoldIt.otf in Resources */,
 				F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */,
