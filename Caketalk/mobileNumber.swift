@@ -67,8 +67,8 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         let attributedString = NSMutableAttributedString(string: "By continuing you agree to the Terms of Use and Privacy Policy 📃")
         attributedString.addAttribute(NSLinkAttributeName, value: "https://www.terms.com", range: NSRange(location: 31, length: 12))
         attributedString.addAttribute(NSLinkAttributeName, value: "https://www.privacypolicy.com", range: NSRange(location: 48, length: 14))
-        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.hex("#BF6282"), range: NSRange(location: 0, length: 62))
-        termsAndPrivacy.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.hex("#BF6282"), NSFontAttributeName : UIFont(name:"RionaSans-Bold", size: 13.0)!]
+        attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.hex("#000") .colorWithAlphaComponent(0.1), range: NSRange(location: 0, length: 62))
+        termsAndPrivacy.linkTextAttributes = [NSForegroundColorAttributeName: UIColor.hex("#000") .colorWithAlphaComponent(0.3), NSFontAttributeName : UIFont(name:"RionaSans-Bold", size: 13.0)!]
 
 
 
@@ -76,7 +76,7 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
         termsAndPrivacy.attributedText = attributedString
         termsAndPrivacy.textAlignment = .Center
-        termsAndPrivacy.font = UIFont(name:"RionaSans-Bold", size: 13.0)
+        termsAndPrivacy.font = UIFont(name:"RionaSans-Regular", size: 13.0)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 

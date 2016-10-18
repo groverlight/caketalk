@@ -22,7 +22,6 @@ class permission: UIViewController {
 
     @IBOutlet var icloudButton: UIButton!
 
-    @IBOutlet var alertView: UIView!
     @IBOutlet var alertViewTitleLabel: UILabel!
 
 /*---------------END OUTLETS----------------------*/
@@ -47,7 +46,6 @@ class permission: UIViewController {
 
 
     self.icloudButton.layer.cornerRadius = 6
-    self.alertView.layer.cornerRadius = 20
     self.alertViewTitleLabel.font = UIFont (name: "RionaSans-Bold", size: 17)
 
 /*---------------END STYLE 🎨----------------------*/
@@ -71,7 +69,7 @@ class permission: UIViewController {
         audioPlayer.volume = 0.05
 
 
-        self.alertView.hidden = true
+        //self.alertView.hidden = true
         
 
         self.iCloudLogin({ (success) -> () in

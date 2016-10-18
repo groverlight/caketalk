@@ -110,7 +110,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
-        let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
         backgroundVisualEffectView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 60)
         self.view.insertSubview(backgroundVisualEffectView, atIndex: 0)
 
@@ -1194,7 +1194,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                     self.cameraTextView.becomeFirstResponder()
                                     self.recordButton.userInteractionEnabled = true
                                     self.recordButton.layer.borderWidth = 0
-                                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in                                                   self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
+                                    UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.9, options: [], animations: { () -> Void in
+                                        self.recordButton.transform = CGAffineTransformMakeScale(1, 1)
                                         self.characterCount.transform = CGAffineTransformMakeScale(1, 1)
                                         self.recordEmoji.transform = CGAffineTransformMakeScale(1, 1)
                                         }, completion: nil)

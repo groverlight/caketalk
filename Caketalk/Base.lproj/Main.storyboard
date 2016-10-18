@@ -9,12 +9,17 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="RionaSans-Black.otf">
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+            <string>RionaSans-Black</string>
+        </mutableArray>
         <mutableArray key="RionaSans-Bold.otf">
-            <string>RionaSans-Bold</string>
-            <string>RionaSans-Bold</string>
-            <string>RionaSans-Bold</string>
-            <string>RionaSans-Bold</string>
-            <string>RionaSans-Bold</string>
             <string>RionaSans-Bold</string>
             <string>RionaSans-Bold</string>
             <string>RionaSans-Bold</string>
@@ -34,12 +39,8 @@
         </mutableArray>
         <mutableArray key="RionaSans-Medium.otf">
             <string>RionaSans-Medium</string>
-            <string>RionaSans-Medium</string>
-            <string>RionaSans-Medium</string>
         </mutableArray>
         <mutableArray key="RionaSans-Regular.otf">
-            <string>RionaSans-Regular</string>
-            <string>RionaSans-Regular</string>
             <string>RionaSans-Regular</string>
             <string>RionaSans-Regular</string>
             <string>RionaSans-Regular</string>
@@ -68,9 +69,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="nve-8m-cRK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="login">
-                                    <color key="titleColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bd-zo-2bb"/>
@@ -86,16 +87,40 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKETALK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRv-t4-jeT" userLabel="Title">
+                                <rect key="frame" x="242" y="270" width="116" height="32"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="22"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-ZR-NVg" userLabel="Description">
+                                <rect key="frame" x="222" y="305" width="156" height="25"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="quiet video updates">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="RionaSans-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pLq-V8-nAa" secondAttribute="bottom" constant="17" id="09W-yr-7f8"/>
                             <constraint firstItem="Nuo-1N-hXo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="0Ds-K6-V2L"/>
                             <constraint firstAttribute="trailing" secondItem="pLq-V8-nAa" secondAttribute="trailing" constant="20" id="6X3-ZQ-7fz"/>
+                            <constraint firstItem="lRv-t4-jeT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6yG-4h-T29"/>
                             <constraint firstItem="pLq-V8-nAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="UiB-Vf-5dd"/>
+                            <constraint firstItem="lRv-t4-jeT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-14" id="bvA-JX-gdD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nuo-1N-hXo" secondAttribute="bottom" constant="37" id="c1d-Mw-Fsd"/>
                             <constraint firstItem="pLq-V8-nAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="l5P-WN-GO3"/>
+                            <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ree-dM-ajb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pLq-V8-nAa" secondAttribute="trailing" constant="10" id="sRZ-dR-wLh"/>
+                            <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="17.5" id="tSs-E5-JlE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -133,7 +158,7 @@
                                     <constraint firstAttribute="width" constant="20" id="y6B-0B-oeJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kS-3b-lDX" userLabel="two">
@@ -144,7 +169,7 @@
                                     <constraint firstAttribute="height" constant="20" id="ayq-b2-TwS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkq-1F-nm3" userLabel="three">
@@ -155,138 +180,95 @@
                                     <constraint firstAttribute="width" constant="20" id="VKE-I6-yXu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyr-Ve-WQw" userLabel="alertView">
-                                <rect key="frame" x="175" y="175" width="250" height="250"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="we will never share your email with anyone - it's just to sign up" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-6G-uIq">
-                                        <rect key="frame" x="14" y="110" width="223" height="55"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="55" id="2bs-wb-mEf"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="14"/>
-                                        <color key="textColor" red="0.82745098039999998" green="0.75686274509999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXr-2O-Lbr" userLabel="line">
-                                        <rect key="frame" x="0.0" y="176" width="250" height="1"/>
-                                        <color key="backgroundColor" red="0.82745098039999998" green="0.75686274509999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="0.5" id="EEZ-p2-Y1x"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9I-WQ-uan">
-                                        <rect key="frame" x="46" y="19" width="159" height="52"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="159" id="Yn2-da-cUE"/>
-                                            <constraint firstAttribute="height" constant="52" id="ziS-1d-hMH"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="please OK ability to be found by email">
-                                                <attributes>
-                                                    <color key="NSColor" red="0.82745098039999998" green="0.75686274509999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" maximumLineHeight="20" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-M6-HBh">
-                                        <rect key="frame" x="8" y="192" width="234" height="44"/>
-                                        <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                        <state key="normal" title="no worries">
-                                            <color key="titleColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="icloudPressed:" destination="Lka-8G-3Dh" eventType="touchUpInside" id="kEL-9o-SNB"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👌🏻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPj-LX-9oD">
-                                        <rect key="frame" x="25" y="203" width="22" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for a caketalk 🍰 account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isA-zE-vqf">
-                                        <rect key="frame" x="23" y="81" width="205" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="gfK-S0-08e"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="14"/>
-                                        <color key="textColor" red="0.82745098039999998" green="0.75686274509999996" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tc-6G-uIq">
+                                <rect key="frame" x="188" y="280" width="223" height="68"/>
                                 <constraints>
-                                    <constraint firstItem="ZPj-LX-9oD" firstAttribute="top" secondItem="xXr-2O-Lbr" secondAttribute="bottom" constant="26" id="4z6-hM-dqy"/>
-                                    <constraint firstAttribute="width" constant="250" id="5j3-b4-Wa4"/>
-                                    <constraint firstItem="3Tc-6G-uIq" firstAttribute="leading" secondItem="jyr-Ve-WQw" secondAttribute="leading" constant="14" id="74w-aZ-1Ib"/>
-                                    <constraint firstItem="S9I-WQ-uan" firstAttribute="top" secondItem="jyr-Ve-WQw" secondAttribute="top" constant="19" id="7kZ-uO-YXH"/>
-                                    <constraint firstItem="ZPj-LX-9oD" firstAttribute="leading" secondItem="jyr-Ve-WQw" secondAttribute="leading" constant="25" id="FMm-ha-0mX"/>
-                                    <constraint firstItem="IWI-M6-HBh" firstAttribute="centerY" secondItem="ZPj-LX-9oD" secondAttribute="centerY" id="L7e-Kw-iQK"/>
-                                    <constraint firstItem="xXr-2O-Lbr" firstAttribute="leading" secondItem="jyr-Ve-WQw" secondAttribute="leading" id="Nwc-kA-kCc"/>
-                                    <constraint firstItem="S9I-WQ-uan" firstAttribute="centerX" secondItem="3Tc-6G-uIq" secondAttribute="centerX" id="OgF-I0-mjF"/>
-                                    <constraint firstItem="xXr-2O-Lbr" firstAttribute="top" secondItem="3Tc-6G-uIq" secondAttribute="bottom" constant="11" id="PtT-Vg-oDn"/>
-                                    <constraint firstItem="S9I-WQ-uan" firstAttribute="centerX" secondItem="isA-zE-vqf" secondAttribute="centerX" id="T3L-5H-2BS"/>
-                                    <constraint firstAttribute="bottom" secondItem="IWI-M6-HBh" secondAttribute="bottom" constant="14" id="Ucd-97-uoX"/>
-                                    <constraint firstItem="S9I-WQ-uan" firstAttribute="centerX" secondItem="jyr-Ve-WQw" secondAttribute="centerX" id="apd-BC-ibE"/>
-                                    <constraint firstItem="S9I-WQ-uan" firstAttribute="centerX" secondItem="IWI-M6-HBh" secondAttribute="centerX" id="c7x-Ya-tfT"/>
-                                    <constraint firstItem="3Tc-6G-uIq" firstAttribute="top" secondItem="isA-zE-vqf" secondAttribute="bottom" constant="7" id="eu1-lk-1FI"/>
-                                    <constraint firstItem="isA-zE-vqf" firstAttribute="top" secondItem="S9I-WQ-uan" secondAttribute="bottom" constant="10" id="hXc-q1-yPu"/>
-                                    <constraint firstItem="IWI-M6-HBh" firstAttribute="top" secondItem="xXr-2O-Lbr" secondAttribute="bottom" constant="15" id="qiZ-l1-L1R"/>
-                                    <constraint firstItem="IWI-M6-HBh" firstAttribute="leading" secondItem="jyr-Ve-WQw" secondAttribute="leadingMargin" id="s4o-jB-IdH"/>
-                                    <constraint firstItem="S9I-WQ-uan" firstAttribute="centerX" secondItem="xXr-2O-Lbr" secondAttribute="centerX" id="vL3-H5-Gs0"/>
-                                    <constraint firstItem="isA-zE-vqf" firstAttribute="leading" secondItem="jyr-Ve-WQw" secondAttribute="leading" constant="23" id="vzA-eZ-h0n"/>
-                                    <constraint firstAttribute="height" constant="250" id="zHm-a2-wEn"/>
+                                    <constraint firstAttribute="height" constant="68" id="7aC-uf-a4R"/>
+                                    <constraint firstAttribute="width" constant="223" id="axM-3g-pi5"/>
+                                    <constraint firstAttribute="height" constant="68" id="wgY-8y-dG6"/>
                                 </constraints>
-                            </view>
+                                <attributedString key="attributedText">
+                                    <fragment content="Don’t read into it in - tapping OK JUST gives us your full name ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="14" name="RionaSans-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.25" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="wgY-8y-dG6"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9I-WQ-uan">
+                                <rect key="frame" x="188" y="270" width="223" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="159" id="Yn2-da-cUE"/>
+                                    <constraint firstAttribute="height" constant="52" id="ziS-1d-hMH"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="The next alert is weird AF">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="RionaSans-Black"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" maximumLineHeight="20" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Yn2-da-cUE"/>
+                                        <exclude reference="ziS-1d-hMH"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWI-M6-HBh">
+                                <rect key="frame" x="183" y="523" width="234" height="44"/>
+                                <color key="backgroundColor" red="0.99612301588058472" green="0.99544459581375122" blue="0.9850124716758728" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ijj-QC-Tqs"/>
+                                    <constraint firstAttribute="width" constant="234" id="oIe-ZD-GQr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="NO WORRIES">
+                                    <color key="titleColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="icloudPressed:" destination="Lka-8G-3Dh" eventType="touchUpInside" id="kEL-9o-SNB"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leadingMargin" constant="100" id="0Rp-9o-HKC"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" id="36b-gO-36b"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jyr-Ve-WQw" secondAttribute="trailing" constant="155" id="6VF-qG-ski"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerX" secondItem="q1t-tU-Q93" secondAttribute="centerX" id="7HB-YN-O21"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" id="7k2-33-fUH"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerX" secondItem="3kS-3b-lDX" secondAttribute="centerX" id="8Hz-3y-UQN"/>
+                            <constraint firstItem="S9I-WQ-uan" firstAttribute="centerX" secondItem="q1t-tU-Q93" secondAttribute="centerX" id="CDK-wX-dtP"/>
                             <constraint firstItem="EIH-p9-1jJ" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leadingMargin" constant="10" id="CDs-gm-Feo"/>
                             <constraint firstItem="EIH-p9-1jJ" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leading" constant="20" id="CJT-HG-jj9"/>
                             <constraint firstItem="3kS-3b-lDX" firstAttribute="centerX" secondItem="q1t-tU-Q93" secondAttribute="centerX" id="EXl-4I-EbY"/>
                             <constraint firstItem="qkq-1F-nm3" firstAttribute="trailing" secondItem="q1t-tU-Q93" secondAttribute="trailingMargin" constant="10" id="FCz-wI-S80"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" id="Fpj-Li-56K"/>
+                            <constraint firstItem="S9I-WQ-uan" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" constant="-20" id="Oie-YX-j19"/>
                             <constraint firstItem="qkq-1F-nm3" firstAttribute="trailing" secondItem="q1t-tU-Q93" secondAttribute="trailingMargin" constant="10" id="Q55-Ku-nfS"/>
                             <constraint firstItem="3kS-3b-lDX" firstAttribute="top" secondItem="F9C-Pe-8Kd" secondAttribute="bottom" id="Qjl-Ie-Esx"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerX" secondItem="3kS-3b-lDX" secondAttribute="centerX" id="VRY-tr-Q5X"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" id="VSc-On-8sk"/>
                             <constraint firstItem="EIH-p9-1jJ" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leadingMargin" constant="10" id="Whl-aD-Alo"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" id="Wwy-HI-T71"/>
+                            <constraint firstItem="IWI-M6-HBh" firstAttribute="centerX" secondItem="S9I-WQ-uan" secondAttribute="centerX" id="ZNC-xl-yOh"/>
                             <constraint firstItem="qkq-1F-nm3" firstAttribute="top" secondItem="F9C-Pe-8Kd" secondAttribute="bottom" constant="10" id="bw5-Ok-BFD"/>
                             <constraint firstItem="EIH-p9-1jJ" firstAttribute="top" secondItem="F9C-Pe-8Kd" secondAttribute="bottom" constant="10" id="dku-ua-gl2"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" id="fIp-8B-2hM"/>
                             <constraint firstAttribute="trailing" secondItem="qkq-1F-nm3" secondAttribute="trailing" constant="20" id="fpy-u5-4Ba"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leading" constant="190" id="goV-aW-kl0"/>
-                            <constraint firstItem="AEr-aX-Vb8" firstAttribute="top" secondItem="jyr-Ve-WQw" secondAttribute="bottom" constant="150" id="gst-Jx-1an"/>
                             <constraint firstItem="3kS-3b-lDX" firstAttribute="top" secondItem="F9C-Pe-8Kd" secondAttribute="bottom" constant="10" id="gxu-xS-o4r"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="top" secondItem="3kS-3b-lDX" secondAttribute="bottom" constant="70" id="m7h-Hk-cKK"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerX" secondItem="3kS-3b-lDX" secondAttribute="centerX" id="mdO-6L-KLt"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="top" secondItem="3kS-3b-lDX" secondAttribute="bottom" constant="100" id="n6F-hv-zae"/>
+                            <constraint firstItem="IWI-M6-HBh" firstAttribute="centerX" secondItem="3Tc-6G-uIq" secondAttribute="centerX" id="i9e-CB-b5R"/>
+                            <constraint firstItem="3Tc-6G-uIq" firstAttribute="centerY" secondItem="q1t-tU-Q93" secondAttribute="centerY" constant="14" id="nnT-Rz-pSo"/>
                             <constraint firstItem="EIH-p9-1jJ" firstAttribute="top" secondItem="F9C-Pe-8Kd" secondAttribute="bottom" constant="10" id="rxl-Wn-bfV"/>
-                            <constraint firstItem="AEr-aX-Vb8" firstAttribute="top" secondItem="jyr-Ve-WQw" secondAttribute="bottom" constant="175" id="sgC-Wv-gQ8"/>
                             <constraint firstItem="3kS-3b-lDX" firstAttribute="centerX" secondItem="q1t-tU-Q93" secondAttribute="centerX" id="ufa-sF-wBT"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerX" secondItem="q1t-tU-Q93" secondAttribute="centerX" id="vE3-tR-lBJ"/>
                             <constraint firstItem="EIH-p9-1jJ" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leadingMargin" constant="10" id="vJ7-tB-pTy"/>
-                            <constraint firstItem="AEr-aX-Vb8" firstAttribute="top" secondItem="jyr-Ve-WQw" secondAttribute="bottom" constant="150" id="wWR-54-sni"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leading" constant="175" id="x4p-hw-NG9"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="leading" secondItem="q1t-tU-Q93" secondAttribute="leadingMargin" constant="155" id="yT5-e5-4fJ"/>
-                            <constraint firstItem="AEr-aX-Vb8" firstAttribute="top" secondItem="jyr-Ve-WQw" secondAttribute="bottom" constant="150" id="yzo-1c-JkJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jyr-Ve-WQw" secondAttribute="trailing" constant="100" id="z4v-1Z-dmW"/>
+                            <constraint firstItem="3Tc-6G-uIq" firstAttribute="leading" secondItem="S9I-WQ-uan" secondAttribute="leading" id="vSe-Mv-38d"/>
                             <constraint firstItem="qkq-1F-nm3" firstAttribute="top" secondItem="F9C-Pe-8Kd" secondAttribute="bottom" constant="10" id="zCl-cJ-UWO"/>
-                            <constraint firstItem="jyr-Ve-WQw" firstAttribute="centerX" secondItem="3kS-3b-lDX" secondAttribute="centerX" id="zr9-8i-YEP"/>
+                            <constraint firstItem="AEr-aX-Vb8" firstAttribute="top" secondItem="IWI-M6-HBh" secondAttribute="bottom" constant="33" id="zNp-Q4-wfW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -294,39 +276,16 @@
                                 <exclude reference="Whl-aD-Alo"/>
                                 <exclude reference="dku-ua-gl2"/>
                                 <exclude reference="vJ7-tB-pTy"/>
-                                <exclude reference="0Rp-9o-HKC"/>
-                                <exclude reference="36b-gO-36b"/>
-                                <exclude reference="6VF-qG-ski"/>
-                                <exclude reference="7HB-YN-O21"/>
-                                <exclude reference="7k2-33-fUH"/>
-                                <exclude reference="8Hz-3y-UQN"/>
-                                <exclude reference="Fpj-Li-56K"/>
-                                <exclude reference="VRY-tr-Q5X"/>
-                                <exclude reference="VSc-On-8sk"/>
-                                <exclude reference="Wwy-HI-T71"/>
-                                <exclude reference="goV-aW-kl0"/>
-                                <exclude reference="m7h-Hk-cKK"/>
-                                <exclude reference="mdO-6L-KLt"/>
-                                <exclude reference="n6F-hv-zae"/>
-                                <exclude reference="x4p-hw-NG9"/>
-                                <exclude reference="yT5-e5-4fJ"/>
-                                <exclude reference="z4v-1Z-dmW"/>
-                                <exclude reference="zr9-8i-YEP"/>
                                 <exclude reference="Qjl-Ie-Esx"/>
                                 <exclude reference="ufa-sF-wBT"/>
                                 <exclude reference="FCz-wI-S80"/>
                                 <exclude reference="Q55-Ku-nfS"/>
                                 <exclude reference="zCl-cJ-UWO"/>
-                                <exclude reference="gst-Jx-1an"/>
-                                <exclude reference="sgC-Wv-gQ8"/>
-                                <exclude reference="wWR-54-sni"/>
-                                <exclude reference="yzo-1c-JkJ"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="F5F-da-LXS"/>
                     <connections>
-                        <outlet property="alertView" destination="jyr-Ve-WQw" id="L8Q-Zm-E46"/>
                         <outlet property="alertViewTitleLabel" destination="S9I-WQ-uan" id="O23-zC-bOa"/>
                         <outlet property="icloudButton" destination="IWI-M6-HBh" id="NRN-Wg-ot5"/>
                         <outlet property="oneLabel" destination="EIH-p9-1jJ" id="Z3k-S3-dsj"/>
@@ -359,7 +318,7 @@
                                     <constraint firstAttribute="height" constant="20" id="Ljw-mj-DeJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pl-LO-SFk" userLabel="two">
@@ -369,7 +328,7 @@
                                     <constraint firstAttribute="width" constant="20" id="rWq-SL-Yha"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSq-q9-Y8F" userLabel="three">
@@ -379,24 +338,24 @@
                                     <constraint firstAttribute="width" constant="20" id="GI7-Sg-2gY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znV-ZO-pcV" userLabel="country">
                                 <rect key="frame" x="20" y="160" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.94509803920000002" green="0.49803921569999998" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="6B2-iy-gms"/>
                                     <constraint firstAttribute="height" constant="50" id="msJ-C0-VIK"/>
                                 </constraints>
-                                <color key="textColor" red="0.74901960784313726" green="0.38431372549019605" blue="0.50980392156862742" alpha="0.60059931506849318" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNd-nd-cMp" userLabel="mobile">
                                 <rect key="frame" x="78" y="160" width="502" height="50"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60392156860000001" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
@@ -404,7 +363,7 @@
                             </textField>
                             <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyH-gY-bek" userLabel="line">
                                 <rect key="frame" x="21" y="244" width="560" height="1"/>
-                                <color key="backgroundColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3045804794520548" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="login with your mobile number " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-8S-Pel">
                                 <rect key="frame" x="230" y="73" width="141" height="72"/>
@@ -412,7 +371,7 @@
                                     <constraint firstAttribute="height" constant="72" id="3bc-hP-M81"/>
                                     <constraint firstAttribute="width" constant="141" id="rhF-K3-Mfj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="19"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -422,9 +381,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="yY4-dV-6XK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="get code">
-                                    <color key="titleColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="GET CODE">
+                                    <color key="titleColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="codeButtonPressed:" destination="AEk-k8-esj" eventType="touchUpInside" id="n0C-2l-BKC"/>
@@ -444,7 +403,7 @@
                                     <constraint firstAttribute="height" constant="62" id="QlF-kz-edf"/>
                                     <constraint firstAttribute="width" constant="232" id="kon-sM-gms"/>
                                 </constraints>
-                                <color key="textColor" red="0.74901960784313726" green="0.38431372549019605" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.30345676369863012" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
@@ -453,7 +412,7 @@
                                 </connections>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZUb-wQ-6jU" firstAttribute="top" secondItem="7cd-Yb-Mhg" secondAttribute="bottom" constant="37" id="00c-pu-xbL"/>
                             <constraint firstItem="znV-ZO-pcV" firstAttribute="leading" secondItem="ZyH-gY-bek" secondAttribute="leading" constant="-1" id="0oJ-Px-aGi"/>
@@ -478,6 +437,7 @@
                             <constraint firstItem="0ym-bZ-I1a" firstAttribute="leading" secondItem="dGk-CI-PmE" secondAttribute="leadingMargin" id="dTB-Zp-bBD"/>
                             <constraint firstItem="uNd-nd-cMp" firstAttribute="trailing" secondItem="ZyH-gY-bek" secondAttribute="trailing" constant="-1" id="dod-7o-qt9"/>
                             <constraint firstItem="0ym-bZ-I1a" firstAttribute="baseline" secondItem="6pl-LO-SFk" secondAttribute="baseline" id="dq0-Av-f5m"/>
+                            <constraint firstItem="OYj-8S-Pel" firstAttribute="centerX" secondItem="dGk-CI-PmE" secondAttribute="centerX" id="kPw-XX-m4J"/>
                             <constraint firstItem="7cd-Yb-Mhg" firstAttribute="baseline" secondItem="SyU-Cm-pBq" secondAttribute="baseline" id="l45-1g-iuL"/>
                             <constraint firstItem="ZyH-gY-bek" firstAttribute="leading" secondItem="SyU-Cm-pBq" secondAttribute="leading" constant="1" id="lTk-Rd-CZD"/>
                             <constraint firstItem="hfu-pU-5VW" firstAttribute="centerX" secondItem="dGk-CI-PmE" secondAttribute="centerX" constant="1" id="mfi-J4-gX1"/>
@@ -548,7 +508,7 @@
                                     <constraint firstAttribute="width" constant="20" id="V2k-lU-ZnU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2y-ye-QPr" userLabel="two">
@@ -559,7 +519,7 @@
                                     <constraint firstAttribute="height" constant="20" id="cJ3-Ct-svt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbC-1s-LLg" userLabel="three">
@@ -570,7 +530,7 @@
                                     <constraint firstAttribute="height" constant="20" id="eDM-ID-at2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hang tight! It might take a few" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAf-2m-u2y">
@@ -583,7 +543,7 @@
                                     <constraint firstAttribute="width" constant="197" id="hKc-LA-SXZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="13"/>
-                                <color key="textColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -594,21 +554,21 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4za-qR-URn">
-                                <rect key="frame" x="216" y="277" width="168" height="31"/>
+                                <rect key="frame" x="216" y="287" width="168" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4za-qR-URn" secondAttribute="height" multiplier="27:5" id="dS9-BF-He7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="13"/>
                                 <state key="normal" title="I didn't get the code 😫">
-                                    <color key="titleColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="AEk-k8-esj" kind="show" animates="NO" id="HTJ-XM-i7F"/>
                                 </connections>
                             </button>
-                            <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2l-RX-0kq" userLabel="line">
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2l-RX-0kq" userLabel="line">
                                 <rect key="frame" x="156" y="244" width="289" height="1"/>
-                                <color key="backgroundColor" red="0.74901960779999999" green="0.38431372549999998" blue="0.50980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h2l-RX-0kq" secondAttribute="height" multiplier="450:1" id="Lgd-cK-2pO"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="lkQ-EU-vYX"/>
@@ -624,7 +584,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTE-g2-Cke" userLabel="digitOne">
                                 <rect key="frame" x="155" y="160" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60392156860000001" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="5Lp-YA-XmO"/>
@@ -636,7 +596,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-V5-c7n" userLabel="digitTwo">
                                 <rect key="frame" x="215" y="160" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99607843139999996" green="0.60392156860000001" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Kld-v4-pFg"/>
@@ -647,7 +607,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptP-gu-Sxb" userLabel="digitFour">
                                 <rect key="frame" x="335" y="160" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="N1d-V5-5xm"/>
@@ -659,7 +619,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wDd-Pr-47Q" userLabel="digitFive">
                                 <rect key="frame" x="395" y="160" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="erC-E6-aMa"/>
@@ -671,7 +631,7 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdE-FJ-3He" userLabel="digitThree">
                                 <rect key="frame" x="275" y="160" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ggx-H7-hLV"/>
@@ -682,13 +642,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="enter the code we just texted you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvH-mm-gez">
-                                <rect key="frame" x="218" y="72" width="181" height="58"/>
+                                <rect key="frame" x="211" y="73" width="181" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="181" id="0gn-6o-dJx"/>
-                                    <constraint firstAttribute="height" constant="58" id="PJb-cY-6x8"/>
+                                    <constraint firstAttribute="height" constant="58" id="9MA-oJ-ZiD"/>
+                                    <constraint firstAttribute="width" constant="181" id="Dq3-V9-3mr"/>
                                     <constraint firstAttribute="width" secondItem="bvH-mm-gez" secondAttribute="height" multiplier="47:24" id="vh9-y2-7pq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="19"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -698,25 +658,28 @@
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ptP-gu-Sxb" firstAttribute="bottom" secondItem="iTE-g2-Cke" secondAttribute="bottom" id="09B-EN-aUu"/>
                             <constraint firstItem="wDd-Pr-47Q" firstAttribute="leading" secondItem="ptP-gu-Sxb" secondAttribute="trailing" constant="10" id="2le-OY-SDn"/>
                             <constraint firstItem="tdE-FJ-3He" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="721-Vw-cZx"/>
+                            <constraint firstItem="bvH-mm-gez" firstAttribute="centerX" secondItem="f2y-ye-QPr" secondAttribute="centerX" id="7VC-az-eWQ"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="tdE-FJ-3He" secondAttribute="bottom" constant="34" id="8hb-Sm-n2w"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="35" id="95w-po-iel"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="leading" secondItem="Se5-kG-Vc9" secondAttribute="leading" constant="125" id="9Wy-vs-oy1"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="width" secondItem="AAf-2m-u2y" secondAttribute="height" multiplier="197:68" id="9gv-1R-nWh"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="9" id="9hA-Zu-mBv"/>
+                            <constraint firstItem="h2l-RX-0kq" firstAttribute="centerX" secondItem="f2y-ye-QPr" secondAttribute="centerX" id="APq-5G-JTM"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="tdE-FJ-3He" secondAttribute="bottom" constant="23" id="C91-rz-VF7"/>
                             <constraint firstItem="f2y-ye-QPr" firstAttribute="centerX" secondItem="h2l-RX-0kq" secondAttribute="centerX" id="DDD-BZ-A3W"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="AAf-2m-u2y" secondAttribute="centerX" id="Dzg-oB-QmD"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="AAf-2m-u2y" secondAttribute="centerX" id="HZU-Br-bpy"/>
                             <constraint firstItem="bvH-mm-gez" firstAttribute="centerX" secondItem="f2y-ye-QPr" secondAttribute="centerX" constant="7.5" id="JhP-sV-oFP"/>
+                            <constraint firstItem="tdE-FJ-3He" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="29" id="Jop-ah-G9g"/>
                             <constraint firstItem="bvH-mm-gez" firstAttribute="width" secondItem="bvH-mm-gez" secondAttribute="height" multiplier="47:24" id="NER-95-80d"/>
                             <constraint firstItem="ptP-gu-Sxb" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="47" id="Nf1-78-IUh"/>
-                            <constraint firstItem="gtb-V5-c7n" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="30" id="PbZ-Mq-SIv"/>
                             <constraint firstItem="gZp-db-yW0" firstAttribute="centerY" secondItem="Se5-kG-Vc9" secondAttribute="centerY" id="Qjy-Oy-Nlo"/>
+                            <constraint firstItem="bvH-mm-gez" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="Scu-aO-caK"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="baseline" secondItem="tdE-FJ-3He" secondAttribute="baseline" id="V1G-Oc-dJ6"/>
                             <constraint firstItem="oPO-kZ-mzH" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="10" id="VIS-l2-8ub"/>
                             <constraint firstItem="f2y-ye-QPr" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="10" id="WrU-SK-plh"/>
@@ -725,11 +688,11 @@
                             <constraint firstItem="oPO-kZ-mzH" firstAttribute="leading" secondItem="Se5-kG-Vc9" secondAttribute="leading" constant="20" id="apu-af-aiP"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="firstBaseline" secondItem="iTE-g2-Cke" secondAttribute="firstBaseline" id="b9p-dH-yrt"/>
                             <constraint firstItem="tdE-FJ-3He" firstAttribute="bottom" secondItem="iTE-g2-Cke" secondAttribute="bottom" id="bUe-Xr-Rk7"/>
+                            <constraint firstItem="bvH-mm-gez" firstAttribute="top" secondItem="f2y-ye-QPr" secondAttribute="bottom" constant="23" id="dHi-iK-OLo"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="leading" secondItem="iTE-g2-Cke" secondAttribute="trailing" constant="10" id="eA1-8h-F6u"/>
                             <constraint firstItem="wDd-Pr-47Q" firstAttribute="leading" secondItem="ptP-gu-Sxb" secondAttribute="trailing" constant="10" id="fXa-vE-AIi"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="h2l-RX-0kq" secondAttribute="centerX" id="fa1-7S-4nu"/>
                             <constraint firstItem="bvH-mm-gez" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="63" id="gYy-zG-fgB"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="top" secondItem="f2y-ye-QPr" secondAttribute="bottom" constant="22" id="ge1-vq-c9X"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="firstBaseline" secondItem="tdE-FJ-3He" secondAttribute="firstBaseline" id="hBV-K8-uZB"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="hfv-x2-VQS"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="ixz-zJ-c4b"/>
@@ -739,24 +702,29 @@
                             <constraint firstAttribute="trailing" secondItem="ZbC-1s-LLg" secondAttribute="trailing" constant="20" id="nb0-rg-5EL"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="gtb-V5-c7n" secondAttribute="bottom" constant="35" id="pIB-aR-Nkq"/>
                             <constraint firstAttribute="trailing" secondItem="h2l-RX-0kq" secondAttribute="trailing" constant="125" id="r4s-eJ-nr6"/>
-                            <constraint firstItem="4za-qR-URn" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="32" id="sLr-pN-h1l"/>
+                            <constraint firstItem="4za-qR-URn" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="42" id="sLr-pN-h1l"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="gZp-db-yW0" secondAttribute="centerX" id="uXb-dQ-zyG"/>
                             <constraint firstItem="ZbC-1s-LLg" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="10" id="vFH-ab-7Bj"/>
+                            <constraint firstItem="h2l-RX-0kq" firstAttribute="trailing" secondItem="wDd-Pr-47Q" secondAttribute="trailing" id="wN5-Tm-BlC"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="firstBaseline" secondItem="ptP-gu-Sxb" secondAttribute="firstBaseline" id="xL7-HJ-bpf"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="centerX" secondItem="h2l-RX-0kq" secondAttribute="centerX" id="yR4-fq-FwI"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="baseline" secondItem="iTE-g2-Cke" secondAttribute="baseline" id="zYD-2q-wlO"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="JhP-sV-oFP"/>
                                 <exclude reference="NER-95-80d"/>
+                                <exclude reference="Scu-aO-caK"/>
                                 <exclude reference="gYy-zG-fgB"/>
                                 <exclude reference="95w-po-iel"/>
                                 <exclude reference="V1G-Oc-dJ6"/>
                                 <exclude reference="xL7-HJ-bpf"/>
                                 <exclude reference="9Wy-vs-oy1"/>
                                 <exclude reference="C91-rz-VF7"/>
+                                <exclude reference="ixz-zJ-c4b"/>
                                 <exclude reference="pIB-aR-Nkq"/>
                                 <exclude reference="r4s-eJ-nr6"/>
+                                <exclude reference="DDD-BZ-A3W"/>
                                 <exclude reference="jKr-EM-ijC"/>
                                 <exclude reference="9gv-1R-nWh"/>
                                 <exclude reference="yR4-fq-FwI"/>
@@ -823,9 +791,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="LFW-94-bjo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="just reading">
-                                    <color key="titleColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="JUST READING">
+                                    <color key="titleColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="Vdl-uT-a8z" eventType="touchUpInside" id="xnt-oL-svj"/>
@@ -837,8 +805,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="FzG-em-Pd3"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="clear draft">
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="CLEAR DRAFT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -847,13 +815,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5R-u6-kxx">
                                 <rect key="frame" x="20" y="355" width="560" height="60"/>
-                                <color key="backgroundColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="2xi-eg-hqM"/>
                                     <constraint firstAttribute="height" constant="60" id="sYH-lV-23m"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="record">
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="RECORD">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
@@ -1112,9 +1080,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Fy1-O3-QJG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="do over">
-                                    <color key="titleColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
+                                <state key="normal" title="ANOTHER ONE">
+                                    <color key="titleColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backButtonPressed:" destination="QGq-kU-ANf" eventType="touchUpInside" id="5IP-qy-bIg"/>
