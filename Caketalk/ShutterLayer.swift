@@ -24,7 +24,7 @@ class ShutterLayer : CALayer {
 
         iPhoneScreenSizes()
         blurbTextView.frame = CGRectMake(100, bounds.size.height * 0.40, bounds.size.width * (2 / 3) + 20, 50)
-        blurbTextView.textColor = UIColor.whiteColor()
+        blurbTextView.textColor = UIColor.blackColor() .colorWithAlphaComponent(0.4)
         blurbTextView.font = labelFont
         blurbTextView.text = title
         blurbTextView.sizeToFit()

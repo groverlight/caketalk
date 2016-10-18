@@ -32,7 +32,7 @@ class permission: UIViewController {
         print ("permission view loaded")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        //playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
@@ -67,8 +67,10 @@ class permission: UIViewController {
         print("iCloud button pressed")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
+        audioPlayer.volume = 0.05
+
+
         self.alertView.hidden = true
         
 

@@ -108,7 +108,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         backgroundVisualEffectView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 60)
@@ -398,7 +398,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         print("button brought back")
                         print("SOUND EFFECT HERE")
                         
-                        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+                        //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
                         //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -462,10 +462,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             print("1st character on new line")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+            //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
                 print("send button pressed")
+
+                playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
+                audioPlayer.volume = 0.05
+
+
 
                 NSUserDefaults.standardUserDefaults().setObject(true, forKey: "shownAllTips")
                 mergeAndExportVideo()
@@ -645,8 +650,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print ("starting recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("beep_piano_hi_on", ofType: "aif")!)
+        audioPlayer.volume = 0.025
+
+
         recording = true;
         let clipCountString = String(clipCount)
         movieWriter = GPUImageMovieWriter(movieURL: NSURL.fileURLWithPath("\(NSTemporaryDirectory())\(clipCountString).mov",isDirectory: true), size: CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height))
@@ -661,11 +668,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     func stopRecording() {
         newImage?.removeFromSuperview()
+
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("beep_piano_hi_off", ofType: "aif")!)
+        audioPlayer.volume = 0.025
+
+
         clipCount += 1
         recording = false;
         showStatusBar(true)
@@ -772,8 +782,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             print("edit view loaded")
             print("SOUND EFFECT HERE")
             
-            playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-            
+            playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_slide", ofType: "aif")!)
+            audioPlayer.volume = 0.05
+
+
             print("Mixpanel event here")
             
             mixPanel.track("Edited a blurb", properties: nil)
@@ -969,11 +981,18 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     @IBAction func recordButtonPressed(sender: AnyObject) {
         print("record button pressed")
         print("Mixpanel event here")
-        
+
+        //playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
+
+
+
         mixPanel.track("Record button pressed", properties: nil)
         mixPanel.flush()
 
+
         if (cameraTextView.text.characters.count == 0){
+
+
 
             self.recordButton.userInteractionEnabled = false
             self.recordEmoji.userInteractionEnabled = false
@@ -1037,7 +1056,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             let newLabel = UILabel(frame: CGRectMake(20, self.scrollView.bounds.size.height + self.scrollHeight, self.view.bounds.size.width*(2/3)-20, textHeight! ))
             newLabel.font = self.cameraTextView.font
-            newLabel.textColor = UIColor.whiteColor()
+            newLabel.textColor =  UIColor.hex("#262626")
+
             ++self.scrollCounter
             newLabel.text = self.cameraTextView.text
             newLabel.numberOfLines = 0
@@ -1046,6 +1066,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.cameraTextView.text.removeAll()
             self.scrollView.addSubview(newLabel)
             newLabel.transform = CGAffineTransformMakeScale(1.5, 1.5)
+
             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 4.5, options: [], animations: { () -> Void in
                 newLabel.transform = CGAffineTransformMakeScale(1, 1)
                 }, completion: nil)
@@ -1059,6 +1080,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         newLabel.alpha = 0.4
                     })
             })
+
+
             self.progressBarView.hidden = false
             self.animatedProgressBarView.hidden = false
 
@@ -1204,8 +1227,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("text cleared")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_delete", ofType: "aif")!)
+        audioPlayer.volume = 0.5
+
         print("Mixpanel event here")
         
         mixPanel.track("Clear button pressed", properties: nil)
@@ -1279,8 +1303,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("decided not to clear")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
+        audioPlayer.volume = 0.05
+
+
         print("Mixpanel event here")
         
         mixPanel.track("Camera back button pressed", properties: nil)

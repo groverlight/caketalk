@@ -11,6 +11,9 @@ import CloudKit
 import CoreTelephony
 import SafariServices
 import pop
+import AVFoundation
+
+
 
 
 var phoneNumber:String = ""
@@ -18,6 +21,8 @@ var cloudManager: CloudManager = CloudManager()
 var userFull: User?
 var codeFired:String = ""
 var twilioView: UIWebView = UIWebView(frame: CGRect.zero)
+var audioPlayer : AVAudioPlayer!
+
 
 
 
@@ -163,6 +168,7 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     func fireMessage(){
         print (phoneNumber)
+
         let twilioSID = "ACf729e40728e0066539061b719410d14e"
         let twilioSecret = "2a8412ba5e572dfc451d6e6afe9d8269"
         let fromNumber = "3105893655"
@@ -273,6 +279,9 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBAction func codeButtonPressed(sender: AnyObject) {
         print("get code button pressed")
 
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
+        audioPlayer.volume = 0.05
+
         let lower : UInt32 = 10000
         let upper : UInt32 = 99999
 
@@ -292,7 +301,20 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
 
 
+    func playSoundWithPath(path : String) {
+        let url = NSURL(fileURLWithPath: path)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
+        }
 
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
 
 
 }
+
+
+

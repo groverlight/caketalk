@@ -9,12 +9,20 @@
 import UIKit
 import Player
 import pop
+import AVFoundation
+
 
 class splash: UIViewController, PlayerDelegate {
     
     let videoUrl = NSURL(string: "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4")!
-    
+
+
     private var player: Player!
+
+    var audioPlayer : AVAudioPlayer!
+
+
+
 
 /*---------------BEGIN OUTLETS 🎛----------------------*/
 
@@ -27,7 +35,7 @@ class splash: UIViewController, PlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print ("login view loaded")
-        
+
         self.player = Player()
         self.player.delegate = self
         self.player.view.frame = self.view.bounds
@@ -72,6 +80,12 @@ class splash: UIViewController, PlayerDelegate {
     @IBAction func loginButtonPressed(sender: AnyObject) {
         print("login button pressed")
 
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
+        audioPlayer.volume = 0.05
+
+
+
+
     }
 
 // MARK: PlayerDelegate
@@ -96,4 +110,22 @@ class splash: UIViewController, PlayerDelegate {
     
     }
 
+    func playSoundWithPath(path : String) {
+        let url = NSURL(fileURLWithPath: path)
+        do{
+            audioPlayer = try AVAudioPlayer(contentsOfURL: url)
+        }catch _ {
+            audioPlayer = nil
+        }
+
+        audioPlayer.prepareToPlay()
+        audioPlayer.play()
+    }
+
+
 }
+
+
+
+
+

@@ -115,7 +115,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         //height of where player label starts
         scrollLabel.frame = CGRectMake(-400, self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
-        scrollLabel.textColor = UIColor.whiteColor()
+        scrollLabel.textColor = UIColor.blackColor() .colorWithAlphaComponent(0.4)
         scrollLabel.font = labelFont
         scrollLabel.text = (arrayofText[index-1] as! String)
         print (scrollLabel.text)
@@ -129,7 +129,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         let comeInAnimation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
         comeInAnimation.repeatCount = 0
-        comeInAnimation.springBounciness = 4;
+        comeInAnimation.springBounciness = 8;
         comeInAnimation.springSpeed = 5;
         comeInAnimation.autoreverses = false
         comeInAnimation.toValue = (scrollLabel.bounds.size.width / 2) + 20
@@ -260,6 +260,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
     func playerItemDidReachEnd(notification: NSNotification){
 
+
         NSNotificationCenter.defaultCenter().removeObserver(self)
 
         if (numOfClips > 0){
@@ -268,7 +269,6 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             print("Setup video")
         }
         else{
-
 
             overlay = UIVisualEffectView()
             let blurEffect = UIBlurEffect(style: .Dark)
@@ -324,7 +324,10 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             overlayScrollView.addSubview(emojiLabel)
             
             overlayScrollView.center = CGPointMake(self.view.center.x, -self.view.center.y * 2)
-            
+//            playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_echo", ofType: "aif")!)
+//            audioPlayer.volume = 0.05
+
+
             showStatusBar(true)
 
             
@@ -356,6 +359,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.backButton.pop_addAnimation(buttonSpring, forKey: "spring")
                 self.backEmoji.pop_addAnimation(buttonSpring2, forKey: "spring2")
 
+
                 self.view.addSubview(overlayScrollView)
                 self.view.bringSubviewToFront(overlayScrollView)
                 self.view.bringSubviewToFront(self.backButton)
@@ -371,12 +375,13 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.moreButton.hidden = false
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
+
                 
                 self.facebookButton.userInteractionEnabled = true
                 self.twitterButton.userInteractionEnabled = true
                 self.instagramButton.userInteractionEnabled = true
                 self.moreButton.userInteractionEnabled = true
-                
+
                 let handleFacebook = UITapGestureRecognizer(target: self, action: #selector(playerView.facebook))
                 self.facebookButton.addGestureRecognizer(handleFacebook)
                 
@@ -511,7 +516,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         mixPanel.track("Player back button pressed");
         mixPanel.flush()
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
+        audioPlayer.volume = 0.05
+
 
         arrayofText.removeAll()
         do {
