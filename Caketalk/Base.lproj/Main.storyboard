@@ -835,13 +835,13 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgq-4S-Z91">
                                 <rect key="frame" x="526" y="373" width="24" height="24"/>
-                                <color key="backgroundColor" red="0.94509803920000002" green="0.49803921569999998" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="Jkj-53-ZFo"/>
                                     <constraint firstAttribute="height" constant="24" id="pLY-9m-Apz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.56470588239999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVs-rJ-vfS" userLabel="header">
