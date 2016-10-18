@@ -56,6 +56,7 @@
 		F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016A1CE3B51E00891EB1 /* RionaSans-Regular.otf */; };
 		F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F47C016B1CE3B51E00891EB1 /* RionaSans-Thin.otf */; };
 		F47C01861CE3D09200891EB1 /* splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01851CE3D09200891EB1 /* splash.swift */; };
+		F49A5F961DB6CA46007B3A88 /* etc_woosh_short.aif in Resources */ = {isa = PBXBuildFile; fileRef = F49A5F951DB6CA46007B3A88 /* etc_woosh_short.aif */; };
 		F4CE512A1DB1A8A700AEB917 /* Caketalk.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */; };
 		F4CE512C1DB1A92A00AEB917 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */; };
 		F4D5F38F1CE3D0F4008AE6D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4D5F38D1CE3D0F4008AE6D6 /* Main.storyboard */; };
@@ -214,6 +215,7 @@
 		F4864AF31CF810C30074A427 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		F4864AF41CF810C30074A427 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F4864AF51CF810C40074A427 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		F49A5F951DB6CA46007B3A88 /* etc_woosh_short.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = etc_woosh_short.aif; path = ../etc_woosh_short.aif; sourceTree = "<group>"; };
 		F4CE51291DB1A8A700AEB917 /* Caketalk.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Caketalk.entitlements; sourceTree = "<group>"; };
 		F4CE512B1DB1A92A00AEB917 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F4D5F38E1CE3D0F4008AE6D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				F4FB95681CE3ED5B00E2977B /* cameraView.swift */,
 				F4FB956A1CE3F0B600E2977B /* playerView.swift */,
 				F4EB2F041DB5B2990099FBC6 /* digi_slide.aif */,
+				F49A5F951DB6CA46007B3A88 /* etc_woosh_short.aif */,
 				F4EB2F051DB5B2990099FBC6 /* digi_powerdown.aif */,
 				F4EB2F061DB5B2990099FBC6 /* click_pop.aif */,
 				F4EB2F071DB5B2990099FBC6 /* click_snip.aif */,
@@ -604,6 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F468923C1D19EA97001FA942 /* pop_echo.aif in Resources */,
+				F49A5F961DB6CA46007B3A88 /* etc_woosh_short.aif in Resources */,
 				F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */,
 				F47C01371CE3B3D700891EB1 /* LaunchScreen.storyboard in Resources */,
 				F4EB2F151DB5B2990099FBC6 /* click_04.aif in Resources */,

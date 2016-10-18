@@ -111,7 +111,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
         
         let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-        backgroundVisualEffectView.frame = CGRectMake(0, 60, self.view.bounds.size.width, self.view.bounds.size.height - 60)
+        backgroundVisualEffectView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 124)
         self.view.insertSubview(backgroundVisualEffectView, atIndex: 0)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
@@ -195,12 +195,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             filter?.addTarget(movieWriter)
             movieWriter?.encodingLiveVideo = true
             movieWriter?.shouldPassthroughAudio = false
-            gradientView.frame = self.view.bounds
+            gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 124)
             gradientView.backgroundColor = UIColor.clearColor()
             gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
             gradientView.locations = [0, 1]
             gradientView.direction = .Vertical
-            gradientView.alpha = 0.8
+            gradientView.alpha = 0.5
 
             // make gradient a subview
 
@@ -1118,9 +1118,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             //moveUp.toValue = 27.5
             self.recordEmoji.hidden = true
             self.characterCount.hidden = true
-            self.recordButton.setTitle("look", forState: UIControlState.Normal)
+            //self.recordButton.setTitle("look", forState: UIControlState.Normal)
             self.recordButton.layer.cornerRadius = 15
-            self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Heavy", size: 13.0)
+            //self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Black", size: 13.0)
             
             self.indicatorView = UIView(frame: CGRectMake(0, 0, 86, 30))
             self.indicatorView.center = CGPointMake(self.view.center.x, -30)
@@ -1132,7 +1132,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 86, 30))
             indicatorLabel.textAlignment = NSTextAlignment.Center
             indicatorLabel.text = "LOOK"
-            indicatorLabel.font = UIFont(name:"RionaSans-Bold", size: 12)
+            indicatorLabel.font = UIFont(name:"RionaSans-Black", size: 12)
             indicatorLabel.textColor = .whiteColor()
             indicatorView.addSubview(indicatorLabel)
             
@@ -1147,7 +1147,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             self.view.bringSubviewToFront(self.recordButton)
             self.gradientView.hidden = false
-            gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 62)
+
+            gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 124)
+            gradientView.backgroundColor = UIColor.clearColor()
+            gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
+            gradientView.locations = [1, 0]
+            gradientView.direction = .Vertical
+            gradientView.alpha = 0.25
+
+
+
 
 
 
@@ -1163,11 +1172,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                             
                             self.filteredImage?.hidden = false
     
-                            
+                            self.playSoundWithPath(NSBundle.mainBundle().pathForResource("etc_woosh_short", ofType: "aif")!)
+                            self.audioPlayer.volume = 0.05
                             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.25, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
                                 self.indicatorView.center = CGPointMake(self.view.center.x, -30)
                                 }, completion: {(finished) -> Void in
                                     self.indicatorView.removeFromSuperview()
+
                             })
                             
                             UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: [], animations: { () -> Void in
@@ -1177,7 +1188,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                 }, completion: {(finished) -> Void in
                                     
                                     // record buttton visual state after recording
-                                    self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 15.0)
+                                    //self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Bold", size: 15.0)
                                     self.recordButton.layer.cornerRadius = 6
                                     self.animatedProgressBarView.hidden = true
                                     self.animatedProgressBarView.transform = CGAffineTransformMakeScale(1, 1)
@@ -1192,7 +1203,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                     self.characterCount.hidden = false
                                     self.view.bringSubviewToFront(self.recordEmoji)
                                     self.view.bringSubviewToFront(self.characterCount)
-                                    self.recordButton.setTitle("record", forState: UIControlState.Normal)
+                                    //self.recordButton.setTitle("record", forState: UIControlState.Normal)
                                     self.cameraTextView.returnKeyType = UIReturnKeyType.Send
                                     self.recordButton.hidden = true
                                     self.recordEmoji.hidden = true

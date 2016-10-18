@@ -90,14 +90,19 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         
         if topVisualEffectView == nil && bottomVisualEffectView == nil {
             topVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
+            topVisualEffectView.frame = CGRectMake(0, 0, self.view.bounds.size.width, 62)
             self.view.addSubview(topVisualEffectView)
             
             bottomVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - self.view.bounds.size.height * 0.1, self.view.bounds.size.width, self.view.bounds.size.height * 0.1)
+            bottomVisualEffectView.frame = CGRectMake(0, self.view.bounds.size.height - 62, self.view.bounds.size.width, 62)
             self.view.addSubview(bottomVisualEffectView)
         }
-        
+
+
+
+
+
+
         self.view.bringSubviewToFront(self.progressBarView)
         self.view.bringSubviewToFront(self.animatedProgressBarView)
         self.view.bringSubviewToFront(headerView)
@@ -164,13 +169,13 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton.layer.cornerRadius = 6
-        gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 62)
+        gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 124)
         self.gradientView.hidden = false
         gradientView.backgroundColor = UIColor.clearColor()
         gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
-        gradientView.locations = [0, 1]
+        gradientView.locations = [1, 0]
         gradientView.direction = .Vertical
-        gradientView.alpha = 0.8
+        gradientView.alpha = 0.25
         
         // make gradient a subview
 

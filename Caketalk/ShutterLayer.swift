@@ -16,10 +16,11 @@ class ShutterLayer : CALayer {
     let blurbTextView: UITextView! = UITextView()
     
     var labelFont: UIFont!
-    
+
     init(previousClipDuration: Double, clipDuration: Double, title: String, line : Int, bounds: CGRect) {
         super.init()
-        
+
+
         //-blurbLabel.bounds.size.width
 
         iPhoneScreenSizes()
