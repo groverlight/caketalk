@@ -115,7 +115,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         //height of where player label starts
         scrollLabel.frame = CGRectMake(-400, self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
-        scrollLabel.textColor = UIColor.blackColor() .colorWithAlphaComponent(0.4)
+        scrollLabel.textColor = UIColor.whiteColor()
         scrollLabel.font = labelFont
         scrollLabel.text = (arrayofText[index-1] as! String)
         print (scrollLabel.text)
@@ -164,8 +164,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         backButton.layer.cornerRadius = 6
-        gradientView.frame = self.view.bounds
-        self.gradientView.hidden = true
+        gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 62)
+        self.gradientView.hidden = false
         gradientView.backgroundColor = UIColor.clearColor()
         gradientView.colors = [UIColor.clearColor(), UIColor.blackColor()]
         gradientView.locations = [0, 1]
@@ -464,16 +464,16 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         switch height {
         case 480.0:
             //print("iPhone 3,4")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 19)
+            labelFont = UIFont(name: "RionaSans-Black", size: 19)
         case 568.0:
             //print("iPhone 5")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 20)
+            labelFont = UIFont(name: "RionaSans-Black", size: 20)
         case 667.0:
             //print("iPhone 6")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 21)
+            labelFont = UIFont(name: "RionaSans-Black", size: 21)
         case 736.0:
             //print("iPhone 6+")
-            labelFont = UIFont(name: "RionaSans-Bold", size: 22 )
+            labelFont = UIFont(name: "RionaSans-Black", size: 22 )
         default:
             break
             //print("not an iPhone")

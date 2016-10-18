@@ -931,7 +931,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                             buttonSpring.springBounciness = 20.0
                             self.clearEmoji.hidden = false
                             self.view.bringSubviewToFront(self.clearEmoji)
-                            self.clearEmoji.pop_addAnimation(buttonSpring, forKey: "spring")
+                            //self.clearEmoji.pop_addAnimation(buttonSpring, forKey: "spring")
 
                         }
                     }
@@ -949,16 +949,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         switch height {
         case 480.0:
             // print("iPhone 3,4")
-            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 19)
+            self.cameraTextView.font = UIFont(name: "RionaSans-Black", size: 19)
         case 568.0:
             //print("iPhone 5")
-            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 20)
+            self.cameraTextView.font = UIFont(name: "RionaSans-Black", size: 20)
         case 667.0:
             //print("iPhone 6")
-            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 21)
+            self.cameraTextView.font = UIFont(name: "RionaSans-Black", size: 21)
         case 736.0:
             //print("iPhone 6+")
-            self.cameraTextView.font = UIFont(name: "RionaSans-Bold", size: 22 )
+            self.cameraTextView.font = UIFont(name: "RionaSans-Black", size: 22 )
         default:
             break
             //print("not an iPhone")
@@ -981,6 +981,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     @IBAction func recordButtonPressed(sender: AnyObject) {
         print("record button pressed")
         print("Mixpanel event here")
+
 
         //playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
 
@@ -1056,7 +1057,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             let newLabel = UILabel(frame: CGRectMake(20, self.scrollView.bounds.size.height + self.scrollHeight, self.view.bounds.size.width*(2/3)-20, textHeight! ))
             newLabel.font = self.cameraTextView.font
-            newLabel.textColor =  UIColor.hex("#262626")
+            newLabel.textColor =  UIColor.whiteColor()
 
             ++self.scrollCounter
             newLabel.text = self.cameraTextView.text
@@ -1090,17 +1091,17 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             var duration:NSTimeInterval = 0
             switch (time){
             case 1:
-                duration = 2
+                duration = 1.25
 
                 break
             case 2:
-                duration = 3
+                duration = 2
                 break
             case 3:
-                duration = 4
+                duration = 3
                 break
             case 4:
-                duration = 5
+                duration = 4
                 break
             case 5:
                 duration = 5
@@ -1145,7 +1146,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             })
             
             self.view.bringSubviewToFront(self.recordButton)
-            self.gradientView.hidden = true
+            self.gradientView.hidden = false
+            gradientView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 62)
+
+
+
+
             self.view.bringSubviewToFront(self.progressBarView)
             moveUp.completionBlock = { (animation, finished) in
 
@@ -1235,7 +1241,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         mixPanel.track("Clear button pressed", properties: nil)
         mixPanel.flush()
-        
+
+
         self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
         self.backEmoji.hidden = true

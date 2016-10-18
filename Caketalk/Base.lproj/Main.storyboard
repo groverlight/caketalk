@@ -771,7 +771,7 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRz-S9-xH4" userLabel="cameraTextView">
                                 <rect key="frame" x="20" y="300" width="367" height="300"/>
-                                <color key="tintColor" red="0.56470588239999997" green="1" blue="0.61176470589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="BRe-fM-eqs"/>
                                     <constraint firstAttribute="width" constant="380" id="T8n-VG-BSt"/>

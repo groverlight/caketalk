@@ -279,7 +279,7 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     @IBAction func codeButtonPressed(sender: AnyObject) {
         print("get code button pressed")
 
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_04", ofType: "aif")!)
         audioPlayer.volume = 0.05
 
         let lower : UInt32 = 10000

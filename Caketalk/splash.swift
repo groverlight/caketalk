@@ -80,7 +80,7 @@ class splash: UIViewController, PlayerDelegate {
     @IBAction func loginButtonPressed(sender: AnyObject) {
         print("login button pressed")
 
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_04", ofType: "aif")!)
         audioPlayer.volume = 0.05
 
 
