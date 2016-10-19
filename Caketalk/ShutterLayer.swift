@@ -17,6 +17,7 @@ class ShutterLayer : CALayer {
     
     var labelFont: UIFont!
 
+
     init(previousClipDuration: Double, clipDuration: Double, title: String, line : Int, bounds: CGRect) {
         super.init()
 
@@ -34,8 +35,13 @@ class ShutterLayer : CALayer {
         blurbTextView.alpha = 0
         blurbTextView.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
         self.addSublayer(blurbTextView.layer)
-        
-        
+
+
+
+        // make gradient a subview
+
+
+
         
         
         let comeInAnimation = CASpringAnimation(keyPath: "position.x")

@@ -9,17 +9,17 @@
 import UIKit
 import GPUImage
 import pop
-import AVFoundation
 import Mixpanel
 import Hue
 import UIImageColors
 import EasyTipView
 import AssetsLibrary
+import AVFoundation
 
 class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, EasyTipViewDelegate {
     
-    var audioPlayer : AVAudioPlayer!
     var recording = false
+    var audioPlayer : AVAudioPlayer!
     var shouldGoDown = false
     var previousRect = CGRectZero
     var oldKeyboardHeight:CGFloat = 0.0
@@ -108,8 +108,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.cameraTextView.delegate = self
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
-        //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
-        
+
         let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
         backgroundVisualEffectView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 124)
         self.view.insertSubview(backgroundVisualEffectView, atIndex: 0)
@@ -242,9 +241,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if NSUserDefaults.standardUserDefaults().valueForKey("tip-1") == nil {
         
         var preferences = EasyTipView.Preferences()
-        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-        preferences.drawing.foregroundColor = UIColor.blackColor()
-        preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+        preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+        preferences.drawing.foregroundColor = UIColor.hex("#262626")
+        preferences.drawing.backgroundColor = UIColor.hex("#FFF")
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
         preferences.animating.dismissDuration = 0.5
         tipView = EasyTipView(text: "Hi, welcome to Caketalk!", preferences: preferences, delegate: self)
@@ -265,9 +264,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         if NSUserDefaults.standardUserDefaults().valueForKey("tip-2") == nil {
             var preferences = EasyTipView.Preferences()
-            preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-            preferences.drawing.foregroundColor = UIColor.blackColor()
-            preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+            preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+            preferences.drawing.foregroundColor = UIColor.hex("#262626")
+            preferences.drawing.backgroundColor = UIColor.hex("#FFF")
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
             preferences.animating.dismissDuration = 0.5
             tipView = EasyTipView(text: "Type a thought, opinion, or question", preferences: preferences, delegate: self)
@@ -331,10 +330,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         }catch _ {
             audioPlayer = nil
         }
-        
+
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
+
     override func viewDidAppear(animated: Bool) {
         videoCamera?.resumeCameraCapture()
         self.cameraTextView.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0)
@@ -398,7 +398,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         print("button brought back")
                         print("SOUND EFFECT HERE")
                         
-                        //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
                         //animations
                         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
@@ -417,7 +416,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
                         if (clipCount > 0){
 
-                            if (self.cameraTextView.returnKeyType == UIReturnKeyType.Send){
+                            if (self.cameraTextView.returnKeyType == UIReturnKeyType.Done){
                                 print("return button visible")
 
                                 dispatch_async(dispatch_get_main_queue()) { [unowned self] in
@@ -455,26 +454,22 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
 
         }
-        if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Send){
+        if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Done){
             return false
         }
         if (textView.text.characters.count == 0 && text != ""){
             print("1st character on new line")
             print("SOUND EFFECT HERE")
-            
-            //playSoundWithPath(NSBundle.mainBundle().pathForResource("chime_dim", ofType: "aif")!)
 
-            if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Send){
+
+            if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Done){
                 print("send button pressed")
-
-                playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
-                audioPlayer.volume = 0.05
-
-
 
                 NSUserDefaults.standardUserDefaults().setObject(true, forKey: "shownAllTips")
                 mergeAndExportVideo()
-                
+
+            
+
                 self.view.bringSubviewToFront(recordButton)
                 self.cameraTextView.resignFirstResponder()
                 self.headerView.backgroundColor = UIColor .clearColor()
@@ -486,7 +481,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 characterCount.hidden = true
                 return false
             }
-            else if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Send){
+            else if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Done){
 
                 return false
             }
@@ -524,12 +519,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if cameraTextView.text.characters.count > 0 {
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-4") == nil {
                 var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                preferences.drawing.foregroundColor = UIColor.blackColor()
-                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+                preferences.drawing.foregroundColor = UIColor.hex("#262626")
+                preferences.drawing.backgroundColor = UIColor.hex("#FFF")
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
                 preferences.animating.dismissDuration = 0.5
-                tipView = EasyTipView(text: "When finished, look up at the lens.", preferences: preferences, delegate: self)
+                tipView = EasyTipView(text: "When finished, look up at the lens", preferences: preferences, delegate: self)
                 tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
                 self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
                 NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
@@ -539,9 +534,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if cameraTextView.text.characters.count > 8 {
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-5") == nil {
                 var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                preferences.drawing.foregroundColor = UIColor.blackColor()
-                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+                preferences.drawing.foregroundColor = UIColor.hex("#262626")
+                preferences.drawing.backgroundColor = UIColor.hex("#FFF")
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "Tap the button to record an expression.", preferences: preferences, delegate: self)
@@ -577,14 +572,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
                 dispatch_async(dispatch_get_main_queue()) { [unowned self] in
                     self.cameraTextView.resignFirstResponder()
-                    self.cameraTextView.returnKeyType = UIReturnKeyType.Send
+                    self.cameraTextView.returnKeyType = UIReturnKeyType.Done
                     self.cameraTextView.becomeFirstResponder()
                 }
             }
         }
         else{
             print ("need to change send button")
-            if (self.cameraTextView.returnKeyType == UIReturnKeyType.Send){
+            if (self.cameraTextView.returnKeyType == UIReturnKeyType.Done){
                 dispatch_async(dispatch_get_main_queue()) { [unowned self] in
                     self.cameraTextView.resignFirstResponder()
                     self.cameraTextView.returnKeyType = UIReturnKeyType.Default
@@ -697,9 +692,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-6") == nil {
                 var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                preferences.drawing.foregroundColor = UIColor.blackColor()
-                preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+                preferences.drawing.foregroundColor = UIColor.hex("#262626")
+                preferences.drawing.backgroundColor = UIColor.hex("#FFF")
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
@@ -983,7 +978,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("Mixpanel event here")
 
 
-        //playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
 
 
 
@@ -1204,7 +1198,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                                     self.view.bringSubviewToFront(self.recordEmoji)
                                     self.view.bringSubviewToFront(self.characterCount)
                                     //self.recordButton.setTitle("record", forState: UIControlState.Normal)
-                                    self.cameraTextView.returnKeyType = UIReturnKeyType.Send
+                                    self.cameraTextView.returnKeyType = UIReturnKeyType.Done
                                     self.recordButton.hidden = true
                                     self.recordEmoji.hidden = true
                                     self.characterCount.hidden = true

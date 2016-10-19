@@ -118,9 +118,21 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         self.view.bringSubviewToFront(self.gradientView)
         let scrollLabel = PaddingLabel()
 
+
+
+
         //height of where player label starts
         scrollLabel.frame = CGRectMake(-400, self.view.bounds.size.height*0.50, self.view.bounds.size.width*(2/3)-20,50)
         scrollLabel.textColor = UIColor.whiteColor()
+
+         scrollLabel.layer.shadowOffset = CGSize(width: 1, height: 0)
+         scrollLabel.layer.shadowOpacity = 1
+         scrollLabel.layer.shadowRadius = 1
+         scrollLabel.layer.shadowColor = UIColor.blackColor().CGColor
+         scrollLabel.layer.shadowOpacity = 1.0
+
+
+
         scrollLabel.font = labelFont
         scrollLabel.text = (arrayofText[index-1] as! String)
         print (scrollLabel.text)
@@ -131,6 +143,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         scrollLabel.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
         scrollLabel.setLineHeight(0)
         self.view.addSubview(scrollLabel)
+
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
+                  audioPlayer.volume = 0.05
 
         let comeInAnimation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
         comeInAnimation.repeatCount = 0
@@ -290,6 +305,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
 
                 let newerLabel = UILabel(frame: CGRectMake(6, scrollHeightOverlay, self.view.bounds.size.width*(2/3)-20, 25))
+
                 newerLabel.font =  self.labelFont
                 newerLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.4)
                 newerLabel.text = text as? String
@@ -329,8 +345,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             overlayScrollView.addSubview(emojiLabel)
             
             overlayScrollView.center = CGPointMake(self.view.center.x, -self.view.center.y * 2)
-//            playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_echo", ofType: "aif")!)
-//            audioPlayer.volume = 0.05
+
 
 
             showStatusBar(true)
@@ -445,12 +460,12 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                                 if NSUserDefaults.standardUserDefaults().objectForKey("isFirstLaunch-line") == nil {
                                         // EasyTipView global preferences
                                         var preferences = EasyTipView.Preferences()
-                                        preferences.drawing.font = UIFont(name: "Futura-Medium", size: 16)!
-                                        preferences.drawing.foregroundColor = UIColor.blackColor()
-                                        preferences.drawing.backgroundColor = UIColor.hex("#FFEAC2")
+                                    preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+                                    preferences.drawing.foregroundColor = UIColor.hex("#262626")
+                                    preferences.drawing.backgroundColor = UIColor.hex("#FFF")
                                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
                                         preferences.animating.showDuration = 2
-                                        EasyTipView.show(forView: self.line,
+                                        EasyTipView.show(forView: self.instagramButton,
                                             withinSuperview: self.view,
                                             text: "Share with your favorite audience!",
                                             preferences: preferences,
@@ -555,7 +570,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
-    
+
     func twitter() {
 
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
@@ -619,7 +634,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
         self.audioPlayer.volume = 0.05
-        
+
         //self.backButton.setTitle("another one", forState: .Normal)
         let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
         let objectsToShare = [outputPath]
@@ -670,7 +685,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
         self.audioPlayer.volume = 0.05
-        
+
         HUD.show(.Progress)
     
         //self.backButton.setTitle("another one", forState: .Normal)

@@ -39,13 +39,13 @@
         </mutableArray>
         <mutableArray key="RionaSans-Medium.otf">
             <string>RionaSans-Medium</string>
+            <string>RionaSans-Medium</string>
+            <string>RionaSans-Medium</string>
+            <string>RionaSans-Medium</string>
+            <string>RionaSans-Medium</string>
+            <string>RionaSans-Medium</string>
         </mutableArray>
         <mutableArray key="RionaSans-Regular.otf">
-            <string>RionaSans-Regular</string>
-            <string>RionaSans-Regular</string>
-            <string>RionaSans-Regular</string>
-            <string>RionaSans-Regular</string>
-            <string>RionaSans-Regular</string>
             <string>RionaSans-Regular</string>
             <string>RionaSans-Regular</string>
         </mutableArray>
@@ -533,8 +533,8 @@
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hang tight! It might take a few" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAf-2m-u2y">
-                                <rect key="frame" x="202" y="254" width="197" height="41"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you don't see it after 30s..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAf-2m-u2y">
+                                <rect key="frame" x="202" y="252" width="197" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="197" id="I0y-MT-6qU"/>
                                     <constraint firstAttribute="width" secondItem="AAf-2m-u2y" secondAttribute="height" multiplier="197:68" id="KLN-Pu-8jn"/>
@@ -554,12 +554,12 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4za-qR-URn">
-                                <rect key="frame" x="216" y="287" width="168" height="31"/>
+                                <rect key="frame" x="216" y="280" width="168" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4za-qR-URn" secondAttribute="height" multiplier="27:5" id="dS9-BF-He7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="13"/>
-                                <state key="normal" title="I didn't get the code 😫">
+                                <state key="normal" title="get another code 🔙">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -590,7 +590,7 @@
                                     <constraint firstAttribute="height" constant="50" id="5Lp-YA-XmO"/>
                                     <constraint firstAttribute="width" constant="50" id="ZfU-B2-4Q5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -601,7 +601,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Kld-v4-pFg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -613,7 +613,7 @@
                                     <constraint firstAttribute="width" constant="50" id="N1d-V5-5xm"/>
                                     <constraint firstAttribute="height" constant="50" id="l3M-p1-qGP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -625,7 +625,7 @@
                                     <constraint firstAttribute="height" constant="50" id="erC-E6-aMa"/>
                                     <constraint firstAttribute="width" constant="50" id="w8S-sd-mID"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -637,7 +637,7 @@
                                     <constraint firstAttribute="height" constant="50" id="Ggx-H7-hLV"/>
                                     <constraint firstAttribute="width" constant="50" id="a44-CJ-N94"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Regular" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -668,7 +668,7 @@
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="35" id="95w-po-iel"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="leading" secondItem="Se5-kG-Vc9" secondAttribute="leading" constant="125" id="9Wy-vs-oy1"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="width" secondItem="AAf-2m-u2y" secondAttribute="height" multiplier="197:68" id="9gv-1R-nWh"/>
-                            <constraint firstItem="AAf-2m-u2y" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="9" id="9hA-Zu-mBv"/>
+                            <constraint firstItem="AAf-2m-u2y" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="7" id="9hA-Zu-mBv"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="centerX" secondItem="f2y-ye-QPr" secondAttribute="centerX" id="APq-5G-JTM"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="tdE-FJ-3He" secondAttribute="bottom" constant="23" id="C91-rz-VF7"/>
                             <constraint firstItem="f2y-ye-QPr" firstAttribute="centerX" secondItem="h2l-RX-0kq" secondAttribute="centerX" id="DDD-BZ-A3W"/>
@@ -702,7 +702,7 @@
                             <constraint firstAttribute="trailing" secondItem="ZbC-1s-LLg" secondAttribute="trailing" constant="20" id="nb0-rg-5EL"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="gtb-V5-c7n" secondAttribute="bottom" constant="35" id="pIB-aR-Nkq"/>
                             <constraint firstAttribute="trailing" secondItem="h2l-RX-0kq" secondAttribute="trailing" constant="125" id="r4s-eJ-nr6"/>
-                            <constraint firstItem="4za-qR-URn" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="42" id="sLr-pN-h1l"/>
+                            <constraint firstItem="4za-qR-URn" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="35" id="sLr-pN-h1l"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="gZp-db-yW0" secondAttribute="centerX" id="uXb-dQ-zyG"/>
                             <constraint firstItem="ZbC-1s-LLg" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="10" id="vFH-ab-7Bj"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="trailing" secondItem="wDd-Pr-47Q" secondAttribute="trailing" id="wN5-Tm-BlC"/>
@@ -1165,11 +1165,11 @@
                                     <constraint firstAttribute="trailing" secondItem="FYa-A2-iDM" secondAttribute="trailing" id="l1D-Jk-NXR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ncw-eK-JFg">
-                                <rect key="frame" x="294" y="376" width="13" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncw-eK-JFg">
+                                <rect key="frame" x="294" y="245" width="13" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" id="Ich-ZZ-WvR"/>
+                                    <constraint firstAttribute="width" constant="13" id="Ich-ZZ-WvR"/>
                                     <constraint firstAttribute="height" constant="128" id="Vyb-3S-bea"/>
                                 </constraints>
                             </view>
@@ -1185,7 +1185,7 @@
                         <constraints>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="top" secondItem="KSB-2V-Yh9" secondAttribute="top" id="0RY-XN-L4J"/>
                             <constraint firstItem="KvP-SD-QVm" firstAttribute="centerX" secondItem="KSB-2V-Yh9" secondAttribute="centerX" id="3YC-EH-uwI"/>
-                            <constraint firstItem="ncw-eK-JFg" firstAttribute="leading" secondItem="RHr-IJ-bFD" secondAttribute="trailing" constant="15" id="4XY-fL-nh2"/>
+                            <constraint firstItem="ncw-eK-JFg" firstAttribute="leading" secondItem="RHr-IJ-bFD" secondAttribute="trailing" constant="9" id="4XY-fL-nh2"/>
                             <constraint firstItem="ncw-eK-JFg" firstAttribute="bottom" secondItem="Tee-Fk-RNJ" secondAttribute="bottom" id="4c5-iw-nhM"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="centerX" secondItem="D1D-Xz-tZ0" secondAttribute="centerX" id="6Li-Ck-pfu"/>
                             <constraint firstAttribute="trailing" secondItem="D1D-Xz-tZ0" secondAttribute="trailing" constant="20" id="9Hw-rQ-fux"/>
@@ -1214,7 +1214,7 @@
                             <constraint firstItem="D1D-Xz-tZ0" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" constant="20" id="fNA-yh-hBZ"/>
                             <constraint firstAttribute="trailing" secondItem="h3W-p5-mHp" secondAttribute="trailing" id="gQj-Xl-n5M"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="bottom" secondItem="lFi-XJ-ULe" secondAttribute="top" id="irP-Ap-fEi"/>
-                            <constraint firstItem="HqY-Hy-WZt" firstAttribute="leading" secondItem="ncw-eK-JFg" secondAttribute="trailing" constant="15" id="m1U-RD-jW2"/>
+                            <constraint firstItem="HqY-Hy-WZt" firstAttribute="leading" secondItem="ncw-eK-JFg" secondAttribute="trailing" constant="8" id="m1U-RD-jW2"/>
                             <constraint firstItem="Tee-Fk-RNJ" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" constant="30" id="m3Q-Tw-M0Y"/>
                             <constraint firstItem="udc-2V-L6j" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" id="mAA-Zf-FY2"/>
                             <constraint firstItem="h3W-p5-mHp" firstAttribute="leading" secondItem="KSB-2V-Yh9" secondAttribute="leading" id="mZe-3k-sdI"/>

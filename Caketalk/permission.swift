@@ -31,7 +31,7 @@ class permission: UIViewController {
         print ("permission view loaded")
         print("SOUND EFFECT HERE")
         
-        //playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
 
