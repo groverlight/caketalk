@@ -315,7 +315,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             overlayScrollView.contentSize = CGSizeMake(self.view.bounds.size.width-20,scrollHeightOverlay)
             let timeStampLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height , self.view.bounds.size.width*(2/3)-20,25))
             timeStampLabel.font = UIFont(name:"RionaSans-Bold", size: 10.0)
-            timeStampLabel.textColor = UIColor.whiteColor() .colorWithAlphaComponent(0.4)
+            timeStampLabel.textColor = UIColor.whiteColor()
             timeStampLabel.text = "recap"
             timeStampLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
@@ -381,7 +381,10 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                 self.backButton.hidden = false
                 self.backEmoji.hidden = false
 
-                
+
+                self.playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_ratchet", ofType: "wav")!)
+                self.audioPlayer.volume = 0.05
+
                 self.facebookButton.userInteractionEnabled = true
                 self.twitterButton.userInteractionEnabled = true
                 self.instagramButton.userInteractionEnabled = true
@@ -555,15 +558,18 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     func twitter() {
 
+        self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
+        self.audioPlayer.volume = 0.05
+
         
-        self.backButton.setTitle("another one", forState: .Normal)
+        //self.backButton.setTitle("another one", forState: .Normal)
         self.backButton.layer.cornerRadius = 6
-        self.backEmoji.text = "👔"
+        //self.backEmoji.text = "👔"
         self.backEmoji.hidden = false
         
         let alertController = UIAlertController(title: "Twitter Video sharing", message: "Enter your tweet", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addTextFieldWithConfigurationHandler { (textField) in
-            textField.placeholder = "#cakeTalk"
+            textField.placeholder = "#caketalk"
         }
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
             //Just dismiss the action sheet
@@ -610,7 +616,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
     
     func instagram() {
-        self.backButton.setTitle("another one", forState: .Normal)
+
+        self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
+        self.audioPlayer.volume = 0.05
+        
+        //self.backButton.setTitle("another one", forState: .Normal)
         let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
         let objectsToShare = [outputPath]
         
@@ -641,7 +651,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     
     @IBAction func share() {
-        self.backButton.setTitle("another one", forState: .Normal)
+
+        self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
+        self.audioPlayer.volume = 0.05
+
+        //self.backButton.setTitle("another one", forState: .Normal)
         let outputPath = NSURL.fileURLWithPath("\(NSTemporaryDirectory())edited_video.mov")
         let objectsToShare = [outputPath]
         
@@ -653,10 +667,13 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
     
     func facebook() {
+
+        self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
+        self.audioPlayer.volume = 0.05
         
         HUD.show(.Progress)
     
-        self.backButton.setTitle("another one", forState: .Normal)
+        //self.backButton.setTitle("another one", forState: .Normal)
         
         let video : FBSDKShareVideo = FBSDKShareVideo()
         

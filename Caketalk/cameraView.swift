@@ -916,7 +916,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                             self.view.bringSubviewToFront(self.backEmoji)
 
 
-                            self.clearEmoji.pop_addAnimation(buttonSpring, forKey: "spring")
+                            //self.clearEmoji.pop_addAnimation(buttonSpring, forKey: "spring")
                         }
                         
                         self.draftBottomSpacing.constant = 17
@@ -1122,16 +1122,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.recordButton.layer.cornerRadius = 15
             //self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Black", size: 13.0)
             
-            self.indicatorView = UIView(frame: CGRectMake(0, 0, 150, 30))
+            self.indicatorView = UIView(frame: CGRectMake(0, 0, 86, 30))
             self.indicatorView.center = CGPointMake(self.view.center.x, -30)
             self.indicatorView.layer.cornerRadius = 15
             self.indicatorView.clipsToBounds = true
-            self.indicatorView.backgroundColor = UIColor.hex("#FF6E6E")
+            self.indicatorView.backgroundColor = UIColor.hex("#FF0000")
             self.view.addSubview(indicatorView)
             
-            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 150, 30))
+            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 86, 30))
             indicatorLabel.textAlignment = NSTextAlignment.Center
-        indicatorLabel.text = "DON'T LOOK DOWN!"
+            indicatorLabel.text = "LOOK UP"
             indicatorLabel.font = UIFont(name:"RionaSans-Black", size: 12)
             indicatorLabel.textColor = .whiteColor()
             indicatorView.addSubview(indicatorLabel)
@@ -1245,8 +1245,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("text cleared")
         print("SOUND EFFECT HERE")
         
-        playSoundWithPath(NSBundle.mainBundle().pathForResource("click_delete", ofType: "aif")!)
-        audioPlayer.volume = 0.5
+        playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
+        audioPlayer.volume = 0.05
 
         print("Mixpanel event here")
         

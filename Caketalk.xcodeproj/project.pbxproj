@@ -34,6 +34,9 @@
 		F468923A1D19EA97001FA942 /* pop_drip_echo.aif in Resources */ = {isa = PBXBuildFile; fileRef = F468922C1D19EA97001FA942 /* pop_drip_echo.aif */; };
 		F468923B1D19EA97001FA942 /* pop_drip_snap.aif in Resources */ = {isa = PBXBuildFile; fileRef = F468922D1D19EA97001FA942 /* pop_drip_snap.aif */; };
 		F468923C1D19EA97001FA942 /* pop_echo.aif in Resources */ = {isa = PBXBuildFile; fileRef = F468922E1D19EA97001FA942 /* pop_echo.aif */; };
+		F46A0DD61DB74A97000C8E0F /* click_natural.wav in Resources */ = {isa = PBXBuildFile; fileRef = F46A0DD51DB74A96000C8E0F /* click_natural.wav */; };
+		F46A0DDA1DB74F01000C8E0F /* pop_drip_ratchet.wav in Resources */ = {isa = PBXBuildFile; fileRef = F46A0DD91DB74F01000C8E0F /* pop_drip_ratchet.wav */; };
+		F46A0DDE1DB74F97000C8E0F /* digi_blip_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = F46A0DDB1DB74F97000C8E0F /* digi_blip_up.wav */; };
 		F47C012A1CE3B3D700891EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C01291CE3B3D700891EB1 /* AppDelegate.swift */; };
 		F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F47C01301CE3B3D700891EB1 /* Caketalk.xcdatamodeld */; };
 		F47C01341CE3B3D700891EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47C01331CE3B3D700891EB1 /* Assets.xcassets */; };
@@ -184,6 +187,9 @@
 		F468922C1D19EA97001FA942 /* pop_drip_echo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop_drip_echo.aif; sourceTree = "<group>"; };
 		F468922D1D19EA97001FA942 /* pop_drip_snap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop_drip_snap.aif; sourceTree = "<group>"; };
 		F468922E1D19EA97001FA942 /* pop_echo.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pop_echo.aif; sourceTree = "<group>"; };
+		F46A0DD51DB74A96000C8E0F /* click_natural.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = click_natural.wav; path = ../click_natural.wav; sourceTree = "<group>"; };
+		F46A0DD91DB74F01000C8E0F /* pop_drip_ratchet.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop_drip_ratchet.wav; sourceTree = "<group>"; };
+		F46A0DDB1DB74F97000C8E0F /* digi_blip_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = digi_blip_up.wav; path = ../digi_blip_up.wav; sourceTree = "<group>"; };
 		F47C01261CE3B3D700891EB1 /* Caketalk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Caketalk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F47C01291CE3B3D700891EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F47C01311CE3B3D700891EB1 /* Caketalk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Caketalk.xcdatamodel; sourceTree = "<group>"; };
@@ -361,6 +367,7 @@
 				F4FB95661CE3EC0900E2977B /* code.swift */,
 				F4FB95681CE3ED5B00E2977B /* cameraView.swift */,
 				F4FB956A1CE3F0B600E2977B /* playerView.swift */,
+				F46A0DD91DB74F01000C8E0F /* pop_drip_ratchet.wav */,
 				F4EB2F041DB5B2990099FBC6 /* digi_slide.aif */,
 				F49A5F951DB6CA46007B3A88 /* etc_woosh_short.aif */,
 				F4EB2F051DB5B2990099FBC6 /* digi_powerdown.aif */,
@@ -369,7 +376,9 @@
 				F4EB2F081DB5B2990099FBC6 /* click_delete.aif */,
 				F4EB2F091DB5B2990099FBC6 /* click_08.aif */,
 				F4EB2F0A1DB5B2990099FBC6 /* click_03.aif */,
+				F46A0DDB1DB74F97000C8E0F /* digi_blip_up.wav */,
 				F4EB2F0B1DB5B2990099FBC6 /* click_04.aif */,
+				F46A0DD51DB74A96000C8E0F /* click_natural.wav */,
 				F4EB2F0C1DB5B2990099FBC6 /* beep_piano_hi_off.aif */,
 				F4EB2F0D1DB5B2990099FBC6 /* beep_piano_hi_on.aif */,
 				F46892231D19EA97001FA942 /* click_pop.aif */,
@@ -607,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F468923C1D19EA97001FA942 /* pop_echo.aif in Resources */,
+				F46A0DD61DB74A97000C8E0F /* click_natural.wav in Resources */,
 				F49A5F961DB6CA46007B3A88 /* etc_woosh_short.aif in Resources */,
 				F47C01791CE3B51E00891EB1 /* RionaSans-Regular.otf in Resources */,
 				F47C01371CE3B3D700891EB1 /* LaunchScreen.storyboard in Resources */,
@@ -624,6 +634,7 @@
 				F468923A1D19EA97001FA942 /* pop_drip_echo.aif in Resources */,
 				F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */,
 				F47C016D1CE3B51E00891EB1 /* RionaSans-BlackIt.otf in Resources */,
+				F46A0DDE1DB74F97000C8E0F /* digi_blip_up.wav in Resources */,
 				F4EB2F121DB5B2990099FBC6 /* click_delete.aif in Resources */,
 				F47C01701CE3B51E00891EB1 /* RionaSans-ExtraBlack.otf in Resources */,
 				F4EB2F101DB5B2990099FBC6 /* click_pop.aif in Resources */,
@@ -645,6 +656,7 @@
 				F4EB2F0E1DB5B2990099FBC6 /* digi_slide.aif in Resources */,
 				F47C01721CE3B51E00891EB1 /* RionaSans-ExtraLight.otf in Resources */,
 				F468923B1D19EA97001FA942 /* pop_drip_snap.aif in Resources */,
+				F46A0DDA1DB74F01000C8E0F /* pop_drip_ratchet.wav in Resources */,
 				F46892341D19EA97001FA942 /* digi_hi_select.aif in Resources */,
 				F47C01771CE3B51E00891EB1 /* RionaSans-Medium.otf in Resources */,
 				F4CE512A1DB1A8A700AEB917 /* Caketalk.entitlements in Resources */,
