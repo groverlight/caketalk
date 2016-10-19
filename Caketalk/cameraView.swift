@@ -1089,16 +1089,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
                 break
             case 2:
-                duration = 2
+                duration = 1.75
                 break
             case 3:
-                duration = 3
+                duration = 2.5
                 break
             case 4:
-                duration = 4
+                duration = 3.25
                 break
             case 5:
-                duration = 5
+                duration = 4.25
                 break
             default:
                 break
