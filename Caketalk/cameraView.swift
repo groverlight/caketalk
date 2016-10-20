@@ -117,6 +117,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
         //rounding edges out
         self.cameraTextView.contentSize = self.cameraTextView.bounds.size
+
         self.recordButton.layer.cornerRadius = 6
         self.clearButton.layer.cornerRadius = 6
         self.backButton.layer.cornerRadius = 6
@@ -1238,9 +1239,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     @IBAction func clearButtonPressed(sender: AnyObject) {
         print("text cleared")
         print("SOUND EFFECT HERE")
-        
+
+
         playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
-        audioPlayer.volume = 0.05
+        audioPlayer.volume = 0.5
 
         print("Mixpanel event here")
         

@@ -25,7 +25,7 @@ class ShutterLayer : CALayer {
         //-blurbLabel.bounds.size.width
 
         iPhoneScreenSizes()
-        blurbTextView.frame = CGRectMake(100, bounds.size.height * 0.40, bounds.size.width * (2 / 3) + 20, 50)
+        blurbTextView.frame = CGRectMake(-400, bounds.size.height * 0.50, bounds.size.width * (2 / 3)-20, 50)
         blurbTextView.textColor = UIColor.whiteColor()
         blurbTextView.font = labelFont
         blurbTextView.text = title
@@ -33,16 +33,20 @@ class ShutterLayer : CALayer {
         blurbTextView.layer.cornerRadius = 10
         blurbTextView.layer.masksToBounds = true
         blurbTextView.alpha = 0
+
+        blurbTextView.layer.shadowOffset = CGSize(width: 1, height: 0)
+        blurbTextView.layer.shadowOpacity = 1
+        blurbTextView.layer.shadowRadius = 1
+        blurbTextView.layer.shadowColor = UIColor.blackColor().CGColor
+        blurbTextView.layer.shadowOpacity = 1.0
+
+
+
         blurbTextView.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
         self.addSublayer(blurbTextView.layer)
 
 
 
-        // make gradient a subview
-
-
-
-        
         
         let comeInAnimation = CASpringAnimation(keyPath: "position.x")
         comeInAnimation.damping = 10
@@ -88,13 +92,13 @@ class ShutterLayer : CALayer {
         
         switch height {
         case 480.0:
-            labelFont = UIFont(name: "RionaSans-Bold", size: 19)
+            labelFont = UIFont(name: "RionaSans-Black", size: 19)
         case 568.0:
-            labelFont = UIFont(name: "RionaSans-Bold", size: 20)
+            labelFont = UIFont(name: "RionaSans-Black", size: 20)
         case 667.0:
-            labelFont = UIFont(name: "RionaSans-Bold", size: 21)
+            labelFont = UIFont(name: "RionaSans-Black", size: 21)
         case 736.0:
-            labelFont = UIFont(name: "RionaSans-Bold", size: 22 )
+            labelFont = UIFont(name: "RionaSans-Black", size: 22 )
         default:
             break
         }
