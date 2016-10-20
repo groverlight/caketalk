@@ -9,11 +9,14 @@
 import UIKit
 import CloudKit
 import AVFoundation
+import Mixpanel
 
 class permission: UIViewController {
     
     var audioPlayer : AVAudioPlayer!
-    
+    var mixPanel : Mixpanel!
+
+
 /*---------------BEGIN OUTLETS----------------------*/
 
     @IBOutlet var oneLabel: UILabel!
@@ -30,7 +33,10 @@ class permission: UIViewController {
         super.viewDidLoad()
         print ("permission view loaded")
         print("SOUND EFFECT HERE")
-        
+
+        mixPanel = Mixpanel.sharedInstance()
+
+
         //playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
 
 /*---------------BEGIN STYLE 🎨----------------------*/
@@ -67,6 +73,11 @@ class permission: UIViewController {
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("click_04", ofType: "aif")!)
         audioPlayer.volume = 0.05
+
+        mixPanel.track("no worries pressed", properties: nil)
+        //mixPanel.people .increment("Record button pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
 
 
         //self.alertView.hidden = true

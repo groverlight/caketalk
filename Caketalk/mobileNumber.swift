@@ -12,6 +12,7 @@ import CoreTelephony
 import SafariServices
 import pop
 import AVFoundation
+import Mixpanel
 
 
 
@@ -22,6 +23,7 @@ var userFull: User?
 var codeFired:String = ""
 var twilioView: UIWebView = UIWebView(frame: CGRect.zero)
 var audioPlayer : AVAudioPlayer!
+var mixPanel : Mixpanel!
 
 
 
@@ -55,6 +57,9 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     override func viewDidLoad() {
         print("phone login loaded")
         super.viewDidLoad()
+
+        mixPanel = Mixpanel.sharedInstance()
+
         self.codeButton.hidden = true
         self.codeEmoji.hidden = true
         self.mobileNumberField.delegate = self
@@ -173,7 +178,7 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
         let twilioSecret = "2a8412ba5e572dfc451d6e6afe9d8269"
         let fromNumber = "3105893655"
         let toNumber = phoneNumber
-        let message = "Your code is \(codeFired)"
+        let message = "Your Caketalk 🍰 code is \(codeFired)"
         // Build the request
         let request = NSMutableURLRequest(URL: NSURL(string:"https://\(twilioSID):\(twilioSecret)@api.twilio.com/2010-04-01/Accounts/\(twilioSID)/SMS/Messages")!)
         request.HTTPMethod = "POST"
@@ -267,17 +272,22 @@ class mobileNumber: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     //MARK: IBAction
     
     func showTerms() {
-        let svc = SFSafariViewController(URL: NSURL(string: "http://google.com")!)
+        let svc = SFSafariViewController(URL: NSURL(string: "http://www.typeface.wtf/terms.html")!)
         self.presentViewController(svc, animated: true, completion: nil)
     }
     
     func showPrivacy() {
-        let svc = SFSafariViewController(URL: NSURL(string: "http://google.com")!)
+        let svc = SFSafariViewController(URL: NSURL(string: "http://www.typeface.wtf/privacy.html")!)
         self.presentViewController(svc, animated: true, completion: nil)
     }
     
     @IBAction func codeButtonPressed(sender: AnyObject) {
         print("get code button pressed")
+
+        mixPanel.track("get code pressed", properties: nil)
+        //mixPanel.people .increment("get code pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
 
         playSoundWithPath(NSBundle.mainBundle().pathForResource("click_04", ofType: "aif")!)
         audioPlayer.volume = 0.05

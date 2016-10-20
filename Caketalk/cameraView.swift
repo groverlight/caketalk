@@ -36,7 +36,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     var previewLayer : AVCaptureVideoPreviewLayer?
     var shouldEdit = true
     var videoCamera:GPUImageVideoCamera?
-    var filter:GPUImageMissEtikateFilter?
+    var filter:GPUImageExposureFilter?
     var filteredImage: GPUImageView?
     var newImage: GPUImageView?
     var movieWriter: GPUImageMovieWriter?
@@ -186,7 +186,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             videoCamera!.outputImageOrientation = .Portrait
             filteredImage?.fillMode = GPUImageFillModeType.PreserveAspectRatioAndFill
             filteredImage?.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)
-            filter = GPUImageMissEtikateFilter()
+            filter = GPUImageExposureFilter()
             videoCamera?.addTarget(filter)
             filter?.addTarget(filteredImage)
             self.view.insertSubview(filteredImage!, atIndex: 1)
@@ -243,8 +243,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-        preferences.drawing.foregroundColor = UIColor.hex("#262626")
-        preferences.drawing.backgroundColor = UIColor.hex("#FFF")
+        preferences.drawing.foregroundColor = UIColor.clearColor()
+        preferences.drawing.backgroundColor = UIColor.clearColor()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
         preferences.animating.dismissDuration = 0.5
         tipView = EasyTipView(text: "Hi, welcome to Caketalk!", preferences: preferences, delegate: self)
@@ -266,8 +266,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if NSUserDefaults.standardUserDefaults().valueForKey("tip-2") == nil {
             var preferences = EasyTipView.Preferences()
             preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-            preferences.drawing.foregroundColor = UIColor.hex("#262626")
-            preferences.drawing.backgroundColor = UIColor.hex("#FFF")
+            preferences.drawing.foregroundColor = UIColor.clearColor()
+            preferences.drawing.backgroundColor = UIColor.clearColor()
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
             preferences.animating.dismissDuration = 0.5
             tipView = EasyTipView(text: "Type a thought, opinion, or question", preferences: preferences, delegate: self)
@@ -367,6 +367,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     //UITextView delegate functions
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         print("getting text...")
+
         
         if tipView != nil {
             dismissTipView()
@@ -466,6 +467,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Done){
                 print("send button pressed")
 
+
+                mixPanel.track("done pressed", properties: nil)
+                mixPanel.people .increment("done pressed", by: 1)
+                mixPanel.identify(mixPanel.distinctId)
+                mixPanel.flush()
+
                 NSUserDefaults.standardUserDefaults().setObject(true, forKey: "shownAllTips")
                 mergeAndExportVideo()
 
@@ -521,8 +528,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-4") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                preferences.drawing.foregroundColor = UIColor.hex("#262626")
-                preferences.drawing.backgroundColor = UIColor.hex("#FFF")
+                preferences.drawing.foregroundColor = UIColor.clearColor()
+                preferences.drawing.backgroundColor = UIColor.clearColor()
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "When finished, look up at the lens", preferences: preferences, delegate: self)
@@ -536,8 +543,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-5") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                preferences.drawing.foregroundColor = UIColor.hex("#262626")
-                preferences.drawing.backgroundColor = UIColor.hex("#FFF")
+                preferences.drawing.foregroundColor = UIColor.clearColor()
+                preferences.drawing.backgroundColor = UIColor.clearColor()
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "Tap the button to record an expression.", preferences: preferences, delegate: self)
@@ -694,13 +701,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-6") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                preferences.drawing.foregroundColor = UIColor.hex("#262626")
-                preferences.drawing.backgroundColor = UIColor.hex("#FFF")
+                preferences.drawing.foregroundColor = UIColor.clearColor()
+                preferences.drawing.backgroundColor = UIColor.clearColor()
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
                 tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
-                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
+                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 10)
                 NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
             }
         }
@@ -784,7 +791,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             print("Mixpanel event here")
             
-            mixPanel.track("Edited a blurb", properties: nil)
+            mixPanel.track("long-pressed", properties: nil)
+            mixPanel.people .increment("long-pressed", by: 1)
+            mixPanel.identify(mixPanel.distinctId)
             mixPanel.flush()
 
             self.headerView.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 110/255, alpha: 1.0)
@@ -979,11 +988,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("Mixpanel event here")
 
 
-
-
-
-        mixPanel.track("Record button pressed", properties: nil)
+        mixPanel.track("record button pressed", properties: nil)
+        mixPanel.people .increment("record button pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
         mixPanel.flush()
+
 
 
         if (cameraTextView.text.characters.count == 0){
@@ -1242,11 +1251,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
 
         playSoundWithPath(NSBundle.mainBundle().pathForResource("digi_powerdown", ofType: "aif")!)
-        audioPlayer.volume = 0.5
+        audioPlayer.volume = 0.25
 
         print("Mixpanel event here")
         
-        mixPanel.track("Clear button pressed", properties: nil)
+        mixPanel.track("clear button pressed", properties: nil)
+        mixPanel.people .increment("clear button pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
         mixPanel.flush()
 
 
@@ -1324,7 +1335,9 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
         print("Mixpanel event here")
         
-        mixPanel.track("Camera back button pressed", properties: nil)
+        mixPanel.track("just reading pressed", properties: nil)
+        mixPanel.people .increment("just reading button pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
         mixPanel.flush()
         
         self.recordButton.userInteractionEnabled = true

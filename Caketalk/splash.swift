@@ -10,6 +10,7 @@ import UIKit
 import Player
 import pop
 import AVFoundation
+import Mixpanel
 
 
 class splash: UIViewController, PlayerDelegate {
@@ -20,6 +21,7 @@ class splash: UIViewController, PlayerDelegate {
     private var player: Player!
 
     var audioPlayer : AVAudioPlayer!
+    var mixPanel : Mixpanel!
 
 
 
@@ -64,6 +66,9 @@ class splash: UIViewController, PlayerDelegate {
         loginButton.pop_addAnimation(buttonSpring, forKey: "spring")
         loginEmoji.pop_addAnimation(buttonSpring2, forKey: "spring2")
 
+        mixPanel = Mixpanel.sharedInstance()
+
+
 /*---------------BEGIN STYLE 🎨----------------------*/
         self.loginButton.layer.cornerRadius = 6
 /*---------------END STYLE 🎨----------------------*/
@@ -82,6 +87,11 @@ class splash: UIViewController, PlayerDelegate {
 
         playSoundWithPath(NSBundle.mainBundle().pathForResource("click_04", ofType: "aif")!)
         audioPlayer.volume = 0.05
+
+        mixPanel.track("login pressed", properties: nil)
+        //mixPanel.people .increment("Record button pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
 
 
 

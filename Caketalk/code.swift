@@ -8,9 +8,12 @@
 
 import UIKit
 import CloudKit
+import Mixpanel
 
 class code: UIViewController, UITextFieldDelegate {
     var labelCounter = 0
+    var mixPanel : Mixpanel!
+
     //var loader = MAActivityIndicatorView()
 
 /*---------------BEGIN OUTLETS----------------------*/
@@ -42,6 +45,9 @@ class code: UIViewController, UITextFieldDelegate {
 override func viewDidLoad() {
     print ("code view is loaded")
     super.viewDidLoad()
+
+    mixPanel = Mixpanel.sharedInstance()
+
     self.invisibleTextField.delegate = self
    // loader.frame = CGRectMake(0, self.view.bounds.size.height/3, self.view.bounds.size.width,100)
     //loader.hidden = true
@@ -136,7 +142,10 @@ override func viewDidLoad() {
                     prefs.setValue("didLogin", forKey: "Login")
                     self.performSegueWithIdentifier("finishLogin", sender: self)
 
-
+                    self.mixPanel.track("code fired", properties: nil)
+                    //mixPanel.people .increment("get code pressed", by: 1)
+                    self.mixPanel.identify(self.mixPanel.distinctId)
+                    self.mixPanel.flush()
 
                 }
             }

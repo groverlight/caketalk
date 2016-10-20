@@ -147,6 +147,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         playSoundWithPath(NSBundle.mainBundle().pathForResource("pop_drip_snap", ofType: "aif")!)
                   audioPlayer.volume = 0.05
 
+
         let comeInAnimation: POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPLayerPositionX)
         comeInAnimation.repeatCount = 0
         comeInAnimation.springBounciness = 8;
@@ -461,8 +462,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                                         // EasyTipView global preferences
                                         var preferences = EasyTipView.Preferences()
                                     preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                                    preferences.drawing.foregroundColor = UIColor.hex("#262626")
-                                    preferences.drawing.backgroundColor = UIColor.hex("#FFF")
+                                    preferences.drawing.foregroundColor = UIColor.clearColor()
+                                    preferences.drawing.backgroundColor = UIColor.clearColor()
                                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
                                         preferences.animating.showDuration = 2
                                         EasyTipView.show(forView: self.instagramButton,
@@ -536,9 +537,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
          print("SOUND EFFECT HERE")
          print("Mixpanel event here")
         
-        mixPanel.track("Player back button pressed");
+        mixPanel.track("another one pressed", properties: nil)
+        mixPanel.people .increment("another one", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
         mixPanel.flush()
-        
+
         playSoundWithPath(NSBundle.mainBundle().pathForResource("click_03", ofType: "aif")!)
         audioPlayer.volume = 0.05
 
@@ -572,6 +575,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
 
     func twitter() {
+
+        mixPanel.track("twitter pressed", properties: nil)
+        mixPanel.people .increment("twitter pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
 
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
         self.audioPlayer.volume = 0.05
@@ -632,6 +640,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     func instagram() {
 
+        mixPanel.track("insta pressed", properties: nil)
+        mixPanel.people .increment("insta pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
+
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
         self.audioPlayer.volume = 0.05
 
@@ -667,6 +680,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     
     @IBAction func share() {
 
+        mixPanel.track("share pressed", properties: nil)
+        mixPanel.people .increment("share pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
+
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
         self.audioPlayer.volume = 0.05
 
@@ -682,6 +700,11 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
     }
     
     func facebook() {
+
+        mixPanel.track("facebook pressed", properties: nil)
+        mixPanel.people .increment("facebook pressed", by: 1)
+        mixPanel.identify(mixPanel.distinctId)
+        mixPanel.flush()
 
         self.playSoundWithPath(NSBundle.mainBundle().pathForResource("click_snip", ofType: "aif")!)
         self.audioPlayer.volume = 0.05

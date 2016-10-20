@@ -25,7 +25,11 @@ class ShutterLayer : CALayer {
         //-blurbLabel.bounds.size.width
 
         iPhoneScreenSizes()
-        blurbTextView.frame = CGRectMake(-400, bounds.size.height * 0.50, bounds.size.width * (2 / 3)-20, 50)
+
+        blurbTextView.frame = CGRectMake(100, bounds.size.height * 0.40, bounds.size.width * (2 / 3) + 20, 50)
+
+
+
         blurbTextView.textColor = UIColor.whiteColor()
         blurbTextView.font = labelFont
         blurbTextView.text = title
@@ -65,7 +69,6 @@ class ShutterLayer : CALayer {
         firstAnimationGroup.animations = [comeInAnimation, fadeInAnimation]
         firstAnimationGroup.beginTime = AVCoreAnimationBeginTimeAtZero + previousClipDuration
         blurbTextView.layer.addAnimation(firstAnimationGroup, forKey: "firstAnimationGroup")
-        
         
         
         let fadeOutAnimation = CABasicAnimation(keyPath: "opacity")
