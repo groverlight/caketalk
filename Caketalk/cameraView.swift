@@ -777,7 +777,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 sum += e
             }
                         
-            TrimVideo.sharedInstance.trimVideo(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), startTime: 0, endTime: Float(sum) - (0.1 * Float(self.arrayOfClipDurations.count)))
+            TrimVideo.sharedInstance.trimVideo(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), startTime: 0, endTime: Float(sum) - (Float(0.05) * Float(self.arrayOfClipDurations.count)))
         })
     }
 

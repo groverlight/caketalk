@@ -18,28 +18,26 @@ public class TrimVideo {
         let start = startTime
         let end = endTime
         
-        do {
-            try manager.removeItemAtURL(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"))
-        } catch {
-            
+        let exportPath = "\(NSTemporaryDirectory())edited_video.mov"
+        let exportURL = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
+        if (NSFileManager.defaultManager().fileExistsAtPath(exportPath)) {
+            do {
+                try NSFileManager.defaultManager().removeItemAtPath(exportPath)
+            } catch _ {
+            }
         }
         
-        var outputURL = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
-        do {
-            try manager.createDirectoryAtURL(outputURL, withIntermediateDirectories: true, attributes: nil)
-            outputURL = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
-        }catch let error {
-            print(error)
-        }
+        let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality)!
+        export.outputURL = exportURL
+        export.outputFileType = AVFileTypeQuickTimeMovie
+        export.shouldOptimizeForNetworkUse = true
         
-        guard let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality) else {return}
-        exportSession.outputURL = outputURL
-        exportSession.outputFileType = AVFileTypeMPEG4
+        print("Export")
         
-        let startTime = CMTime(seconds: Double(start ?? 0), preferredTimescale: 1000)
-        let endTime = CMTime(seconds: Double(end ?? length), preferredTimescale: 1000)
-        let timeRange = CMTimeRange(start: startTime, end: endTime)
-        
-        exportSession.timeRange = timeRange
+        export.exportAsynchronouslyWithCompletionHandler({
+            completion in
+            print("Completed trimming")
+        })
+    
     }
 }
