@@ -76,5 +76,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app uses the camera to let you share your surroundings.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app does not take use of the microphone.</string>
 </dict>
 </plist>
