@@ -80,5 +80,7 @@
 	<string>This app uses the camera to let you share your surroundings.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app does not take use of the microphone.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app saves the videos you make to your camera roll.</string>
 </dict>
 </plist>
