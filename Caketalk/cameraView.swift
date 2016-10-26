@@ -771,7 +771,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         let movieURL = "\(NSTemporaryDirectory())edited_video.mov"
         let shutter = Shutter(path: movieURL, layers: shutterLayers)
         shutter.export("\(NSTemporaryDirectory())edited_video.mov", callback: {
-
+            
+            var sum: Double = 0
+            for (_, e) in self.arrayOfClipDurations.enumerate() {
+                sum += e
+            }
+                        
+            TrimVideo.sharedInstance.trimVideo(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), startTime: 0, endTime: Float(sum) - (0.1 * Float(self.arrayOfClipDurations.count)))
         })
     }
 
@@ -1442,7 +1448,7 @@ extension UIImage {
         let inputImage = CGImage ?? CIContext().createCGImage(CIImage!, fromRect: CIImage!.extent)
         
         // Render to bitmap.
-        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: 1, height: 1), inputImage)
+        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: 1, height: 1), inputImage!)
         
         // Compute result.
         let result = UIColor(red: CGFloat(bitmap[0]) / 255.0, green: CGFloat(bitmap[1]) / 255.0, blue: CGFloat(bitmap[2]) / 255.0, alpha: CGFloat(bitmap[3]) / 255.0)
