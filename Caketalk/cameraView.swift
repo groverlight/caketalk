@@ -272,7 +272,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             preferences.animating.dismissDuration = 0.5
             tipView = EasyTipView(text: "Type a thought, opinion, or question", preferences: preferences, delegate: self)
             tipView.show(animated: true, forView: view, withinSuperview: self.view)
-            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
             NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-2")
         }
     }
@@ -322,6 +321,19 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
     func dismissTipView() {
         tipView.dismiss()
+        
+        if NSUserDefaults.standardUserDefaults().valueForKey("tip-5") == nil && NSUserDefaults.standardUserDefaults().valueForKey("tip-4") != nil {
+            var preferences = EasyTipView.Preferences()
+            preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+            preferences.drawing.foregroundColor = UIColor.clearColor()
+            preferences.drawing.backgroundColor = UIColor.clearColor()
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
+            preferences.animating.dismissDuration = 0.5
+            tipView = EasyTipView(text: "Tap the button to record an expression.", preferences: preferences, delegate: self)
+            tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
+            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
+            NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-5")
+        }
     }
     
     func playSoundWithPath(path : String) {
@@ -534,23 +546,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "When finished, look up at the lens", preferences: preferences, delegate: self)
                 tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
-                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
+                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 6)
                 NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
-            }
-        }
-        
-        if cameraTextView.text.characters.count > 8 {
-            if NSUserDefaults.standardUserDefaults().valueForKey("tip-5") == nil {
-                var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                preferences.drawing.foregroundColor = UIColor.clearColor()
-                preferences.drawing.backgroundColor = UIColor.clearColor()
-                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
-                preferences.animating.dismissDuration = 0.5
-                tipView = EasyTipView(text: "Tap the button to record an expression.", preferences: preferences, delegate: self)
-                tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
-                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
-                NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-5")
             }
         }
         
@@ -678,6 +675,19 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         playSoundWithPath(NSBundle.mainBundle().pathForResource("beep_piano_hi_off", ofType: "aif")!)
         audioPlayer.volume = 0.025
 
+        if NSUserDefaults.standardUserDefaults().valueForKey("tip-6") == nil {
+            var preferences = EasyTipView.Preferences()
+            preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+            preferences.drawing.foregroundColor = UIColor.clearColor()
+            preferences.drawing.backgroundColor = UIColor.clearColor()
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+            preferences.animating.dismissDuration = 0.5
+            tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
+            tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
+            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 10)
+            NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
+        }
+
 
         clipCount += 1
         recording = false;
@@ -697,19 +707,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             let view = UIView(frame: CGRectMake(0, 0, 1, 1))
             view.center = CGPointMake(self.view.center.x, self.view.center.y + 65)
             self.view.addSubview(view)
-            
-            if NSUserDefaults.standardUserDefaults().valueForKey("tip-6") == nil {
-                var preferences = EasyTipView.Preferences()
-                preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                preferences.drawing.foregroundColor = UIColor.clearColor()
-                preferences.drawing.backgroundColor = UIColor.clearColor()
-                preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-                preferences.animating.dismissDuration = 0.5
-                tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
-                tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
-                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 10)
-                NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
-            }
         }
 
     }
