@@ -16,6 +16,7 @@ class Shutter {
     
     var layers : [ShutterLayer]
     var path : String
+    var watermarkImageView: UIImageView!
     
     init(path: String, layers: [ShutterLayer]) {
         self.layers = layers
@@ -67,6 +68,11 @@ class Shutter {
         parentLayer.addSublayer(gradientLayer)
         
         parentLayer.addSublayer(overlayLayer)
+        
+        watermarkImageView = UIImageView(frame: CGRectMake(size.width - 110, 10, 100, 40))
+        //  watermarkImageView.image = UIImage(named: "")
+        watermarkImageView.backgroundColor = .greenColor()
+        parentLayer.addSublayer(watermarkImageView.layer)
         
         let videoComposition = AVMutableVideoComposition()
         videoComposition.renderSize = size

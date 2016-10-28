@@ -14,22 +14,16 @@ import AVFoundation
 class ShutterLayer : CALayer {
     
     let blurbTextView: UITextView! = UITextView()
-    
+
     var labelFont: UIFont!
 
 
     init(previousClipDuration: Double, clipDuration: Double, title: String, line : Int, bounds: CGRect) {
         super.init()
-
-
-        //-blurbLabel.bounds.size.width
-
+        
         iPhoneScreenSizes()
 
         blurbTextView.frame = CGRectMake(100, bounds.size.height * 0.40, bounds.size.width * (2 / 3) + 20, 50)
-
-
-
         blurbTextView.textColor = UIColor.whiteColor()
         blurbTextView.font = labelFont
         blurbTextView.text = title
@@ -37,21 +31,14 @@ class ShutterLayer : CALayer {
         blurbTextView.layer.cornerRadius = 10
         blurbTextView.layer.masksToBounds = true
         blurbTextView.alpha = 0
-
         blurbTextView.layer.shadowOffset = CGSize(width: 1, height: 0)
         blurbTextView.layer.shadowOpacity = 1
         blurbTextView.layer.shadowRadius = 1
         blurbTextView.layer.shadowColor = UIColor.blackColor().CGColor
         blurbTextView.layer.shadowOpacity = 1.0
-
-
-
         blurbTextView.backgroundColor = randomColor(hue: .Random, luminosity: .Light).colorWithAlphaComponent(0.70)
         self.addSublayer(blurbTextView.layer)
 
-
-
-        
         let comeInAnimation = CASpringAnimation(keyPath: "position.x")
         comeInAnimation.damping = 10
         comeInAnimation.initialVelocity = 1
