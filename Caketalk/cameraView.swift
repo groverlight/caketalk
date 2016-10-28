@@ -451,11 +451,13 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         clipCount -= 1
 
                         do {
-                            try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
-                            clipCount -= 1
-                            videoClips.removeLast()
-                            arrayOfClipDurations.removeLast()
-                            arrayofText.removeLast()
+                            if arrayofText.count > 0 {
+                                try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
+                                clipCount -= 1
+                                videoClips.removeLast()
+                                arrayOfClipDurations.removeLast()
+                                arrayofText.removeLast()
+                            }
 
                         }
                         catch {}
