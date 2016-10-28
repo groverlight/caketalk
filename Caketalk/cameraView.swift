@@ -406,7 +406,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 self.recordEmoji.hidden = true
                 self.characterCount.hidden = true
 
-                if (scrollView.subviews.count > 0){
+                if (scrollView.subviews.count > 0) {
 
                     if (scrollView.subviews[scrollView.subviews.count-1] is UILabel){
                         print("button brought back")
@@ -450,13 +450,15 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         --scrollCounter
                         clipCount -= 1
 
-                        do{
+                        do {
                             try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
+                            clipCount -= 1
+                            videoClips.removeLast()
+                            arrayOfClipDurations.removeLast()
                             arrayofText.removeLast()
 
                         }
-                        catch{
-                        }
+                        catch {}
 
                         scrollHeight = scrollHeight - newLabel.bounds.size.height
                         self.scrollView.contentOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y-(self.cameraTextView.font?.lineHeight)!)
