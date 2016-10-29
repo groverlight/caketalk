@@ -392,7 +392,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             shouldGoDown = true
         }
         if (isBackSpace == -92) {
-             print("backspace was pressed")
+            print("backspace was pressed")
+            
             if (textView.text.characters.count == 1){
                 print("current line has been cleared")
                 self.recordButton.hidden = true
@@ -550,12 +551,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "When finished, look up at the lens", preferences: preferences, delegate: self)
                 tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
-                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 6)
                 NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
+                self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 6)
             }
         }
         
         if cameraTextView.text.characters.count == 14 {
+            NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
+            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 0)
+        }
+        
         
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)
         let textHeight = self.cameraTextView.font?.lineHeight
@@ -678,6 +683,18 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("SOUND EFFECT HERE")
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("beep_piano_hi_off", ofType: "aif")!)
+        audioPlayer.volume = 0.02
+        
+        var preferences = EasyTipView.Preferences()
+        preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
+        preferences.drawing.foregroundColor = UIColor.clearColor()
+        preferences.drawing.backgroundColor = UIColor.clearColor()
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+        preferences.animating.dismissDuration = 0.5
+        tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
+        tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
+        self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 10)
+        NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
 
         clipCount += 1
         recording = false;
