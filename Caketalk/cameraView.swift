@@ -540,7 +540,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     }
     func textViewDidChange(textView: UITextView) {
         
-        if cameraTextView.text.characters.count > 0 {
+        if cameraTextView.text.characters.count == 1 {
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-4") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
@@ -555,6 +555,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
         }
         
+        if cameraTextView.text.characters.count == 14 {
         
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)
         let textHeight = self.cameraTextView.font?.lineHeight
@@ -677,21 +678,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         print("SOUND EFFECT HERE")
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("beep_piano_hi_off", ofType: "aif")!)
-        audioPlayer.volume = 0.025
-
-        if NSUserDefaults.standardUserDefaults().valueForKey("tip-6") == nil {
-            var preferences = EasyTipView.Preferences()
-            preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-            preferences.drawing.foregroundColor = UIColor.clearColor()
-            preferences.drawing.backgroundColor = UIColor.clearColor()
-            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
-            preferences.animating.dismissDuration = 0.5
-            tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
-            tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
-            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 10)
-            NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
-        }
-
 
         clipCount += 1
         recording = false;
@@ -778,7 +764,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 sum += e
             }
                         
-            TrimVideo.sharedInstance.trimVideo(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), startTime: 0, endTime: Float(sum) - (Float(0.05) * Float(self.arrayOfClipDurations.count)))
         })
     }
 
