@@ -15,9 +15,6 @@ public class TrimVideo {
         
         print("The length \(length)")
         
-        let start = startTime
-        let end = endTime
-        
         let exportPath = "\(NSTemporaryDirectory())edited_video.mov"
         let exportURL = NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov")
         if (NSFileManager.defaultManager().fileExistsAtPath(exportPath)) {
@@ -27,8 +24,13 @@ public class TrimVideo {
             }
         }
         
+        let startTime = CMTime(seconds: Double(startTime ?? 0), preferredTimescale: 1000)
+        let endTime = CMTime(seconds: Double(endTime ?? length), preferredTimescale: 1000)
+        let timeRange = CMTimeRange(start: startTime, end: endTime)
+
         let export = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetHighestQuality)!
         export.outputURL = exportURL
+        export.timeRange = timeRange
         export.outputFileType = AVFileTypeQuickTimeMovie
         export.shouldOptimizeForNetworkUse = true
         
