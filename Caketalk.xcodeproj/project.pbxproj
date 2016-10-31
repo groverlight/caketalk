@@ -26,6 +26,7 @@
 		36FEF4711D41580400C7ABEF /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */; };
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
+		DCF3D4B51DC7B9A50083171C /* TrimVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */; };
 		F46892311D19EA97001FA942 /* click_pop.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892231D19EA97001FA942 /* click_pop.aif */; };
 		F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */; };
 		F46892331D19EA97001FA942 /* digi_error_2x.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892251D19EA97001FA942 /* digi_error_2x.aif */; };
@@ -180,6 +181,7 @@
 		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
 		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
+		DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimVideo.swift; sourceTree = "<group>"; };
 		F46892231D19EA97001FA942 /* click_pop.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = click_pop.aif; sourceTree = "<group>"; };
 		F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = digi_blip_hi_2x.aif; sourceTree = "<group>"; };
 		F46892251D19EA97001FA942 /* digi_error_2x.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = digi_error_2x.aif; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		36FEF46C1D4157F200C7ABEF /* Shutter Export */ = {
 			isa = PBXGroup;
 			children = (
+				DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */,
 				36FEF4661D414AE100C7ABEF /* Shutter.swift */,
 				36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */,
 			);
@@ -825,6 +828,7 @@
 				27049AA91CE823FD002D69EF /* CloudManager.swift in Sources */,
 				27049AAC1CE823FD002D69EF /* Hue.swift in Sources */,
 				F47C01321CE3B3D700891EB1 /* Caketalk.xcdatamodeld in Sources */,
+				DCF3D4B51DC7B9A50083171C /* TrimVideo.swift in Sources */,
 				F4FB95651CE3E93700E2977B /* mobileNumber.swift in Sources */,
 				27049AAB1CE823FD002D69EF /* ColorDefinition.swift in Sources */,
 				F47C01861CE3D09200891EB1 /* splash.swift in Sources */,
@@ -1002,7 +1006,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grover.testalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
@@ -1034,7 +1038,7 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grover.testalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
