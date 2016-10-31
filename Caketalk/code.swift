@@ -93,7 +93,7 @@ override func viewDidLoad() {
         labelCounter = 0
     }
     override func viewWillDisappear(animated: Bool) {
-        self.invisibleTextField.resignFirstResponder()
+        self.invisibleTextField.becomeFirstResponder()
     }
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         //print ("\(textField.text!)\(string)")

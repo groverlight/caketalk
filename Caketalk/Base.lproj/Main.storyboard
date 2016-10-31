@@ -792,7 +792,7 @@
                                     <constraint firstAttribute="height" constant="60" id="LFW-94-bjo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="JUST READING">
+                                <state key="normal" title="GO BACK">
                                     <color key="titleColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>

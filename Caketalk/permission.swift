@@ -71,6 +71,9 @@ class permission: UIViewController {
         print("iCloud button pressed")
         print("SOUND EFFECT HERE")
         
+        self.icloudButton.setTitle("WAITING ⏳", forState: .Normal)
+        self.icloudButton.setTitleColor(UIColor.blackColor() .colorWithAlphaComponent(0.30), forState: .Normal)
+        
         playSoundWithPath(NSBundle.mainBundle().pathForResource("click_04", ofType: "aif")!)
         audioPlayer.volume = 0.05
 

@@ -243,8 +243,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-        preferences.drawing.foregroundColor = UIColor.clearColor()
-        preferences.drawing.backgroundColor = UIColor.clearColor()
+        preferences.drawing.foregroundColor = UIColor.blackColor()
+        preferences.drawing.backgroundColor = UIColor.whiteColor()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
         preferences.animating.dismissDuration = 0.5
         tipView = EasyTipView(text: "Hi, welcome to Caketalk!", preferences: preferences, delegate: self)
@@ -266,8 +266,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if NSUserDefaults.standardUserDefaults().valueForKey("tip-2") == nil {
             var preferences = EasyTipView.Preferences()
             preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-            preferences.drawing.foregroundColor = UIColor.clearColor()
-            preferences.drawing.backgroundColor = UIColor.clearColor()
+            preferences.drawing.foregroundColor = UIColor.blackColor()
+            preferences.drawing.backgroundColor = UIColor.whiteColor()
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
             preferences.animating.dismissDuration = 0.5
             tipView = EasyTipView(text: "Type a thought, opinion, or question", preferences: preferences, delegate: self)
@@ -325,8 +325,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if NSUserDefaults.standardUserDefaults().valueForKey("tip-5") == nil && NSUserDefaults.standardUserDefaults().valueForKey("tip-4") != nil {
             var preferences = EasyTipView.Preferences()
             preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-            preferences.drawing.foregroundColor = UIColor.clearColor()
-            preferences.drawing.backgroundColor = UIColor.clearColor()
+            preferences.drawing.foregroundColor = UIColor.blackColor()
+            preferences.drawing.backgroundColor = UIColor.whiteColor()
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
             preferences.animating.dismissDuration = 0.5
             tipView = EasyTipView(text: "Tap the button to record an expression.", preferences: preferences, delegate: self)
@@ -545,8 +545,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-4") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                preferences.drawing.foregroundColor = UIColor.clearColor()
-                preferences.drawing.backgroundColor = UIColor.clearColor()
+                preferences.drawing.foregroundColor = UIColor.blackColor()
+                preferences.drawing.backgroundColor = UIColor.whiteColor()
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
                 preferences.animating.dismissDuration = 0.5
                 tipView = EasyTipView(text: "When finished, look up at the lens", preferences: preferences, delegate: self)
@@ -687,8 +687,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-        preferences.drawing.foregroundColor = UIColor.clearColor()
-        preferences.drawing.backgroundColor = UIColor.clearColor()
+        preferences.drawing.foregroundColor = UIColor.blackColor()
+        preferences.drawing.backgroundColor = UIColor.whiteColor()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
         preferences.animating.dismissDuration = 0.5
         tipView = EasyTipView(text: "Repeat until satisfied then tap DONE", preferences: preferences, delegate: self)
@@ -781,7 +781,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 sum += e
             }
                         
-            TrimVideo.sharedInstance.trimVideo(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), startTime: 0, endTime: Float(sum) - (Float(0.05) * Float(self.arrayOfClipDurations.count)))
+            TrimVideo.sharedInstance.trimVideo(NSURL(fileURLWithPath: "\(NSTemporaryDirectory())edited_video.mov"), startTime: 0, endTime: Float(sum) - (Float(0.5) * Float(self.arrayOfClipDurations.count)))
         })
     }
 
@@ -1136,16 +1136,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.recordButton.layer.cornerRadius = 15
             //self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Black", size: 13.0)
             
-            self.indicatorView = UIView(frame: CGRectMake(0, 0, 86, 30))
+            self.indicatorView = UIView(frame: CGRectMake(0, 0, 126, 30))
             self.indicatorView.center = CGPointMake(self.view.center.x, -30)
             self.indicatorView.layer.cornerRadius = 15
             self.indicatorView.clipsToBounds = true
             self.indicatorView.backgroundColor = UIColor.hex("#FF0000")
             self.view.addSubview(indicatorView)
             
-            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 86, 30))
+            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 126, 30))
             indicatorLabel.textAlignment = NSTextAlignment.Center
-            indicatorLabel.text = "LOOK UP"
+            indicatorLabel.text = "LOOK HERE 🎯"
             indicatorLabel.font = UIFont(name:"RionaSans-Black", size: 12)
             indicatorLabel.textColor = .whiteColor()
             indicatorView.addSubview(indicatorLabel)
