@@ -1105,20 +1105,20 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             var duration:NSTimeInterval = 0
             switch (time){
             case 1:
-                duration = 1.25
+                duration = 2
 
                 break
             case 2:
-                duration = 1.75
+                duration = 3
                 break
             case 3:
-                duration = 2.5
+                duration = 4
                 break
             case 4:
-                duration = 3.25
+                duration = 5
                 break
             case 5:
-                duration = 4.25
+                duration = 5
                 break
             default:
                 break
@@ -1452,7 +1452,7 @@ extension UIImage {
         let inputImage = CGImage ?? CIContext().createCGImage(CIImage!, fromRect: CIImage!.extent)
         
         // Render to bitmap.
-        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: 1, height: 1), inputImage!)
+        CGContextDrawImage(context, CGRect(x: 0, y: 0, width: 1, height: 1), inputImage)
         
         // Compute result.
         let result = UIColor(red: CGFloat(bitmap[0]) / 255.0, green: CGFloat(bitmap[1]) / 255.0, blue: CGFloat(bitmap[2]) / 255.0, alpha: CGFloat(bitmap[3]) / 255.0)
