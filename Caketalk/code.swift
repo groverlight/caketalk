@@ -47,6 +47,8 @@ override func viewDidLoad() {
     super.viewDidLoad()
 
     mixPanel = Mixpanel.sharedInstance()
+    
+    NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(code.ensureFirstResponder), userInfo: nil, repeats: true)
 
     self.invisibleTextField.delegate = self
    // loader.frame = CGRectMake(0, self.view.bounds.size.height/3, self.view.bounds.size.width,100)
@@ -89,12 +91,10 @@ override func viewDidLoad() {
 }
 
     override func viewDidAppear(animated: Bool) {
-        invisibleTextField.performSelector(#selector(UIResponder.becomeFirstResponder), withObject: nil, afterDelay: 0)
         labelCounter = 0
     }
-    override func viewWillDisappear(animated: Bool) {
-        self.invisibleTextField.resignFirstResponder()
-    }
+    
+    override func viewWillDisappear(animated: Bool) {}
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         //print ("\(textField.text!)\(string)")
         var newDigit:UILabel!
@@ -175,6 +175,10 @@ override func viewDidLoad() {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func ensureFirstResponder() {
+        invisibleTextField.becomeFirstResponder()
     }
 
 
