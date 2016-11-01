@@ -276,6 +276,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         }
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewWillAppear(animated: Bool) {
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -544,7 +552,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     }
     func textViewDidChange(textView: UITextView) {
         
-        if cameraTextView.text.characters.count == 1 {
+        if cameraTextView.text.characters.count > 10 {
             if NSUserDefaults.standardUserDefaults().valueForKey("tip-4") == nil {
                 var preferences = EasyTipView.Preferences()
                 preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
@@ -559,10 +567,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
         }
         
-        if cameraTextView.text.characters.count == 14 {
-            NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
-            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 0)
-        }
+//        if cameraTextView.text.characters.count == 14 {
+//            NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
+//            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 0)
+//        }
         
         
         self.characterCount.text = String(70-self.cameraTextView.text.characters.count)

@@ -13,98 +13,92 @@ import Mixpanel
 class code: UIViewController, UITextFieldDelegate {
     var labelCounter = 0
     var mixPanel : Mixpanel!
-
+    
     //var loader = MAActivityIndicatorView()
-
-/*---------------BEGIN OUTLETS----------------------*/
-
+    
+    /*---------------BEGIN OUTLETS----------------------*/
+    
     @IBOutlet var oneLabel: UILabel!
     @IBOutlet var twoLabel: UILabel!
     @IBOutlet var threeLabel: UILabel!
-
+    
     @IBOutlet var codeLabel: UILabel!
-
+    
     @IBOutlet var digitOne: UILabel!
     @IBOutlet var digitTwo: UILabel!
     @IBOutlet var digitThree: UILabel!
     @IBOutlet var digitFour: UILabel!
     @IBOutlet var digitFive: UILabel!
-
-
-
+    
+    
+    
     @IBOutlet var line: UIView!
-
+    
     @IBOutlet var hangTightLabel: UILabel!
     @IBOutlet var noCodeButton: UIButton!
-
+    
     @IBOutlet var invisibleTextField: UITextField!
-
-/*---------------END OUTLETS----------------------*/
-
-
-override func viewDidLoad() {
-    print ("code view is loaded")
-    super.viewDidLoad()
-
-    mixPanel = Mixpanel.sharedInstance()
     
-    NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(code.ensureFirstResponder), userInfo: nil, repeats: true)
-
-    self.invisibleTextField.delegate = self
-   // loader.frame = CGRectMake(0, self.view.bounds.size.height/3, self.view.bounds.size.width,100)
-    //loader.hidden = true
-    //self.view.addSubview(loader)
-    //loader.startAnimating()
+    /*---------------END OUTLETS----------------------*/
     
-/*---------------BEGIN STYLE 🎨----------------------*/
-
+    
+    override func viewDidLoad() {
+        print ("code view is loaded")
+        super.viewDidLoad()
+        
+        mixPanel = Mixpanel.sharedInstance()
+        
+        NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: #selector(code.ensureFirstResponder), userInfo: nil, repeats: true)
+        
+        self.invisibleTextField.delegate = self
+        // loader.frame = CGRectMake(0, self.view.bounds.size.height/3, self.view.bounds.size.width,100)
+        //loader.hidden = true
+        //self.view.addSubview(loader)
+        //loader.startAnimating()
+        
+        /*---------------BEGIN STYLE 🎨----------------------*/
+        
         //rounding edges out use MASKTOBOUNDS=true
-
-
-    self.oneLabel.layer.cornerRadius = 10
-    self.oneLabel.clipsToBounds = true
-    self.twoLabel.layer.cornerRadius = 10
-    self.twoLabel.clipsToBounds = true
-    self.threeLabel.layer.cornerRadius = 10
-    self.threeLabel.clipsToBounds = true
-
-    self.digitOne.layer.cornerRadius = 6
-    self.digitTwo.layer.cornerRadius = 6
-    self.digitThree.layer.cornerRadius = 6
-    self.digitFour.layer.cornerRadius = 6
-    self.digitFive.layer.cornerRadius = 6
-
-    self.digitOne.clipsToBounds = true
-    self.digitTwo.clipsToBounds = true
-    self.digitThree.clipsToBounds = true
-    self.digitFour.clipsToBounds = true
-    self.digitFive.clipsToBounds = true
-
-
+        
+        
+        self.oneLabel.layer.cornerRadius = 10
+        self.oneLabel.clipsToBounds = true
+        self.twoLabel.layer.cornerRadius = 10
+        self.twoLabel.clipsToBounds = true
+        self.threeLabel.layer.cornerRadius = 10
+        self.threeLabel.clipsToBounds = true
+        
+        self.digitOne.layer.cornerRadius = 6
+        self.digitTwo.layer.cornerRadius = 6
+        self.digitThree.layer.cornerRadius = 6
+        self.digitFour.layer.cornerRadius = 6
+        self.digitFive.layer.cornerRadius = 6
+        
+        self.digitOne.clipsToBounds = true
+        self.digitTwo.clipsToBounds = true
+        self.digitThree.clipsToBounds = true
+        self.digitFour.clipsToBounds = true
+        self.digitFive.clipsToBounds = true
+        
+        
+        
+        
+        
+        
+        
+        /*---------------END STYLE 🎨----------------------*/
+        
+    }
     
-
-
-
-
-/*---------------END STYLE 🎨----------------------*/
-
-}
-
     override func viewDidAppear(animated: Bool) {
         labelCounter = 0
     }
-<<<<<<< HEAD
-    override func viewWillDisappear(animated: Bool) {
-        self.invisibleTextField.becomeFirstResponder()
-    }
-=======
     
     override func viewWillDisappear(animated: Bool) {}
->>>>>>> origin/master
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         //print ("\(textField.text!)\(string)")
         var newDigit:UILabel!
-
+        
         if (range.length == 0){
             //print ("morechar")
             labelCounter += 1
@@ -128,8 +122,8 @@ override func viewDidLoad() {
         default:
             return false
         }
-
-
+        
+        
         if (range.length == 0){
             newDigit.text = string
         }
@@ -142,17 +136,17 @@ override func viewDidLoad() {
         if (labelCounter == 5){
             digitFive.text = string
             if ( codeFired == textField.text! + string){
-
+                
                 dispatch_async(dispatch_get_main_queue()) {
                     let prefs = NSUserDefaults.standardUserDefaults()
                     prefs.setValue("didLogin", forKey: "Login")
                     self.performSegueWithIdentifier("finishLogin", sender: self)
-
+                    
                     self.mixPanel.track("code fired", properties: nil)
                     //mixPanel.people .increment("get code pressed", by: 1)
                     self.mixPanel.identify(self.mixPanel.distinctId)
                     self.mixPanel.flush()
-
+                    
                 }
             }
             else {
@@ -177,7 +171,7 @@ override func viewDidLoad() {
         
         return true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -186,9 +180,9 @@ override func viewDidLoad() {
     func ensureFirstResponder() {
         invisibleTextField.becomeFirstResponder()
     }
-
-
+    
+    
     //Mark: blah blah blah
-
-
+    
+    
 }

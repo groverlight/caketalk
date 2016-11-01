@@ -69,9 +69,13 @@ class Shutter {
         
         parentLayer.addSublayer(overlayLayer)
         
-        watermarkImageView = UIImageView(frame: CGRectMake(size.width - 110, 10, 100, 40))
-        //  watermarkImageView.image = UIImage(named: "")
-        watermarkImageView.backgroundColor = .greenColor()
+        watermarkImageView = UIImageView(frame: CGRectMake(size.width - 165, 10, 150, 60))
+        watermarkImageView.image = UIImage(named: "water_white.png")
+        watermarkImageView.alpha = 0.7
+        
+        //watermarkImageView.backgroundColor = UIColor .whiteColor().colorWithAlphaComponent(0.3)
+        self.watermarkImageView.contentMode   = .ScaleAspectFit
+        //self.watermarkImageView.clipsToBounds = YES
         parentLayer.addSublayer(watermarkImageView.layer)
         
         let videoComposition = AVMutableVideoComposition()

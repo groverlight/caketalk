@@ -26,6 +26,9 @@
 		36FEF4711D41580400C7ABEF /* SocialVideoHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */; };
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
+		DCE1CDAF1DC93CAE00FB268D /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE1CDAE1DC93CAE00FB268D /* water_white.png */; };
+		DCE1CDB11DC93F5A00FB268D /* water_black.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE1CDB01DC93F5A00FB268D /* water_black.png */; };
+		DCE1CDB31DC9445200FB268D /* cake_vid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DCE1CDB21DC9445200FB268D /* cake_vid.mp4 */; };
 		DCF3D4B51DC7B9A50083171C /* TrimVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */; };
 		F46892311D19EA97001FA942 /* click_pop.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892231D19EA97001FA942 /* click_pop.aif */; };
 		F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */; };
@@ -181,6 +184,9 @@
 		9B9EA905285A0856B1E02215 /* Pods-CaketalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaketalkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
 		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
+		DCE1CDAE1DC93CAE00FB268D /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water_white.png; path = ../../water_white.png; sourceTree = "<group>"; };
+		DCE1CDB01DC93F5A00FB268D /* water_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water_black.png; path = ../../water_black.png; sourceTree = "<group>"; };
+		DCE1CDB21DC9445200FB268D /* cake_vid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = cake_vid.mp4; path = "../../untitled folder/cake_vid.mp4"; sourceTree = "<group>"; };
 		DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimVideo.swift; sourceTree = "<group>"; };
 		F46892231D19EA97001FA942 /* click_pop.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = click_pop.aif; sourceTree = "<group>"; };
 		F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = digi_blip_hi_2x.aif; sourceTree = "<group>"; };
@@ -304,6 +310,8 @@
 		36FEF46C1D4157F200C7ABEF /* Shutter Export */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1CDB01DC93F5A00FB268D /* water_black.png */,
+				DCE1CDAE1DC93CAE00FB268D /* water_white.png */,
 				DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */,
 				36FEF4661D414AE100C7ABEF /* Shutter.swift */,
 				36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */,
@@ -337,6 +345,7 @@
 		F47C01281CE3B3D700891EB1 /* Caketalk */ = {
 			isa = PBXGroup;
 			children = (
+				DCE1CDB21DC9445200FB268D /* cake_vid.mp4 */,
 				36FEF46F1D41580400C7ABEF /* SocialVideoHelper.h */,
 				36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */,
 				36FEF46C1D4157F200C7ABEF /* Shutter Export */,
@@ -638,6 +647,7 @@
 				F4A190051DB9459A008DDA82 /* lookup_soft_elegance_2.png in Resources */,
 				F46892311D19EA97001FA942 /* click_pop.aif in Resources */,
 				F468923A1D19EA97001FA942 /* pop_drip_echo.aif in Resources */,
+				DCE1CDB11DC93F5A00FB268D /* water_black.png in Resources */,
 				F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */,
 				F47C016D1CE3B51E00891EB1 /* RionaSans-BlackIt.otf in Resources */,
 				F4EB2F121DB5B2990099FBC6 /* click_delete.aif in Resources */,
@@ -653,6 +663,7 @@
 				F4EB2EFA1DB587760099FBC6 /* fb.png in Resources */,
 				F47C01751CE3B51E00891EB1 /* RionaSans-Light.otf in Resources */,
 				F47C01741CE3B51E00891EB1 /* RionaSans-Italic.otf in Resources */,
+				DCE1CDB31DC9445200FB268D /* cake_vid.mp4 in Resources */,
 				F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */,
 				F4EB2F161DB5B2990099FBC6 /* beep_piano_hi_off.aif in Resources */,
 				F47C016F1CE3B51E00891EB1 /* RionaSans-BoldIt.otf in Resources */,
@@ -664,6 +675,7 @@
 				F4A190041DB9459A008DDA82 /* lookup_amatorka.png in Resources */,
 				F47C01721CE3B51E00891EB1 /* RionaSans-ExtraLight.otf in Resources */,
 				F468923B1D19EA97001FA942 /* pop_drip_snap.aif in Resources */,
+				DCE1CDAF1DC93CAE00FB268D /* water_white.png in Resources */,
 				F46A0DDA1DB74F01000C8E0F /* pop_drip_ratchet.wav in Resources */,
 				F46892341D19EA97001FA942 /* digi_hi_select.aif in Resources */,
 				F47C01771CE3B51E00891EB1 /* RionaSans-Medium.otf in Resources */,
