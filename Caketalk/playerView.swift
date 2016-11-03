@@ -340,7 +340,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             let emojiLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height+16, self.view.bounds.size.width*(2/3)-20,25))
             emojiLabel.font = UIFont(name:"Avenir Next", size:14)
             emojiLabel.textColor = UIColor.whiteColor()
-            emojiLabel.text = "📜"
+            emojiLabel.text = "📝"
             emojiLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(emojiLabel)
@@ -590,9 +590,10 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
         //self.backEmoji.text = "👔"
         self.backEmoji.hidden = false
         
-        let alertController = UIAlertController(title: "Twitter Video sharing", message: "Enter your tweet", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Twitter Video Share", message: "Tap OK to tweet!", preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addTextFieldWithConfigurationHandler { (textField) in
-            textField.placeholder = "#caketalk"
+            //textField.placeholder = "#caketalk"
+            textField.text = "Watch me talk without sound: appsto.re/us/1eSlfb.i @caketalk"
         }
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .Cancel) { action -> Void in
             //Just dismiss the action sheet
@@ -721,6 +722,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             let content : FBSDKShareVideoContent = FBSDKShareVideoContent()
             content.video = video
             
+            
             let dialog = FBSDKShareDialog()
             let newURL = NSURL(string: "fbauth2://")
             if (UIApplication.sharedApplication() .canOpenURL(newURL!)){
@@ -736,7 +738,7 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             dialog.delegate = self;
             dialog.fromViewController = self;
             dialog.show()
-            
+          
             HUD.hide(afterDelay: 1)
         })
         

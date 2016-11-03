@@ -463,17 +463,23 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                             if arrayofText.count > 0 {
                                 try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
                                 clipCount -= 1
-                                arrayOfClipDurations.removeLast()
-                                arrayofText.removeLast()
                                 
-                                if videoClips != nil {
-                                     videoClips.removeLast()
+                                if arrayOfClipDurations.count > 0 {
+                                    arrayOfClipDurations.removeLast()
+                                }
+                                
+                                if arrayofText.count > 0 {
+                                    arrayofText.removeLast()
+                                }
+                                
+                                if videoClips != nil && videoClips.count > 0 {
+                                    videoClips.removeLast()
                                 }
                             }
-
+                            
                         }
                         catch {}
-
+                        
                         scrollHeight = scrollHeight - newLabel.bounds.size.height
                         self.scrollView.contentOffset = CGPoint(x: 0, y: self.scrollView.contentOffset.y-(self.cameraTextView.font?.lineHeight)!)
                         scrollView.subviews[scrollView.subviews.count-1].removeFromSuperview()

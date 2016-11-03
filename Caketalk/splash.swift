@@ -15,7 +15,8 @@ import Mixpanel
 
 class splash: UIViewController, PlayerDelegate {
     
-let videoUrl = NSURL(string: "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4")!
+    let resourcePath = NSBundle.mainBundle().pathForResource("IMG_0011", ofType:"MOV")
+    
 
 
     private var player: Player!
@@ -47,7 +48,7 @@ let videoUrl = NSURL(string: "https://v.cdn.vine.co/r/videos/AA3C120C52117717580
         self.view.sendSubviewToBack(self.player.view)
         self.player.didMoveToParentViewController(self)
         
-        self.player.setUrl(videoUrl)
+        //self.player.path = resourcePath()
         
         self.player.playbackLoops = true
         self.player.muted = true
