@@ -462,13 +462,13 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                                         // EasyTipView global preferences
                                         var preferences = EasyTipView.Preferences()
                                     preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
-                                    preferences.drawing.foregroundColor = UIColor.clearColor()
-                                    preferences.drawing.backgroundColor = UIColor.clearColor()
+                                    preferences.drawing.foregroundColor = UIColor.blackColor()
+                                    preferences.drawing.backgroundColor = UIColor.whiteColor()
                                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
                                         preferences.animating.showDuration = 2
-                                        EasyTipView.show(forView: self.instagramButton,
+                                        EasyTipView.show(forView: self.moreButton,
                                             withinSuperview: self.view,
-                                            text: "Share with your favorite audience!",
+                                            text: "Tap to save or share with your audience",
                                             preferences: preferences,
                                             delegate: self)
                                         
