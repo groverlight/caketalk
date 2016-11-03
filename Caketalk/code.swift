@@ -156,6 +156,7 @@ class code: UIViewController, UITextFieldDelegate {
                 })
                 wrongCode.addAction(okAction)
                 dispatch_async(dispatch_get_main_queue()) {
+                    self.labelCounter = 0
                     self.invisibleTextField.text = ""
                     self.digitOne.text = "•"
                     self.digitTwo.text = "•"
@@ -163,6 +164,7 @@ class code: UIViewController, UITextFieldDelegate {
                     self.digitFour.text = "•"
                     self.digitFive.text = "•"
                     self.presentViewController(wrongCode, animated: true, completion: nil)
+                    
                 }
             }
             
