@@ -106,8 +106,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         mixPanel = Mixpanel.sharedInstance()
     
         self.cameraTextView.delegate = self
+        self.cameraTextView.text = "What's on your mind? "
+        self.cameraTextView.autocapitalizationType = UITextAutocapitalizationType.Words
         self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
         
+        
+        if self.cameraTextView.text == "What's on your mind? " {
+            self.cameraTextView.autocapitalizationType = UITextAutocapitalizationType.Sentences
+        }
 
         let backgroundVisualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
         backgroundVisualEffectView.frame = CGRectMake(0, 62, self.view.bounds.size.width, self.view.bounds.size.height - 124)
@@ -143,6 +149,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         self.clearButton.hidden = true
         self.clearEmoji.hidden = true
         self.line.hidden = true
+        
+        self.cameraTextView.textColor = UIColor .blackColor().colorWithAlphaComponent(0.3)
 
 /*---------------END STYLE 🎨----------------------*/
 
@@ -307,6 +315,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     
     override func viewWillAppear(animated: Bool) {
+        
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
             if (files?.count == 0){
@@ -317,6 +326,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
                 self.cameraTextView.returnKeyType = UIReturnKeyType.Default
                 self.cameraTextView.becomeFirstResponder()
+                
                 self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
                 for subview in self.scrollView.subviews {
                     if subview is UILabel{
@@ -406,10 +416,30 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.setNeedsStatusBarAppearanceUpdate()
         }
     
+    
+    
+    
+    
     //UITextView delegate functions
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         print("getting text...")
 
+        
+        
+        if (self.cameraTextView.text == "What's on your mind? ") {
+            self.cameraTextView.text = "".uppercaseString
+            self.cameraTextView.textColor = UIColor.whiteColor()
+            
+        }
+        
+        else if (self.cameraTextView.text == "(Anything else? ") {
+            self.cameraTextView.text = "".uppercaseString
+            self.cameraTextView.textColor = UIColor.whiteColor()
+        }
+        else {
+            
+        }
+        
         
 //        if tipView != nil {
 //            dismissTipView()
@@ -424,6 +454,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         if (isBackSpace == -92) {
             print("backspace was pressed")
             
+            
             if (textView.text.characters.count == 1){
                 print("current line has been cleared")
                 self.recordButton.hidden = true
@@ -432,6 +463,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
             }
             else if (textView.text == ""){
+                
                 print("editing the previous line")
                 self.recordButton.hidden = true
                 self.recordEmoji.hidden = true
@@ -460,6 +492,10 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         self.characterCount.hidden = false
 
                         if (clipCount > 0){
+                            
+//                            if (self.cameraTextView.text == "Anything Else?") {
+//                                self.cameraTextView.text = ""
+//                            }
 
                             if (self.cameraTextView.returnKeyType == UIReturnKeyType.Done){
                                 print("return button visible")
@@ -715,6 +751,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
 
         print ("stopping recording...")
         print("SOUND EFFECT HERE")
+        
+                if clipCount > 0 {
+                    self.cameraTextView.text = "Anything else? "
+                    self.cameraTextView.textColor = UIColor .blackColor().colorWithAlphaComponent(0.3)
+                }
+
         
         playSoundWithPath(NSBundle.mainBundle().pathForResource("beep_piano_hi_off", ofType: "aif")!)
         audioPlayer.volume = 0.02
