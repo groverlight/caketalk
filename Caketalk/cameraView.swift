@@ -548,7 +548,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             }
 
         }
-        if (text == "\n" && cameraTextView.returnKeyType != UIReturnKeyType.Done){
+        if (text == "Anything else? " && cameraTextView.returnKeyType != UIReturnKeyType.Done){
             return false
         }
         if (textView.text.characters.count == 0 && text != ""){
@@ -556,7 +556,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             print("SOUND EFFECT HERE")
 
 
-            if (clipCount > 0 && cameraTextView.returnKeyType == UIReturnKeyType.Done){
+            if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Done){
                 print("send button pressed")
 
 
