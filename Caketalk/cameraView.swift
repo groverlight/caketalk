@@ -432,7 +432,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             
         }
         
-        else if (self.cameraTextView.text == "(Anything else? ") {
+        else if (self.cameraTextView.text == "Anything else? ") {
             self.cameraTextView.text = "".uppercaseString
             self.cameraTextView.textColor = UIColor.whiteColor()
         }
@@ -556,7 +556,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             print("SOUND EFFECT HERE")
 
 
-            if (text == "\n" && cameraTextView.returnKeyType == UIReturnKeyType.Done){
+            if (clipCount > 0 && cameraTextView.returnKeyType == UIReturnKeyType.Done){
                 print("send button pressed")
 
 
