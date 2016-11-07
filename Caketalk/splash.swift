@@ -15,7 +15,7 @@ import Mixpanel
 
 class splash: UIViewController, PlayerDelegate {
     
-let videoUrl = NSURL(string: "https://v.cdn.vine.co/r/videos/AA3C120C521177175800441692160_38f2cbd1ffb.1.5.13763579289575020226.mp4")!
+    let videoUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("loop", ofType: "mp4")!)
 
 
     private var player: Player!
@@ -109,9 +109,12 @@ let videoUrl = NSURL(string: "https://v.cdn.vine.co/r/videos/AA3C120C52117717580
     }
     
     func playerBufferingStateDidChange(player: Player) {
-    
+        
     }
     
+    func playerCurrentTimeDidChange(player: Player) {
+        
+    }
     func playerPlaybackWillStartFromBeginning(player: Player) {
     
     }
