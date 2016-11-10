@@ -47,11 +47,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses the camera to let you share your surroundings.</string>
+	<string>Caketalk uses the camera to let you record your facial expressions.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app does not take use of the microphone.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app saves the videos you make to your camera roll.</string>
+	<string>Caketalk saves the videos you make to your camera roll.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>RionaSans-BlackIt.otf</string>

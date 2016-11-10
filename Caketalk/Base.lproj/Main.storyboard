@@ -36,8 +36,11 @@
             <string>RionaSans-Bold</string>
             <string>RionaSans-Bold</string>
             <string>RionaSans-Bold</string>
+            <string>RionaSans-Bold</string>
         </mutableArray>
         <mutableArray key="RionaSans-Medium.otf">
+            <string>RionaSans-Medium</string>
+            <string>RionaSans-Medium</string>
             <string>RionaSans-Medium</string>
             <string>RionaSans-Medium</string>
             <string>RionaSans-Medium</string>
@@ -78,7 +81,7 @@
                                     <segue destination="Lka-8G-3Dh" kind="show" animates="NO" id="DTR-OB-PE1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="📇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuo-1N-hXo" userLabel="loginEmoji">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙋🏼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nuo-1N-hXo" userLabel="loginEmoji">
                                 <rect key="frame" x="50" y="542" width="22" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Nuo-1N-hXo" secondAttribute="height" multiplier="22:21" id="Wwt-RG-Qai"/>
@@ -157,7 +160,7 @@
                                     <constraint firstAttribute="height" constant="20" id="DC4-W1-bM7"/>
                                     <constraint firstAttribute="width" constant="20" id="y6B-0B-oeJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -168,7 +171,7 @@
                                     <constraint firstAttribute="width" constant="20" id="1rG-ep-N0a"/>
                                     <constraint firstAttribute="height" constant="20" id="ayq-b2-TwS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -179,7 +182,7 @@
                                     <constraint firstAttribute="height" constant="20" id="47L-kj-AlV"/>
                                     <constraint firstAttribute="width" constant="20" id="VKE-I6-yXu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -317,7 +320,7 @@
                                     <constraint firstAttribute="width" constant="20" id="1Lt-er-F5Z"/>
                                     <constraint firstAttribute="height" constant="20" id="Ljw-mj-DeJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -327,7 +330,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="rWq-SL-Yha"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -337,7 +340,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="GI7-Sg-2gY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -356,7 +359,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNd-nd-cMp" userLabel="mobile">
                                 <rect key="frame" x="78" y="160" width="502" height="50"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.60392156862745094" blue="0.72156862745098038" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.43137254899999999" green="0.87058823529999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" keyboardAppearance="alert"/>
@@ -366,12 +369,22 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.3045804794520548" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quickly sign in via mobile #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYj-8S-Pel">
-                                <rect key="frame" x="230" y="73" width="141" height="72"/>
+                                <rect key="frame" x="161" y="69" width="279" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="3bc-hP-M81"/>
-                                    <constraint firstAttribute="width" constant="141" id="rhF-K3-Mfj"/>
+                                    <constraint firstAttribute="height" constant="45" id="3bc-hP-M81"/>
+                                    <constraint firstAttribute="width" constant="279" id="rhF-K3-Mfj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="19"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll text you a 5-digit pin to verify" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eVH-7r-5p8">
+                                <rect key="frame" x="82" y="97" width="439" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="439" id="Fsq-ZF-e08"/>
+                                    <constraint firstAttribute="height" constant="45" id="pSX-sa-ree"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="14"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -420,9 +433,10 @@
                             <constraint firstItem="OYj-8S-Pel" firstAttribute="top" secondItem="6pl-LO-SFk" secondAttribute="bottom" constant="44" id="2QZ-yk-Rcz"/>
                             <constraint firstItem="7cd-Yb-Mhg" firstAttribute="centerY" secondItem="SyU-Cm-pBq" secondAttribute="centerY" id="3P5-ao-suT"/>
                             <constraint firstItem="znV-ZO-pcV" firstAttribute="bottom" secondItem="uNd-nd-cMp" secondAttribute="bottom" id="6Fl-nx-EgT"/>
+                            <constraint firstItem="uNd-nd-cMp" firstAttribute="top" secondItem="eVH-7r-5p8" secondAttribute="bottom" constant="18" id="77i-7q-HP3"/>
                             <constraint firstItem="uNd-nd-cMp" firstAttribute="leading" secondItem="znV-ZO-pcV" secondAttribute="trailing" constant="8" symbolic="YES" id="7EJ-CL-NuH"/>
                             <constraint firstItem="7cd-Yb-Mhg" firstAttribute="leading" secondItem="dGk-CI-PmE" secondAttribute="leadingMargin" constant="35" id="AtW-9i-fmS"/>
-                            <constraint firstItem="OYj-8S-Pel" firstAttribute="top" secondItem="6pl-LO-SFk" secondAttribute="bottom" constant="23" id="CcV-JG-WrQ"/>
+                            <constraint firstItem="OYj-8S-Pel" firstAttribute="top" secondItem="6pl-LO-SFk" secondAttribute="bottom" constant="19" id="CcV-JG-WrQ"/>
                             <constraint firstItem="znV-ZO-pcV" firstAttribute="top" secondItem="uNd-nd-cMp" secondAttribute="top" id="EeR-1J-i5S"/>
                             <constraint firstItem="hfu-pU-5VW" firstAttribute="top" secondItem="ZyH-gY-bek" secondAttribute="bottom" constant="11" id="NrI-Wp-1MV"/>
                             <constraint firstItem="ZUb-wQ-6jU" firstAttribute="top" secondItem="SyU-Cm-pBq" secondAttribute="bottom" constant="17" id="OQK-ir-1Ak"/>
@@ -433,10 +447,11 @@
                             <constraint firstItem="OYj-8S-Pel" firstAttribute="centerX" secondItem="6pl-LO-SFk" secondAttribute="centerX" id="X6b-yx-m6i"/>
                             <constraint firstItem="0ym-bZ-I1a" firstAttribute="top" secondItem="PLR-jA-xB3" secondAttribute="bottom" constant="10" id="YSC-WM-pdH"/>
                             <constraint firstItem="cSq-q9-Y8F" firstAttribute="trailing" secondItem="dGk-CI-PmE" secondAttribute="trailingMargin" id="coM-rM-odI"/>
-                            <constraint firstItem="uNd-nd-cMp" firstAttribute="top" secondItem="OYj-8S-Pel" secondAttribute="bottom" constant="15" id="dI8-2B-mdk"/>
+                            <constraint firstItem="uNd-nd-cMp" firstAttribute="top" secondItem="OYj-8S-Pel" secondAttribute="bottom" constant="46" id="dI8-2B-mdk"/>
                             <constraint firstItem="0ym-bZ-I1a" firstAttribute="leading" secondItem="dGk-CI-PmE" secondAttribute="leadingMargin" id="dTB-Zp-bBD"/>
                             <constraint firstItem="uNd-nd-cMp" firstAttribute="trailing" secondItem="ZyH-gY-bek" secondAttribute="trailing" constant="-1" id="dod-7o-qt9"/>
                             <constraint firstItem="0ym-bZ-I1a" firstAttribute="baseline" secondItem="6pl-LO-SFk" secondAttribute="baseline" id="dq0-Av-f5m"/>
+                            <constraint firstItem="eVH-7r-5p8" firstAttribute="centerX" secondItem="ZyH-gY-bek" secondAttribute="centerX" id="epc-8D-iHU"/>
                             <constraint firstItem="OYj-8S-Pel" firstAttribute="centerX" secondItem="dGk-CI-PmE" secondAttribute="centerX" id="kPw-XX-m4J"/>
                             <constraint firstItem="7cd-Yb-Mhg" firstAttribute="baseline" secondItem="SyU-Cm-pBq" secondAttribute="baseline" id="l45-1g-iuL"/>
                             <constraint firstItem="ZyH-gY-bek" firstAttribute="leading" secondItem="SyU-Cm-pBq" secondAttribute="leading" constant="1" id="lTk-Rd-CZD"/>
@@ -452,9 +467,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="rbW-Oh-41e"/>
                                 <exclude reference="2QZ-yk-Rcz"/>
                                 <exclude reference="X6b-yx-m6i"/>
+                                <exclude reference="rbW-Oh-41e"/>
                                 <exclude reference="l45-1g-iuL"/>
                                 <exclude reference="s6I-NZ-D2V"/>
                                 <exclude reference="00c-pu-xbL"/>
@@ -507,7 +522,7 @@
                                     <constraint firstAttribute="height" constant="20" id="8o1-Zs-WpM"/>
                                     <constraint firstAttribute="width" constant="20" id="V2k-lU-ZnU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -518,7 +533,7 @@
                                     <constraint firstAttribute="width" constant="20" id="6nm-1N-ean"/>
                                     <constraint firstAttribute="height" constant="20" id="cJ3-Ct-svt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -529,7 +544,7 @@
                                     <constraint firstAttribute="width" constant="20" id="8Xx-ak-ATA"/>
                                     <constraint firstAttribute="height" constant="20" id="eDM-ID-at2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -641,11 +656,11 @@
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now enter the code we just texted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvH-mm-gez">
-                                <rect key="frame" x="211" y="73" width="181" height="72"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code we just texted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvH-mm-gez">
+                                <rect key="frame" x="161" y="69" width="279" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="72" id="9MA-oJ-ZiD"/>
-                                    <constraint firstAttribute="width" constant="181" id="Dq3-V9-3mr"/>
+                                    <constraint firstAttribute="height" constant="45" id="9MA-oJ-ZiD"/>
+                                    <constraint firstAttribute="width" constant="279" id="Dq3-V9-3mr"/>
                                     <constraint firstAttribute="width" secondItem="bvH-mm-gez" secondAttribute="height" multiplier="47:24" id="vh9-y2-7pq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="19"/>
@@ -657,15 +672,30 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Then OK camera access to start!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrl-Ex-Xb3">
+                                <rect key="frame" x="80" y="97" width="439" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jrl-Ex-Xb3" secondAttribute="height" multiplier="47:24" id="Icj-li-U3y"/>
+                                    <constraint firstAttribute="height" constant="45" id="e7c-5G-lNO"/>
+                                    <constraint firstAttribute="width" constant="439" id="n8z-U6-Nfn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RionaSans-Medium" family="Riona Sans" pointSize="14"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Icj-li-U3y"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ptP-gu-Sxb" firstAttribute="bottom" secondItem="iTE-g2-Cke" secondAttribute="bottom" id="09B-EN-aUu"/>
+                            <constraint firstItem="tdE-FJ-3He" firstAttribute="top" secondItem="Jrl-Ex-Xb3" secondAttribute="bottom" constant="18" id="2eI-xf-Pfl"/>
                             <constraint firstItem="wDd-Pr-47Q" firstAttribute="leading" secondItem="ptP-gu-Sxb" secondAttribute="trailing" constant="10" id="2le-OY-SDn"/>
                             <constraint firstItem="tdE-FJ-3He" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="721-Vw-cZx"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="centerX" secondItem="f2y-ye-QPr" secondAttribute="centerX" id="7VC-az-eWQ"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="tdE-FJ-3He" secondAttribute="bottom" constant="34" id="8hb-Sm-n2w"/>
-                            <constraint firstItem="gtb-V5-c7n" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="35" id="95w-po-iel"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="leading" secondItem="Se5-kG-Vc9" secondAttribute="leading" constant="125" id="9Wy-vs-oy1"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="width" secondItem="AAf-2m-u2y" secondAttribute="height" multiplier="197:68" id="9gv-1R-nWh"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="7" id="9hA-Zu-mBv"/>
@@ -674,12 +704,8 @@
                             <constraint firstItem="f2y-ye-QPr" firstAttribute="centerX" secondItem="h2l-RX-0kq" secondAttribute="centerX" id="DDD-BZ-A3W"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="AAf-2m-u2y" secondAttribute="centerX" id="Dzg-oB-QmD"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="AAf-2m-u2y" secondAttribute="centerX" id="HZU-Br-bpy"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="centerX" secondItem="f2y-ye-QPr" secondAttribute="centerX" constant="7.5" id="JhP-sV-oFP"/>
-                            <constraint firstItem="tdE-FJ-3He" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="15" id="Jop-ah-G9g"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="width" secondItem="bvH-mm-gez" secondAttribute="height" multiplier="47:24" id="NER-95-80d"/>
-                            <constraint firstItem="ptP-gu-Sxb" firstAttribute="top" secondItem="bvH-mm-gez" secondAttribute="bottom" constant="47" id="Nf1-78-IUh"/>
                             <constraint firstItem="gZp-db-yW0" firstAttribute="centerY" secondItem="Se5-kG-Vc9" secondAttribute="centerY" id="Qjy-Oy-Nlo"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="Scu-aO-caK"/>
+                            <constraint firstItem="bvH-mm-gez" firstAttribute="top" secondItem="f2y-ye-QPr" secondAttribute="bottom" constant="19" id="UFe-Pk-DMO"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="baseline" secondItem="tdE-FJ-3He" secondAttribute="baseline" id="V1G-Oc-dJ6"/>
                             <constraint firstItem="oPO-kZ-mzH" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="10" id="VIS-l2-8ub"/>
                             <constraint firstItem="f2y-ye-QPr" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="10" id="WrU-SK-plh"/>
@@ -688,11 +714,11 @@
                             <constraint firstItem="oPO-kZ-mzH" firstAttribute="leading" secondItem="Se5-kG-Vc9" secondAttribute="leading" constant="20" id="apu-af-aiP"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="firstBaseline" secondItem="iTE-g2-Cke" secondAttribute="firstBaseline" id="b9p-dH-yrt"/>
                             <constraint firstItem="tdE-FJ-3He" firstAttribute="bottom" secondItem="iTE-g2-Cke" secondAttribute="bottom" id="bUe-Xr-Rk7"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="top" secondItem="f2y-ye-QPr" secondAttribute="bottom" constant="23" id="dHi-iK-OLo"/>
+                            <constraint firstItem="Jrl-Ex-Xb3" firstAttribute="centerX" secondItem="tdE-FJ-3He" secondAttribute="centerX" id="cFI-Xa-uRS"/>
+                            <constraint firstItem="Jrl-Ex-Xb3" firstAttribute="top" secondItem="f2y-ye-QPr" secondAttribute="bottom" constant="47" id="e2r-F1-3xe"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="leading" secondItem="iTE-g2-Cke" secondAttribute="trailing" constant="10" id="eA1-8h-F6u"/>
                             <constraint firstItem="wDd-Pr-47Q" firstAttribute="leading" secondItem="ptP-gu-Sxb" secondAttribute="trailing" constant="10" id="fXa-vE-AIi"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="h2l-RX-0kq" secondAttribute="centerX" id="fa1-7S-4nu"/>
-                            <constraint firstItem="bvH-mm-gez" firstAttribute="top" secondItem="5pY-dw-iEF" secondAttribute="bottom" constant="63" id="gYy-zG-fgB"/>
                             <constraint firstItem="gtb-V5-c7n" firstAttribute="firstBaseline" secondItem="tdE-FJ-3He" secondAttribute="firstBaseline" id="hBV-K8-uZB"/>
                             <constraint firstItem="AAf-2m-u2y" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="hfv-x2-VQS"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="centerX" secondItem="Se5-kG-Vc9" secondAttribute="centerX" id="ixz-zJ-c4b"/>
@@ -701,6 +727,7 @@
                             <constraint firstItem="tdE-FJ-3He" firstAttribute="leading" secondItem="gtb-V5-c7n" secondAttribute="trailing" constant="10" id="mOo-hw-1u4"/>
                             <constraint firstAttribute="trailing" secondItem="ZbC-1s-LLg" secondAttribute="trailing" constant="20" id="nb0-rg-5EL"/>
                             <constraint firstItem="h2l-RX-0kq" firstAttribute="top" secondItem="gtb-V5-c7n" secondAttribute="bottom" constant="35" id="pIB-aR-Nkq"/>
+                            <constraint firstItem="Jrl-Ex-Xb3" firstAttribute="centerX" secondItem="bvH-mm-gez" secondAttribute="centerX" constant="-1" id="prF-wF-8cz"/>
                             <constraint firstAttribute="trailing" secondItem="h2l-RX-0kq" secondAttribute="trailing" constant="125" id="r4s-eJ-nr6"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="top" secondItem="h2l-RX-0kq" secondAttribute="bottom" constant="35" id="sLr-pN-h1l"/>
                             <constraint firstItem="4za-qR-URn" firstAttribute="centerX" secondItem="gZp-db-yW0" secondAttribute="centerX" id="uXb-dQ-zyG"/>
@@ -712,11 +739,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="JhP-sV-oFP"/>
-                                <exclude reference="NER-95-80d"/>
-                                <exclude reference="Scu-aO-caK"/>
-                                <exclude reference="gYy-zG-fgB"/>
-                                <exclude reference="95w-po-iel"/>
                                 <exclude reference="V1G-Oc-dJ6"/>
                                 <exclude reference="xL7-HJ-bpf"/>
                                 <exclude reference="9Wy-vs-oy1"/>
@@ -730,7 +752,6 @@
                                 <exclude reference="yR4-fq-FwI"/>
                                 <exclude reference="Dzg-oB-QmD"/>
                                 <exclude reference="fa1-7S-4nu"/>
-                                <exclude reference="Nf1-78-IUh"/>
                                 <exclude reference="Yyn-ID-JUO"/>
                             </mask>
                         </variation>
@@ -754,6 +775,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F37-6j-qgL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quickly sign in via mobile #" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zb-7Z-sfk">
+                    <rect key="frame" x="0.0" y="0.0" width="279" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="279" id="3qW-HW-NWA"/>
+                        <constraint firstAttribute="height" constant="45" id="c5L-Uq-zQN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="RionaSans-Bold" family="Riona Sans" pointSize="19"/>
+                    <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
             <point key="canvasLocation" x="2543" y="323"/>
         </scene>
