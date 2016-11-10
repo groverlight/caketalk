@@ -40,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Mixpanel.sharedInstanceWithToken("aabf6e79eea8bfab5f06b2f0c5c47aa2", launchOptions: launchOptions)
+        Mixpanel.sharedInstanceWithToken("417031b3549f6033ee61cbe76b058cf3", launchOptions: launchOptions)
         // Override point for customization after application launch.
         //  frontWindow = UIWindow(frame: UIScreen.mainScreen().bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

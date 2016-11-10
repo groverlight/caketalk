@@ -237,7 +237,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         iPhoneScreenSizes()
 
     
-        self.performSelector(#selector(cameraView.showFirstTipView), withObject: nil, afterDelay: 6)
+        self.performSelector(#selector(cameraView.showFirstTipView), withObject: nil, afterDelay: 4)
     
     }
     
@@ -257,8 +257,8 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         preferences.animating.dismissDuration = 0.5
         tipView = EasyTipView(text: "Hi, welcome to Caketalk!", preferences: preferences, delegate: self)
         tipView.show(animated: true, forView: view, withinSuperview: self.view)
-        self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
-        self.performSelector(#selector(cameraView.showSecondTipView), withObject: nil, afterDelay: 4)
+        self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 5)
+        self.performSelector(#selector(cameraView.showSecondTipView), withObject: nil, afterDelay: 5)
         NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-1")
         }
 
@@ -278,7 +278,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             preferences.drawing.backgroundColor = UIColor.whiteColor()
             preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
             preferences.animating.dismissDuration = 0.5
-            tipView = EasyTipView(text: "Type a thought, opinion, or question", preferences: preferences, delegate: self)
+            tipView = EasyTipView(text: "Type a thought, opinion, or question like...", preferences: preferences, delegate: self)
             tipView.show(animated: true, forView: view, withinSuperview: self.view)
             self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
             self.performSelector(#selector(cameraView.showThirdTipView), withObject: nil, afterDelay: 4)
@@ -299,11 +299,11 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             preferences.drawing.font = UIFont(name: "AvenirNext-Medium", size: 14)!
             preferences.drawing.foregroundColor = UIColor.blackColor()
             preferences.drawing.backgroundColor = UIColor.whiteColor()
-            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
+            preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
             preferences.animating.dismissDuration = 0.5
-            tipView = EasyTipView(text: "i.e. Donald Trump is a _____", preferences: preferences, delegate: self)
-            tipView.show(animated: true, forView: view, withinSuperview: self.view)
-            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 4)
+            tipView = EasyTipView(text: "i.e. With Donald in charge, we are __________", preferences: preferences, delegate: self)
+            tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
+            self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 6)
             
             NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-3")
         }
@@ -315,6 +315,18 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
     
     
     override func viewWillAppear(animated: Bool) {
+        
+        self.cameraTextView.delegate = self
+        self.cameraTextView.textColor = UIColor .blackColor().colorWithAlphaComponent(0.3)
+        self.cameraTextView.text = "What's on your mind? "
+        self.cameraTextView.autocapitalizationType = UITextAutocapitalizationType.Words
+        self.cameraTextView.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
+        
+        if self.cameraTextView.text == "What's on your mind? " {
+            self.cameraTextView.autocapitalizationType = UITextAutocapitalizationType.Sentences
+        }
+
         
         do {
             let files = try fileManager?.contentsOfDirectoryAtPath(NSTemporaryDirectory())
@@ -623,7 +635,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                 preferences.drawing.backgroundColor = UIColor.whiteColor()
                 preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
                 preferences.animating.dismissDuration = 0.5
-                tipView = EasyTipView(text: "Finished? look here", preferences: preferences, delegate: self)
+                tipView = EasyTipView(text: "When finished look HERE", preferences: preferences, delegate: self)
                 tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
                 NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-4")
                 self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 6)
@@ -768,7 +780,7 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         preferences.drawing.backgroundColor = UIColor.whiteColor()
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Top
         preferences.animating.dismissDuration = 0.5
-        tipView = EasyTipView(text: "Do as may as you like, then tap DONE", preferences: preferences, delegate: self)
+        tipView = EasyTipView(text: "Write a few more thoughts, then tap DONE", preferences: preferences, delegate: self)
         tipView.show(animated: true, forView: headerView, withinSuperview: self.view)
         self.performSelector(#selector(cameraView.dismissTipView), withObject: nil, afterDelay: 10)
         NSUserDefaults.standardUserDefaults().setValue(true, forKey: "tip-6")
@@ -947,14 +959,14 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             let timeStampLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height , self.view.bounds.size.width*(2/3)-20,25))
             timeStampLabel.font = UIFont(name:"RionaSans-Bold", size: 10.0)
             timeStampLabel.textColor = UIColor.whiteColor()
-            timeStampLabel.text = "draft"
+            timeStampLabel.text = ":: draft ::"
             timeStampLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(timeStampLabel)
             let emojiLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height+16, self.view.bounds.size.width*(2/3)-20,25))
             emojiLabel.font = UIFont(name:"Avenir Next", size:14)
             emojiLabel.textColor = UIColor.whiteColor()
-            emojiLabel.text = "✍🏻"
+            //emojiLabel.text = "✍🏻"
             emojiLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(emojiLabel)
@@ -1214,16 +1226,16 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
             self.recordButton.layer.cornerRadius = 15
             //self.recordButton.titleLabel?.font = UIFont(name:"RionaSans-Black", size: 13.0)
             
-            self.indicatorView = UIView(frame: CGRectMake(0, 0, 126, 30))
+            self.indicatorView = UIView(frame: CGRectMake(0, 0, 106, 30))
             self.indicatorView.center = CGPointMake(self.view.center.x, -30)
             self.indicatorView.layer.cornerRadius = 15
             self.indicatorView.clipsToBounds = true
             self.indicatorView.backgroundColor = UIColor.hex("#FF0000")
             self.view.addSubview(indicatorView)
             
-            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 126, 30))
+            let indicatorLabel = UILabel(frame: CGRectMake(0, 0, 106, 30))
             indicatorLabel.textAlignment = NSTextAlignment.Center
-            indicatorLabel.text = "LOOK HERE 🎯"
+            indicatorLabel.text = "LOOK HERE"
             indicatorLabel.font = UIFont(name:"RionaSans-Black", size: 12)
             indicatorLabel.textColor = .whiteColor()
             indicatorView.addSubview(indicatorLabel)
@@ -1347,9 +1359,12 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
         mixPanel.people .increment("clear button pressed", by: 1)
         mixPanel.identify(mixPanel.distinctId)
         mixPanel.flush()
+        
+        self.cameraTextView.textColor = UIColor .blackColor().colorWithAlphaComponent(0.3)
+        self.cameraTextView.text = "What's on your mind? "
+        self.cameraTextView.autocapitalizationType = UITextAutocapitalizationType.Sentences
 
-
-        self.headerView.backgroundColor = UIColor .clearColor()
+               self.headerView.backgroundColor = UIColor .clearColor()
         self.backButton.hidden = true
         self.backEmoji.hidden = true
         self.clearButton.hidden = true

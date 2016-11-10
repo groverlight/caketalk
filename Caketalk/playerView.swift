@@ -332,15 +332,15 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
             overlayScrollView.contentSize = CGSizeMake(self.view.bounds.size.width-20,scrollHeightOverlay)
             let timeStampLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height , self.view.bounds.size.width*(2/3)-20,25))
             timeStampLabel.font = UIFont(name:"RionaSans-Bold", size: 10.0)
-            timeStampLabel.textColor = UIColor.whiteColor()
-            timeStampLabel.text = "recap"
+            timeStampLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.70)
+            timeStampLabel.text = ":: recap ::"
             timeStampLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(timeStampLabel)
             let emojiLabel = UILabel(frame: CGRectMake(6, overlayScrollView.contentSize.height+16, self.view.bounds.size.width*(2/3)-20,25))
             emojiLabel.font = UIFont(name:"Avenir Next", size:14)
             emojiLabel.textColor = UIColor.whiteColor()
-            emojiLabel.text = "📝"
+            //emojiLabel.text = "📝"
             emojiLabel.numberOfLines = 0
             timeStampLabel.sizeToFit()
             overlayScrollView.addSubview(emojiLabel)
@@ -466,9 +466,9 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
                                     preferences.drawing.backgroundColor = UIColor.whiteColor()
                                         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.Bottom
                                         preferences.animating.showDuration = 2
-                                        EasyTipView.show(forView: self.moreButton,
+                                        EasyTipView.show(forView: self.twitterButton,
                                             withinSuperview: self.view,
-                                            text: "Tap to save or share with your audience",
+                                            text: "Share to get hella likes/views",
                                             preferences: preferences,
                                             delegate: self)
                                         
@@ -576,6 +576,8 @@ class playerView: UIViewController,/*FBSDKSharingDelegate,*/ UIScrollViewDelegat
 
     func twitter() {
 
+        
+        
         mixPanel.track("twitter pressed", properties: nil)
         mixPanel.people .increment("twitter pressed", by: 1)
         mixPanel.identify(mixPanel.distinctId)

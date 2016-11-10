@@ -19,7 +19,6 @@
 		27049AB01CE823FD002D69EF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA61CE823FD002D69EF /* GradientView.swift */; };
 		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
 		36FEF4671D414AE100C7ABEF /* Shutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4661D414AE100C7ABEF /* Shutter.swift */; };
 		36FEF4691D414AFC00C7ABEF /* ShutterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */; };
@@ -28,9 +27,9 @@
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
 		DC0BEE671DD3FF2F00FA457F /* spalsh_vid.mov in Resources */ = {isa = PBXBuildFile; fileRef = DC0BEE661DD3FF2E00FA457F /* spalsh_vid.mov */; };
 		DC597E9A1DCBC7A000A2FADE /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DC597E991DCBC7A000A2FADE /* water_white.png */; };
+		DC7363191DD44CBA0072A2F0 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCE1CDAF1DC93CAE00FB268D /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE1CDAE1DC93CAE00FB268D /* water_white.png */; };
 		DCF3D4B51DC7B9A50083171C /* TrimVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */; };
-		F46892311D19EA97001FA942 /* click_pop.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892231D19EA97001FA942 /* click_pop.aif */; };
 		F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */; };
 		F46892331D19EA97001FA942 /* digi_error_2x.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892251D19EA97001FA942 /* digi_error_2x.aif */; };
 		F46892341D19EA97001FA942 /* digi_hi_select.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892261D19EA97001FA942 /* digi_hi_select.aif */; };
@@ -150,7 +149,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				27049ADA1CE82547002D69EF /* GPUImage.framework in Embed Frameworks */,
+				DC7363191DD44CBA0072A2F0 /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,7 +187,6 @@
 		DC597E991DCBC7A000A2FADE /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_white.png; sourceTree = "<group>"; };
 		DCE1CDAE1DC93CAE00FB268D /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water_white.png; path = ../../water_white.png; sourceTree = "<group>"; };
 		DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimVideo.swift; sourceTree = "<group>"; };
-		F46892231D19EA97001FA942 /* click_pop.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = click_pop.aif; sourceTree = "<group>"; };
 		F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = digi_blip_hi_2x.aif; sourceTree = "<group>"; };
 		F46892251D19EA97001FA942 /* digi_error_2x.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = digi_error_2x.aif; sourceTree = "<group>"; };
 		F46892261D19EA97001FA942 /* digi_hi_select.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = digi_hi_select.aif; sourceTree = "<group>"; };
@@ -396,7 +394,6 @@
 				F4CEA7B81DB80EE600FF5588 /* click_snip.aif */,
 				F4CEA7B91DB80EE600FF5588 /* click_03.aif */,
 				F4CEA7BA1DB80EE600FF5588 /* click_04.aif */,
-				F46892231D19EA97001FA942 /* click_pop.aif */,
 				F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */,
 				F46892251D19EA97001FA942 /* digi_error_2x.aif */,
 				F46892261D19EA97001FA942 /* digi_hi_select.aif */,
@@ -646,7 +643,6 @@
 				F47C01761CE3B51E00891EB1 /* RionaSans-LightIt.otf in Resources */,
 				F47C01341CE3B3D700891EB1 /* Assets.xcassets in Resources */,
 				F4A190051DB9459A008DDA82 /* lookup_soft_elegance_2.png in Resources */,
-				F46892311D19EA97001FA942 /* click_pop.aif in Resources */,
 				F468923A1D19EA97001FA942 /* pop_drip_echo.aif in Resources */,
 				F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */,
 				F47C016D1CE3B51E00891EB1 /* RionaSans-BlackIt.otf in Resources */,
@@ -1002,6 +998,7 @@
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1018,9 +1015,10 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.grover.testalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
 			};
 			name = Debug;
@@ -1034,6 +1032,7 @@
 				CODE_SIGN_ENTITLEMENTS = Caketalk/Caketalk.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = NO;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1050,9 +1049,10 @@
 				INFOPLIST_FILE = Caketalk/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.grover.testalk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grover.caketalk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				STRIP_PNG_TEXT = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Caketalk/bridging-header.h";
 			};
 			name = Release;
