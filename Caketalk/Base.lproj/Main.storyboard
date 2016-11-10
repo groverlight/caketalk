@@ -70,7 +70,7 @@
                                     <constraint firstAttribute="height" constant="60" id="nve-8m-cRK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="15"/>
-                                <state key="normal" title="CONTINUE">
+                                <state key="normal" title="MAKE ONE!">
                                     <color key="titleColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -88,13 +88,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAKETALK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRv-t4-jeT" userLabel="Title">
-                                <rect key="frame" x="242" y="270" width="116" height="32"/>
-                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="22"/>
+                                <rect key="frame" x="237" y="19" width="127" height="34"/>
+                                <fontDescription key="fontDescription" name="RionaSans-Black" family="Riona Sans" pointSize="24"/>
                                 <color key="textColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-ZR-NVg" userLabel="Description">
-                                <rect key="frame" x="222" y="305" width="156" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htd-ZR-NVg" userLabel="Description">
+                                <rect key="frame" x="225" y="57" width="151" height="21"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="quiet video updates">
@@ -115,12 +115,12 @@
                             <constraint firstAttribute="trailing" secondItem="pLq-V8-nAa" secondAttribute="trailing" constant="20" id="6X3-ZQ-7fz"/>
                             <constraint firstItem="lRv-t4-jeT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6yG-4h-T29"/>
                             <constraint firstItem="pLq-V8-nAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="UiB-Vf-5dd"/>
-                            <constraint firstItem="lRv-t4-jeT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-14" id="bvA-JX-gdD"/>
+                            <constraint firstItem="lRv-t4-jeT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-264" id="bvA-JX-gdD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nuo-1N-hXo" secondAttribute="bottom" constant="37" id="c1d-Mw-Fsd"/>
                             <constraint firstItem="pLq-V8-nAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="l5P-WN-GO3"/>
                             <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ree-dM-ajb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pLq-V8-nAa" secondAttribute="trailing" constant="10" id="sRZ-dR-wLh"/>
-                            <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="17.5" id="tSs-E5-JlE"/>
+                            <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-232.5" id="tSs-E5-JlE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

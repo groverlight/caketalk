@@ -16,7 +16,7 @@ import Mixpanel
 class splash: UIViewController, PlayerDelegate {
     
 
-    let videoUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cake_vid", ofType: "mp4")!)
+    let videoUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("spalsh_vid", ofType: "mov")!)
     
 
     private var player: Player!
