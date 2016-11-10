@@ -520,7 +520,6 @@ class cameraView: UIViewController, UITextViewDelegate, UIScrollViewDelegate, Ea
                         do {
                             if arrayofText.count > 0 {
                                 try fileManager?.removeItemAtPath("\(NSTemporaryDirectory())\(clipCount).mov")
-                                clipCount -= 1
                                 
                                 if arrayOfClipDurations.count > 0 {
                                     arrayOfClipDurations.removeLast()

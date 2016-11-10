@@ -15,9 +15,9 @@ import Mixpanel
 
 class splash: UIViewController, PlayerDelegate {
     
-    let resourcePath = NSBundle.mainBundle().pathForResource("IMG_0011", ofType:"MOV")
-    
 
+    let videoUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("cake_vid", ofType: "mp4")!)
+    
 
     private var player: Player!
 
@@ -48,7 +48,7 @@ class splash: UIViewController, PlayerDelegate {
         self.view.sendSubviewToBack(self.player.view)
         self.player.didMoveToParentViewController(self)
         
-        //self.player.path = resourcePath()
+        self.player.setUrl(videoUrl)
         
         self.player.playbackLoops = true
         self.player.muted = true

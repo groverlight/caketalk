@@ -27,6 +27,7 @@
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
 		DC597E9A1DCBC7A000A2FADE /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DC597E991DCBC7A000A2FADE /* water_white.png */; };
+		DC9F0E2F1DD244C3001A4C62 /* cake_vid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = DC9F0E2E1DD244C3001A4C62 /* cake_vid.mp4 */; };
 		DCE1CDAF1DC93CAE00FB268D /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE1CDAE1DC93CAE00FB268D /* water_white.png */; };
 		DCF3D4B51DC7B9A50083171C /* TrimVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */; };
 		F46892311D19EA97001FA942 /* click_pop.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892231D19EA97001FA942 /* click_pop.aif */; };
@@ -184,6 +185,7 @@
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
 		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
 		DC597E991DCBC7A000A2FADE /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_white.png; sourceTree = "<group>"; };
+		DC9F0E2E1DD244C3001A4C62 /* cake_vid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cake_vid.mp4; sourceTree = "<group>"; };
 		DCE1CDAE1DC93CAE00FB268D /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water_white.png; path = ../../water_white.png; sourceTree = "<group>"; };
 		DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimVideo.swift; sourceTree = "<group>"; };
 		F46892231D19EA97001FA942 /* click_pop.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = click_pop.aif; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */,
 				36FEF46C1D4157F200C7ABEF /* Shutter Export */,
 				F4A190011DB9459A008DDA82 /* lookup_amatorka.png */,
+				DC9F0E2E1DD244C3001A4C62 /* cake_vid.mp4 */,
 				F4A190031DB9459A008DDA82 /* lookup.png */,
 				27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */,
 				F4A190021DB9459A008DDA82 /* lookup_soft_elegance_2.png */,
@@ -660,6 +663,7 @@
 				F47C01751CE3B51E00891EB1 /* RionaSans-Light.otf in Resources */,
 				F47C01741CE3B51E00891EB1 /* RionaSans-Italic.otf in Resources */,
 				F47C017A1CE3B51E00891EB1 /* RionaSans-Thin.otf in Resources */,
+				DC9F0E2F1DD244C3001A4C62 /* cake_vid.mp4 in Resources */,
 				DC597E9A1DCBC7A000A2FADE /* water_white.png in Resources */,
 				F4EB2F161DB5B2990099FBC6 /* beep_piano_hi_off.aif in Resources */,
 				F47C016F1CE3B51E00891EB1 /* RionaSans-BoldIt.otf in Resources */,
