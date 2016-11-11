@@ -17,8 +17,6 @@
 		27049AAE1CE823FD002D69EF /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA31CE823FD002D69EF /* RandomColor.swift */; };
 		27049AAF1CE823FD002D69EF /* paddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA41CE823FD002D69EF /* paddedLabel.swift */; };
 		27049AB01CE823FD002D69EF /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27049AA61CE823FD002D69EF /* GradientView.swift */; };
-		27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2774685C1CF509A400AEA790 /* MAActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2774685B1CF509A400AEA790 /* MAActivityIndicatorView.swift */; };
 		36FEF4671D414AE100C7ABEF /* Shutter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4661D414AE100C7ABEF /* Shutter.swift */; };
 		36FEF4691D414AFC00C7ABEF /* ShutterLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FEF4681D414AFC00C7ABEF /* ShutterLayer.swift */; };
@@ -26,8 +24,10 @@
 		AE87BBEF4D5102CDC7BFD55E /* Pods_CaketalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26882D69144B813DA28CC31D /* Pods_CaketalkUITests.framework */; };
 		D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22BBA995424658A6B50DF2CF /* Pods_Caketalk.framework */; };
 		DC0BEE671DD3FF2F00FA457F /* spalsh_vid.mov in Resources */ = {isa = PBXBuildFile; fileRef = DC0BEE661DD3FF2E00FA457F /* spalsh_vid.mov */; };
+		DC100E731DD59328005EAD08 /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; };
+		DC100E741DD59328005EAD08 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC100E7B1DD59E6A005EAD08 /* blur_vid2.png in Resources */ = {isa = PBXBuildFile; fileRef = DC100E7A1DD59E6A005EAD08 /* blur_vid2.png */; };
 		DC597E9A1DCBC7A000A2FADE /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DC597E991DCBC7A000A2FADE /* water_white.png */; };
-		DC7363191DD44CBA0072A2F0 /* GPUImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27049AD51CE824F8002D69EF /* GPUImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCE1CDAF1DC93CAE00FB268D /* water_white.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE1CDAE1DC93CAE00FB268D /* water_white.png */; };
 		DCF3D4B51DC7B9A50083171C /* TrimVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */; };
 		F46892321D19EA97001FA942 /* digi_blip_hi_2x.aif in Resources */ = {isa = PBXBuildFile; fileRef = F46892241D19EA97001FA942 /* digi_blip_hi_2x.aif */; };
@@ -109,7 +109,7 @@
 			remoteGlobalIDString = BCE209E51943F20C002FEED8;
 			remoteInfo = GPUImageFramework;
 		};
-		27049AD71CE82502002D69EF /* PBXContainerItemProxy */ = {
+		DC100E751DD59328005EAD08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 27049ACC1CE824F8002D69EF /* GPUImage.xcodeproj */;
 			proxyType = 1;
@@ -133,23 +133,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		27049ABD1CE8245D002D69EF /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 7;
-			files = (
-				27049AD91CE82506002D69EF /* GPUImage.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F45844B21CE5562F000D8B41 /* Embed Frameworks */ = {
+		DC100E771DD59329005EAD08 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DC7363191DD44CBA0072A2F0 /* GPUImage.framework in Embed Frameworks */,
+				DC100E741DD59328005EAD08 /* GPUImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +174,7 @@
 		A9AB98174BF6682CDA3B40D7 /* Pods-Caketalk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.debug.xcconfig"; sourceTree = "<group>"; };
 		CE56217F03A80E2CB55489F1 /* Pods-Caketalk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Caketalk.release.xcconfig"; path = "Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk.release.xcconfig"; sourceTree = "<group>"; };
 		DC0BEE661DD3FF2E00FA457F /* spalsh_vid.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = spalsh_vid.mov; sourceTree = "<group>"; };
+		DC100E7A1DD59E6A005EAD08 /* blur_vid2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blur_vid2.png; sourceTree = "<group>"; };
 		DC597E991DCBC7A000A2FADE /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_white.png; sourceTree = "<group>"; };
 		DCE1CDAE1DC93CAE00FB268D /* water_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = water_white.png; path = ../../water_white.png; sourceTree = "<group>"; };
 		DCF3D4B41DC7B9A50083171C /* TrimVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrimVideo.swift; sourceTree = "<group>"; };
@@ -266,12 +257,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27049AD61CE824FE002D69EF /* GPUImage.framework in Frameworks */,
 				F4FB95781CE3F5C300E2977B /* CFNetwork.framework in Frameworks */,
 				F4FB95741CE3F5AB00E2977B /* QuartzCore.framework in Frameworks */,
 				F4FB95721CE3F59200E2977B /* AVKit.framework in Frameworks */,
 				F4FB95701CE3F57B00E2977B /* MediaPlayer.framework in Frameworks */,
 				F4CE512C1DB1A92A00AEB917 /* CloudKit.framework in Frameworks */,
+				DC100E731DD59328005EAD08 /* GPUImage.framework in Frameworks */,
 				F4FB956E1CE3F57300E2977B /* AVFoundation.framework in Frameworks */,
 				D85A7E7D3A112B7019780BCB /* Pods_Caketalk.framework in Frameworks */,
 			);
@@ -346,6 +337,7 @@
 				36FEF4701D41580400C7ABEF /* SocialVideoHelper.m */,
 				36FEF46C1D4157F200C7ABEF /* Shutter Export */,
 				F4A190011DB9459A008DDA82 /* lookup_amatorka.png */,
+				DC100E7A1DD59E6A005EAD08 /* blur_vid2.png */,
 				DC0BEE661DD3FF2E00FA457F /* spalsh_vid.mov */,
 				F4A190031DB9459A008DDA82 /* lookup.png */,
 				27049A9C1CE823FD002D69EF /* lookup_soft_elegance_1.png */,
@@ -488,15 +480,14 @@
 				F47C01221CE3B3D700891EB1 /* Sources */,
 				F47C01231CE3B3D700891EB1 /* Frameworks */,
 				F47C01241CE3B3D700891EB1 /* Resources */,
-				F45844B21CE5562F000D8B41 /* Embed Frameworks */,
-				27049ABD1CE8245D002D69EF /* CopyFiles */,
 				092522BF086C505BD68E9A6E /* [CP] Embed Pods Frameworks */,
 				9759A4D211516BC11171C523 /* [CP] Copy Pods Resources */,
+				DC100E771DD59329005EAD08 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				27049AD81CE82502002D69EF /* PBXTargetDependency */,
+				DC100E761DD59328005EAD08 /* PBXTargetDependency */,
 			);
 			name = Caketalk;
 			productName = Caketalk;
@@ -533,6 +524,7 @@
 				F47C01451CE3B3D700891EB1 /* Frameworks */,
 				F47C01461CE3B3D700891EB1 /* Resources */,
 				EAB4CC0EC51077CC25434AD6 /* [CP] Copy Pods Resources */,
+				CF14F49AA49F508B16A192D1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -676,6 +668,7 @@
 				F46892341D19EA97001FA942 /* digi_hi_select.aif in Resources */,
 				F47C01771CE3B51E00891EB1 /* RionaSans-Medium.otf in Resources */,
 				F4CE512A1DB1A8A700AEB917 /* Caketalk.entitlements in Resources */,
+				DC100E7B1DD59E6A005EAD08 /* blur_vid2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +701,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		092522BF086C505BD68E9A6E /* [CP] Embed Pods Frameworks */ = {
@@ -738,7 +731,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		756002C2E56C713A0FA37416 /* [CP] Copy Pods Resources */ = {
@@ -768,7 +761,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8FB8ADB683307BDDDFBF35CE /* [CP] Embed Pods Frameworks */ = {
@@ -799,6 +792,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Caketalk/Pods-Caketalk-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF14F49AA49F508B16A192D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CaketalkUITests/Pods-CaketalkUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EAB4CC0EC51077CC25434AD6 /* [CP] Copy Pods Resources */ = {
@@ -867,10 +875,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		27049AD81CE82502002D69EF /* PBXTargetDependency */ = {
+		DC100E761DD59328005EAD08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GPUImageFramework;
-			targetProxy = 27049AD71CE82502002D69EF /* PBXContainerItemProxy */;
+			targetProxy = DC100E751DD59328005EAD08 /* PBXContainerItemProxy */;
 		};
 		F47C013F1CE3B3D700891EB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

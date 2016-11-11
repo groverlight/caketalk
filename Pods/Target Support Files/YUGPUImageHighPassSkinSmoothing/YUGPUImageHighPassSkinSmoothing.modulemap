@@ -1,6 +1,0 @@
-framework module YUGPUImageHighPassSkinSmoothing {
-  umbrella header "YUGPUImageHighPassSkinSmoothing-umbrella.h"
-
-  export *
-  module * { export * }
-}

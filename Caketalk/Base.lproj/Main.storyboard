@@ -66,6 +66,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blur_vid2.png" translatesAutoresizingMaskIntoConstraints="NO" id="CuT-q4-Pve">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLq-V8-nAa">
                                 <rect key="frame" x="20" y="523" width="560" height="60"/>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.96078431369999995" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,12 +114,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.51764705882352935" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pLq-V8-nAa" secondAttribute="bottom" constant="17" id="09W-yr-7f8"/>
                             <constraint firstItem="Nuo-1N-hXo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="0Ds-K6-V2L"/>
                             <constraint firstAttribute="trailing" secondItem="pLq-V8-nAa" secondAttribute="trailing" constant="20" id="6X3-ZQ-7fz"/>
                             <constraint firstItem="lRv-t4-jeT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6yG-4h-T29"/>
+                            <constraint firstItem="CuT-q4-Pve" firstAttribute="centerX" secondItem="Htd-ZR-NVg" secondAttribute="centerX" id="8fP-aT-MeS"/>
+                            <constraint firstItem="CuT-q4-Pve" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Fir-Gm-Jdl"/>
+                            <constraint firstItem="CuT-q4-Pve" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GND-75-RuQ"/>
                             <constraint firstItem="pLq-V8-nAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="UiB-Vf-5dd"/>
                             <constraint firstItem="lRv-t4-jeT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-264" id="bvA-JX-gdD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nuo-1N-hXo" secondAttribute="bottom" constant="37" id="c1d-Mw-Fsd"/>
@@ -124,6 +129,7 @@
                             <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ree-dM-ajb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pLq-V8-nAa" secondAttribute="trailing" constant="10" id="sRZ-dR-wLh"/>
                             <constraint firstItem="Htd-ZR-NVg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-232.5" id="tSs-E5-JlE"/>
+                            <constraint firstItem="CuT-q4-Pve" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xVw-qK-1dy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -133,6 +139,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="blurVid" destination="CuT-q4-Pve" id="BIG-B9-xd9"/>
                         <outlet property="loginButton" destination="pLq-V8-nAa" id="1zS-kH-8sA"/>
                         <outlet property="loginEmoji" destination="Nuo-1N-hXo" id="RCM-8U-B0Z"/>
                     </connections>
@@ -1296,6 +1303,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blur_vid2.png" width="1242" height="2208"/>
         <image name="fb.png" width="160" height="160"/>
         <image name="insta.png" width="160" height="160"/>
         <image name="more.png" width="160" height="160"/>

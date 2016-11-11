@@ -13,7 +13,7 @@ import AVFoundation
 import Mixpanel
 
 
-class splash: UIViewController, PlayerDelegate {
+class splash: UIViewController  {
     
 
     let videoUrl = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("spalsh_vid", ofType: "mov")!)
@@ -31,6 +31,7 @@ class splash: UIViewController, PlayerDelegate {
 
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var loginEmoji: UILabel!
+    @IBOutlet weak var blurVid: UIImageView!
 
 /*---------------END OUTLETS 🎛----------------------*/
 
@@ -40,7 +41,7 @@ class splash: UIViewController, PlayerDelegate {
         print ("login view loaded")
 
         self.player = Player()
-        self.player.delegate = self
+        //self.player.delegate = self
         self.player.view.frame = self.view.bounds
         self.player.view.backgroundColor = .clearColor()
         self.addChildViewController(self.player)
@@ -54,6 +55,13 @@ class splash: UIViewController, PlayerDelegate {
         self.player.muted = true
         self.player.playFromBeginning()
 
+        let opacityOutAnimation: POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
+        opacityOutAnimation.duration = 3.5
+        opacityOutAnimation.autoreverses = false
+        opacityOutAnimation.toValue = 0
+        blurVid.layer.pop_addAnimation(opacityOutAnimation, forKey: "opacityOutAnimation")
+        
+        
 
         let buttonSpring = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)
         let buttonSpring2 = POPSpringAnimation(propertyNamed: kPOPViewScaleXY)

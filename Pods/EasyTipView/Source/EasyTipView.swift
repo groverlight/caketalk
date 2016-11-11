@@ -139,7 +139,6 @@ public extension EasyTipView {
             self.alpha = self.preferences.animating.dismissFinalAlpha
         }) { (finished) -> Void in
             completion?()
-            self.delegate?.easyTipViewDidDismiss(self)
             self.removeFromSuperview()
             self.transform = CGAffineTransformIdentity
         }
@@ -177,7 +176,7 @@ public class EasyTipView: UIView {
             public var bubbleVInset         = CGFloat(1)
             public var textHInset           = CGFloat(10)
             public var textVInset           = CGFloat(10)
-            public var maxWidth             = CGFloat(350)
+            public var maxWidth             = CGFloat(200)
         }
         
         public struct Animating {
@@ -346,7 +345,9 @@ public class EasyTipView: UIView {
     // MARK:- Callbacks -
     
     func handleTap() {
-        dismiss()
+        dismiss {
+            self.delegate?.easyTipViewDidDismiss(self)
+        }
     }
     
     // MARK:- Drawing -
